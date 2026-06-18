@@ -203,6 +203,8 @@ strong{color:var(--white);font-weight:600;}
 .work-gallery{display:grid;grid-template-columns:1fr;gap:20px;margin-top:clamp(32px,4vw,56px);}
 @media(min-width:760px){.work-gallery{grid-template-columns:1fr 1fr;}.work-gallery .full{grid-column:1 / -1;}}
 .work-gallery .thumb-art{aspect-ratio:16/10;}
+.work-case{margin-top:clamp(40px,6vw,72px);border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);background:#0e0e12;}
+.work-case img{width:100%;display:block;}
 
 /* ---------------- CTA call-out ---------------- */
 .cta-callout{position:relative;overflow:hidden;border-radius:var(--radius-lg);border:1px solid var(--line);background:var(--bg-soft);padding:clamp(48px,7vw,96px) clamp(28px,5vw,72px);text-align:center;}

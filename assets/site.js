@@ -130,8 +130,9 @@
       return '<p>' + esc(b.p) + '</p>';
     }).join('');
 
-    var cover = p.cover
-      ? '<div class="thumb-art"><img src="' + p.cover + '" alt="' + esc(p.title) + '"></div>'
+    var coverImg = p.cover || p.thumb;
+    var cover = coverImg
+      ? '<div class="thumb-art"><img src="' + coverImg + '" alt="' + esc(p.title) + '"></div>'
       : '<div class="thumb-art" style="--c1:' + p.c1 + ';--c2:' + p.c2 + ';--c3:' + p.c3 + '"><div class="mesh"></div></div>';
 
     var visit = p.visit ? '<div class="hero-actions"><a class="btn btn-light" href="' + p.visit + '">Visit project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>' : '';
@@ -146,6 +147,7 @@
         '<div class="work-cover">' + cover + '</div>' +
         '<div class="work-facts">' + facts + '</div>' +
         '<div class="work-body">' + body + '</div>' +
+        (p.caseImage ? '<div class="work-case reveal"><img src="' + p.caseImage + '" alt="' + esc(p.title) + ' — full case study" loading="lazy"></div>' : '') +
       '</div>';
   }
 

@@ -23,7 +23,8 @@ window.PROJECTS = [
     category: 'Website',
     tagline: 'A technology consultancy website redesign focused on AI-powered, human-centred digital experiences.',
     location: 'Auckland, NZ · Tech & Innovation Consultancy',
-    c1: '#ff5a4a', c2: '#7c2bff', c3: '#ff2e8b',
+    thumb: '/assets/img/work/clearpoint.jpg',
+    caseImage: '/assets/img/work/clearpoint-case.jpg',
     facts: [
       { k: 'Discipline', v: 'Website redesign · UI/UX' },
       { k: 'Sector', v: 'Tech & Innovation Consultancy' },
@@ -46,7 +47,8 @@ window.PROJECTS = [
     category: 'Website',
     tagline: 'A website for Re-Leased — a platform for commercial landlords, property managers, and tenants, streamlining lease, maintenance, compliance, and accounting with automation and AI-powered workflows.',
     location: 'NZ & Global · Commercial Property Management Software',
-    c1: '#7c5cff', c2: '#4a8cff', c3: '#b15cff',
+    thumb: '/assets/img/work/re-leased.jpg',
+    caseImage: '/assets/img/work/re-leased-case.jpg',
     facts: [
       { k: 'Discipline', v: 'Website · UI/UX' },
       { k: 'Sector', v: 'Property Management Software' },
@@ -64,7 +66,7 @@ window.PROJECTS = [
     category: 'Customer Portal',
     tagline: 'A customer portal for a finance platform — simplifying complex loan workflows, document management, and multi-user access.',
     location: 'Auckland, NZ · Finance',
-    c1: '#36c5d0', c2: '#4a8cff', c3: '#2b6cff',
+    thumb: '/assets/img/work/lannock.jpg',
     facts: [
       { k: 'Discipline', v: 'Product design · UX' },
       { k: 'Sector', v: 'Finance' },
@@ -72,7 +74,11 @@ window.PROJECTS = [
     ],
     body: [
       { h: 'Overview' },
-      { p: 'A customer portal for a finance platform, designed to simplify complex loan workflows, document management, and multi-user access.' }
+      { p: 'A customer portal for a finance platform, designed to simplify complex loan workflows, document management, and multi-user access.' },
+      { h: 'The problem' },
+      { p: 'Strata managers need to manage multiple buildings, submit loan proposals, and handle large volumes of financial documents. Communication was fragmented across email, phone calls, and an outdated system; users lacked visibility into application status and next steps; and coordination between stakeholders was inconsistent and error-prone. Document-heavy workflows created confusion around actions and responsibilities, and financial-compliance constraints added complexity to every interaction.' },
+      { h: 'What changed' },
+      { p: 'A clear, intuitive UI now supports multiple user types (owners, managers, tenants). Complex financial and application processes became easier to manage, navigate, and understand, with clearer step-by-step flows and improved content hierarchy. Internal teams benefited from consistent data capture and reduced admin overhead, and document-heavy interactions were streamlined into guided journeys — improving usability for non-technical users.' }
     ]
   },
   {
@@ -82,7 +88,8 @@ window.PROJECTS = [
     category: 'Website',
     tagline: 'A website for TEDxAuckland presenting speakers, ideas, and event information in a clear, engaging format.',
     location: 'Auckland, NZ · Independent TED event',
-    c1: '#ff3b3b', c2: '#ff6b4a', c3: '#ff2e6b',
+    thumb: '/assets/img/work/tedxauckland.jpg',
+    caseImage: '/assets/img/work/tedxauckland-case.jpg',
     facts: [
       { k: 'Discipline', v: 'Website · UI/UX' },
       { k: 'Sector', v: 'Events / Media' },
@@ -100,7 +107,8 @@ window.PROJECTS = [
     category: 'Website',
     tagline: 'A redesign for a cloud-based collaboration platform, making complex film & TV production workflows clearer in real-time environments (formerly Moxion).',
     location: 'NZ & Global · Film & TV Production',
-    c1: '#36c5d0', c2: '#1f8cff', c3: '#0fd1a0',
+    thumb: '/assets/img/work/autodesk-flow-capture.jpg',
+    caseImage: '/assets/img/work/autodesk-flow-capture-case.jpg',
     facts: [
       { k: 'Discipline', v: 'Website · UI/UX' },
       { k: 'Sector', v: 'Film & TV Production Software' },
@@ -118,7 +126,8 @@ window.PROJECTS = [
     category: 'Website',
     tagline: 'A website redesign repositioning solar roofing as a premium offering — improving clarity, trust, and conversion for high-value decisions.',
     location: 'Hawaii, US · Roofing & Solar',
-    c1: '#ffb648', c2: '#ff6b4a', c3: '#36c5d0',
+    thumb: '/assets/img/work/kapili.jpg',
+    caseImage: '/assets/img/work/kapili-case.jpg',
     facts: [
       { k: 'Discipline', v: 'Website · UI/UX' },
       { k: 'Sector', v: 'Roofing & Solar' },
