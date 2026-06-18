@@ -92,6 +92,7 @@
         thumb +
         '<span class="cat">' + esc(p.category) + '</span>' +
         '<div class="work-meta"><h3>' + esc(p.title) + '</h3><span class="yr">' + esc(p.year) + '</span></div>' +
+        (p.location ? '<p class="loc">' + esc(p.location) + '</p>' : '') +
         '<p class="desc">' + esc(p.tagline) + '</p>' +
         '<span class="arrow">View project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17 17 7M9 7h8v8"/></svg></span>' +
       '</a>';
@@ -140,6 +141,7 @@
         '<a class="text-link" href="/portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg> All work</a>' +
         '<div class="cat" style="margin-top:24px">' + esc(p.category) + '</div>' +
         '<h1>' + esc(p.title) + '</h1>' +
+        (p.location ? '<p class="loc" style="margin-top:10px">' + esc(p.location) + '</p>' : '') +
         '<p class="lead">' + esc(p.tagline) + '</p>' + visit +
         '<div class="work-cover">' + cover + '</div>' +
         '<div class="work-facts">' + facts + '</div>' +

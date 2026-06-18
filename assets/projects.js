@@ -1,12 +1,10 @@
 /* ===================================================================
    Bentoji Studio — portfolio data (single source of truth)
-   To ADD a project: copy a block and edit. The homepage grid, the
-   portfolio page, and the project detail page all read from here.
-   - `link`   : if set, the card links straight to that page.
-   - no link  : the card opens /work?p=<slug> (data-driven detail page).
-   - `thumb`/`cover`: optional image paths. If omitted, an animated
-     gradient (c1/c2/c3) is generated automatically.
-   NOTE: SoundLax is real. Projects 2–5 are placeholders to edit.
+   Real projects sourced from Ben's "BN Selected works | 2026" Figma.
+   Card thumbnails currently use generated gradient art (themed per
+   project). To use the real screenshots, drop images into
+   /assets/img/work/<slug>.jpg and add `thumb: '/assets/img/work/<slug>.jpg'`.
+   Taglines marked [check] were placeholder/!!unclear in the Figma — confirm copy.
    =================================================================== */
 window.PROJECTS = [
   {
@@ -20,76 +18,116 @@ window.PROJECTS = [
     external: false
   },
   {
-    slug: 'kowhai',
-    title: 'Kōwhai',
+    slug: 'clearpoint',
+    title: 'ClearPoint',
     year: '2025',
-    category: 'Brand & Identity',
-    tagline: 'A warm, nature-led identity system for a boutique wellness brand. [Placeholder — edit in projects.js]',
-    c1: '#ffb648', c2: '#ff6b4a', c3: '#ff5c8a',
-    visit: '',
+    category: 'Website',
+    tagline: 'A technology consultancy website redesign focused on AI-powered, human-centred digital experiences.',
+    location: 'Auckland, NZ · Tech & Innovation Consultancy',
+    c1: '#ff5a4a', c2: '#7c2bff', c3: '#ff2e8b',
     facts: [
-      { k: 'Discipline', v: 'Brand identity, art direction' },
-      { k: 'Year', v: '2025' },
-      { k: 'Role', v: 'Design & strategy' }
+      { k: 'Discipline', v: 'Website redesign · UI/UX' },
+      { k: 'Sector', v: 'Tech & Innovation Consultancy' },
+      { k: 'Role', v: 'UI/UX Design Lead (agency-based)' }
     ],
     body: [
-      { p: 'This is placeholder copy. Replace it with the real project story in assets/projects.js. Kōwhai began with a simple question: how do you make a wellness brand feel warm without feeling soft?' },
-      { h: 'The approach' },
-      { p: 'We built a flexible identity around a single golden accent and a generous type system, then extended it across packaging, web, and social. Everything is designed to scale as the brand grows.' },
-      { h: 'Outcome' },
-      { p: 'A cohesive, recognisable system the team can run themselves. Swap this text for your actual results, metrics, or learnings.' }
+      { h: 'Client overview' },
+      { p: "ClearPoint's strategic shift towards AI-driven, human-centred solutions created a gap between its evolving capabilities and its existing digital presence. A full website redesign was needed to realign the brand, improve clarity, and support future growth." },
+      { p: 'The goal was not just to redesign the website, but to translate ClearPoint’s evolving business strategy into a clear and scalable digital experience.' },
+      { h: 'The challenge' },
+      { p: 'Communicating complex service offerings clearly, balancing technical credibility with business clarity, modernising the brand’s positioning, and creating a scalable structure to support ongoing content and service expansion.' },
+      { h: 'Approach' },
+      { p: 'Defined user personas and mapped key customer journeys, restructured the information architecture to simplify navigation, validated layout with wireframes, and designed a cohesive UI aligned with the brand and its positioning.' }
     ]
   },
   {
-    slug: 'driftwell',
-    title: 'Driftwell',
+    slug: 'lannock',
+    title: 'Lannock / Strata Finance',
     year: '2025',
-    category: 'Product / UX',
-    tagline: 'Rethinking a sleep-tracking experience around calm, not data overload. [Placeholder — edit in projects.js]',
-    c1: '#36c5d0', c2: '#4a8cff', c3: '#7c5cff',
+    category: 'Customer Portal',
+    tagline: 'A customer portal that simplifies complex strata & property finance journeys.',
+    location: 'Auckland, NZ · Finance',
+    c1: '#36c5d0', c2: '#4a8cff', c3: '#2b6cff',
     facts: [
-      { k: 'Discipline', v: 'Product design, UX' },
-      { k: 'Year', v: '2025' },
-      { k: 'Role', v: 'Lead designer' }
+      { k: 'Discipline', v: 'Product design · UX' },
+      { k: 'Sector', v: 'Finance' },
+      { k: 'Role', v: 'Product / UX Designer' }
     ],
     body: [
-      { p: 'Placeholder copy — replace with the real case study. Driftwell reframed a noisy dashboard into a quiet, glanceable ritual.' },
-      { h: 'The approach' },
-      { p: 'Information hierarchy, motion, and restraint did the heavy lifting. We removed three quarters of the original UI and kept only what helped people wind down.' }
+      { h: 'Overview' },
+      { p: 'A customer portal experience for a strata and property finance lender, designed to make complex finance products clear and manageable for everyday users. [Full case study to be added from Figma.]' }
     ]
   },
   {
-    slug: 'anga',
-    title: 'Anga',
+    slug: 'tedxauckland',
+    title: 'TEDxAuckland',
     year: '2024',
-    category: 'Web Design & Development',
-    tagline: 'A fast, editorial marketing site for a climate-tech startup. [Placeholder — edit in projects.js]',
-    c1: '#7c5cff', c2: '#ff5c8a', c3: '#4a8cff',
+    category: 'Website',
+    tagline: 'An event platform celebrating bold ideas from Aotearoa.',
+    location: 'Auckland, NZ · Independent TED event',
+    c1: '#ff3b3b', c2: '#ff6b4a', c3: '#ff2e6b',
     facts: [
-      { k: 'Discipline', v: 'Web design & build' },
-      { k: 'Year', v: '2024' },
-      { k: 'Role', v: 'Design & front-end' }
+      { k: 'Discipline', v: 'Website · UI/UX' },
+      { k: 'Sector', v: 'Events / Media' },
+      { k: 'Role', v: 'Designer' }
     ],
     body: [
-      { p: 'Placeholder copy. Anga paired a bold editorial layout with a static, lightning-fast build — the same approach as this very site.' },
-      { h: 'The approach' },
-      { p: 'Asymmetric grids, generous type, and subtle motion. Built to load instantly and stay easy to maintain.' }
+      { h: 'Overview' },
+      { p: 'An engaging event platform designed to showcase speakers, sessions, and ideas for an independent TED event celebrating bold thinking from Aotearoa. [Full case study to be added from Figma.]' }
     ]
   },
   {
-    slug: 'field-notes',
-    title: 'Field Notes',
+    slug: 'autodesk-flow-capture',
+    title: 'Autodesk Flow Capture',
     year: '2024',
-    category: 'Motion & Illustration',
-    tagline: 'An abstract motion system and illustration set for a podcast network. [Placeholder — edit in projects.js]',
-    c1: '#3ddc97', c2: '#36c5d0', c3: '#ffb648',
+    category: 'Website',
+    tagline: 'Marketing experience for a cloud collaboration platform for film & television production (formerly Moxion).',
+    location: 'NZ & Global · Film & TV Production',
+    c1: '#36c5d0', c2: '#1f8cff', c3: '#0fd1a0',
     facts: [
-      { k: 'Discipline', v: 'Motion, illustration' },
-      { k: 'Year', v: '2024' },
-      { k: 'Role', v: 'Art direction' }
+      { k: 'Discipline', v: 'Website · UI/UX' },
+      { k: 'Sector', v: 'Film & TV Production Software' },
+      { k: 'Role', v: 'Designer' }
     ],
     body: [
-      { p: 'Placeholder copy. A library of looping abstract animations and marks that gave a growing podcast network a single visual language.' }
+      { h: 'Overview' },
+      { p: 'A cloud-based collaboration platform for film and television production (formerly Moxion, now Autodesk Flow Capture). [Full case study to be added from Figma.]' }
+    ]
+  },
+  {
+    slug: 'released',
+    title: 'Released',
+    year: '2024',
+    category: 'Website',
+    tagline: 'Website for a commercial property management software platform.',
+    location: 'NZ & Global · Commercial Property Management Software',
+    c1: '#7c5cff', c2: '#4a8cff', c3: '#b15cff',
+    facts: [
+      { k: 'Discipline', v: 'Website · UI/UX' },
+      { k: 'Sector', v: 'Property Management Software' },
+      { k: 'Role', v: 'Designer' }
+    ],
+    body: [
+      { h: 'Overview' },
+      { p: 'A website for a commercial property management software platform. [Copy in the Figma was placeholder here — confirm the real description.]' }
+    ]
+  },
+  {
+    slug: 'kapili',
+    title: 'Kapili Roofing & Painting',
+    year: '2023',
+    category: 'Website',
+    tagline: 'A bold marketing site for a Hawaii-based roofing & solar company.',
+    location: 'Hawaii, US · Roofing & Solar',
+    c1: '#ffb648', c2: '#ff6b4a', c3: '#36c5d0',
+    facts: [
+      { k: 'Discipline', v: 'Website · UI/UX' },
+      { k: 'Sector', v: 'Roofing & Solar' },
+      { k: 'Role', v: 'Designer' }
+    ],
+    body: [
+      { h: 'Overview' },
+      { p: 'A bold, conversion-focused marketing site for a Hawaii-based roofing and solar company. [Full case study to be added from Figma.]' }
     ]
   }
 ];
