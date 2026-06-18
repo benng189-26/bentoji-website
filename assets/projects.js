@@ -1,10 +1,9 @@
 /* ===================================================================
    Bentoji Studio — portfolio data (single source of truth)
-   Real projects sourced from Ben's "BN Selected works | 2026" Figma.
-   Card thumbnails currently use generated gradient art (themed per
-   project). To use the real screenshots, drop images into
-   /assets/img/work/<slug>.jpg and add `thumb: '/assets/img/work/<slug>.jpg'`.
-   Taglines marked [check] were placeholder/!!unclear in the Figma — confirm copy.
+   Real projects + copy sourced from Ben's "BN Selected works | 2026" Figma.
+   Card thumbnails currently use generated gradient art (themed per project).
+   To use the real screenshots: drop images into /assets/img/work/<slug>.jpg
+   and add  thumb: '/assets/img/work/<slug>.jpg'  to that project.
    =================================================================== */
 window.PROJECTS = [
   {
@@ -41,65 +40,11 @@ window.PROJECTS = [
     ]
   },
   {
-    slug: 'lannock',
-    title: 'Lannock / Strata Finance',
+    slug: 're-leased',
+    title: 'Re-Leased',
     year: '2025',
-    category: 'Customer Portal',
-    tagline: 'A customer portal that simplifies complex strata & property finance journeys.',
-    location: 'Auckland, NZ · Finance',
-    c1: '#36c5d0', c2: '#4a8cff', c3: '#2b6cff',
-    facts: [
-      { k: 'Discipline', v: 'Product design · UX' },
-      { k: 'Sector', v: 'Finance' },
-      { k: 'Role', v: 'Product / UX Designer' }
-    ],
-    body: [
-      { h: 'Overview' },
-      { p: 'A customer portal experience for a strata and property finance lender, designed to make complex finance products clear and manageable for everyday users. [Full case study to be added from Figma.]' }
-    ]
-  },
-  {
-    slug: 'tedxauckland',
-    title: 'TEDxAuckland',
-    year: '2024',
     category: 'Website',
-    tagline: 'An event platform celebrating bold ideas from Aotearoa.',
-    location: 'Auckland, NZ · Independent TED event',
-    c1: '#ff3b3b', c2: '#ff6b4a', c3: '#ff2e6b',
-    facts: [
-      { k: 'Discipline', v: 'Website · UI/UX' },
-      { k: 'Sector', v: 'Events / Media' },
-      { k: 'Role', v: 'Designer' }
-    ],
-    body: [
-      { h: 'Overview' },
-      { p: 'An engaging event platform designed to showcase speakers, sessions, and ideas for an independent TED event celebrating bold thinking from Aotearoa. [Full case study to be added from Figma.]' }
-    ]
-  },
-  {
-    slug: 'autodesk-flow-capture',
-    title: 'Autodesk Flow Capture',
-    year: '2024',
-    category: 'Website',
-    tagline: 'Marketing experience for a cloud collaboration platform for film & television production (formerly Moxion).',
-    location: 'NZ & Global · Film & TV Production',
-    c1: '#36c5d0', c2: '#1f8cff', c3: '#0fd1a0',
-    facts: [
-      { k: 'Discipline', v: 'Website · UI/UX' },
-      { k: 'Sector', v: 'Film & TV Production Software' },
-      { k: 'Role', v: 'Designer' }
-    ],
-    body: [
-      { h: 'Overview' },
-      { p: 'A cloud-based collaboration platform for film and television production (formerly Moxion, now Autodesk Flow Capture). [Full case study to be added from Figma.]' }
-    ]
-  },
-  {
-    slug: 'released',
-    title: 'Released',
-    year: '2024',
-    category: 'Website',
-    tagline: 'Website for a commercial property management software platform.',
+    tagline: 'A website for Re-Leased — a platform for commercial landlords, property managers, and tenants, streamlining lease, maintenance, compliance, and accounting with automation and AI-powered workflows.',
     location: 'NZ & Global · Commercial Property Management Software',
     c1: '#7c5cff', c2: '#4a8cff', c3: '#b15cff',
     facts: [
@@ -109,7 +54,61 @@ window.PROJECTS = [
     ],
     body: [
       { h: 'Overview' },
-      { p: 'A website for a commercial property management software platform. [Copy in the Figma was placeholder here — confirm the real description.]' }
+      { p: 'A website for Re-Leased — a powerful platform for commercial landlords, property managers, and tenants, streamlining lease, maintenance, compliance, and accounting via automation and AI-powered workflows.' }
+    ]
+  },
+  {
+    slug: 'lannock',
+    title: 'Lannock / Strata Finance',
+    year: '2025',
+    category: 'Customer Portal',
+    tagline: 'A customer portal for a finance platform — simplifying complex loan workflows, document management, and multi-user access.',
+    location: 'Auckland, NZ · Finance',
+    c1: '#36c5d0', c2: '#4a8cff', c3: '#2b6cff',
+    facts: [
+      { k: 'Discipline', v: 'Product design · UX' },
+      { k: 'Sector', v: 'Finance' },
+      { k: 'Role', v: 'Product / UX Designer' }
+    ],
+    body: [
+      { h: 'Overview' },
+      { p: 'A customer portal for a finance platform, designed to simplify complex loan workflows, document management, and multi-user access.' }
+    ]
+  },
+  {
+    slug: 'tedxauckland',
+    title: 'TEDxAuckland',
+    year: '2024',
+    category: 'Website',
+    tagline: 'A website for TEDxAuckland presenting speakers, ideas, and event information in a clear, engaging format.',
+    location: 'Auckland, NZ · Independent TED event',
+    c1: '#ff3b3b', c2: '#ff6b4a', c3: '#ff2e6b',
+    facts: [
+      { k: 'Discipline', v: 'Website · UI/UX' },
+      { k: 'Sector', v: 'Events / Media' },
+      { k: 'Role', v: 'Designer' }
+    ],
+    body: [
+      { h: 'Overview' },
+      { p: 'A website designed for TEDxAuckland to present speakers, ideas, and event information in a clear, engaging format — celebrating bold ideas from Aotearoa.' }
+    ]
+  },
+  {
+    slug: 'autodesk-flow-capture',
+    title: 'Autodesk Flow Capture',
+    year: '2024',
+    category: 'Website',
+    tagline: 'A redesign for a cloud-based collaboration platform, making complex film & TV production workflows clearer in real-time environments (formerly Moxion).',
+    location: 'NZ & Global · Film & TV Production',
+    c1: '#36c5d0', c2: '#1f8cff', c3: '#0fd1a0',
+    facts: [
+      { k: 'Discipline', v: 'Website · UI/UX' },
+      { k: 'Sector', v: 'Film & TV Production Software' },
+      { k: 'Role', v: 'Designer' }
+    ],
+    body: [
+      { h: 'Overview' },
+      { p: 'A redesign for a cloud-based collaboration platform (formerly Moxion, now Autodesk Flow Capture), focused on making complex production workflows clearer and easier to navigate in real-time environments.' }
     ]
   },
   {
@@ -117,7 +116,7 @@ window.PROJECTS = [
     title: 'Kapili Roofing & Painting',
     year: '2023',
     category: 'Website',
-    tagline: 'A bold marketing site for a Hawaii-based roofing & solar company.',
+    tagline: 'A website redesign repositioning solar roofing as a premium offering — improving clarity, trust, and conversion for high-value decisions.',
     location: 'Hawaii, US · Roofing & Solar',
     c1: '#ffb648', c2: '#ff6b4a', c3: '#36c5d0',
     facts: [
@@ -127,7 +126,7 @@ window.PROJECTS = [
     ],
     body: [
       { h: 'Overview' },
-      { p: 'A bold, conversion-focused marketing site for a Hawaii-based roofing and solar company. [Full case study to be added from Figma.]' }
+      { p: 'A website redesign focused on repositioning solar roofing as a premium offering, improving clarity, trust, and conversion for high-value decisions.' }
     ]
   }
 ];
