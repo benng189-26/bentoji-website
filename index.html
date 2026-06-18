@@ -27,6 +27,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="assets/style.css" />
+
+<!-- enables JS-only reveal hiding (so content stays visible if JS fails) -->
+<script>document.documentElement.classList.add('js');</script>
+<!-- Lenis: Apple-style smooth scrolling -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
 <body>
 
@@ -109,19 +114,23 @@
         <img src="https://bentoji.co.nz/wp-content/uploads/2026/05/study-app-2.png" alt="SoundLax in use" loading="lazy" />
       </div>
       <div class="diff-cards">
-        <div class="diff-card">
+        <div class="diff-card reveal">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></span>
           <h4>quick access</h4>
           <p>We work on SoundLax to reduce the friction when you're using the app. You should be able to start instantly, open the app, press play, and that's it.</p>
         </div>
-        <div class="diff-card">
+        <div class="diff-card reveal">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
           <h4>sounds are the heart of SoundLax</h4>
           <p>We spent way too much time testing sounds to make sure they actually feel good to listen to for hours. And we hope you do.</p>
         </div>
-        <div class="diff-card">
+        <div class="diff-card reveal">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12c.5.5 1 1.5 1 2h6c0-.5.5-1.5 1-2a7 7 0 0 0-4-12z"/></svg></span>
           <h4>built for distracted brains</h4>
           <p>You're not alone. SoundLax was made by someone who understands the struggle of trying to focus.</p>
         </div>
-        <div class="diff-card">
+        <div class="diff-card reveal">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span>
           <h4>100% focus guarantee</h4>
           <p>We asked family and friends to test SoundLax while working. 100% said it worked. (They claimed: no bias).</p>
         </div>
@@ -141,27 +150,33 @@
       <img src="https://bentoji.co.nz/wp-content/uploads/2026/05/work-mac-app.png" alt="SoundLax across devices" loading="lazy" />
     </div>
     <div class="feature-grid">
-      <div class="feature">
+      <div class="feature reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15a4 4 0 0 1 0-8 5 5 0 0 1 9.6-1A3.5 3.5 0 0 1 17 15"/><path d="M8 18l-1 2M12 18l-1 3M16 18l-1 2"/></svg></span>
         <h4>Rain Museum (7+ environments)</h4>
         <p>Explore a growing collection of carefully crafted rain sounds (thunderstorm, rain on tint roof, rain on camper roof, and many more).</p>
       </div>
-      <div class="feature">
+      <div class="feature reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.1 1.6 2.6.2.2 2.6L18.5 9l-1.6 2 1.6 2-1.4 2.1-.2 2.6-2.6.2L12 19.5 9.9 17.9l-2.6-.2-.2-2.6L5.5 13l1.6-2-1.6-2 1.4-2.1.2-2.6 2.6-.2L12 2.5z"/><path d="M9.3 11.5l1.8 1.8 3.6-3.6"/></svg></span>
         <h4>curated, not generated</h4>
         <p>Every sound is hand-picked and tested by humans, not endlessly AI-generated filler.</p>
       </div>
-      <div class="feature">
+      <div class="feature reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>
         <h4>sounds you can actually leave on for hours</h4>
         <p>Carefully balanced sounds that are comfortable to listen to for hours while working, studying, or sleeping.</p>
       </div>
-      <div class="feature">
+      <div class="feature reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg></span>
         <h4>built for background Use</h4>
         <p>Made to stay out of your way instead of constantly asking for attention.</p>
       </div>
-      <div class="feature">
+      <div class="feature reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15.5l-8.5-3.5V5a1.5 1.5 0 0 0-3 0v7L3 15.5v1.8l6.5-2v3L7.5 19.6V21l4.5-1.3L16.5 21v-1.4L14.5 18.3v-3l6.5 2v-1.8z"/></svg></span>
         <h4>airplane mode friendly</h4>
         <p>Core sounds stay available offline automatically, so your favourite environments are always ready.</p>
       </div>
-      <div class="feature">
+      <div class="feature reveal">
+        <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.7 4L18 8.7l-4.3 1.6L12 14l-1.7-3.7L6 8.7l4.3-1.7L12 3z"/><path d="M18.5 14l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9.9-2.1z"/></svg></span>
         <h4>small things we obsessed over</h4>
         <p>Smooth looping. Gentle fades. Swipe to change tabs. Volume balancing. All small things matters.</p>
       </div>
@@ -332,7 +347,7 @@
 <footer class="site-footer">
   <div class="container footer-grid">
     <div class="footer-col">
-      <img class="footer-logo" src="https://bentoji.co.nz/wp-content/uploads/2026/05/soundlax-logo-reversed.png" alt="SoundLax" height="28" />
+      <img class="footer-logo" src="https://bentoji.co.nz/wp-content/uploads/2026/05/soundlax-logo-reversed.png" alt="SoundLax" height="14" />
     </div>
     <div class="footer-col">
       <h5>Connect</h5>
