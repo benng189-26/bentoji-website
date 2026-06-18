@@ -127,7 +127,12 @@
 
     var body = (p.body || []).map(function (b) {
       if (b.h) return '<h3>' + esc(b.h) + '</h3>';
+      if (b.list) return '<ul class="work-list">' + b.list.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') + '</ul>';
       return '<p>' + esc(b.p) + '</p>';
+    }).join('');
+
+    var shots = (p.gallery || []).map(function (src, i) {
+      return '<figure class="shot reveal"><img src="' + src + '" alt="' + esc(p.title) + ' — screen ' + (i + 1) + '" loading="lazy"></figure>';
     }).join('');
 
     var coverImg = p.cover || p.thumb;
@@ -147,7 +152,7 @@
         '<div class="work-cover">' + cover + '</div>' +
         '<div class="work-facts">' + facts + '</div>' +
         '<div class="work-body">' + body + '</div>' +
-        (p.caseImage ? '<div class="work-case reveal"><img src="' + p.caseImage + '" alt="' + esc(p.title) + ' — full case study" loading="lazy"></div>' : '') +
+        (shots ? '<div class="work-shots">' + shots + '</div>' : '') +
       '</div>';
   }
 
