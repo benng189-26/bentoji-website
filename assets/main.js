@@ -224,4 +224,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   })();
 
+
+  /* ── Hero video: force load + play ── */
+  (function () {
+    var hv = document.querySelector('video.hero-bg');
+    if (!hv) return;
+    hv.load();
+    hv.play().catch(function () {});
+    // retry on first user interaction if autoplay was blocked
+    document.addEventListener('click', function once() {
+      hv.play().catch(function () {});
+      document.removeEventListener('click', once);
+    }, { once: true });
+  })();
+
 });
