@@ -236,8 +236,52 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     hv.addEventListener('canplay', tryPlay);
     hv.addEventListener('canplaythrough', tryPlay);
-    // Safari fallback: try on first interaction if autoplay blocked
     document.addEventListener('click', tryPlay, { once: true });
+  })();
+
+  /* ── Testimonials: carousel ── */
+  (function () {
+    var track  = document.getElementById('testiTrack');
+    var dots   = document.querySelectorAll('.testi-dot');
+    if (!track || !dots.length) return;
+    var current = 0;
+    var total   = dots.length;
+
+    function goTo(n) {
+      current = n;
+      track.style.transform = 'translateX(-' + (n * 100) + '%)';
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === n); });
+    }
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () { goTo(+this.dataset.page); });
+    });
+
+    // touch swipe
+    var startX = 0;
+    track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend',   function (e) {
+      var dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) goTo(dx < 0 ? Math.min(current + 1, total - 1) : Math.max(current - 1, 0));
+    }, { passive: true });
+  })();
+
+  /* ── Testimonials: read more toggle ── */
+  (function () {
+    document.querySelectorAll('.testi-more').forEach(function (btn) {
+      var body = btn.previousElementSibling;
+      // hide button if text isn't clamped
+      if (body && body.scrollHeight <= body.clientHeight + 4) {
+        btn.classList.add('hidden');
+        return;
+      }
+      var expanded = false;
+      btn.addEventListener('click', function () {
+        expanded = !expanded;
+        body.classList.toggle('expanded', expanded);
+        btn.textContent = expanded ? 'Read less' : 'Read more';
+      });
+    });
   })();
 
 });
