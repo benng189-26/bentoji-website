@@ -183,6 +183,12 @@
       e.preventDefault();
       var note = form.querySelector('.form-note');
       var btn = form.querySelector('button[type=submit]');
+      // validate required fields (name, email, message) and email format
+      if (!form.checkValidity()) {
+        if (note) { note.className = 'form-note'; note.textContent = ''; }
+        form.reportValidity();
+        return;
+      }
       var key = form.querySelector('input[name=access_key]');
       if (!key || /YOUR_WEB3FORMS/.test(key.value)) {
         if (note) { note.className = 'form-note err'; note.textContent = 'Form not configured yet - add your Web3Forms access key.'; }

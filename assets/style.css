@@ -260,17 +260,20 @@ html.js .reveal.in{opacity:1;transform:none;}
 /* cta */
 .cta{text-align:center;background:linear-gradient(180deg,#0a0a0a,#101014);}
 .cta-inner{max-width:900px;margin:0 auto;}
-.cta-wordmark{max-width:340px;margin:0 auto 30px;opacity:.95;}
+.cta-wordmark{max-width:210px;margin:0 auto 28px;opacity:.95;}
 .cta-title{margin-bottom:1rem;}
 .cta-title .line{display:block;}
 .cta-sub{color:var(--muted);margin-bottom:2rem;}
+.platforms{display:flex;flex-wrap:wrap;justify-content:center;gap:30px;margin:0 auto 2rem;}
+.plat{display:flex;flex-direction:column;align-items:center;gap:9px;color:var(--muted);font-size:.8rem;letter-spacing:.01em;}
+.plat svg{width:30px;height:30px;color:#fff;opacity:.92;}
 .appstore-badge{display:inline-block;}
 .appstore-badge img{height:48px;width:auto;}
 
 /* footer */
 .site-footer{border-top:1px solid var(--line);padding:64px 0 40px;background:#070707;}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;align-items:start;}
-.footer-logo{height:14px;width:auto;}
+.footer-logo{height:11px;width:auto;}
 .footer-col h5{margin-bottom:14px;color:var(--muted);}
 .footer-col a{display:block;color:var(--text);margin-bottom:10px;font-size:.95rem;transition:color .25s;}
 .footer-col a:hover{color:var(--white);}

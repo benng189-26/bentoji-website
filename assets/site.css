@@ -21,7 +21,7 @@
   --gutter:clamp(22px,5vw,72px);
   --ease:cubic-bezier(.22,.61,.36,1);
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","SF Pro","Helvetica Neue",Arial,sans-serif;
-  --font-head:"SF Pro Expanded","SF Pro Display",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+  --font-head:"SF Pro Expanded",system-ui,-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
 }
 
 *{box-sizing:border-box;}
@@ -47,8 +47,8 @@ a{color:inherit;text-decoration:none;}
 .aurora,.grain{display:none !important;}
 
 /* ---------- typography ---------- */
-h1,h2,h3,h4{font-family:var(--font-head);color:var(--white);margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.05;}
-.display{font-weight:700;font-size:clamp(2.7rem,7vw,5.8rem);letter-spacing:-.03em;line-height:1;}
+h1,h2,h3,h4{font-family:var(--font-head);font-stretch:expanded;color:var(--white);margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.05;}
+.display{font-weight:700;font-stretch:expanded;font-size:clamp(2.7rem,7vw,5.8rem);letter-spacing:-.03em;line-height:1;}
 h1{font-weight:700;font-size:clamp(2.3rem,5.2vw,4.2rem);letter-spacing:-.025em;}
 h2{font-weight:700;font-size:clamp(1.9rem,4vw,3.2rem);letter-spacing:-.02em;}
 h3{font-weight:700;font-size:clamp(1.35rem,2.2vw,1.9rem);letter-spacing:-.015em;}
@@ -75,9 +75,9 @@ strong{color:var(--white);font-weight:600;}
 }
 .btn svg{width:17px;height:17px;}
 .btn-light{background:var(--white);color:#000;border-color:var(--white);}
-.btn-light:hover{background:transparent;color:var(--white);}
+.btn-light:hover{background:#d8d8da;border-color:#d8d8da;color:#000;}
 .btn-ghost{background:transparent;color:var(--white);border-color:var(--line-strong);}
-.btn-ghost:hover{background:var(--white);color:#000;border-color:var(--white);}
+.btn-ghost:hover{background:rgba(255,255,255,.1);color:var(--white);border-color:var(--white);}
 .btn-lg{padding:16px 30px;font-size:1.02rem;}
 
 .text-link{display:inline-flex;align-items:center;gap:8px;color:var(--white);font-weight:500;border-bottom:1px solid var(--line-strong);padding-bottom:3px;transition:gap .25s,border-color .25s;}
@@ -154,7 +154,7 @@ strong{color:var(--white);font-weight:600;}
 .work-card:hover .arrow svg{transform:translate(3px,-3px);}
 
 /* ---------- work detail (two columns: sticky structure left, scrollable content right) ---------- */
-.work-detail{padding:clamp(108px,14vh,168px) 0 0;}
+.work-detail{padding-top:clamp(108px,14vh,168px);}
 .work-back{margin-bottom:clamp(30px,4vw,52px);}
 .work-detail-grid{display:grid;grid-template-columns:1fr;gap:clamp(40px,5vw,72px);align-items:start;}
 @media(min-width:980px){
