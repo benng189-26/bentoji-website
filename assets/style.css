@@ -323,15 +323,16 @@ html.js .reveal.in{opacity:1;transform:none;}
 .hero-inner { position:relative; z-index:3; }
 .hero-arrow  { z-index:4; }
 
-/* ── Hero: video background ── */
-.hero-bg {
-  background: none;       /* clear the jpg fallback */
-  transform: none;        /* clear old scale */
-  animation: none;
+/* ── Hero: video overlay (fades in when ready, photo always behind) ── */
+.hero-video {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover; object-position: center;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
+.hero-video.playing { opacity: 1; }
 
 /* ── Hero: hide orbs/grain ── */
 .hero-orbs, .hero-grain { display: none; }

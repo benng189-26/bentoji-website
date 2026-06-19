@@ -225,17 +225,19 @@ document.addEventListener('DOMContentLoaded', function () {
   })();
 
 
-  /* ── Hero video: force load + play ── */
+  /* ── Hero video: fade in only when frames are ready ── */
   (function () {
-    var hv = document.querySelector('video.hero-bg');
+    var hv = document.querySelector('video.hero-video');
     if (!hv) return;
-    hv.load();
-    hv.play().catch(function () {});
-    // retry on first user interaction if autoplay was blocked
-    document.addEventListener('click', function once() {
-      hv.play().catch(function () {});
-      document.removeEventListener('click', once);
-    }, { once: true });
+    function tryPlay() {
+      hv.play().then(function () {
+        hv.classList.add('playing');
+      }).catch(function () {});
+    }
+    hv.addEventListener('canplay', tryPlay);
+    hv.addEventListener('canplaythrough', tryPlay);
+    // Safari fallback: try on first interaction if autoplay blocked
+    document.addEventListener('click', tryPlay, { once: true });
   })();
 
 });
