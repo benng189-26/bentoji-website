@@ -131,3 +131,97 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* ═══════════════════════════════════════════════════════
+   Premium: nav frost-on-scroll + Rain Museum waveform
+═══════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ── Nav: deepen backdrop on scroll ── */
+  var header = document.querySelector('.site-header');
+  if (header) {
+    var _navTick = false;
+    window.addEventListener('scroll', function () {
+      if (!_navTick) {
+        requestAnimationFrame(function () {
+          header.classList.toggle('scrolled', window.scrollY > 56);
+          _navTick = false;
+        });
+        _navTick = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ── Rain Museum: animated waveform ── */
+  (function () {
+    var canvas = document.getElementById('waveform');
+    if (!canvas || !canvas.getContext) return;
+    if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+    var ctx = canvas.getContext('2d');
+    var BAR_COUNT = 60;
+    var GAP = 3;
+
+    var bars = Array.from({ length: BAR_COUNT }, function (_, i) {
+      var dist = Math.abs(i / (BAR_COUNT - 1) - 0.5);
+      return {
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.35 + Math.random() * 0.85,
+        base:  0.14 + (1 - dist * 1.6) * 0.52
+      };
+    });
+
+    function resize() {
+      var dpr = window.devicePixelRatio || 1;
+      canvas.width  = canvas.offsetWidth  * dpr;
+      canvas.height = canvas.offsetHeight * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize, { passive: true });
+
+    var t = 0;
+    var running = false;
+
+    function draw() {
+      var w = canvas.offsetWidth;
+      var h = canvas.offsetHeight;
+      ctx.clearRect(0, 0, w, h);
+
+      var barW = Math.max(2, (w - (BAR_COUNT - 1) * GAP) / BAR_COUNT);
+      bars.forEach(function (bar, i) {
+        var wave   = Math.sin(bar.phase + t * bar.speed);
+        var height = Math.max(4, bar.base * h * (0.44 + 0.56 * ((wave + 1) / 2)));
+        var x = i * (barW + GAP);
+        var y = (h - height) / 2;
+        var alpha = 0.22 + bar.base * 0.55;
+        var hue   = 186 + (i / BAR_COUNT) * 18;
+        ctx.fillStyle = 'hsla(' + hue + ',52%,62%,' + alpha + ')';
+        var r = Math.min(barW / 2, 3.5);
+        ctx.beginPath();
+        if (ctx.roundRect) {
+          ctx.roundRect(x, y, barW, height, r);
+        } else {
+          ctx.rect(x, y, barW, height);
+        }
+        ctx.fill();
+      });
+
+      t += 0.016;
+      requestAnimationFrame(draw);
+    }
+
+    /* start only when visible — saves CPU on hidden pages */
+    if ('IntersectionObserver' in window) {
+      var wObs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !running) { running = true; draw(); }
+        });
+      }, { threshold: 0.1 });
+      wObs.observe(canvas);
+    } else {
+      running = true; draw();
+    }
+  })();
+
+});
