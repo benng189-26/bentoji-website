@@ -323,14 +323,17 @@ html.js .reveal.in{opacity:1;transform:none;}
 .hero-inner { position:relative; z-index:3; }
 .hero-arrow  { z-index:4; }
 
-/* ── Hero: Ken Burns slow drift on background ── */
-@keyframes kenBurns {
-  from { transform: scale(1.04) translateX(0); }
-  to   { transform: scale(1.13) translateX(-1.5%); }
+/* ── Hero: video background ── */
+.hero-bg {
+  background: none;       /* clear the jpg fallback */
+  transform: none;        /* clear old scale */
+  animation: none;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-.hero-bg { animation: kenBurns 22s ease-in-out infinite alternate; }
 
-/* ── Hero: hide orbs/grain (orbs don't work on photo bg) ── */
+/* ── Hero: hide orbs/grain ── */
 .hero-orbs, .hero-grain { display: none; }
 
 /* ── Hero: CTA download row ── */
