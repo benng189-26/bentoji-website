@@ -235,8 +235,8 @@
       this.y  = Math.random() * H;
       this.vx = (Math.random() - 0.5) * 0.26;
       this.vy = (Math.random() - 0.5) * 0.26;
-      this.r  = Math.random() * 1.0 + 0.4;
-      this.a  = Math.random() * 0.20 + 0.07;
+      this.r  = Math.random() * 1.3 + 0.7;
+      this.a  = Math.random() * 0.40 + 0.30;
     };
     Particle.prototype.update = function () {
       var dx = this.x - mouse.x;
@@ -282,12 +282,12 @@
           var dy = particles[i].y - particles[j].y;
           var d2 = dx * dx + dy * dy;
           if (d2 < cc) {
-            var alpha = (1 - Math.sqrt(d2) / CONNECT) * 0.09;
+            var alpha = (1 - Math.sqrt(d2) / CONNECT) * 0.25;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.7;
             ctx.stroke();
           }
         }
