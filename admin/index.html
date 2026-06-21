@@ -6,6 +6,106 @@
   <title>Bentoji Content Manager</title>
 </head>
 <body>
+  <script>window.CMS_MANUAL_INIT = true;</script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'benng189-26/soundlax-lp',
+          branch: 'main',
+          base_url: 'https://bentoji.co.nz',
+          auth_endpoint: '/api/auth'
+        },
+        media_folder: 'assets/img',
+        public_folder: '/assets/img',
+        collections: [
+          {
+            name: 'soundlax_reviews',
+            label: 'App Store Reviews',
+            files: [
+              {
+                name: 'reviews',
+                label: 'Reviews',
+                file: 'content/testimonials.json',
+                fields: [
+                  { name: 'perPage', label: 'Reviews per page', widget: 'number', default: 3 },
+                  {
+                    name: 'reviews', label: 'Reviews', widget: 'list',
+                    fields: [
+                      { label: 'Reviewer Name', name: 'name', widget: 'string' },
+                      { label: 'Date', name: 'date', widget: 'string', hint: 'e.g. Jun 9, 2026' },
+                      { label: 'Country', name: 'country', widget: 'string' },
+                      { label: 'Review Title', name: 'title', widget: 'string' },
+                      { label: 'Review Body', name: 'body', widget: 'text' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'soundlax_faq',
+            label: 'SoundLax FAQ',
+            files: [
+              {
+                name: 'faq',
+                label: 'FAQ Items',
+                file: 'content/faq.json',
+                fields: [
+                  {
+                    name: 'items', label: 'FAQ Items', widget: 'list',
+                    fields: [
+                      { label: 'Question', name: 'question', widget: 'string' },
+                      { label: 'Answer', name: 'answer', widget: 'text', hint: 'HTML supported: <p>text</p> and <ul><li>item</li></ul>' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'homepage',
+            label: 'Homepage',
+            files: [
+              {
+                name: 'content',
+                label: 'Homepage Content',
+                file: 'content/homepage.json',
+                fields: [
+                  {
+                    name: 'hero', label: 'Hero Section', widget: 'object',
+                    fields: [
+                      { label: 'Headline', name: 'title', widget: 'string' },
+                      { label: 'Lead Paragraph', name: 'lead', widget: 'text' }
+                    ]
+                  },
+                  {
+                    name: 'about', label: 'About Section', widget: 'object',
+                    fields: [
+                      { label: 'Eyebrow Label', name: 'eyebrow', widget: 'string' },
+                      { label: 'Heading', name: 'heading', widget: 'string' },
+                      {
+                        name: 'paragraphs', label: 'Paragraphs', widget: 'list',
+                        field: { label: 'Paragraph', name: 'paragraph', widget: 'text' }
+                      }
+                    ]
+                  },
+                  {
+                    name: 'cta', label: 'CTA Section', widget: 'object',
+                    fields: [
+                      { label: 'Heading', name: 'heading', widget: 'string' },
+                      { label: 'Body', name: 'body', widget: 'text' }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
 </body>
 </html>
