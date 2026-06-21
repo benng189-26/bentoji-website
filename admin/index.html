@@ -6,6 +6,26 @@
   <title>Bentoji Content Manager</title>
 </head>
 <body>
+  <script>
+  // BroadcastChannel bridge: GitHub's COOP header severs window.opener in the
+  // OAuth popup, so the callback sends the token via BroadcastChannel instead.
+  // We receive it here and re-dispatch as a window MessageEvent so Decap CMS
+  // auth handler picks it up normally.
+  (function () {
+    try {
+      var bc = new BroadcastChannel('decap-cms-auth');
+      bc.onmessage = function (e) {
+        if (typeof e.data === 'string' && e.data.indexOf('authorization:github:') === 0) {
+          window.dispatchEvent(new MessageEvent('message', {
+            data:   e.data,
+            origin: window.location.origin,
+          }));
+        }
+        bc.close();
+      };
+    } catch (e) {}
+  })();
+  </script>
   <script>window.CMS_MANUAL_INIT = true;</script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   <script>
