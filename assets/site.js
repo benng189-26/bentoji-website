@@ -215,4 +215,123 @@
 
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]; }); }
   function slugify(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+
+  /* ---- Hero: interactive particle canvas ---- */
+  (function () {
+    var canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    var ctx = canvas.getContext('2d');
+    var W, H, particles, raf;
+    var mouse = { x: -9999, y: -9999 };
+    var CONNECT = 130;
+    var REPEL   = 120;
+    var count;
+
+    function Particle() {
+      this.reset();
+    }
+    Particle.prototype.reset = function () {
+      this.x  = Math.random() * W;
+      this.y  = Math.random() * H;
+      this.vx = (Math.random() - 0.5) * 0.26;
+      this.vy = (Math.random() - 0.5) * 0.26;
+      this.r  = Math.random() * 1.0 + 0.4;
+      this.a  = Math.random() * 0.20 + 0.07;
+    };
+    Particle.prototype.update = function () {
+      var dx = this.x - mouse.x;
+      var dy = this.y - mouse.y;
+      var d2 = dx * dx + dy * dy;
+      if (d2 < REPEL * REPEL && d2 > 0.25) {
+        var d = Math.sqrt(d2);
+        var f = (1 - d / REPEL) * 0.6;
+        this.vx += (dx / d) * f * 0.1;
+        this.vy += (dy / d) * f * 0.1;
+      }
+      /* gentle random drift */
+      this.vx += (Math.random() - 0.5) * 0.007;
+      this.vy += (Math.random() - 0.5) * 0.007;
+      this.vx *= 0.984;
+      this.vy *= 0.984;
+      this.x += this.vx;
+      this.y += this.vy;
+      /* wrap edges */
+      if (this.x < -14) this.x = W + 14;
+      if (this.x > W + 14) this.x = -14;
+      if (this.y < -14) this.y = H + 14;
+      if (this.y > H + 14) this.y = -14;
+    };
+
+    function resize() {
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.offsetWidth;
+      H = canvas.offsetHeight;
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      count = W < 760 ? 44 : 78;
+      particles = [];
+      for (var i = 0; i < count; i++) particles.push(new Particle());
+    }
+
+    function drawLines() {
+      var cc = CONNECT * CONNECT;
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var d2 = dx * dx + dy * dy;
+          if (d2 < cc) {
+            var alpha = (1 - Math.sqrt(d2) / CONNECT) * 0.09;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(255,255,255,' + alpha + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      drawLines();
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
+        p.update();
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+        ctx.fillStyle = 'rgba(255,255,255,' + p.a + ')';
+        ctx.fill();
+      }
+      raf = requestAnimationFrame(loop);
+    }
+
+    /* mouse / touch on the hero section (canvas is pointer-events:none) */
+    var hero = canvas.parentElement;
+    hero.addEventListener('mousemove', function (e) {
+      var r = canvas.getBoundingClientRect();
+      mouse.x = e.clientX - r.left;
+      mouse.y = e.clientY - r.top;
+    }, { passive: true });
+    hero.addEventListener('mouseleave', function () {
+      mouse.x = -9999; mouse.y = -9999;
+    }, { passive: true });
+    hero.addEventListener('touchmove', function (e) {
+      var r = canvas.getBoundingClientRect();
+      mouse.x = e.touches[0].clientX - r.left;
+      mouse.y = e.touches[0].clientY - r.top;
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      cancelAnimationFrame(raf);
+      resize();
+      if (!reduce) loop();
+    }, { passive: true });
+
+    resize();
+    if (!reduce) loop();
+  })();
+
 })();

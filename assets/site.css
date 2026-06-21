@@ -362,3 +362,14 @@ html.js .reveal.d3{transition-delay:.21s;}
 @media (max-width: 560px) {
   .process-grid { grid-template-columns: 1fr; }
 }
+
+/* ── Hero canvas animation ── */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
+}
