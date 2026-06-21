@@ -123,8 +123,7 @@ p{margin:0 0 1.1rem;color:var(--text);}
 .hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:8vh;}
 .hero-bg{
   position:absolute;inset:0;
-  background:url("img/hero-bg.jpg") center/cover no-repeat;
-  transform:scale(1.04);
+  background:#0a0a0a;
 }
 .hero-overlay{
   position:absolute;inset:0;
@@ -155,8 +154,8 @@ html.js .reveal.in{opacity:1;transform:none;}
 }
 
 /* icons */
-.icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;margin-bottom:18px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid var(--line);color:var(--white);}
-.icon svg{width:24px;height:24px;}
+.icon{display:none;}
+.feat-icon{display:block;width:28px;height:28px;margin-bottom:16px;color:var(--white);}
 
 /* ---------- generic sections ---------- */
 .section{padding:clamp(64px,9vw,130px) 0;}
@@ -186,8 +185,8 @@ html.js .reveal.in{opacity:1;transform:none;}
 /* rain museum */
 .rain{
   text-align:center;
-  background:linear-gradient(180deg,#0a0a0a,rgba(14,14,18,.6) 50%,#0a0a0a),
-    url("img/hero-bg.jpg") center/cover fixed;
+  background:linear-gradient(180deg,#0a0a0a,rgba(0,0,0,.55) 50%,#0a0a0a),
+    url("img/rain-bg.jpg") center/cover fixed;
   background-blend-mode:multiply;
   position:relative;
 }
@@ -243,14 +242,14 @@ html.js .reveal.in{opacity:1;transform:none;}
 .testi footer{display:flex;flex-direction:column;margin-top:auto;padding-top:14px;border-top:1px solid var(--line);}
 .testi .name{font-weight:600;color:var(--white);font-family:var(--font-head);font-size:.9rem;}
 .testi .role{font-size:.78rem;color:var(--muted);}
-/* dots */
-.testi-dots{display:flex;justify-content:center;gap:8px;margin-top:28px;}
+/* dots — Apple pill style */
+.testi-dots{display:flex;justify-content:center;gap:6px;margin-top:32px;align-items:center;}
 .testi-dot{
-  width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;
-  background:rgba(255,255,255,.18);padding:0;
-  transition:background .3s ease, transform .3s ease;
+  height:4px;border-radius:2px;border:none;cursor:pointer;padding:0;
+  width:24px;background:rgba(255,255,255,.18);
+  transition:width .4s cubic-bezier(.22,.61,.36,1), background .4s ease;
 }
-.testi-dot.active{background:rgba(255,255,255,.78);transform:scale(1.25);}
+.testi-dot.active{width:52px;background:rgba(255,255,255,.82);}
 
 /* support */
 .support-grid{align-items:center;}
@@ -266,14 +265,20 @@ html.js .reveal.in{opacity:1;transform:none;}
 .faq-item summary{
   list-style:none;cursor:pointer;padding:26px 44px 26px 0;position:relative;
   font-family:var(--font-head);font-size:1.18rem;color:var(--white);font-weight:500;
+  user-select:none;
 }
 .faq-item summary::-webkit-details-marker{display:none;}
 .faq-item summary::after{
   content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
-  font-size:1.6rem;color:var(--muted);transition:transform .3s;font-weight:300;
+  font-size:1.6rem;color:var(--muted);transition:transform .35s var(--ease), content .35s;font-weight:300;
 }
-.faq-item[open] summary::after{content:"–";}
-.faq-body{padding:0 0 26px;color:var(--muted);}
+.faq-item.is-open summary::after{transform:translateY(-50%) rotate(45deg);}
+.faq-body{
+  overflow:hidden;max-height:0;
+  transition:max-height .38s cubic-bezier(.22,.61,.36,1), padding-bottom .38s ease;
+  padding-bottom:0;color:var(--muted);
+}
+.faq-item.is-open .faq-body{padding-bottom:26px;}
 .faq-body p{color:var(--muted);}
 .faq-body ul{margin:0 0 1rem;padding-left:1.2rem;color:var(--muted);}
 .faq-body li{margin-bottom:.3rem;}
@@ -459,10 +464,7 @@ html.js .reveal.in {
   transform:translateY(-3px);
 }
 .features.dark .feature h4 { color:#fff; font-size:1rem; }
-.features.dark .icon {
-  background:rgba(91,141,238,.12);
-  border-color:rgba(91,141,238,.22);
-}
+.features.dark .feat-icon { color: rgba(255,255,255,.8); }
 
 /* ── Rain Museum: waveform canvas ── */
 #waveform {
@@ -478,16 +480,16 @@ html.js .reveal.in {
 }
 .rain-tag {
   padding:7px 17px; border-radius:100px;
-  border:1px solid rgba(255,255,255,.09);
-  font-size:.8rem; color:rgba(255,255,255,.42);
-  background:rgba(255,255,255,.03);
-  transition:border-color .22s, color .22s, background .22s;
+  border:1px solid rgba(255,255,255,.14);
+  font-size:.8rem; color:rgba(255,255,255,.58);
+  background:rgba(255,255,255,.04);
+  transition:border-color .28s, color .28s, background .28s;
   cursor:default;
 }
-.rain-tag:hover {
-  border-color:rgba(100,184,192,.4);
-  color:rgba(100,184,192,.9);
-  background:rgba(100,184,192,.06);
+.rain-tag:hover, .rain-tag.active {
+  border-color:rgba(255,255,255,.55);
+  color:rgba(255,255,255,.95);
+  background:rgba(255,255,255,.09);
 }
 
 /* ── Testimonials: hover lift ── */
@@ -508,3 +510,9 @@ html.js .reveal.in {
   .hero-bg { animation:none; }
   .cue-line { animation:none; }
 }
+
+
+/* ── Hero App Store badge ── */
+.hero-appstore-badge { display:inline-block; }
+.hero-appstore-badge img { height:52px; width:auto; display:block; border-radius:12px; }
+.hero-appstore-badge:hover { opacity:.88; transition:opacity .25s; }

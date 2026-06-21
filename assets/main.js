@@ -104,16 +104,40 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 150);
 
   /* -------------------------------------------------
-     FAQ accordion - one open at a time
+     FAQ accordion - smooth animated expand/collapse
   ------------------------------------------------- */
-  var faqItems = document.querySelectorAll('.faq-item');
-  faqItems.forEach(function (item) {
-    item.addEventListener('toggle', function () {
-      if (item.open) {
-        faqItems.forEach(function (other) { if (other !== item) other.open = false; });
-      }
+  (function () {
+    var faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(function (item) {
+      var summary = item.querySelector('summary');
+      var body    = item.querySelector('.faq-body');
+      if (!summary || !body) return;
+
+      // Remove native open/close so we control it
+      item.removeAttribute('open');
+
+      summary.addEventListener('click', function (e) {
+        e.preventDefault();
+        var isOpen = item.classList.contains('is-open');
+
+        // Close any open item
+        faqItems.forEach(function (other) {
+          if (other.classList.contains('is-open')) {
+            var ob = other.querySelector('.faq-body');
+            ob.style.maxHeight = ob.scrollHeight + 'px';
+            requestAnimationFrame(function () { ob.style.maxHeight = '0'; });
+            other.classList.remove('is-open');
+          }
+        });
+
+        if (!isOpen) {
+          item.classList.add('is-open');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
     });
-  });
+  })();
 
   /* -------------------------------------------------
      Newsletter form (front-end only)
@@ -194,9 +218,8 @@ document.addEventListener('DOMContentLoaded', function () {
         var height = Math.max(4, bar.base * h * (0.44 + 0.56 * ((wave + 1) / 2)));
         var x = i * (barW + GAP);
         var y = (h - height) / 2;
-        var alpha = 0.22 + bar.base * 0.55;
-        var hue   = 186 + (i / BAR_COUNT) * 18;
-        ctx.fillStyle = 'hsla(' + hue + ',52%,62%,' + alpha + ')';
+        var alpha = 0.18 + bar.base * 0.52;
+        ctx.fillStyle = 'rgba(255,255,255,' + alpha + ')';
         var r = Math.min(barW / 2, 3.5);
         ctx.beginPath();
         if (ctx.roundRect) {
@@ -239,31 +262,48 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', tryPlay, { once: true });
   })();
 
-  /* ── Testimonials: carousel ── */
+  /* ── Testimonials: carousel with auto-advance ── */
   (function () {
-    var track  = document.getElementById('testiTrack');
-    var dots   = document.querySelectorAll('.testi-dot');
+    var track    = document.getElementById('testiTrack');
+    var carousel = document.getElementById('testiCarousel');
+    var dots     = document.querySelectorAll('.testi-dot');
     if (!track || !dots.length) return;
-    var current = 0;
-    var total   = dots.length;
+    var current  = 0;
+    var total    = dots.length;
+    var autoTimer;
 
     function goTo(n) {
-      current = n;
-      track.style.transform = 'translateX(-' + (n * 100) + '%)';
-      dots.forEach(function (d, i) { d.classList.toggle('active', i === n); });
+      current = ((n % total) + total) % total;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
     }
 
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(function () { goTo(current + 1); }, 5500);
+    }
+
+    function resetAuto() { clearInterval(autoTimer); startAuto(); }
+
     dots.forEach(function (dot) {
-      dot.addEventListener('click', function () { goTo(+this.dataset.page); });
+      dot.addEventListener('click', function () { goTo(+this.dataset.page); resetAuto(); });
     });
 
     // touch swipe
     var startX = 0;
-    track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
-    track.addEventListener('touchend',   function (e) {
+    track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; clearInterval(autoTimer); }, { passive: true });
+    track.addEventListener('touchend', function (e) {
       var dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) goTo(dx < 0 ? Math.min(current + 1, total - 1) : Math.max(current - 1, 0));
+      if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); startAuto(); }
     }, { passive: true });
+
+    // Pause on hover
+    if (carousel) {
+      carousel.addEventListener('mouseenter', function () { clearInterval(autoTimer); });
+      carousel.addEventListener('mouseleave', startAuto);
+    }
+
+    startAuto();
   })();
 
   /* ── Testimonials: read more toggle ── */
@@ -282,6 +322,55 @@ document.addEventListener('DOMContentLoaded', function () {
         btn.textContent = expanded ? 'Read less' : 'Read more';
       });
     });
+  })();
+
+  /* ── Rain Museum: cycling tag highlight ── */
+  (function () {
+    var tags = Array.from(document.querySelectorAll('.rain-tag'));
+    if (!tags.length) return;
+    var idx = 0;
+    function nextTag() {
+      tags.forEach(function (t) { t.classList.remove('active'); });
+      tags[idx].classList.add('active');
+      idx = (idx + 1) % tags.length;
+    }
+    nextTag();
+    setInterval(nextTag, 1800);
+  })();
+
+  /* ── Section snapping: auto-scroll to nearest section after pause ── */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var sections = Array.from(document.querySelectorAll('.hero, .section, .site-footer'));
+    var snapTimer = null;
+    var isSnapping = false;
+    var headerH = 88;
+
+    function snapNearest() {
+      if (isSnapping) return;
+      var best = null, bestDist = Infinity;
+      sections.forEach(function (s) {
+        var dist = Math.abs(s.getBoundingClientRect().top - headerH);
+        if (dist < bestDist) { bestDist = dist; best = s; }
+      });
+      if (!best || bestDist < 56) return;
+      isSnapping = true;
+      if (typeof lenis !== 'undefined' && lenis) {
+        lenis.scrollTo(best, { offset: -headerH, duration: 0.8, onComplete: function () {
+          setTimeout(function () { isSnapping = false; }, 300);
+        }});
+      } else {
+        var top = window.scrollY + best.getBoundingClientRect().top - headerH;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        setTimeout(function () { isSnapping = false; }, 900);
+      }
+    }
+
+    window.addEventListener('scroll', function () {
+      if (isSnapping) return;
+      clearTimeout(snapTimer);
+      snapTimer = setTimeout(snapNearest, 450);
+    }, { passive: true });
   })();
 
 });
