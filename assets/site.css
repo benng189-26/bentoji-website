@@ -118,7 +118,7 @@ strong{color:var(--white);font-weight:600;}
 .thumb-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:clamp(150px,20vh,240px) 0 clamp(50px,7vw,90px);background:linear-gradient(180deg,#F84E21 0%,#F84E21 20%,#E7DFC6 46%,var(--bg) 78%);}
+.hero{position:relative;padding:clamp(150px,20vh,240px) 0 clamp(50px,7vw,90px);background:linear-gradient(180deg,#F84E21 0%,#F84E21 22%,var(--bg) 80%);}
 .hero .container{position:relative;z-index:2;}
 .hero .display{max-width:16ch;}
 .hero .lead{max-width:52ch;margin-top:1.8rem;color:var(--muted);}
