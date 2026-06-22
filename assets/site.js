@@ -318,20 +318,23 @@
     Particle.prototype.reset = function () {
       this.x  = Math.random() * W;
       this.y  = Math.random() * H;
-      this.vx = (Math.random() - 0.5) * 0.62;
-      this.vy = (Math.random() - 0.5) * 0.62;
-      this.r  = Math.random() * 2.6 + 0.7;
-      this.a  = Math.random() * 0.45 + 0.45;
+      this.z  = Math.random();                 // depth: 0 = far, 1 = near
+      this.vx = (Math.random() - 0.5) * 0.62 * (0.5 + this.z);
+      this.vy = (Math.random() - 0.5) * 0.62 * (0.5 + this.z);
+      this.r  = 0.55 + this.z * this.z * 3.6;   // near particles much larger
+      this.a  = 0.16 + this.z * 0.64;           // near particles much brighter
+      this.pulse = Math.random() * 6.2832;      // subtle size "breathing"
     };
     Particle.prototype.update = function () {
+      var ds = 0.45 + this.z * 1.25;           // depth speed scale (near = faster)
       var dx = this.x - mouse.x;
       var dy = this.y - mouse.y;
       var d2 = dx * dx + dy * dy;
       if (d2 < REPEL * REPEL && d2 > 0.25) {
         var d = Math.sqrt(d2);
         var f = (1 - d / REPEL);
-        this.vx += (dx / d) * f * 0.55;
-        this.vy += (dy / d) * f * 0.55;
+        this.vx += (dx / d) * f * 0.55 * (0.5 + this.z);
+        this.vy += (dy / d) * f * 0.55 * (0.5 + this.z);
       }
       /* lively random drift */
       this.vx += (Math.random() - 0.5) * 0.02;
@@ -341,7 +344,7 @@
       /* Keep every particle autonomously moving (not just on hover):
          clamp speed into [MIN, MAX] every frame. MIN guarantees constant drift. */
       var sp = this.vx * this.vx + this.vy * this.vy;
-      var MIN = 0.6, MAX = 2.8;
+      var MIN = 0.45 * ds, MAX = 2.6 * ds;
       if (sp > MAX * MAX) {
         var sc = MAX / Math.sqrt(sp); this.vx *= sc; this.vy *= sc;
       } else if (sp < MIN * MIN) {
@@ -371,6 +374,7 @@
       count = W < 760 ? 66 : 132;
       particles = [];
       for (var i = 0; i < count; i++) particles.push(new Particle());
+      particles.sort(function (a, b) { return a.z - b.z; }); // far -> near (painter's order)
     }
 
     function drawLines() {
@@ -419,8 +423,10 @@
       for (var i = 0; i < particles.length; i++) {
         var p = particles[i];
         p.update();
+        p.pulse += 0.02;
+        var rr = p.r * (0.86 + 0.14 * Math.sin(p.pulse));
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, 6.2832);
+        ctx.arc(p.x, p.y, rr, 0, 6.2832);
         ctx.fillStyle = 'rgba(255,255,255,' + p.a + ')';
         ctx.fill();
       }

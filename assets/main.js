@@ -490,3 +490,74 @@ document.addEventListener('DOMContentLoaded', function () {
   /* section-by-section scroll handled by CSS scroll-snap */
 
 });
+
+/* ═══════════════════════════════════════════════════════
+   Rain Museum: ambient falling-rain animation (background)
+═══════════════════════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', function () {
+  var canvas = document.getElementById('rainfall');
+  if (!canvas || !canvas.getContext) return;
+  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+
+  var ctx = canvas.getContext('2d');
+  var W, H, drops, raf, running = false;
+
+  function makeDrop(initial) {
+    var z = Math.random();            // depth: far (0) .. near (1)
+    return {
+      x:   Math.random() * (W + 40) - 20,
+      y:   initial ? Math.random() * H : -20 - Math.random() * 60,
+      len: 7 + z * 20,                // near drops longer
+      vy:  3.4 + z * 9,               // near drops faster
+      vx:  0.5 + z * 1.4,             // slight wind slant
+      a:   0.06 + z * 0.22,           // near drops brighter
+      w:   0.5 + z * 1.1
+    };
+  }
+
+  function resize() {
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = canvas.offsetWidth;
+    H = canvas.offsetHeight;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var count = Math.max(60, Math.round(W / 5.5));
+    drops = [];
+    for (var i = 0; i < count; i++) drops.push(makeDrop(true));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.lineCap = 'round';
+    for (var i = 0; i < drops.length; i++) {
+      var d = drops[i];
+      ctx.beginPath();
+      ctx.moveTo(d.x, d.y);
+      ctx.lineTo(d.x + d.vx * 1.7, d.y + d.len);
+      ctx.strokeStyle = 'rgba(186,206,230,' + d.a + ')';
+      ctx.lineWidth = d.w;
+      ctx.stroke();
+      d.x += d.vx;
+      d.y += d.vy;
+      if (d.y > H + 20) drops[i] = makeDrop(false);
+      else if (d.x > W + 20) d.x = -10;
+    }
+    raf = requestAnimationFrame(draw);
+  }
+
+  resize();
+  window.addEventListener('resize', resize, { passive: true });
+
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !running) { running = true; draw(); }
+        else if (!e.isIntersecting && running) { running = false; cancelAnimationFrame(raf); }
+      });
+    }, { threshold: 0.03 });
+    io.observe(canvas);
+  } else {
+    running = true; draw();
+  }
+});
