@@ -279,9 +279,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var total    = dots.length;
     var autoTimer;
 
+    // Centre the active slide in the viewport so the previous/next cards
+    // peek in on either side (they're dimmed + edge-faded via CSS).
+    function center(i) {
+      var slides = track.children;
+      if (!slides.length) return;
+      var slide = slides[i];
+      var cw = carousel.getBoundingClientRect().width;
+      var sw = slide.getBoundingClientRect().width;
+      var offset = slide.offsetLeft - (cw - sw) / 2;
+      track.style.transform = 'translateX(' + (-offset) + 'px)';
+      for (var k = 0; k < slides.length; k++) {
+        slides[k].classList.toggle('is-active', k === i);
+      }
+    }
     function goTo(n) {
       current = ((n % total) + total) % total;
-      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      center(current);
       dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
       updateBtns();
     }
@@ -305,7 +319,8 @@ document.addEventListener('DOMContentLoaded', function () {
     track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; clearInterval(autoTimer); }, { passive: true });
     track.addEventListener('touchend', function (e) {
       var dx = e.changedTouches[0].clientX - startX;
-      if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); startAuto(); }
+      if (Math.abs(dx) > 40) { goTo(dx < 0 ? current + 1 : current - 1); }
+      startAuto();
     }, { passive: true });
 
     if (carousel) {
@@ -318,23 +333,38 @@ document.addEventListener('DOMContentLoaded', function () {
     if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); resetAuto(); });
     if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); resetAuto(); });
 
-    updateBtns();
+    // keep the active slide centred when the viewport changes
+    window.addEventListener('resize', function () { center(current); }, { passive: true });
+
+    requestAnimationFrame(function () { goTo(0); });
     startAuto();
   }
 
   function initReadMore() {
     document.querySelectorAll('.testi-more').forEach(function (btn) {
       var body = btn.previousElementSibling;
-      if (body && body.scrollHeight <= body.clientHeight + 4) {
-        btn.classList.add('hidden');
-        return;
-      }
+      if (!body) return;
       var expanded = false;
       btn.addEventListener('click', function () {
         expanded = !expanded;
         body.classList.toggle('expanded', expanded);
         btn.textContent = expanded ? 'Read less' : 'Read more';
       });
+      // Decide whether the button is needed AFTER layout + web fonts settle.
+      // (Measuring too early — before fonts load or while the card width is
+      // still changing — was hiding the button on long entries like the
+      // Japanese review.)
+      function measure() {
+        if (expanded) return; // never hide while expanded
+        var overflowing = body.scrollHeight > body.clientHeight + 4;
+        btn.classList.toggle('hidden', !overflowing);
+      }
+      measure();
+      requestAnimationFrame(measure);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(function () { requestAnimationFrame(measure); });
+      }
+      window.addEventListener('resize', function () { requestAnimationFrame(measure); }, { passive: true });
     });
   }
 
