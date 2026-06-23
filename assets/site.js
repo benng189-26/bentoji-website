@@ -174,6 +174,28 @@
     return '<div class="placeholder-inner">' + number + '<span class="ph-label">' + label + '</span></div>';
   }
 
+  function richText(value) {
+    if (!Array.isArray(value)) return esc(value);
+    return value.map(function (part) {
+      if (typeof part === 'string') return esc(part);
+      if (part && part.href) {
+        return '<a href="' + esc(part.href) + '" target="_blank" rel="noopener noreferrer">' + esc(part.text || part.href) + '</a>';
+      }
+      return esc(part && part.text ? part.text : '');
+    }).join('');
+  }
+
+  function shotHTML(shot, i, title, extraClass) {
+    var cls = 'shot' + (extraClass ? ' ' + extraClass : '');
+    if (typeof shot === 'string') {
+      return '<figure class="' + cls + '"><img src="' + esc(shot) + '" alt="' + esc(title) + ' - screen ' + (i + 1) + '" loading="lazy"></figure>';
+    }
+    if (shot && shot.src) {
+      return '<figure class="' + cls + '"><img src="' + esc(shot.src) + '" alt="' + esc(shot.alt || title + ' - screen ' + (i + 1)) + '" loading="lazy"></figure>';
+    }
+    return '<figure class="' + cls + ' shot-placeholder" role="img" aria-label="' + esc((shot && shot.label) || title + ' screen placeholder') + '">' + placeholderInner(shot || {}) + '</figure>';
+  }
+
   function cardHTML(p) {
     var thumb = p.thumb
       ? '<div class="thumb-art"><img src="' + p.thumb + '" alt="' + esc(p.title) + '" loading="lazy"></div>'
@@ -225,16 +247,14 @@
     var toc = [];
     var body = (p.body || []).map(function (b) {
       if (b.h) { var id = 's-' + slugify(b.h); toc.push('<a href="#' + id + '">' + esc(b.h) + '</a>'); return '<h3 id="' + id + '">' + esc(b.h) + '</h3>'; }
-      if (b.list) return '<ul class="work-list">' + b.list.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') + '</ul>';
-      return '<p>' + esc(b.p) + '</p>';
+      if (b.image) return shotHTML(b.image, 0, p.title, 'shot-inline');
+      if (b.list) return '<ul class="work-list">' + b.list.map(function (li) { return '<li>' + richText(li) + '</li>'; }).join('') + '</ul>';
+      return '<p>' + richText(b.p) + '</p>';
     }).join('');
     var tocHTML = toc.length ? '<nav class="work-toc" aria-label="Sections">' + toc.join('') + '</nav>' : '';
 
     var shots = (p.gallery || []).map(function (shot, i) {
-      if (typeof shot === 'string') {
-        return '<figure class="shot"><img src="' + shot + '" alt="' + esc(p.title) + ' - screen ' + (i + 1) + '" loading="lazy"></figure>';
-      }
-      return '<figure class="shot shot-placeholder" role="img" aria-label="' + esc((shot && shot.label) || p.title + ' screen placeholder') + '">' + placeholderInner(shot || {}) + '</figure>';
+      return shotHTML(shot, i, p.title);
     }).join('');
 
     var coverImg = p.cover || p.thumb;
