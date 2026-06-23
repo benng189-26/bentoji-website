@@ -365,6 +365,7 @@ html.js .reveal.d3{transition-delay:.21s;}
   mix-blend-mode:screen;
 }
 .client-logo img.logo-light{filter:grayscale(1) brightness(1.05) contrast(.92) opacity(.64);mix-blend-mode:normal;}
+.client-logo img.logo-reversed{filter:grayscale(1) invert(1) brightness(1.9) contrast(1) opacity(.8);mix-blend-mode:screen;}
 @keyframes clientMarquee{to{transform:translateX(-50%);}}
 
 /* Services – 2×2 expanded grid */
