@@ -231,5 +231,66 @@ window.PROJECTS = [
       { h: 'Solutions' },
       { list: ['Elevated visual direction to reflect high-end, future-ready solutions', 'Structured content to guide users from exploration → validation → enquiry', 'Introduced interactive tools (a pricing Calculator) to simplify quoting', 'Built an advanced gallery - images and video to showcase real projects', 'CMS + CRM integration - an end-to-end system for content, lead tracking, and follow-up'] }
     ]
+  },
+
+  {
+    slug: 'kmart',
+    title: 'Kmart Brand & Website Redesign Concept',
+    year: '2024',
+    category: 'Brand & Web Concept',
+    tagline: 'A full brand and digital redesign concept for Kmart NZ, bringing a fresh, modern identity to a retail icon while keeping everyday value at its core.',
+    location: 'Auckland, NZ · Retail / eCommerce',
+    thumb: '/assets/img/work/kmart-cover.jpg',
+    cover: '/assets/img/work/kmart-cover.jpg',
+    coverClass: 'cover-full',
+    gallery: [
+      '/assets/img/work/kmart-identity.jpg',
+      '/assets/img/work/kmart-website.jpg',
+      '/assets/img/work/kmart-products.jpg',
+      '/assets/img/work/kmart-mobile.jpg',
+      '/assets/img/work/kmart-campaign.jpg',
+      '/assets/img/work/kmart-billboard.jpg'
+    ],
+    facts: [
+      { k: 'Type', v: 'Concept project' },
+      { k: 'Focus', v: 'Brand identity, website redesign, mobile UI, campaign design' },
+      { k: 'Role', v: 'Visual design, UI design, brand direction' },
+      { k: 'Industry', v: 'Retail / eCommerce' }
+    ],
+    body: [
+      { h: 'Overview' },
+      { p: 'Kmart opened New Zealand\'s first discount department store in Henderson, Auckland in 1988. Today, Kmart delivers irresistibly low prices through more than 200 stores across Australia and New Zealand.' },
+      { p: 'This project is a concept redesign exploring how Kmart could evolve its brand and digital presence to feel more relevant, modern and appealing to a younger generation of shoppers, without losing the core strength of everyday affordable value.' },
+      { h: 'The Challenge' },
+      { p: 'Kmart\'s existing brand visuals positioned it strongly as a budget store, but that perception was working against it when reaching younger consumers aged 25 to 35.' },
+      { p: 'The challenge was to create an identity and digital experience that feels fresh and contemporary, while staying true to what Kmart does best: quality products at reasonable prices.' },
+      { h: 'The Approach' },
+      { p: 'The redesign was structured across three core areas:' },
+      { list: [
+          'Logo redesign: A new minimalist wordmark using the letterform "k" with a distinctive dash, rendered in a clean sans-serif with black and neutral tones. The new logo retains the "EST 1988" heritage mark while feeling confident and modern.',
+          'Website redesign: A fully rethought eCommerce experience covering the homepage, category browsing, product listing, product detail, and checkout. The design leans into lifestyle photography, a warmer colour palette, and stronger content hierarchy to guide users from discovery to purchase.',
+          'Promotional campaign: A brand campaign built around the idea of spending less on things to experience more. The tagline series "Enjoy More. Own Less.", "See More. Own Less.", "Live More. Own Less." reflects Kmart\'s value proposition in a way that resonates with how younger consumers think about money and lifestyle.'
+        ]
+      },
+      { h: 'Design Direction' },
+      { p: 'The visual language moved away from purely promotional aesthetics toward a cleaner, more editorial feel. Key design decisions included:' },
+      { list: [
+          'Homepage: Lifestyle-led hero sections, a curated "K Collection" editorial module, and a K-STAGRAM social integration section',
+          'Product listing: A structured category layout with room-by-room browsing (Living Room, Workspace, Decoration) and clear product cards with pricing',
+          'Product detail: Simplified layout with colour selector, styling consultation booking, and related product recommendations',
+          'Mobile site: Full responsive design with bottom navigation, lifestyle category tiles, and a streamlined browsing experience',
+          'Campaign posters: Bold, full-bleed photography with minimal type, designed for both print and out-of-home placement'
+        ]
+      },
+      { image: { src: '/assets/img/work/kmart-identity.jpg', alt: 'Kmart logo redesign and brand stationery' } },
+      { image: { src: '/assets/img/work/kmart-website.jpg', alt: 'Kmart website homepage redesign' } },
+      { image: { src: '/assets/img/work/kmart-mobile.jpg', alt: 'Kmart mobile website design' } },
+      { image: { src: '/assets/img/work/kmart-campaign.jpg', alt: 'Kmart promotional campaign posters' } },
+      { h: 'Outcome' },
+      { p: 'The redesign demonstrates how a well-established retail brand can modernise its look and feel without abandoning what made it successful.' },
+      { p: 'The new identity and digital experience positions Kmart as a more desirable brand for younger shoppers, while keeping the emphasis on accessible pricing and practical product value.' },
+      { p: 'The campaign direction gives the brand a genuine point of view, moving beyond product promotion toward a lifestyle message that connects with how its audience actually thinks.' }
+    ]
   }
+
 ];
