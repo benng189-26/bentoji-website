@@ -9,7 +9,6 @@
    =================================================================== */
 window.PROJECTS = [
   {
-  {
     slug: 'soundlax',
     title: 'SoundLax',
     year: '2026',
@@ -94,7 +93,7 @@ window.PROJECTS = [
       { image: { src: '/assets/img/work/soundlax-07.png', alt: 'Content curation' } },
       { h: 'Bird System and Visual Identity' },
       { p: 'SoundLax uses a bird illustration system to give the app a more distinctive and personal identity.' },
-      { p: 'The direction was inspired by New Zealand's everyday birdsong, from gardens to forests, and the natural link between birds, ambient sound, and calm environments.' },
+      { p: "The direction was inspired by New Zealand's everyday birdsong, from gardens to forests, and the natural link between birds, ambient sound, and calm environments." },
       { p: 'Visually, the system blends vintage bird painting references with a modern treatment: bold colours, soft gradients, grainy textures, and simplified forms. This helped SoundLax stand apart from the flat blue and purple illustration styles often seen in similar apps.' },
       { p: 'The colour and gradient system was carefully defined to reflect each sound category, while accessibility testing helped ensure text, controls, and layered elements remained clear and easy to read.' },
       { image: { src: '/assets/img/work/soundlax-08.png', alt: 'Bird system and visual identity' } },
@@ -123,6 +122,7 @@ window.PROJECTS = [
     ]
   },
 
+  {
     slug: 'cohesive-construction',
     title: 'Cohesive Construction',
     year: '2026',
