@@ -16,6 +16,7 @@ window.PROJECTS = [
     tagline: 'An ambient sound app for focus, rest, and sleep. Designed to ask less of your attention.',
     location: 'New Zealand · Productivity & Wellbeing',
     thumb: '/assets/img/work/soundlax-thumb.jpg',
+    thumbClass: 'thumb-contain',
     cover: '/assets/img/work/soundlax-thumb.jpg',
     coverClass: 'cover-full',
     gallery: [
