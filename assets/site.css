@@ -486,10 +486,10 @@ html.js .reveal.d3{transition-delay:.21s;}
   max-width:154px;
   max-height:36px;
   object-fit:contain;
-  filter:grayscale(1) brightness(.5) opacity(.65);
+  filter:opacity(.75);
   mix-blend-mode:normal;
 }
-.client-logo img.logo-light{filter:grayscale(1) brightness(1.05) contrast(.92) opacity(.64);mix-blend-mode:normal;}
+.client-logo img.logo-light{filter:opacity(.7);mix-blend-mode:normal;}
 @keyframes clientMarquee{to{transform:translateX(-50%);}}
 
 /* Services – 2×2 expanded grid */
@@ -689,10 +689,10 @@ html.js .reveal.d3{transition-delay:.21s;}
 
 /* ── Work detail: prev/next sidebar nav ──────────────── */
 .work-nav-btns{margin-top:clamp(20px,2.5vw,28px);padding-top:clamp(20px,2.5vw,28px);border-top:1px solid var(--line);display:flex;flex-direction:column;gap:2px;}
-.work-nav-btn{display:block;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;transition:border-color .2s,background .2s;}
+.work-nav-btn{display:flex;align-items:center;gap:8px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;transition:border-color .2s,background .2s;}
 .work-nav-btn:hover{border-color:var(--line-strong);background:var(--bg-soft);}
-.work-nav-dir{display:block;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-2);font-weight:600;margin-bottom:3px;}
-.work-nav-title{display:block;font-size:.88rem;font-weight:600;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.work-nav-dir{flex-shrink:0;font-size:.82rem;color:var(--muted);line-height:1;}
+.work-nav-title{flex:1;font-size:.88rem;font-weight:600;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 
 /* ── Work detail: related projects at bottom ─────────── */
 .work-related{margin-top:clamp(64px,9vw,110px);padding-top:clamp(36px,4vw,52px);border-top:1px solid var(--line);}
