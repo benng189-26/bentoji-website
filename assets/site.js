@@ -280,20 +280,21 @@
         ? '<div class="thumb-art thumb-placeholder" role="img" aria-label="' + esc(p.coverPlaceholder.label || p.title) + '">' + placeholderInner(p.coverPlaceholder) + '</div>'
         : '<div class="thumb-art"><div class="mesh"></div></div>';
 
-    var visit = p.visit ? '<div class="hero-actions"><a class="btn btn-light" href="' + esc(p.visit) + '" target="_blank" rel="noopener noreferrer">Visit project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>' : '';
+    var backSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>';
+    var visit = p.visit ? '<div class="hero-actions"><a class="btn btn-ghost" href="' + esc(p.visit) + '" target="_blank" rel="noopener noreferrer">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>' : '';
 
     root.innerHTML =
       '<div class="container work-detail">' +
-        '<a class="text-link work-back" href="/portfolio"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg> All work</a>' +
         '<div class="work-detail-grid">' +
-          '<aside class="work-side reveal">' +
-            '<div class="cat">' + esc(p.category) + '</div>' +
+          '<aside class="work-side">' +
+            '<a class="work-back" href="/portfolio">' + backSvg + ' All work</a>' +
+            '<span class="cat">' + esc(p.category) + '</span>' +
             '<h1>' + esc(p.title) + '</h1>' +
             (p.location ? '<p class="loc">' + esc(p.location) + '</p>' : '') +
             '<div class="work-facts">' + facts + '</div>' +
-            tocHTML + visit +
+            visit +
           '</aside>' +
-          '<div class="work-main reveal d1">' +
+          '<div class="work-main">' +
             '<p class="lead">' + esc(p.tagline) + '</p>' +
             '<div class="work-cover">' + cover + '</div>' +
             '<div class="work-body">' + body + '</div>' +

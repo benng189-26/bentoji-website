@@ -178,6 +178,7 @@ window.PROJECTS = [
 
   {
     slug: 'clearpoint',
+    hidden: true,
     title: 'ClearPoint',
     year: '2025',
     category: 'Website',
@@ -314,6 +315,7 @@ window.PROJECTS = [
 
   {
     slug: 'kapili',
+    hidden: true,
     title: 'Kapili Roofing & Painting',
     year: '2023',
     category: 'Website',
