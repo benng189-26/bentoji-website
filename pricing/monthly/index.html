@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+<title>Monthly Design Support – How It Works | Bentoji Studio</title>
+<meta name="description" content="Flexible monthly design support for websites, marketing, brand and product work. No hiring, no contracts. Cancel anytime." />
+<link rel="canonical" href="https://bentoji.co.nz/pricing/monthly/" />
+<link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="/assets/site.css?v=35" />
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<style>
+/* ── MDS detail page ─────────────────────────────────── */
+.mds-hero{padding:clamp(130px,16vh,190px) 0 clamp(48px,7vw,80px);}
+.mds-hero h1{font-size:clamp(2.2rem,5vw,3.8rem);max-width:20ch;}
+.mds-hero .lead{max-width:52ch;margin-top:1.2rem;color:var(--muted);}
+
+/* Illustration placeholder */
+.illus{
+  width:100%;
+  border:1.5px dashed var(--line-strong);
+  border-radius:var(--radius);
+  background:var(--bg-soft);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:var(--muted-2);
+  font-size:.85rem;
+  text-align:center;
+  padding:clamp(28px,4vw,48px) 24px;
+}
+.illus-n{font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--line-strong);line-height:1;}
+.illus-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted-2);font-weight:500;}
+.illus-sm{min-height:200px;}
+.illus-md{min-height:280px;}
+.illus-lg{min-height:360px;}
+
+/* Use case row */
+.usecase-row{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+@media(min-width:620px){.usecase-row{grid-template-columns:1fr 1fr;}}
+@media(min-width:980px){.usecase-row{grid-template-columns:repeat(3,1fr);}}
+.usecase-cell{background:var(--bg);padding:clamp(22px,3vw,32px);}
+.usecase-cell h4{font-size:1rem;margin:0 0 10px;}
+.usecase-cell ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.9rem;line-height:1.9;}
+
+/* Steps */
+.steps-row{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
+@media(min-width:560px){.steps-row{grid-template-columns:1fr 1fr;}}
+@media(min-width:980px){.steps-row{grid-template-columns:repeat(5,1fr);}}
+.step-cell{background:var(--bg);padding:clamp(22px,3vw,36px);}
+.step-n{display:block;font-family:var(--font-head);font-size:2rem;font-weight:700;color:var(--line-strong);line-height:1;margin-bottom:14px;}
+.step-cell h4{font-size:1rem;margin:0 0 8px;}
+.step-cell p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.6;}
+
+/* Plan cards */
+.plans-grid{display:grid;grid-template-columns:1fr;gap:clamp(18px,2.5vw,24px);}
+@media(min-width:760px){.plans-grid{grid-template-columns:repeat(3,1fr);}}
+.plan-card{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(26px,3.5vw,40px);display:flex;flex-direction:column;background:var(--bg);}
+.plan-card.featured{border-color:var(--white);background:var(--bg-soft);}
+.plan-badge{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted-2);font-weight:600;margin-bottom:10px;}
+.plan-name{font-family:var(--font-head);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;color:var(--white);margin:0 0 6px;}
+.plan-sub{color:var(--muted);font-size:.93rem;margin:0 0 20px;line-height:1.4;}
+.plan-price{font-family:var(--font-head);font-weight:700;font-size:1.4rem;letter-spacing:-.02em;color:var(--white);margin:0;}
+.plan-price span{font-size:.88rem;font-weight:400;color:var(--muted-2);}
+.plan-rule{height:1px;background:var(--line);border:0;margin:18px 0;}
+.plan-list{list-style:none;margin:0 0 20px;padding:0;display:flex;flex-direction:column;gap:8px;}
+.plan-list li{font-size:.92rem;color:var(--muted);padding-left:16px;position:relative;line-height:1.4;}
+.plan-list li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:var(--accent);}
+.plan-cta{margin-top:auto;}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{width:100%;background:none;border:0;text-align:left;padding:20px 0;font-family:var(--font);font-size:.97rem;font-weight:600;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;line-height:1.4;}
+.faq-q svg{flex-shrink:0;transition:transform .3s;color:var(--muted-2);}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{display:none;padding:0 0 20px;color:var(--muted);font-size:.95rem;line-height:1.7;max-width:68ch;}
+.faq-a ul{margin:.5rem 0;padding-left:1.1em;line-height:1.9;}
+.faq-item.open .faq-a{display:block;}
+
+/* Not included */
+.not-included{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(28px,4vw,44px);}
+.not-included ul{columns:2;gap:32px;margin:0;padding-left:1.1em;color:var(--muted);font-size:.93rem;line-height:1.9;}
+@media(max-width:620px){.not-included ul{columns:1;}}
+
+/* CTA strip */
+.cta-strip{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(36px,5vw,60px);background:var(--bg-soft);display:flex;flex-direction:column;gap:20px;}
+@media(min-width:760px){.cta-strip{flex-direction:row;align-items:center;justify-content:space-between;}}
+.cta-strip-text h3{margin:0 0 8px;}
+.cta-strip-text p{margin:0;color:var(--muted);max-width:44ch;font-size:.97rem;}
+.cta-strip-actions{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────── -->
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="/portfolio">Work</a>
+      <a href="/pricing" aria-current="page">Pricing</a>
+      <a href="/soundlax-app">SoundLax</a>
+      <a href="/writing">Writing</a>
+      <a href="/contact">Contact</a>
+      <a class="btn btn-ghost nav-cta" href="/contact">Let's talk</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<div class="mobile-menu">
+  <a href="/portfolio">Work</a>
+  <a href="/pricing">Pricing</a>
+  <a href="/soundlax-app">SoundLax</a>
+  <a href="/writing">Writing</a>
+  <a href="/contact">Contact</a>
+  <a class="btn btn-light" href="/contact">Let's talk</a>
+</div>
+
+<!-- ── HERO ─────────────────────────────────────────────── -->
+<section class="mds-hero">
+  <div class="container">
+    <a href="/pricing" style="display:inline-flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted-2);margin-bottom:32px;text-decoration:none;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Pricing
+    </a>
+    <p class="eyebrow no-line">Monthly Design Support</p>
+    <h1 class="reveal">Design help when you need it, without hiring in-house.</h1>
+    <p class="lead reveal d1">A flexible monthly plan for businesses that need regular creative help across website, marketing, brand and product work.</p>
+    <div style="margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;" class="reveal d2">
+      <a href="/contact" class="btn btn-light">Start a conversation</a>
+      <a href="#plans" class="btn btn-ghost">See plans &amp; pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── ILLUSTRATION 1: OVERVIEW ──────────────────────────── -->
+<section class="section-sm" style="padding-top:0;">
+  <div class="container">
+    <div class="illus illus-lg reveal">
+      <span class="illus-n">1</span>
+      <span class="illus-label">Illustration — Overview: how monthly support works</span>
+      <p style="margin:8px 0 0;max-width:36ch;color:var(--muted-2);font-size:.82rem;line-height:1.5;">Suggested: a simple flow showing request → active task → delivery → next request. Could be a looping diagram or process visual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHO IT'S FOR ───────────────────────────────────────── -->
+<section class="section" style="padding-top:clamp(48px,7vw,80px);">
+  <div class="container">
+    <div class="asym reveal">
+      <div>
+        <p class="eyebrow">Who it's for</p>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Regular design work, without a full-time hire.</h2>
+        <p style="color:var(--muted);margin-top:1rem;">Monthly Design Support is built for businesses and teams that have a steady stream of design needs — but not enough to justify a full-time designer on staff.</p>
+        <p style="color:var(--muted);">You send requests as they come up. We work through them one at a time. No project kickoffs, no long scoping documents. Just reliable design help that keeps things moving.</p>
+        <div style="margin-top:24px;border-left:3px solid var(--accent);padding-left:18px;">
+          <p style="margin:0;font-style:italic;color:var(--muted);font-size:.97rem;line-height:1.6;">"We need a designer for this, but it's not big enough to start a full project."</p>
+          <p style="margin:8px 0 0;font-size:.82rem;color:var(--muted-2);">If you think this often, this plan is for you.</p>
+        </div>
+      </div>
+      <div class="illus illus-md reveal d1">
+        <span class="illus-n">2</span>
+        <span class="illus-label">Illustration — Who it's for</span>
+        <p style="margin:8px 0 0;max-width:32ch;color:var(--muted-2);font-size:.82rem;line-height:1.5;">Suggested: a visual of a small team or founder at a desk with a design queue — casual, editorial style.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU CAN USE IT FOR ────────────────────────────── -->
+<section class="section" style="padding-top:clamp(48px,7vw,80px);">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">What you can use it for</p>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Small-to-medium tasks with a clear brief and output.</h2>
+    </div>
+
+    <div class="usecase-row reveal">
+      <div class="usecase-cell">
+        <h4>Website updates</h4>
+        <ul>
+          <li>New sections or page layouts</li>
+          <li>Hero section redesign</li>
+          <li>Design QA and feedback</li>
+          <li>Developer handoff notes</li>
+        </ul>
+      </div>
+      <div class="usecase-cell">
+        <h4>Marketing graphics</h4>
+        <ul>
+          <li>Social and LinkedIn graphics</li>
+          <li>Campaign and ad creative</li>
+          <li>Email headers and banners</li>
+          <li>Event and announcement visuals</li>
+        </ul>
+      </div>
+      <div class="usecase-cell">
+        <h4>Presentation design</h4>
+        <ul>
+          <li>Slide polish and layout</li>
+          <li>Pitch deck sections</li>
+          <li>Charts and diagrams</li>
+          <li>Slide templates</li>
+        </ul>
+      </div>
+      <div class="usecase-cell">
+        <h4>Brand support</h4>
+        <ul>
+          <li>Applying your brand to new materials</li>
+          <li>Templates and asset prep</li>
+          <li>Logo lockups and icon sets</li>
+          <li>Layout consistency across documents</li>
+        </ul>
+      </div>
+      <div class="usecase-cell">
+        <h4>UX/UI support</h4>
+        <ul>
+          <li>One app screen or component</li>
+          <li>Form and flow improvements</li>
+          <li>Figma notes for developers</li>
+          <li>Design QA on live pages</li>
+        </ul>
+      </div>
+      <div class="usecase-cell">
+        <h4>Documents &amp; collateral</h4>
+        <ul>
+          <li>Flyers and PDF layouts</li>
+          <li>Price sheets and menus</li>
+          <li>Service guides and case studies</li>
+          <li>Client-facing templates</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Illustration 3 -->
+    <div class="illus illus-md reveal" style="margin-top:clamp(32px,4vw,48px);">
+      <span class="illus-n">3</span>
+      <span class="illus-label">Illustration — Types of work (examples)</span>
+      <p style="margin:8px 0 0;max-width:40ch;color:var(--muted-2);font-size:.82rem;line-height:1.5;">Suggested: a small grid of mini design output thumbnails — a social graphic, a slide, a webpage section, a flyer — each with a simple label.</p>
+    </div>
+
+    <!-- What's NOT included -->
+    <div class="not-included reveal" style="margin-top:clamp(32px,4vw,48px);">
+      <h4 style="margin:0 0 16px;">Not included by default</h4>
+      <p style="color:var(--muted);font-size:.93rem;margin:0 0 16px;">Monthly support is not a replacement for a full project. These are better scoped separately:</p>
+      <ul>
+        <li>Full website or brand redesign</li>
+        <li>Full app or product design from scratch</li>
+        <li>Complex UX research</li>
+        <li>Large pitch decks from scratch</li>
+        <li>Custom development</li>
+        <li>Advanced animation or video</li>
+        <li>Print management</li>
+        <li>Hosting, domains or software licences</li>
+        <li>Urgent same-day work (unless agreed)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ───────────────────────────────────────── -->
+<section class="section" style="padding-top:clamp(48px,7vw,80px);">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">How it works</p>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Simple by design.</h2>
+    </div>
+
+    <div class="steps-row reveal">
+      <div class="step-cell">
+        <span class="step-n">01</span>
+        <h4>Choose a plan</h4>
+        <p>Pick the level of support that matches your usual design volume.</p>
+      </div>
+      <div class="step-cell">
+        <span class="step-n">02</span>
+        <h4>Send a request</h4>
+        <p>Send by email, Notion, Trello or a form. Include what you need, a brief, any content or references, and a deadline if there is one.</p>
+      </div>
+      <div class="step-cell">
+        <span class="step-n">03</span>
+        <h4>We get to work</h4>
+        <p>One active task at a time. Once it's done or waiting on feedback, we move to the next one in your queue.</p>
+      </div>
+      <div class="step-cell">
+        <span class="step-n">04</span>
+        <h4>Review &amp; refine</h4>
+        <p>Reasonable revisions included within your monthly capacity.</p>
+      </div>
+      <div class="step-cell">
+        <span class="step-n">05</span>
+        <h4>Keep going</h4>
+        <p>Unused time rolls over for one month. Cancel before the next billing cycle if you need to stop.</p>
+      </div>
+    </div>
+
+    <!-- Illustration 4 -->
+    <div class="illus illus-md reveal" style="margin-top:clamp(32px,4vw,48px);">
+      <span class="illus-n">4</span>
+      <span class="illus-label">Illustration — Request to delivery flow</span>
+      <p style="margin:8px 0 0;max-width:40ch;color:var(--muted-2);font-size:.82rem;line-height:1.5;">Suggested: a simple left-to-right flow: brief → in progress → delivered → next request. Clean, minimal, editorial.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── PLANS ─────────────────────────────────────────────── -->
+<section class="section" style="padding-top:clamp(48px,7vw,80px);" id="plans">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Plans &amp; pricing</p>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Three plans. Cancel anytime.</h2>
+      <p style="color:var(--muted);max-width:50ch;">All plans include one active request at a time and one month of rollover on unused hours.</p>
+    </div>
+
+    <div class="plans-grid">
+      <!-- Design Light -->
+      <div class="plan-card reveal">
+        <div class="plan-badge">Design Light</div>
+        <h3 class="plan-name">Design Light</h3>
+        <p class="plan-sub">For occasional design help &mdash; a few tasks each month.</p>
+        <p class="plan-price">NZ$750 <span>/ month</span></p>
+        <hr class="plan-rule" />
+        <ul class="plan-list">
+          <li>Up to 5 hours per month</li>
+          <li>Website updates and graphics</li>
+          <li>Basic brand support</li>
+          <li>Simple layouts and documents</li>
+        </ul>
+        <p style="font-size:.82rem;color:var(--muted-2);margin:0 0 20px;font-style:italic;">Good for: small businesses, consultants, local services.</p>
+        <div class="plan-cta">
+          <a href="/contact?plan=light" class="btn btn-ghost" style="width:100%;justify-content:center;">Enquire about Design Light</a>
+        </div>
+      </div>
+
+      <!-- Design Care -->
+      <div class="plan-card featured reveal d1">
+        <div class="plan-badge">Most popular</div>
+        <h3 class="plan-name">Design Care</h3>
+        <p class="plan-sub">Regular support across website, marketing, brand and content.</p>
+        <p class="plan-price">NZ$1,500 <span>/ month</span></p>
+        <hr class="plan-rule" />
+        <ul class="plan-list">
+          <li>Up to 10 hours per month</li>
+          <li>Website, marketing, UX/UI, presentations</li>
+          <li>Design QA and feedback</li>
+          <li>Priority over hourly work</li>
+        </ul>
+        <p style="font-size:.82rem;color:var(--muted-2);margin:0 0 20px;font-style:italic;">Good for: growing businesses, startups, small marketing teams.</p>
+        <div class="plan-cta">
+          <a href="/contact?plan=care" class="btn btn-light" style="width:100%;justify-content:center;">Enquire about Design Care</a>
+        </div>
+      </div>
+
+      <!-- Design Partner -->
+      <div class="plan-card reveal d2">
+        <div class="plan-badge">Design Partner</div>
+        <h3 class="plan-name">Design Partner</h3>
+        <p class="plan-sub">Ongoing collaboration across multiple areas of your business.</p>
+        <p class="plan-price">NZ$2,800 <span>/ month</span></p>
+        <hr class="plan-rule" />
+        <ul class="plan-list">
+          <li>Up to 20 hours per month</li>
+          <li>Website, product, brand and campaigns</li>
+          <li>Monthly planning call</li>
+          <li>Strategic design input + priority support</li>
+        </ul>
+        <p style="font-size:.82rem;color:var(--muted-2);margin:0 0 20px;font-style:italic;">Good for: agencies, funded startups, active marketing teams.</p>
+        <div class="plan-cta">
+          <a href="/contact?plan=partner" class="btn btn-ghost" style="width:100%;justify-content:center;">Enquire about Design Partner</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Illustration 5 -->
+    <div class="illus illus-sm reveal" style="margin-top:clamp(32px,4vw,48px);">
+      <span class="illus-n">5</span>
+      <span class="illus-label">Illustration — Plan comparison visual</span>
+      <p style="margin:8px 0 0;max-width:38ch;color:var(--muted-2);font-size:.82rem;line-height:1.5;">Suggested: a simple bar or volume graphic comparing 5h / 10h / 20h with example outputs for each plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────── -->
+<section class="section" style="padding-top:clamp(48px,7vw,80px);">
+  <div class="container">
+    <div class="asym" style="align-items:start;gap:clamp(40px,6vw,80px);">
+      <div class="reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);">Common questions.</h2>
+        <p style="color:var(--muted);margin-top:1rem;">Anything else? <a href="/contact" style="color:var(--white);border-bottom:1px solid var(--line-strong);padding-bottom:1px;">Send us a message.</a></p>
+      </div>
+      <div class="faq-list reveal d1" style="min-width:0;">
+
+        <div class="faq-item">
+          <button class="faq-q">Is this unlimited design? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">No. Monthly Design Support is based on plan capacity. You can send requests as needed and we work through them one at a time within your monthly hours. This keeps the work focused and fair.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What does "one active request at a time" mean? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">We focus on one task at a time. If you send several requests, we'll agree on priority and work through them in order. Once the first task is done or waiting on your feedback, we move to the next.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can unused hours roll over? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">Yes. Unused time rolls over for one month while your plan is active. It does not accumulate indefinitely, and expires if the plan is cancelled.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I cancel anytime? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">Yes. Cancel before the next billing cycle and you will not be charged again. No long contracts.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What if a task is bigger than my plan capacity? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">We will let you know before starting. Larger tasks can use more of your monthly capacity, be split across months, or be quoted as a separate project.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What makes a good design request? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">A good request includes: what you need, why you need it, where it will be used, any content or images, brand files, preferred format or size, and a deadline if there is one. The clearer the brief, the faster we move.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can you work alongside our existing team? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">Yes. Monthly Design Support works well alongside founders, marketers, developers and agencies. We can prepare files, give feedback, mark up issues, and create assets that slot into your existing workflow.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How do we get started? <svg width="16" height="16" viewBox="0 0 18 18" fill="none"><line x1="9" y1="2" x2="9" y2="16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="2" y1="9" x2="16" y2="9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <div class="faq-a">Send a short message about your business and what kind of design help you need each month. We'll recommend the right plan or suggest a better fit if needed. <a href="/contact" style="color:var(--white);font-weight:500;">Start a conversation →</a></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────── -->
+<section class="section" style="padding-top:clamp(32px,4vw,48px);">
+  <div class="container">
+    <div class="cta-strip reveal">
+      <div class="cta-strip-text">
+        <h3>Ready to get started?</h3>
+        <p>Tell us what you're working on and how often design tasks come up. We'll recommend the right plan.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="/contact" class="btn btn-light">Start a conversation</a>
+        <a href="/pricing" class="btn btn-ghost">Back to pricing</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="/"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
+        <p>Independent design studio in Auckland, NZ. Available for new projects.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Work</h5>
+        <a href="/portfolio">All projects</a>
+        <a href="/work/soundlax/">SoundLax</a>
+        <a href="/work/kmart/">Kmart concept</a>
+        <a href="/work/cohesive-construction/">Cohesive Construction</a>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <a href="/pricing">Pricing</a>
+        <a href="/writing">Writing</a>
+        <a href="/contact">Contact</a>
+        <a href="/soundlax-app">SoundLax app</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Bentoji Studio</span>
+      <a href="/soundlax/privacypolicy/">Privacy policy</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=22"></script>
+<script>
+(function(){
+  // Reveal
+  var els = document.querySelectorAll('.reveal');
+  if (els.length) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+    },{threshold:.08});
+    els.forEach(function(el){ io.observe(el); });
+  }
+  // Mobile menu
+  var btn = document.querySelector('.nav-toggle');
+  var menu = document.querySelector('.mobile-menu');
+  if (btn && menu) btn.addEventListener('click', function(){
+    var open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  // FAQ
+  document.querySelectorAll('.faq-q').forEach(function(b){
+    b.addEventListener('click', function(){
+      var item = b.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
