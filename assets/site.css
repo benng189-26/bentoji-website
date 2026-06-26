@@ -506,3 +506,75 @@ html.js .reveal.d3{transition-delay:.21s;}
   .client-logo img{max-width:122px;max-height:30px;}
   .process-grid { grid-template-columns: 1fr; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   DARK SECTION UTILITY  .section-ink
+   Redefines all CSS variables so every component inside
+   automatically reads correct dark-mode values.
+═══════════════════════════════════════════════════════════ */
+.section-ink{
+  background:#111111;
+  color:#ebebeb;
+  --bg:#111111;
+  --bg-soft:#1c1c1e;
+  --bg-card:#2c2c2e;
+  --white:#f0f0f0;
+  --text:#ebebeb;
+  --muted:#aeaeb2;
+  --muted-2:#8e8e93;
+  --line:rgba(255,255,255,.09);
+  --line-strong:rgba(255,255,255,.16);
+  --placeholder:rgba(255,255,255,.06);
+  position:relative;
+}
+.section-ink h1,
+.section-ink h2,
+.section-ink h3,
+.section-ink h4{color:#f0f0f0;}
+.section-ink .eyebrow{color:rgba(255,255,255,.38);}
+.section-ink .eyebrow::before{background:rgba(255,255,255,.18);}
+.section-ink .btn-light{background:#f0f0f0;color:#111111;border-color:#f0f0f0;}
+.section-ink .btn-light:hover{background:#ffffff;border-color:#ffffff;color:#000;}
+.section-ink .btn-ghost{color:#f0f0f0;border-color:rgba(255,255,255,.22);}
+.section-ink .btn-ghost:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.4);color:#fff;}
+/* pricing page specifics inside dark sections */
+.section-ink .pr-label-n{color:rgba(255,255,255,.08);}
+.section-ink .pr-hero-nav a{border-color:rgba(255,255,255,.14);color:rgba(255,255,255,.45);}
+.section-ink .pr-hero-nav a:hover{border-color:rgba(255,255,255,.5);color:#f0f0f0;}
+
+/* ── Warm glow for dark hero sections ────────────────────── */
+.ink-glow::before{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(60% 80% at 90% 110%, rgba(224,67,31,.18) 0%, transparent 60%),
+    radial-gradient(40% 60% at 10% 60%, rgba(255,160,80,.07) 0%, transparent 55%);
+  border-radius:inherit;
+}
+.ink-glow > .container{position:relative;z-index:1;}
+
+/* ═══════════════════════════════════════════════════════════
+   DARK FOOTER  (global — affects every page)
+═══════════════════════════════════════════════════════════ */
+.site-footer{
+  background:#111111;
+  color:#aeaeb2;
+  --white:#f0f0f0;
+  --text:#ebebeb;
+  --muted:#8e8e93;
+  --muted-2:#636366;
+  --line:rgba(255,255,255,.09);
+  --line-strong:rgba(255,255,255,.16);
+}
+/* Logo is a white SVG — on dark bg it's correct; remove the invert */
+.site-footer .brand img{filter:none !important;height:28px;}
+.site-footer .footer-brand p{color:#8e8e93;}
+.site-footer .footer-col h5{color:#636366;}
+.site-footer .footer-col a{color:#aeaeb2;}
+.site-footer .footer-col a:hover{color:#f0f0f0;}
+.site-footer .footer-bottom{color:#636366;border-top-color:rgba(255,255,255,.09);}
+.site-footer .footer-bottom a{color:#636366;}
+.site-footer .footer-bottom a:hover{color:#aeaeb2;}
