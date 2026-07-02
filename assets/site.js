@@ -240,6 +240,7 @@
   }
 
   function renderWorkGrid() {
+    document.body.classList.add('work-listing');
     document.querySelectorAll('[data-work-grid]').forEach(function (grid) {
       var limit = parseInt(grid.getAttribute('data-limit') || '0', 10);
       var visibleProjects = window.PROJECTS.filter(function (project) { return !project.hidden; });
@@ -266,8 +267,11 @@
     var root = document.querySelector('[data-work-detail]');
     if (!root) return;
 
-    /* Mark body so CSS can widen the nav container */
     document.body.classList.add('work-page');
+
+    /* Measure nav height for sticky offset */
+    var navEl = document.querySelector('.site-nav');
+    if (navEl) document.documentElement.style.setProperty('--nav-h', navEl.offsetHeight + 'px');
 
     /* Resolve slug from URL */
     var slug = new URLSearchParams(location.search).get('p');
@@ -277,75 +281,57 @@
     }
 
     var p = window.PROJECTS.filter(function (x) { return x.slug === slug; })[0];
-    if (!p) { location.replace('/portfolio'); return; }
-    document.title = p.title + ' - Bentoji Studio';
+    if (!p) { location.replace('/work/'); return; }
+    document.title = p.title + ' - Bentoji';
 
-    /* Visible project list for prev/next */
+    /* Visible list for next */
     var visible = window.PROJECTS.filter(function (x) { return !x.hidden; });
     var idx = -1;
     visible.forEach(function (x, i) { if (x.slug === slug) idx = i; });
-    var prevP = idx > 0 ? visible[idx - 1] : null;
-    var nextP = idx < visible.length - 1 ? visible[idx + 1] : null;
+    var nextP = idx >= 0 && idx < visible.length - 1 ? visible[idx + 1] : null;
 
-    /* Facts */
-    var facts = (p.facts || []).map(function (f) {
-      return '<div class="fact"><div class="k">' + esc(f.k) + '</div><div class="v">' + esc(f.v) + '</div></div>';
-    }).join('');
+    /* SVGs */
+    var backSvg  = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M10 3L5 8l5 5"/></svg>';
+    var arrowR   = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M6 3l5 5-5 5"/></svg>';
+    var chevron  = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="11" height="11"><path d="M4 6l4 4 4-4"/></svg>';
 
-    /* Extract "What we did" from body into sidebar */
-    var whatWeDidItems = [];
-    var capturing = false;
-    var bodyItems = [];
+    /* Group body into accordion sections by heading, skip inline images */
+    var sections = [];
+    var cur = null;
     (p.body || []).forEach(function (b) {
-      if (b.h && b.h.toLowerCase().replace(/\s+/g, ' ').trim() === 'what we did') {
-        capturing = true; return;
+      if (b.h) {
+        cur = { title: b.h, items: [] };
+        sections.push(cur);
+      } else if (b.image) {
+        /* skip: images go in the imagery panel */
+      } else if (cur) {
+        cur.items.push(b);
+      } else {
+        if (!sections.length) { cur = { title: 'Overview', items: [] }; sections.push(cur); }
+        sections[0].items.push(b);
       }
-      if (capturing && b.list) {
-        whatWeDidItems = b.list; capturing = false; return;
-      }
-      if (capturing && b.h) { capturing = false; }
-      if (!capturing) bodyItems.push(b);
     });
+    if (!sections.length) {
+      sections = [{ title: 'Overview', items: p.tagline ? [{ p: p.tagline }] : [] }];
+    }
 
-    var whatWeDidHTML = whatWeDidItems.length
-      ? '<div class="work-services"><span class="sk">What we did</span><ul>' +
-          whatWeDidItems.map(function (li) { return '<li>' + esc(li) + '</li>'; }).join('') +
-        '</ul></div>'
-      : '';
-
-    /* Build body HTML */
-    var body = bodyItems.map(function (b) {
-      if (b.h) return '<h3 id="s-' + slugify(b.h) + '">' + esc(b.h) + '</h3>';
-      if (b.image) return shotHTML(b.image, 0, p.title, 'shot-inline');
-      if (b.list) return '<ul class="work-list">' + b.list.map(function (li) { return '<li>' + richText(li) + '</li>'; }).join('') + '</ul>';
-      return '<p>' + richText(b.p) + '</p>';
+    /* Accordion HTML */
+    var accHTML = sections.map(function (s, i) {
+      var inner = s.items.map(function (b) {
+        if (b.list) return '<ul>' + b.list.map(function (li) { return '<li>' + richText(li) + '</li>'; }).join('') + '</ul>';
+        if (b.p)    return '<p>' + richText(b.p) + '</p>';
+        return '';
+      }).join('');
+      return '<div class="acc-item' + (i === 0 ? ' open' : '') + '">' +
+        '<button class="acc-trigger" type="button">' +
+          '<span class="acc-label">' + esc(s.title) + '</span>' +
+          '<span class="acc-icon">' + chevron + '</span>' +
+        '</button>' +
+        '<div class="acc-body"><div class="acc-inner">' + inner + '</div></div>' +
+        '</div>';
     }).join('');
 
-    /* Gallery shots */
-    var shots = (p.gallery || []).map(function (shot, i) {
-      return shotHTML(shot, i, p.title);
-    }).join('');
-
-    /* Cover image */
-    var coverImg = p.cover || p.thumb;
-    var coverClass = classTokens(p.coverClass);
-    var cover = coverImg
-      ? '<div class="thumb-art' + (coverClass ? ' ' + coverClass : '') + '"><img src="' + coverImg + '" alt="' + esc(p.title) + '"></div>'
-      : p.coverPlaceholder
-        ? '<div class="thumb-art thumb-placeholder" role="img" aria-label="' + esc(p.coverPlaceholder.label || p.title) + '">' + placeholderInner(p.coverPlaceholder) + '</div>'
-        : '<div class="thumb-art"><div class="mesh"></div></div>';
-
-    /* Back link */
-    var backSvg = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3L5 8l5 5"/></svg>';
-
-    /* Visit button */
-    var visit = p.visit
-      ? '<div class="hero-actions" style="margin-top:clamp(20px,2.5vw,28px);"><a class="btn btn-ghost" href="' + esc(p.visit) + '" target="_blank" rel="noopener noreferrer">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>'
-      : '';
-
-    /* Prev / next navigation */
-    var arrowL = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M10 3L5 8l5 5"/></svg>';
-    var arrowR = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><path d="M6 3l5 5-5 5"/></svg>';
+    /* Next project button */
     var nextBtn = nextP
       ? '<a class="work-nav-btn" href="/work/' + nextP.slug + '/" data-nav-slug="' + nextP.slug + '">' +
           '<span class="work-nav-label">Next project</span>' +
@@ -353,60 +339,56 @@
           '<span class="work-nav-dir">' + arrowR + '</span>' +
         '</a>'
       : '';
-    var navBtns = nextBtn
-      ? '<div class="work-nav-btns">' + nextBtn + '</div>'
+
+    /* Visit live site button */
+    var visitBtn = p.visit
+      ? '<a class="btn btn-ghost work-visit-btn" href="' + esc(p.visit) + '" target="_blank" rel="noopener noreferrer">Visit live site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><path d="M7 17 17 7M9 7h8v8"/></svg></a>'
       : '';
 
-    /* Related projects (up to 3, excluding current) */
-    var related = visible.filter(function (x) { return x.slug !== slug; }).slice(0, 3);
-    var relatedHTML = related.length
-      ? '<div class="work-related">' +
-          '<p class="work-related-label">More work</p>' +
-          '<div class="work-related-grid">' + related.map(cardHTML).join('') + '</div>' +
-        '</div>'
-      : '';
-
-    root.innerHTML =
-      '<div class="container work-detail">' +
-        '<div class="work-detail-grid">' +
-          '<aside class="work-side">' +
-            '<a class="work-back" href="/portfolio">' + backSvg + ' All work</a>' +
-            '<span class="cat">' + esc(p.category) + '</span>' +
-            '<h1>' + esc(p.title) + '</h1>' +
-            (p.location ? '<p class="loc">' + esc(p.location) + '</p>' : '') +
-            '<div class="work-facts">' + facts + '</div>' +
-            whatWeDidHTML +
-            visit +
-            navBtns +
-          '</aside>' +
-          '<div class="work-main">' +
-            '<p class="lead">' + esc(p.tagline) + '</p>' +
-            '<div class="work-cover">' + cover + '</div>' +
-            '<div class="work-body">' + body + '</div>' +
-            (shots ? '<div class="work-shots">' + shots + '</div>' : '') +
-            relatedHTML +
+    /* Sidebar */
+    var sidebar =
+      '<aside class="work-sidebar">' +
+        '<div class="work-sidebar-head">' +
+          '<a class="work-back" href="/work/">' + backSvg + ' All work</a>' +
+          '<div class="work-sidebar-meta">' +
+            '<span class="work-cat">' + esc(p.category) + '</span>' +
+            '<h1 class="work-title">' + esc(p.title) + '</h1>' +
+            (p.location ? '<div class="work-loc">' + esc(p.location) + '</div>' : '') +
           '</div>' +
         '</div>' +
-      '</div>';
+        '<div class="work-accordion">' + accHTML + '</div>' +
+        '<div class="work-sidebar-foot">' +
+          (visitBtn ? '<div class="work-visit-wrap">' + visitBtn + '</div>' : '') +
+          (nextBtn  ? '<div class="work-nav-btns">' + nextBtn + '</div>' : '') +
+        '</div>' +
+      '</aside>';
 
-    /* Wire up prev/next SPA navigation */
+    /* Imagery panel */
+    var imgs = (p.gallery || []).map(function (src) {
+      return '<div class="work-img-wrap"><img src="' + esc(src) + '" alt="' + esc(p.title) + '" loading="lazy"></div>';
+    }).join('');
+    if (!imgs) imgs = '<div class="work-img-placeholder"></div>';
+    var imagery = '<div class="work-imagery">' + imgs + '</div>';
+
+    root.innerHTML = '<div class="work-detail-v2">' + sidebar + imagery + '</div>';
+
+    /* Accordion click handlers */
+    root.querySelectorAll('.acc-trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.acc-item');
+        var wasOpen = item.classList.contains('open');
+        root.querySelectorAll('.acc-item').forEach(function (el) { el.classList.remove('open'); });
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    /* SPA navigation */
     root.querySelectorAll('[data-nav-slug]').forEach(function (el) {
       el.addEventListener('click', function (e) {
         e.preventDefault();
         loadProject(el.getAttribute('data-nav-slug'));
       });
     });
-
-    /* Re-observe reveal elements injected after initial scroll observer ran */
-    var newReveals = root.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      var dio = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); dio.unobserve(e.target); } });
-      }, { threshold: 0.06 });
-      newReveals.forEach(function (el) { dio.observe(el); });
-    } else {
-      newReveals.forEach(function (el) { el.classList.add('in'); });
-    }
   }
 
   /* Handle browser back/forward within work detail SPA navigation */
