@@ -240,7 +240,6 @@
   }
 
   function renderWorkGrid() {
-    document.body.classList.add('work-listing');
     document.querySelectorAll('[data-work-grid]').forEach(function (grid) {
       var limit = parseInt(grid.getAttribute('data-limit') || '0', 10);
       var visibleProjects = window.PROJECTS.filter(function (project) { return !project.hidden; });

@@ -198,7 +198,7 @@ strong{color:var(--white);font-weight:600;}
 .work-card .arrow svg{width:16px;height:16px;transition:transform .25s;}
 .work-card:hover .arrow svg{transform:translate(3px,-3px);}
 
-/* ── Work detail — editorial two-column layout ─────────── */
+/* Work detail: editorial two-column layout */
 /* Wide container for detail pages */
 
 @media(min-width:600px){.work-related-grid{grid-template-columns:1fr 1fr;}}
@@ -211,7 +211,7 @@ strong{color:var(--white);font-weight:600;}
 
 
 /* ===================================================================
-   Work pages (listing + detail) — dark theme
+   Work pages (listing + detail): dark theme
    =================================================================== */
 body.work-page,
 body.work-listing {
@@ -220,8 +220,8 @@ body.work-listing {
   --bg-soft:#1c1c1e;
   --white:#f5f5f7;
   --text:#f5f5f7;
-  --muted:#98989d;
-  --muted-2:#565659;
+  --muted:#b0b0b6;
+  --muted-2:#94949a;
   --line:rgba(255,255,255,.08);
   --line-strong:rgba(255,255,255,.16);
 }
@@ -244,8 +244,18 @@ body.work-page .site-nav .container { max-width:100%; padding:0 32px; }
 
 .work-detail-v2 {
   display:grid;
-  grid-template-columns:290px 1fr;
+  grid-template-columns:minmax(320px, 34%) 1fr;
   min-height:calc(100vh - var(--nav-h, 64px));
+}
+@media(max-width:820px){
+  .work-detail-v2 { grid-template-columns:1fr; }
+  .work-sidebar {
+    position:static;
+    height:auto;
+    border-right:none;
+    border-bottom:1px solid var(--line);
+  }
+  .work-img-placeholder { min-height:60vh; }
 }
 
 /* ── Left sidebar ──────────────────────────────────────────────── */
@@ -416,6 +426,10 @@ body.work-page .site-nav .container { max-width:100%; padding:0 32px; }
 .work-img-wrap img { width:100%; height:auto; display:block; }
 .work-img-placeholder { min-height:calc(100vh - var(--nav-h, 64px)); background:#191919; }
 
-/* ── Work listing dark cards ───────────────────────────────────── */
+/* Work listing dark cards */
 body.work-listing .card { background:var(--bg-soft); }
 body.work-listing .card:hover { background:#242426; }
+
+/* No border on imagery in the work listing (case study list) */
+body.work-listing .thumb-art { border:none; }
+body.work-listing .thumb-art .mesh { background:var(--bg-soft); }
