@@ -280,7 +280,7 @@
     }
 
     var p = window.PROJECTS.filter(function (x) { return x.slug === slug; })[0];
-    if (!p) { location.replace('/work/'); return; }
+    if (!p) { location.replace('/portfolio'); return; }
     document.title = p.title + ' - Bentoji';
 
     /* Visible list for next */
@@ -348,7 +348,7 @@
     var sidebar =
       '<aside class="work-sidebar" data-lenis-prevent>' +
         '<div class="work-sidebar-head">' +
-          '<a class="work-back" href="/work/">' + backSvg + ' All work</a>' +
+          '<a class="work-back" href="/portfolio">' + backSvg + ' All work</a>' +
           '<div class="work-sidebar-meta">' +
             '<span class="work-cat">' + esc(p.category) + '</span>' +
             '<h1 class="work-title">' + esc(p.title) + '</h1>' +
