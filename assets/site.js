@@ -346,7 +346,7 @@
 
     /* Sidebar */
     var sidebar =
-      '<aside class="work-sidebar">' +
+      '<aside class="work-sidebar" data-lenis-prevent>' +
         '<div class="work-sidebar-head">' +
           '<a class="work-back" href="/work/">' + backSvg + ' All work</a>' +
           '<div class="work-sidebar-meta">' +
