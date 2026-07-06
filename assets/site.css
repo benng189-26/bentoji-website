@@ -241,6 +241,7 @@ body.work-listing .nav-links a:hover { color:var(--white); }
 body.work-page .site-nav .container { max-width:100%; padding:0 32px; }
 
 [data-work-detail] { display:block; }
+body.work-page [data-work-detail] { padding-top:var(--nav-h, 64px); }
 
 .work-detail-v2 {
   display:grid;
