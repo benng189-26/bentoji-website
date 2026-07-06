@@ -20,10 +20,11 @@ window.PROJECTS = [
     cover: '/assets/img/work/soundlax-thumb.jpg',
     coverClass: 'cover-full',
     gallery: [
-      '/assets/img/work/soundlax-01.png',
-      '/assets/img/work/soundlax-04.png',
-      '/assets/img/work/soundlax-08.png',
-      '/assets/img/work/soundlax-09.png'
+      '/assets/img/work/soundlax-web-1.jpg',
+      '/assets/img/work/soundlax-web-2.jpg',
+      '/assets/img/work/soundlax-web-3.jpg',
+      '/assets/img/work/soundlax-web-4.jpg',
+      '/assets/img/work/soundlax-web-5.jpg'
     ],
     facts: [
       { k: 'Discipline', v: 'Product design, UX research, UI design, brand identity' },
