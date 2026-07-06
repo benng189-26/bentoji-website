@@ -271,7 +271,7 @@ window.PROJECTS = [
     thumb: '/assets/img/work/tedxauckland.jpg',
     cover: '/assets/img/work/tedxauckland.jpg',
     coverClass: 'cover-full',
-    gallery: ['/assets/img/work/tedxauckland-1.jpg', '/assets/img/work/tedxauckland-3.jpg', '/assets/img/work/tedxauckland-4.jpg', '/assets/img/work/tedxauckland-5.jpg', '/assets/img/work/tedxauckland-6.jpg'],
+    gallery: ['/assets/img/work/tedxauckland-web-1.jpg', '/assets/img/work/tedxauckland-web-2.jpg', '/assets/img/work/tedxauckland-web-3.jpg', '/assets/img/work/tedxauckland-web-4.jpg'],
     facts: [
       { k: 'Discipline', v: 'Website · UI/UX' },
       { k: 'Sector', v: 'Events / Media' },
