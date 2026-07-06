@@ -15,11 +15,11 @@
    =================================================================== */
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lenis = null;
 
   document.addEventListener('DOMContentLoaded', function () {
 
     /* ---- Lenis smooth scrolling ---- */
-    var lenis = null;
     if (window.Lenis && !reduce) {
       lenis = new Lenis({ duration: 1.1, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
       function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
@@ -388,6 +388,41 @@
         loadProject(el.getAttribute('data-nav-slug'));
       });
     });
+
+    /* Fade imagery in as it scrolls into view */
+    var imgWraps = root.querySelectorAll('.work-img-wrap');
+    if ('IntersectionObserver' in window && !reduce) {
+      var iio = new IntersectionObserver(function (en) {
+        en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); iio.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      imgWraps.forEach(function (el) { iio.observe(el); });
+    } else {
+      imgWraps.forEach(function (el) { el.classList.add('in'); });
+    }
+
+    /* Back-to-top button (created once, shown after scrolling) */
+    initBackToTop();
+  }
+
+  function initBackToTop() {
+    if (document.querySelector('.back-to-top')) return;
+    var bt = document.createElement('button');
+    bt.className = 'back-to-top';
+    bt.type = 'button';
+    bt.setAttribute('aria-label', 'Back to top');
+    bt.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    document.body.appendChild(bt);
+    bt.addEventListener('click', function () {
+      if (lenis) lenis.scrollTo(0, { duration: 1.0 });
+      else window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    var toggle = function () {
+      var y = window.scrollY || window.pageYOffset || 0;
+      if (y > 600) bt.classList.add('show'); else bt.classList.remove('show');
+    };
+    window.addEventListener('scroll', toggle, { passive: true });
+    if (lenis && lenis.on) lenis.on('scroll', toggle);
+    toggle();
   }
 
   /* Handle browser back/forward within work detail SPA navigation */
