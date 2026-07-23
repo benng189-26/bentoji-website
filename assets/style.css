@@ -367,8 +367,11 @@ html.js .reveal.in{opacity:1;transform:none;}
   text-align:center;
   background:url("/assets/img/danylo-suprun-1zJwAKjw-tY-unsplash.jpg") center/cover no-repeat;
 }
-.cta-inner{max-width:900px;margin:0 auto;}
-.cta-wordmark{max-width:210px;margin:0 auto 28px;opacity:.95;}
+.cta-inner{
+  max-width:900px;
+  margin:0 auto;
+  padding-top:clamp(72px,10vw,124px);
+}
 .cta-title{margin-bottom:1rem;}
 .cta-title .line{display:block;}
 .cta-sub{color:var(--muted);margin-bottom:2rem;}
