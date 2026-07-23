@@ -193,6 +193,11 @@ html.js .reveal.in{opacity:1;transform:none;}
 
 /* meet */
 .meet-copy h2{margin-bottom:1.4rem;}
+.meet-copy .section-title{
+  font-size:clamp(1.6rem,3.2vw,2rem);
+  line-height:1.18;
+  letter-spacing:-.01em;
+}
 .meet-media img{border-radius:var(--radius);width:100%;}
 .meet-player{position:relative;overflow:hidden;border-radius:var(--radius);isolation:isolate;}
 .meet-volume-track,.meet-volume-fill,.meet-volume-knob{display:none;}
