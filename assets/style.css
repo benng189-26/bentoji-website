@@ -6,7 +6,7 @@
   /* Brand palette */
   --blazing-flame:#F84F22;
   --space-indigo:#2A324B;
-  --slate-grey:#767B91;
+  --slate-grey:#E9E9E9;
   --vanilla-custard:#EEE3AB;
   --bone:#D9CFC1;
 
@@ -23,6 +23,7 @@
   --maxw:1200px;
   --ease:cubic-bezier(.2,.7,.2,1);
   --font-head:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-section-head:"SF Pro Display","SF Pro Text",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --font-body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   --font-eyebrow:"Instrument Sans","Inter",sans-serif;
 }
@@ -54,10 +55,10 @@ a{color:inherit;text-decoration:none;}
 
 /* ---------- typography ---------- */
 h1,h2,h3{font-family:var(--font-head);color:var(--white);margin:0;}
-h2{font-weight:700;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2.4rem,6vw,4.4rem);}
-h3{font-weight:400;font-size:clamp(1.6rem,3.2vw,2rem);line-height:1.18;letter-spacing:-.01em;}
-h4{font-family:var(--font-body);font-weight:600;font-size:1.35rem;color:var(--white);margin:0 0 .5rem;letter-spacing:-.02em;}
-h5{font-family:var(--font-body);font-weight:500;font-size:.8125rem;text-transform:uppercase;letter-spacing:.1em;color:var(--white);margin:0 0 1rem;}
+h2{font-family:var(--font-section-head);font-weight:700;letter-spacing:-.02em;line-height:1.05;font-size:clamp(2.4rem,6vw,4.4rem);}
+h3{font-family:var(--font-section-head);font-weight:700;font-size:clamp(1.6rem,3.2vw,2rem);line-height:1.18;letter-spacing:-.01em;}
+h4{font-family:var(--font-section-head);font-weight:700;font-size:1.35rem;color:var(--white);margin:0 0 .5rem;letter-spacing:-.02em;}
+h5{font-family:var(--font-section-head);font-weight:700;font-size:.8125rem;text-transform:uppercase;letter-spacing:.1em;color:var(--white);margin:0 0 1rem;}
 p{margin:0 0 1.1rem;color:var(--text);}
 .muted{color:var(--muted);}
 
@@ -169,6 +170,20 @@ html.js .reveal.in{opacity:1;transform:none;}
 /* icons */
 .icon{display:none;}
 .feat-icon{display:block;width:28px;height:28px;margin-bottom:16px;color:var(--white);}
+.emoji-icon,
+.plat-emoji{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.emoji-icon{
+  font-size:1.55rem;
+  margin-bottom:16px;
+}
+.plat-emoji{
+  font-size:1.7rem;
+}
 
 /* ---------- generic sections ---------- */
 .section{padding:clamp(64px,9vw,130px) 0;}
@@ -343,7 +358,12 @@ html.js .reveal.in{opacity:1;transform:none;}
 .form-note{color:#8bd49a;font-size:.95rem;margin:0;}
 
 /* cta */
-.cta{text-align:center;background:linear-gradient(180deg,#0a0a0a,#101014);}
+.cta{
+  text-align:center;
+  background:
+    linear-gradient(180deg,rgba(10,10,10,.52),rgba(10,10,10,.76)),
+    url("/assets/img/danylo-suprun-1zJwAKjw-tY-unsplash.jpg") center/cover no-repeat;
+}
 .cta-inner{max-width:900px;margin:0 auto;}
 .cta-wordmark{max-width:210px;margin:0 auto 28px;opacity:.95;}
 .cta-title{margin-bottom:1rem;}

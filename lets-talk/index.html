@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+<title>Let's Talk - SoundLax</title>
+<meta name="description" content="Get in touch about SoundLax, feedback, partnerships, or support." />
+<link rel="canonical" href="https://www.bentoji.co.nz/lets-talk" />
+<link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/assets/style.css?v=18" />
+<script>document.documentElement.classList.add('js');</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<style>
+  .talk-page .breadcrumb{padding-top:104px}
+  .talk-hero{padding-top:32px;padding-bottom:32px}
+  .talk-hero h1{
+    font-family:var(--font-section-head);
+    font-size:clamp(2.8rem,6vw,5rem);
+    line-height:1;
+    margin-bottom:1rem;
+  }
+  .talk-hero p{max-width:34rem;color:var(--muted)}
+  .talk-grid{
+    display:grid;
+    grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);
+    gap:clamp(28px,5vw,64px);
+    align-items:start;
+  }
+  .talk-panel{
+    background:rgba(255,255,255,.03);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:28px;
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+  }
+  .talk-form{display:flex;flex-direction:column;gap:18px}
+  .talk-form .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .talk-form .field{display:flex;flex-direction:column;gap:8px}
+  .talk-form label,.talk-form legend{
+    font-size:.82rem;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+    color:var(--muted);
+  }
+  .talk-form input,.talk-form textarea{
+    width:100%;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:15px 18px;
+    color:var(--white);
+    font:inherit;
+  }
+  .talk-form textarea{min-height:160px;resize:vertical}
+  .talk-form input:focus,.talk-form textarea:focus{
+    outline:none;
+    border-color:rgba(255,255,255,.35);
+  }
+  .talk-form .checks{
+    border:0;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+  .talk-form .checks label{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    text-transform:none;
+    letter-spacing:0;
+    font-size:.98rem;
+  }
+  .talk-form .checks input{
+    width:auto;
+    margin-top:4px;
+    accent-color:#fff;
+  }
+  .talk-note{margin:0;color:#8bd49a;font-size:.95rem}
+  .talk-list{display:grid;gap:24px}
+  .talk-list .k{
+    font-family:var(--font-section-head);
+    font-weight:700;
+    color:var(--white);
+    margin-bottom:6px;
+  }
+  .talk-list a{color:var(--white);border-bottom:1px solid var(--line)}
+  @media(max-width:900px){
+    .talk-grid{grid-template-columns:1fr}
+    .talk-form .form-row{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body class="talk-page">
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="/soundlax-app" aria-label="SoundLax home">
+      <img src="/assets/img/logo.svg" alt="SoundLax" height="26" />
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="/soundlax-app">SoundLax</a>
+      <a href="/soundlax/privacypolicy">Privacy Policy</a>
+      <a class="btn btn-ghost nav-cta" href="/lets-talk">Let's talk</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="slideout" id="slideout" aria-hidden="true">
+  <button class="slideout-close" id="slideoutClose" aria-label="Close menu">&times;</button>
+  <nav class="slideout-nav">
+    <a href="/soundlax-app">SoundLax</a>
+    <a href="/soundlax/privacypolicy">Privacy Policy</a>
+    <a class="btn btn-light" href="/lets-talk">Let's talk</a>
+  </nav>
+</div>
+
+<div class="breadcrumb">
+  <div class="container">
+    <a href="/soundlax-app">SoundLax</a> <span>&raquo;</span> Let's talk
+  </div>
+</div>
+
+<section class="section talk-hero">
+  <div class="container">
+    <h1 class="reveal">Let's talk.</h1>
+    <p class="reveal">If you have feedback, partnership ideas, press enquiries, or just want to say hello, send a note here. We read every message.</p>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="container talk-grid">
+    <div class="talk-panel reveal">
+      <form class="talk-form" data-web3form novalidate>
+        <input type="hidden" name="access_key" value="4af5bed8-bb14-4317-a9e7-d52b2387b2c3" />
+        <input type="hidden" name="subject" value="New enquiry from SoundLax lets-talk page" />
+        <input type="hidden" name="from_name" value="SoundLax lets-talk form" />
+        <input type="hidden" name="cc" value="ben.ng189@gmail.com" />
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0" />
+
+        <div class="form-row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@email.com" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="company">Company or project</label>
+          <input id="company" name="company" type="text" placeholder="Optional" />
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us what you have in mind." required></textarea>
+        </div>
+
+        <fieldset class="checks">
+          <legend>What is this about?</legend>
+          <label><input type="checkbox" name="feedback" /> App feedback or support</label>
+          <label><input type="checkbox" name="partnerships" /> Partnership or collaboration</label>
+          <label><input type="checkbox" name="press" /> Press or feature request</label>
+        </fieldset>
+
+        <button type="submit" class="btn btn-light">Send message</button>
+        <p class="talk-note form-note" aria-live="polite"></p>
+      </form>
+    </div>
+
+    <div class="talk-panel reveal">
+      <div class="talk-list">
+        <div>
+          <div class="k">Email</div>
+          <a href="mailto:soundlax.studio@gmail.com">soundlax.studio@gmail.com</a>
+        </div>
+        <div>
+          <div class="k">Based in</div>
+          <p>Aotearoa New Zealand, working worldwide.</p>
+        </div>
+        <div>
+          <div class="k">Best for</div>
+          <p>Support, product feedback, launch opportunities, podcast features, partnerships, and kind hellos.</p>
+        </div>
+        <div>
+          <div class="k">Response time</div>
+          <p>Usually within 1 to 2 business days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <img class="footer-logo" src="/assets/img/logo.svg" alt="SoundLax" height="14" />
+    </div>
+    <div class="footer-col">
+      <h5>Explore</h5>
+      <a href="/soundlax-app#features">Features</a>
+      <a href="/soundlax-app#testimonials">Testimonials</a>
+    </div>
+    <div class="footer-col">
+      <h5>Support</h5>
+      <a href="mailto:soundlax.studio@gmail.com">soundlax.studio@gmail.com</a>
+      <a href="/soundlax/privacypolicy">Privacy Policy</a>
+    </div>
+    <div class="footer-col">
+      <a class="appstore-badge" href="https://apps.apple.com/us/app/soundlax-focus-relax-sleep/id6764812942" aria-label="Download on the App Store">
+        <img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1778630400" alt="Download on the App Store" height="44" />
+      </a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>&copy; 2026 SoundLax. Built for slow moments.</p>
+    <p>&copy; 2026 Bentoji. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=46"></script>
+<script src="/assets/main.js?v=13"></script>
+</body>
+</html>
