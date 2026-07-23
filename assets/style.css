@@ -370,7 +370,7 @@ html.js .reveal.in{opacity:1;transform:none;}
 .cta-inner{
   max-width:900px;
   margin:0 auto;
-  padding-top:clamp(72px,10vw,124px);
+  padding-bottom:clamp(72px,10vw,124px);
 }
 .cta-title{margin-bottom:1rem;}
 .cta-title .line{display:block;}
