@@ -20,12 +20,16 @@ window.PROJECTS = [
     cover: '/assets/img/work/soundlax-thumb.jpg',
     coverClass: 'cover-full',
     gallery: [
-      '/assets/img/work/soundlax-web-1.jpg',
-      '/assets/img/work/soundlax-web-2.jpg',
-      '/assets/img/work/soundlax-web-3.jpg',
-      '/assets/img/work/soundlax-web-4.jpg',
-      '/assets/img/work/soundlax-web-5.jpg'
+      '/assets/img/work/soundlax-case-01.jpg',
+      '/assets/img/work/soundlax-case-02.jpg',
+      '/assets/img/work/soundlax-case-03.jpg',
+      '/assets/img/work/soundlax-case-04.jpg',
+      '/assets/img/work/soundlax-case-05.jpg',
+      '/assets/img/work/soundlax-case-06.jpg',
+      '/assets/img/work/soundlax-case-07.jpg',
+      '/assets/img/work/soundlax-case-08.jpg'
     ],
+    showSidebarCopy: false,
     facts: [
       { k: 'Discipline', v: 'Product design, UX research, UI design, brand identity' },
       { k: 'Type', v: 'iOS app' },

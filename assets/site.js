@@ -355,7 +355,7 @@
             (p.location ? '<div class="work-loc">' + esc(p.location) + '</div>' : '') +
           '</div>' +
         '</div>' +
-        '<div class="work-accordion">' + accHTML + '</div>' +
+        (p.showSidebarCopy === false ? '' : '<div class="work-accordion">' + accHTML + '</div>') +
         '<div class="work-sidebar-foot">' +
           (visitBtn ? '<div class="work-visit-wrap">' + visitBtn + '</div>' : '') +
           (nextBtn  ? '<div class="work-nav-btns">' + nextBtn + '</div>' : '') +
