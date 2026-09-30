@@ -470,7 +470,7 @@
           form.reset();
         } else { throw new Error(res.message || 'failed'); }
       }).catch(function () {
-        if (note) { note.className = 'form-note err'; note.textContent = 'Something went wrong. Please email soundlax.studio@gmail.com directly.'; }
+        if (note) { note.className = 'form-note err'; note.textContent = 'Something went wrong. Please email ben.ng189@gmail.com directly.'; }
       }).finally(function () {
         if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || 'Send'; }
       });
