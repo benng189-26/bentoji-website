@@ -243,6 +243,11 @@
     document.querySelectorAll('[data-work-grid]').forEach(function (grid) {
       var limit = parseInt(grid.getAttribute('data-limit') || '0', 10);
       var visibleProjects = window.PROJECTS.filter(function (project) { return !project.hidden; });
+      // data-featured: show only projects marked featured: true (falls back to all if none are marked)
+      if (grid.hasAttribute('data-featured')) {
+        var featured = visibleProjects.filter(function (project) { return project.featured; });
+        if (featured.length) visibleProjects = featured;
+      }
       var list = limit ? visibleProjects.slice(0, limit) : visibleProjects;
       grid.innerHTML = list.map(cardHTML).join('');
       // re-observe new reveal nodes

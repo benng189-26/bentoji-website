@@ -3,18 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-<title>Bentoji – UI/UX & Product Design Studio, Auckland NZ</title>
-<meta name="description" content="Bentoji is an independent UI/UX and product design studio based in Auckland, New Zealand. Available for new projects. We design apps, websites, and brand identities for startups and growing businesses." />
+<title>Bentoji | Ben Nguyen, Web, App and Brand Designer in Auckland</title>
+<meta name="description" content="I'm Ben Nguyen, a designer in Auckland with 10+ years of experience. I design websites, apps and brands for small businesses and teams, as projects or on a monthly plan." />
 <link rel="canonical" href="https://bentoji.co.nz/" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Bentoji – UI/UX & Product Design Studio, Auckland NZ" />
-<meta property="og:description" content="Independent design studio in Auckland. Available for app design, website design, and brand identity projects." />
+<meta property="og:title" content="Bentoji | Ben Nguyen, Web, App and Brand Designer in Auckland" />
+<meta property="og:description" content="Websites, apps and brands, designed by Ben Nguyen in Auckland. Projects or monthly design support." />
 <meta property="og:url" content="https://bentoji.co.nz/" />
 <meta property="og:image" content="https://bentoji.co.nz/assets/img/app-icon.png" />
 <link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
 
 <script>document.documentElement.classList.add('js');</script>
+<link rel="preload" href="/assets/type/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=46" />
+<link rel="stylesheet" href="/assets/home.css?v=1" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -23,20 +25,21 @@
   "name": "Bentoji",
   "url": "https://bentoji.co.nz",
   "logo": "https://bentoji.co.nz/assets/img/bentoji-logo.svg",
-  "description": "Independent UI/UX and product design studio based in Auckland, New Zealand. Available for new projects.",
+  "description": "The design practice of Ben Nguyen, a web, app and brand designer based in Auckland, New Zealand.",
+  "founder": { "@type": "Person", "name": "Ben Nguyen" },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Auckland",
     "addressCountry": "NZ"
   },
   "areaServed": ["New Zealand", "Australia"],
-  "serviceType": ["UI/UX Design", "Product Design", "App Design", "Website Design", "Brand Identity"],
+  "serviceType": ["Website Design", "App Design", "UI/UX Design", "Brand Identity", "Monthly Design Support"],
   "email": "ben.ng189@gmail.com",
   "sameAs": []
 }
 </script>
 </head>
-<body data-content="/content/homepage.json">
+<body class="home" data-content="/content/homepage.json">
 
 <!-- ============ NAV ============ -->
 <header class="site-nav">
@@ -62,46 +65,63 @@
   <a class="btn btn-light" href="/contact">Let's talk</a>
 </div>
 
-<!-- ============ HERO ============ -->
-<section class="hero">
+<main>
+
+<!-- ============ HERO (dark) ============ -->
+<section class="h-hero h-dark">
   <div class="container">
-    <h1 class="display reveal d1" data-cms="hero.title">Thoughtful digital design, built with care.</h1>
-    <p class="lead reveal d2" data-cms="hero.lead">Bentoji is an independent design studio based in Auckland, New Zealand. We help startups, agencies and growing businesses design digital products, websites and brands that are clear, useful and built to last. Every project is approached collaboratively, with a focus on solving real problems rather than simply making things look good.</p>
-    <div class="hero-actions reveal d3">
-      <a class="btn btn-light btn-lg" href="/portfolio">View work</a>
-      <a class="btn btn-ghost btn-lg" href="/contact">Start a project</a>
-      <a class="btn btn-ghost btn-lg" href="/pricing">See pricing</a>
+    <p class="h-pill reveal" data-cms="hero.pill">Ben Nguyen · Designer, Auckland</p>
+    <h1 class="h-head h-display reveal d1" data-cms="hero.title">I design websites, apps and brands.</h1>
+    <p class="h-lead reveal d2" data-cms="hero.lead">I've spent 10+ years designing for agencies, small businesses and my own apps. Here's some of that work.</p>
+    <div class="h-actions reveal d3">
+      <a class="h-btn h-btn-primary" href="#work">See the work</a>
+      <a class="h-btn h-btn-ghost" href="/contact">Book a free call</a>
     </div>
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="section" id="about">
+<!-- ============ SELECTED WORK (dark) ============ -->
+<!-- Cards come from assets/projects.js: projects marked featured: true, in file order. -->
+<section class="h-section h-dark h-work" id="work">
   <div class="container">
-    <div class="about-layout">
-      <div class="about-head reveal">
-        <p class="eyebrow" data-cms="about.eyebrow">About Bentoji</p>
-        <h2 data-cms="about.heading">Small studio. Direct collaboration. No unnecessary layers.</h2>
-      </div>
-      <div class="about-body reveal d2" data-cms="about.paragraphs">
-        <p>Bentoji is the independent studio of Ben Nguyen, a digital designer with over a decade of experience creating products, websites and digital experiences across New Zealand and Australia.</p>
-        <p>After years working with agencies and product teams, Bentoji was created to offer something simpler: working directly with the designer who actually builds the work.</p>
-        <p>Whether it's designing a new product, improving an existing experience, or creating a brand from scratch, every project stays focused on clarity, usability and thoughtful execution.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CLIENTS ============ -->
-<section class="section clients" aria-labelledby="clients-title">
-  <div class="container">
-    <div class="clients-head reveal">
+    <div class="h-section-head reveal">
       <div>
-        <p class="eyebrow">Clients We've Worked With</p>
-        <h2 id="clients-title">Selected clients from agency and independent work.</h2>
+        <p class="h-pill" data-cms="work.pill">Selected work</p>
+        <h2 class="h-head h-title" data-cms="work.heading">The work</h2>
+      </div>
+      <a class="h-link" href="/portfolio">See all work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="work-grid" data-work-grid data-featured data-limit="4"></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES (grey) ============ -->
+<section class="h-section h-grey" id="services">
+  <div class="container">
+    <p class="h-pill reveal" data-cms="services.pill">Services</p>
+    <h2 class="h-head h-title is-orange reveal d1" data-cms="services.heading">Two ways to work together</h2>
+    <div class="h-services-grid">
+      <div class="h-service reveal">
+        <span class="h-num">01</span>
+        <h3 class="h-head h-sub" data-cms="services.items.0.title">Monthly design</h3>
+        <p data-cms="services.items.0.body">For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up.</p>
+        <a class="h-link" href="/pricing/monthly"><span data-cms="services.items.0.linkText">How monthly design works</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="h-service reveal d2">
+        <span class="h-num">02</span>
+        <h3 class="h-head h-sub" data-cms="services.items.1.title">Projects</h3>
+        <p data-cms="services.items.1.body">Websites, landing pages, apps and brand identities. We start with a free call, and I'll give you a clear estimate after it.</p>
+        <a class="h-link" href="/pricing"><span data-cms="services.items.1.linkText">See project pricing</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
-    <div class="client-marquee reveal d2" aria-label="Selected clients Bentoji has worked with">
+  </div>
+</section>
+
+<!-- ============ BRANDS (grey) ============ -->
+<section class="h-grey h-brands" aria-labelledby="brands-title">
+  <div class="container">
+    <p class="h-brands-label" id="brands-title" data-cms="brands.heading">Brands I've designed for</p>
+    <div class="client-marquee" aria-label="Brands Ben has designed for">
       <div class="client-track">
         <span class="client-logo"><img src="/assets/img/clients/suzuki-nz.svg" alt="Suzuki NZ" /></span>
         <span class="client-logo"><img src="/assets/img/clients/lendlease.svg" alt="Lendlease" /></span>
@@ -126,351 +146,33 @@
   </div>
 </section>
 
-<!-- ============ SERVICES ============ -->
-<section class="section" id="services">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-cms="services.eyebrow">Services</p>
-      <h2 data-cms="services.heading">What we do</h2>
+<!-- ============ ABOUT (dark) ============ -->
+<section class="h-section h-dark" id="about">
+  <div class="container h-about-grid">
+    <div class="reveal">
+      <p class="h-pill" data-cms="about.pill">About</p>
+      <h2 class="h-head h-title" data-cms="about.heading">Hi, I'm Ben.</h2>
     </div>
-    <div class="svc-expanded" data-svc-grid>
-
-      <div class="svc-exp reveal">
-        <div class="svc-visual"><svg viewBox="0 0 460 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="56" y="10" width="108" height="170" rx="13" stroke="rgba(255,255,255,0.18)" stroke-width="0.9"/>
-  <rect x="64" y="23" width="92" height="144" fill="rgba(255,255,255,0.03)"/>
-  <rect x="97" y="15" width="30" height="8" rx="4" fill="rgba(255,255,255,0.14)"/>
-  <line x1="64" y1="34" x2="156" y2="34" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-  <path d="M69 42l4-3.5-4-3.5" stroke="rgba(255,255,255,0.14)" stroke-width="0.9" stroke-linecap="round"/>
-  <rect x="82" y="38" width="48" height="5" rx="2" fill="rgba(255,255,255,0.14)"/>
-  <rect x="68" y="50" width="39" height="33" rx="4" stroke="#F84F22" stroke-width="0.9" fill="#F84F22" fill-opacity="0.08"/>
-  <rect x="73" y="55" width="16" height="3.5" rx="1.5" fill="rgba(255,255,255,0.2)"/>
-  <rect x="73" y="62" width="26" height="7" rx="2" fill="rgba(255,255,255,0.13)"/>
-  <rect x="73" y="72" width="19" height="3" rx="1.5" fill="#F84F22" fill-opacity="0.6"/>
-  <rect x="113" y="50" width="38" height="33" rx="4" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-  <rect x="118" y="55" width="16" height="3.5" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-  <rect x="118" y="62" width="26" height="7" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="118" y="72" width="19" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
-  <line x1="64" y1="90" x2="156" y2="90" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
-  <circle cx="72" cy="100" r="4" stroke="rgba(255,255,255,0.14)" stroke-width="0.8"/>
-  <rect x="81" y="97" width="56" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
-  <rect x="81" y="103" width="36" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
-  <circle cx="72" cy="117" r="4" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-  <rect x="81" y="114" width="48" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="81" y="120" width="40" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
-  <circle cx="72" cy="134" r="4" stroke="rgba(255,255,255,0.08)" stroke-width="0.8"/>
-  <rect x="81" y="131" width="52" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="81" y="137" width="30" height="3" rx="1.5" fill="rgba(255,255,255,0.05)"/>
-  <line x1="64" y1="153" x2="156" y2="153" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-  <circle cx="82" cy="162" r="5" fill="rgba(255,255,255,0.16)"/>
-  <circle cx="100" cy="162" r="5" fill="rgba(255,255,255,0.07)"/>
-  <circle cx="118" cy="162" r="5" fill="rgba(255,255,255,0.07)"/>
-  <circle cx="136" cy="162" r="5" fill="rgba(255,255,255,0.07)"/>
-  <rect x="92" y="177" width="40" height="2.5" rx="1.5" fill="rgba(255,255,255,0.18)"/>
-  <line x1="168" y1="96" x2="288" y2="96" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" stroke-dasharray="4 3"/>
-  <path d="M284 91.5l6 4.5-6 4.5" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-linecap="round" fill="none"/>
-  <rect x="296" y="10" width="108" height="170" rx="13" stroke="rgba(255,255,255,0.18)" stroke-width="0.9"/>
-  <rect x="304" y="23" width="92" height="144" fill="rgba(255,255,255,0.03)"/>
-  <rect x="337" y="15" width="30" height="8" rx="4" fill="rgba(255,255,255,0.14)"/>
-  <circle cx="350" cy="47" r="14" stroke="rgba(255,255,255,0.15)" stroke-width="0.8"/>
-  <circle cx="350" cy="43" r="6" fill="rgba(255,255,255,0.1)"/>
-  <path d="M337 59c0-7 6-13 13-13s13 6 13 13" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-  <rect x="322" y="67" width="56" height="5" rx="2" fill="rgba(255,255,255,0.16)"/>
-  <rect x="332" y="75" width="36" height="4" rx="2" fill="rgba(255,255,255,0.09)"/>
-  <rect x="308" y="86" width="27" height="21" rx="3" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
-  <rect x="341" y="86" width="27" height="21" rx="3" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
-  <rect x="374" y="86" width="27" height="21" rx="3" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
-  <rect x="316" y="90" width="11" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
-  <rect x="349" y="90" width="11" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
-  <rect x="382" y="90" width="11" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
-  <line x1="304" y1="113" x2="396" y2="113" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
-  <rect x="308" y="119" width="50" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="308" y="127" width="38" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
-  <rect x="308" y="136" width="56" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="308" y="144" width="44" height="3" rx="1.5" fill="rgba(255,255,255,0.06)"/>
-  <rect x="308" y="154" width="88" height="20" rx="10" stroke="#F84F22" stroke-width="0.9" fill="#F84F22" fill-opacity="0.1"/>
-  <rect x="326" y="161" width="52" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="332" y="177" width="36" height="2.5" rx="1.5" fill="rgba(255,255,255,0.18)"/>
-</svg></div>
-        <span class="num">01</span>
-        <h4>Product Design</h4>
-        <p class="svc-tagline">From early concepts to polished interfaces, we design products that are intuitive, scalable and enjoyable to use.</p>
-        <p>Whether you're building an MVP or improving an existing platform, we help simplify complex workflows into experiences people actually understand.</p>
-        <p class="svc-list-label">Perfect for:</p>
-        <ul>
-          <li>SaaS</li>
-          <li>Internal tools</li>
-          <li>Customer portals</li>
-          <li>Mobile apps</li>
-          <li>Dashboards</li>
-        </ul>
-        <a class="svc-link" href="/contact">Let's discuss your product <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-
-      <div class="svc-exp reveal d2">
-        <div class="svc-visual"><svg viewBox="0 0 460 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="22" y="14" width="416" height="166" rx="9" stroke="rgba(255,255,255,0.16)" stroke-width="0.9"/>
-  <rect x="22" y="14" width="416" height="30" rx="9" fill="rgba(255,255,255,0.04)"/>
-  <line x1="22" y1="44" x2="438" y2="44" stroke="rgba(255,255,255,0.08)" stroke-width="0.7"/>
-  <circle cx="40" cy="29" r="4" fill="rgba(255,255,255,0.14)"/>
-  <circle cx="53" cy="29" r="4" fill="rgba(255,255,255,0.1)"/>
-  <circle cx="66" cy="29" r="4" fill="rgba(255,255,255,0.07)"/>
-  <rect x="120" y="21" width="220" height="16" rx="8" stroke="rgba(255,255,255,0.1)" stroke-width="0.7"/>
-  <rect x="132" y="26" width="90" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="22" y="44" width="416" height="30" fill="rgba(255,255,255,0.02)"/>
-  <line x1="22" y1="74" x2="438" y2="74" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
-  <rect x="36" y="53" width="44" height="7" rx="2" fill="rgba(255,255,255,0.16)"/>
-  <rect x="220" y="55" width="28" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="258" y="55" width="28" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="296" y="55" width="28" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="340" y="50" width="60" height="18" rx="9" stroke="#F84F22" stroke-width="0.9" fill="#F84F22" fill-opacity="0.1"/>
-  <rect x="352" y="56" width="36" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="36" y="85" width="178" height="11" rx="4" fill="rgba(255,255,255,0.16)"/>
-  <rect x="36" y="100" width="140" height="11" rx="4" fill="rgba(255,255,255,0.12)"/>
-  <rect x="36" y="117" width="168" height="4.5" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="36" y="125" width="140" height="4.5" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="36" y="136" width="96" height="22" rx="11" stroke="#F84F22" stroke-width="0.9" fill="#F84F22" fill-opacity="0.1"/>
-  <rect x="52" y="144" width="64" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
-  <rect x="260" y="80" width="156" height="92" rx="6" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" fill="rgba(255,255,255,0.03)"/>
-  <line x1="260" y1="80" x2="416" y2="172" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="416" y1="80" x2="260" y2="172" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="22" y1="165" x2="438" y2="165" stroke="rgba(255,255,255,0.06)" stroke-width="0.7"/>
-  <rect x="36" y="170" width="118" height="16" rx="4" stroke="rgba(255,255,255,0.08)" stroke-width="0.7"/>
-  <rect x="168" y="170" width="118" height="16" rx="4" stroke="rgba(255,255,255,0.08)" stroke-width="0.7"/>
-  <rect x="300" y="170" width="118" height="16" rx="4" stroke="rgba(255,255,255,0.08)" stroke-width="0.7"/>
-  <rect x="44" y="174" width="60" height="3.5" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-  <rect x="176" y="174" width="60" height="3.5" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-  <rect x="308" y="174" width="60" height="3.5" rx="1.5" fill="rgba(255,255,255,0.1)"/>
-</svg></div>
-        <span class="num">02</span>
-        <h4>Website Design</h4>
-        <p class="svc-tagline">Websites should do more than look good.</p>
-        <p>We design fast, responsive websites that communicate clearly, convert visitors and are easy to maintain. Whether it's a marketing site, company website or landing page, every decision is made with usability and business goals in mind.</p>
-        <p class="svc-list-label">Perfect for:</p>
-        <ul>
-          <li>Company websites</li>
-          <li>Landing pages</li>
-          <li>Marketing campaigns</li>
-          <li>Product launches</li>
-        </ul>
-        <a class="svc-link" href="/contact">Start your website project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-
-      <div class="svc-exp reveal">
-        <div class="svc-visual"><svg viewBox="0 0 460 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <line x1="50" y1="0" x2="50" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="110" y1="0" x2="110" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="170" y1="0" x2="170" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="230" y1="0" x2="230" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="290" y1="0" x2="290" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="350" y1="0" x2="350" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="410" y1="0" x2="410" y2="192" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="0" y1="48" x2="460" y2="48" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="0" y1="96" x2="460" y2="96" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="0" y1="144" x2="460" y2="144" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <circle cx="218" cy="96" r="72" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <circle cx="218" cy="96" r="50" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-  <circle cx="242" cy="96" r="72" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"/>
-  <line x1="80" y1="96" x2="380" y2="96" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
-  <line x1="230" y1="14" x2="230" y2="178" stroke="rgba(255,255,255,0.1)" stroke-width="0.7" stroke-dasharray="3 3"/>
-  <line x1="168" y1="45" x2="290" y2="147" stroke="rgba(255,255,255,0.05)" stroke-width="0.6"/>
-  <line x1="168" y1="147" x2="290" y2="45" stroke="rgba(255,255,255,0.05)" stroke-width="0.6"/>
-  <line x1="30" y1="22" x2="46" y2="22" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="38" y1="14" x2="38" y2="30" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="422" y1="22" x2="438" y2="22" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="430" y1="14" x2="430" y2="30" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="30" y1="170" x2="46" y2="170" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="38" y1="162" x2="38" y2="178" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="422" y1="170" x2="438" y2="170" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <line x1="430" y1="162" x2="430" y2="178" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-  <circle cx="230" cy="96" r="18" stroke="#F84F22" stroke-width="0.9" fill="#F84F22" fill-opacity="0.07"/>
-  <circle cx="230" cy="96" r="3" fill="#F84F22"/>
-  <rect x="370" y="48" width="60" height="20" rx="4" fill="rgba(255,255,255,0.1)"/>
-  <rect x="370" y="74" width="60" height="20" rx="4" fill="rgba(255,255,255,0.07)"/>
-  <rect x="370" y="100" width="60" height="20" rx="4" fill="#F84F22" fill-opacity="0.28"/>
-  <rect x="370" y="126" width="60" height="20" rx="4" fill="rgba(255,255,255,0.05)"/>
-</svg></div>
-        <span class="num">03</span>
-        <h4>Brand &amp; Graphic Design</h4>
-        <p class="svc-tagline">Strong brands are built through consistency.</p>
-        <p>We help shape visual identities and create supporting design assets that feel cohesive across every touchpoint, from logos and presentations to social graphics and marketing campaigns.</p>
-        <p class="svc-list-label">Services include:</p>
-        <ul>
-          <li>Brand identity</li>
-          <li>Presentation design</li>
-          <li>Campaign graphics</li>
-          <li>Social assets</li>
-          <li>Print collateral</li>
-        </ul>
-        <a class="svc-link" href="/contact">Let's build your brand <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-
-      <div class="svc-exp reveal d2">
-        <div class="svc-visual"><svg viewBox="0 0 460 192" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g transform="rotate(-4 225 110)">
-    <rect x="75" y="24" width="270" height="152" rx="6" stroke="rgba(255,255,255,0.07)" stroke-width="0.8" fill="rgba(255,255,255,0.015)"/>
-  </g>
-  <g transform="rotate(-2 225 110)">
-    <rect x="65" y="16" width="270" height="152" rx="6" stroke="rgba(255,255,255,0.1)" stroke-width="0.8" fill="rgba(255,255,255,0.02)"/>
-  </g>
-  <rect x="54" y="10" width="270" height="152" rx="6" stroke="rgba(255,255,255,0.16)" stroke-width="0.9" fill="rgba(255,255,255,0.03)"/>
-  <rect x="54" y="10" width="270" height="24" rx="6" fill="#F84F22" fill-opacity="0.16"/>
-  <line x1="54" y1="34" x2="324" y2="34" stroke="#F84F22" stroke-opacity="0.25" stroke-width="0.8"/>
-  <rect x="64" y="17" width="80" height="5" rx="2" fill="rgba(255,255,255,0.22)"/>
-  <rect x="282" y="17" width="32" height="5" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <line x1="189" y1="42" x2="189" y2="154" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-  <rect x="64" y="42" width="110" height="6" rx="2" fill="rgba(255,255,255,0.16)"/>
-  <rect x="64" y="52" width="80" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="64" y="60" width="96" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="64" y="68" width="72" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-  <rect x="64" y="78" width="115" height="48" rx="3" stroke="rgba(255,255,255,0.09)" stroke-width="0.7" fill="rgba(255,255,255,0.03)"/>
-  <line x1="64" y1="78" x2="179" y2="126" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <line x1="179" y1="78" x2="64" y2="126" stroke="rgba(255,255,255,0.04)" stroke-width="0.7"/>
-  <rect x="64" y="132" width="100" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="64" y="140" width="80" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="64" y="148" width="90" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="199" y="42" width="98" height="6" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="199" y="52" width="108" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="199" y="60" width="88" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="199" y="68" width="100" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="199" y="76" width="80" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="199" y="88" width="3" height="28" rx="1.5" fill="#F84F22" fill-opacity="0.7"/>
-  <rect x="208" y="92" width="85" height="4" rx="2" fill="rgba(255,255,255,0.12)"/>
-  <rect x="208" y="100" width="70" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="208" y="108" width="78" height="4" rx="2" fill="rgba(255,255,255,0.1)"/>
-  <rect x="199" y="124" width="98" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-  <rect x="199" y="132" width="80" height="4" rx="2" fill="rgba(255,255,255,0.07)"/>
-  <rect x="199" y="140" width="88" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="199" y="148" width="70" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
-  <rect x="338" y="28" width="86" height="114" rx="5" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" fill="rgba(255,255,255,0.025)"/>
-  <rect x="338" y="28" width="86" height="22" rx="5" fill="rgba(255,255,255,0.06)"/>
-  <rect x="348" y="34" width="46" height="5" rx="2" fill="rgba(255,255,255,0.14)"/>
-  <rect x="348" y="58" width="66" height="4" rx="2" fill="rgba(255,255,255,0.08)"/>
-  <rect x="348" y="66" width="50" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="348" y="74" width="58" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="348" y="86" width="66" height="28" rx="3" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="0.7"/>
-  <rect x="348" y="120" width="66" height="4" rx="2" fill="rgba(255,255,255,0.06)"/>
-  <rect x="348" y="128" width="50" height="4" rx="2" fill="rgba(255,255,255,0.05)"/>
-  <rect x="338" y="48" width="4" height="22" rx="2" fill="#F84F22" fill-opacity="0.5"/>
-</svg></div>
-        <span class="num">04</span>
-        <h4>Editorial &amp; Collateral</h4>
-        <p class="svc-tagline">Sometimes the most effective communication still happens outside the screen.</p>
-        <p>We design reports, brochures, annual reports, event materials and other printed or digital publications that make information easier to read and more engaging to explore.</p>
-        <p class="svc-list-label">Services include:</p>
-        <ul>
-          <li>Annual reports</li>
-          <li>Editorial layouts</li>
-          <li>Brochures &amp; booklets</li>
-          <li>Event collateral</li>
-          <li>Sales material</li>
-        </ul>
-        <a class="svc-link" href="/contact">Talk about your project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-
+    <div class="h-about-body reveal d2" data-cms="about.paragraphs">
+      <p>I spent six years at Avidly, an APAC HubSpot partner, the last four leading design on websites, customer portals and web apps for clients across New Zealand and Australia.</p>
+      <p>Since 2025 I've worked for myself, designing for small businesses and building my own apps. I started out writing HTML and CSS, so I design with the build in mind, and developers tend to find my files easy to work with.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ WHY BENTOJI ============ -->
-<section class="section" id="why">
+<!-- ============ CLOSE (grey) ============ -->
+<section class="h-section h-grey h-close">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-cms="why.eyebrow">Why work together</p>
-      <h2 data-cms="why.heading">What you can expect</h2>
+    <h2 class="h-head h-title is-orange reveal" data-cms="cta.heading">Got something in mind?</h2>
+    <p class="h-lead reveal d1" data-cms="cta.body">Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost.</p>
+    <div class="h-actions reveal d2">
+      <a class="h-btn h-btn-dark" href="/contact">Book a free call</a>
     </div>
-    <div class="why-grid" data-why-grid>
-      <div class="why-item reveal">
-        <h4>Independent by choice</h4>
-        <p>You'll work directly with the designer doing the work, from the first conversation to the final handoff.</p>
-      </div>
-      <div class="why-item reveal d2">
-        <h4>Practical, not flashy</h4>
-        <p>Design should solve problems, not create them. Every decision balances usability, aesthetics and technical feasibility.</p>
-      </div>
-      <div class="why-item reveal">
-        <h4>Cross-disciplinary</h4>
-        <p>Experience across UX, UI, branding, motion, websites and marketing means ideas stay consistent from concept to launch.</p>
-      </div>
-      <div class="why-item reveal d2">
-        <h4>Built for collaboration</h4>
-        <p>Comfortable working alongside developers, marketers, founders and product teams, whether joining an existing workflow or leading the design process.</p>
-      </div>
-    </div>
+    <p class="h-small reveal d2">or email <a href="mailto:soundlax.studio@gmail.com">soundlax.studio@gmail.com</a></p>
   </div>
 </section>
 
-<!-- ============ PROCESS ============ -->
-<section class="section" id="process">
-  <div class="container">
-    <div class="section-head reveal">
-      <p class="eyebrow" data-cms="process.eyebrow">How it works</p>
-      <h2 data-cms="process.heading">How projects usually work</h2>
-    </div>
-    <div class="process-grid" data-process-grid>
-      <div class="process-step reveal">
-        <span class="step-num">01</span>
-        <h4>Discovery</h4>
-        <p>Understand your goals, audience and constraints before opening Figma.</p>
-      </div>
-      <div class="process-step reveal d2">
-        <span class="step-num">02</span>
-        <h4>Design</h4>
-        <p>Explore ideas, refine direction and iterate together until everything feels right.</p>
-      </div>
-      <div class="process-step reveal">
-        <span class="step-num">03</span>
-        <h4>Build</h4>
-        <p>Work closely with developers (or build simple websites ourselves) to ensure the final product matches the design.</p>
-      </div>
-      <div class="process-step reveal d2">
-        <span class="step-num">04</span>
-        <h4>Improve</h4>
-        <p>Launch isn't the finish line. Continue refining based on feedback, analytics and real-world use.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ SELECTED WORK ============ -->
-<section class="section" id="work">
-  <div class="container">
-    <div class="section-head reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;max-width:none">
-      <div>
-        <p class="eyebrow" data-cms="work.eyebrow">Selected work</p>
-        <h2 data-cms="work.heading">A collection of products, websites and digital experiences designed across healthcare, property, technology, finance, events and independent products.</h2>
-      </div>
-      <a class="text-link" href="/portfolio">All work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-    <div class="work-grid" data-work-grid data-limit="0"></div>
-  </div>
-</section>
-
-<!-- ============ CTA ============ -->
-<section class="section section-ink ink-glow">
-  <div class="container">
-    <div class="cta-callout reveal" style="background:transparent;border-color:rgba(255,255,255,.1);">
-      <div class="cta-callout-inner">
-        <div class="cta-callout-text">
-          <h2 data-cms="cta.heading">Have something in mind?</h2>
-          <p data-cms="cta.body">Tell us about your product, brand or idea. We would love to hear it. We take on a small number of projects at a time.</p>
-          <div class="hero-actions">
-            <a class="btn btn-light btn-lg" href="/contact">Start a project</a>
-            <a class="btn btn-ghost btn-lg" href="/pricing">See pricing</a>
-            <a class="btn btn-ghost btn-lg" href="mailto:soundlax.studio@gmail.com">Email us</a>
-          </div>
-        </div>
-        <div class="cta-visual" aria-hidden="true">
-          <div class="cta-visual-mark">
-            <div class="cta-visual-lines">
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="site-footer">
@@ -478,29 +180,29 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
-        <p data-cms="footer.blurb">Bentoji is an independent design studio based in Auckland, helping businesses create thoughtful digital products, websites and visual identities.</p>
+        <p data-cms="footer.blurb">Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="/portfolio">Work</a>
+        <a href="/pricing">Pricing</a>
         <a href="/soundlax-app">SoundLax app</a>
-        <a href="/writing">Writing</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
         <h5>Connect</h5>
         <a href="mailto:soundlax.studio@gmail.com">soundlax.studio@gmail.com</a>
-        <a href="/contact">Start a project</a>
+        <a href="/contact">Book a free call</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bentoji Studio. All rights reserved.</span>
+      <span>© <span data-year>2026</span> Bentoji. All rights reserved.</span>
       <span>Made in Aotearoa New Zealand</span>
     </div>
   </div>
 </footer>
 
-<script src="/assets/projects.js?v=17"></script>
-<script src="/assets/site.js?v=33"></script>
+<script src="/assets/projects.js?v=18"></script>
+<script src="/assets/site.js?v=34"></script>
 </body>
 </html>

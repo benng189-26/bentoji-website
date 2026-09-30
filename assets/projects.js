@@ -4,12 +4,15 @@
    "BN Selected works | 2026" Figma case studies.
    To ADD a project: copy a block and edit.
    - thumb   : card image
+   - featured: true shows the project on the homepage (in file order, max 4)
+   - hidden  : true hides it everywhere
    - gallery : screenshots shown on the detail page (native <img>)
    - body    : {h} heading, {p} paragraph, {list:[...]} bullet list
    =================================================================== */
 window.PROJECTS = [
   {
     slug: 'soundlax',
+    featured: true,
     title: 'SoundLax',
     year: '2026',
     category: 'Product & App Design',
@@ -130,6 +133,7 @@ window.PROJECTS = [
 
   {
     slug: 'cohesive-construction',
+    featured: true,
     title: 'Cohesive Construction',
     year: '2026',
     category: 'Website',
@@ -294,6 +298,7 @@ window.PROJECTS = [
 
   {
     slug: 'autodesk-flow-capture',
+    featured: true,
     title: 'Autodesk Flow Capture',
     year: '2024',
     category: 'Website',
@@ -348,6 +353,7 @@ window.PROJECTS = [
 
   {
     slug: 'kmart',
+    featured: true,
     title: 'Kmart Brand & Website Redesign Concept',
     year: '2024',
     category: 'Brand & Web Concept',

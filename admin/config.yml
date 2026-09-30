@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: benng189-26/soundlax-lp
+  repo: benng189-26/bentoji-website
   branch: main
   base_url: https://www.bentoji.co.nz
   auth_endpoint: /api/auth
@@ -60,79 +60,51 @@ collections:
             label: "Hero"
             widget: object
             fields:
-              - {label: "Headline", name: title, widget: string}
-              - {label: "Lead Paragraph", name: lead, widget: text}
-          - name: about
-            label: "About Section"
+              - {label: "Pill Label", name: pill, widget: string}
+              - {label: "Headline", name: title, widget: string, hint: "Shown in capitals automatically. Keep it short."}
+              - {label: "Line Under Headline", name: lead, widget: text}
+          - name: work
+            label: "Selected Work"
             widget: object
+            hint: "The project cards come from assets/projects.js (projects marked featured: true)."
             fields:
-              - {label: "Eyebrow Label", name: eyebrow, widget: string}
+              - {label: "Pill Label", name: pill, widget: string}
               - {label: "Heading", name: heading, widget: string}
-              - name: paragraphs
-                label: "Paragraphs"
-                widget: list
-                field: {label: "Paragraph", name: paragraph, widget: text}
           - name: services
-            label: "What We Do (Services)"
+            label: "Services"
             widget: object
             fields:
-              - {label: "Eyebrow Label", name: eyebrow, widget: string}
+              - {label: "Pill Label", name: pill, widget: string}
               - {label: "Heading", name: heading, widget: string}
               - name: items
                 label: "Service Cards"
                 label_singular: "Service"
                 widget: list
-                summary: "{{fields.title}}"
-                fields:
-                  - {label: "Title", name: title, widget: string}
-                  - {label: "Tagline", name: tagline, widget: text}
-                  - name: paragraphs
-                    label: "Paragraphs"
-                    widget: list
-                    field: {label: "Paragraph", name: paragraph, widget: text}
-                  - {label: "List Label", name: listLabel, widget: string, required: false}
-                  - name: list
-                    label: "List Items"
-                    widget: list
-                    required: false
-                    field: {label: "Item", name: item, widget: string}
-                  - {label: "Link Text", name: linkText, widget: string, required: false}
-          - name: why
-            label: "What You Can Expect"
-            widget: object
-            fields:
-              - {label: "Eyebrow Label", name: eyebrow, widget: string}
-              - {label: "Heading", name: heading, widget: string}
-              - name: items
-                label: "Points"
-                label_singular: "Point"
-                widget: list
+                min: 2
+                max: 2
+                hint: "Card 1 links to /pricing/monthly, card 2 links to /pricing."
                 summary: "{{fields.title}}"
                 fields:
                   - {label: "Title", name: title, widget: string}
                   - {label: "Body", name: body, widget: text}
-          - name: process
-            label: "How Projects Usually Work"
+                  - {label: "Link Text", name: linkText, widget: string}
+          - name: brands
+            label: "Brands"
             widget: object
             fields:
-              - {label: "Eyebrow Label", name: eyebrow, widget: string}
+              - {label: "Label", name: heading, widget: string}
+          - name: about
+            label: "About"
+            widget: object
+            fields:
+              - {label: "Pill Label", name: pill, widget: string}
               - {label: "Heading", name: heading, widget: string}
-              - name: items
-                label: "Steps"
-                label_singular: "Step"
+              - name: paragraphs
+                label: "Paragraphs"
                 widget: list
-                summary: "{{fields.title}}"
-                fields:
-                  - {label: "Title", name: title, widget: string}
-                  - {label: "Body", name: body, widget: text}
-          - name: work
-            label: "Selected Work (Heading)"
-            widget: object
-            fields:
-              - {label: "Eyebrow Label", name: eyebrow, widget: string}
-              - {label: "Heading", name: heading, widget: text}
+                field: {label: "Paragraph", name: paragraph, widget: text}
           - name: cta
-            label: "Call To Action"
+            label: "Closing Call To Action"
             widget: object
             fields:
               - {label: "Heading", name: heading, widget: string}
@@ -141,7 +113,7 @@ collections:
             label: "Footer"
             widget: object
             fields:
-              - {label: "Studio Blurb", name: blurb, widget: text}
+              - {label: "Footer Blurb", name: blurb, widget: text}
 
   # ─────────────────────────────────────────────────
   # Contact page

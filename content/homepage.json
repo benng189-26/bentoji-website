@@ -1,139 +1,45 @@
 {
   "hero": {
-    "title": "Thoughtful digital design, built with care.",
-    "lead": "Bentoji is an independent design studio based in Auckland, New Zealand. We help startups, agencies and growing businesses design digital products, websites and brands."
-  },
-  "about": {
-    "eyebrow": "About Bentoji",
-    "heading": "Small studio. Direct collab. No unnecessary layers.",
-    "paragraphs": [
-      "Bentoji is the independent studio of Ben Nguyen, a digital designer with over a decade of experience creating products, websites and digital experiences across New Zealand and Australia.",
-      "After years working with agencies and product teams, Bentoji was created to offer something simpler: working directly with the designer who actually builds the work.",
-      "Whether it's designing a new product, improving an existing experience, every project stays focused on clarity, usability and thoughtful execution."
-    ]
-  },
-  "services": {
-    "eyebrow": "Services",
-    "heading": "What we do",
-    "items": [
-      {
-        "title": "Product Design",
-        "tagline": "From early concepts to polished interfaces, we design products that are intuitive, scalable and enjoyable to use.",
-        "paragraphs": [
-          "Whether you're building an MVP or improving an existing platform, we help simplify complex workflows into experiences people actually understand."
-        ],
-        "listLabel": "Perfect for:",
-        "list": [
-          "SaaS",
-          "Internal tools",
-          "Customer portals",
-          "Mobile apps",
-          "Dashboards"
-        ],
-        "linkText": "Let's discuss your product"
-      },
-      {
-        "title": "Website Design",
-        "tagline": "Websites should do more than look good.",
-        "paragraphs": [
-          "We design fast, responsive websites that communicate clearly, convert visitors and are easy to maintain. Whether it's a marketing site, company website or landing page, every decision is made with usability and business goals in mind."
-        ],
-        "listLabel": "Perfect for:",
-        "list": [
-          "Company websites",
-          "Landing pages",
-          "Marketing campaigns",
-          "Product launches"
-        ],
-        "linkText": "Start your website project"
-      },
-      {
-        "title": "Brand & Graphic Design",
-        "tagline": "Strong brands are built through consistency.",
-        "paragraphs": [
-          "We help shape visual identities and create supporting design assets that feel cohesive across every touchpoint, from logos and presentations to social graphics and marketing campaigns."
-        ],
-        "listLabel": "Services include:",
-        "list": [
-          "Brand identity",
-          "Presentation design",
-          "Campaign graphics",
-          "Social assets",
-          "Print collateral"
-        ],
-        "linkText": "Let's build your brand"
-      },
-      {
-        "title": "Editorial & Collateral",
-        "tagline": "Sometimes the most effective communication still happens outside the screen.",
-        "paragraphs": [
-          "We design reports, brochures, annual reports, event materials and other printed or digital publications that make information easier to read and more engaging to explore."
-        ],
-        "listLabel": "Services include:",
-        "list": [
-          "Annual reports",
-          "Editorial layouts",
-          "Brochures & booklets",
-          "Event collateral",
-          "Sales material"
-        ],
-        "linkText": "Talk about your project"
-      }
-    ]
-  },
-  "why": {
-    "eyebrow": "Why work together",
-    "heading": "What you can expect",
-    "items": [
-      {
-        "title": "Independent by choice",
-        "body": "You'll work directly with the designer doing the work, from the first conversation to the final handoff."
-      },
-      {
-        "title": "Practical, not flashy",
-        "body": "Design should solve problems, not create them. Every decision balances usability, aesthetics and technical feasibility."
-      },
-      {
-        "title": "Cross-disciplinary",
-        "body": "Experience across UX, UI, branding, motion, websites and marketing means ideas stay consistent from concept to launch."
-      },
-      {
-        "title": "Built for collaboration",
-        "body": "Comfortable working alongside developers, marketers, founders and product teams, whether joining an existing workflow or leading the design process."
-      }
-    ]
-  },
-  "process": {
-    "eyebrow": "How it works",
-    "heading": "How projects usually work",
-    "items": [
-      {
-        "title": "Discovery",
-        "body": "Understand your goals, audience and constraints before opening Figma."
-      },
-      {
-        "title": "Design",
-        "body": "Explore ideas, refine direction and iterate together until everything feels right."
-      },
-      {
-        "title": "Build",
-        "body": "Work closely with developers (or build simple websites ourselves) to ensure the final product matches the design."
-      },
-      {
-        "title": "Improve",
-        "body": "Launch isn't the finish line. Continue refining based on feedback, analytics and real-world use."
-      }
-    ]
+    "pill": "Ben Nguyen · Designer, Auckland",
+    "title": "I design websites, apps and brands.",
+    "lead": "I've spent 10+ years designing for agencies, small businesses and my own apps. Here's some of that work."
   },
   "work": {
-    "eyebrow": "Selected work",
-    "heading": "A collection of products, websites, and digital experiences we’ve designed and built."
+    "pill": "Selected work",
+    "heading": "The work"
+  },
+  "services": {
+    "pill": "Services",
+    "heading": "Two ways to work together",
+    "items": [
+      {
+        "title": "Monthly design",
+        "body": "For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up.",
+        "linkText": "How monthly design works"
+      },
+      {
+        "title": "Projects",
+        "body": "Websites, landing pages, apps and brand identities. We start with a free call, and I'll give you a clear estimate after it.",
+        "linkText": "See project pricing"
+      }
+    ]
+  },
+  "brands": {
+    "heading": "Brands I've designed for"
+  },
+  "about": {
+    "pill": "About",
+    "heading": "Hi, I'm Ben.",
+    "paragraphs": [
+      "I spent six years at Avidly, an APAC HubSpot partner, the last four leading design on websites, customer portals and web apps for clients across New Zealand and Australia.",
+      "Since 2025 I've worked for myself, designing for small businesses and building my own apps. I started out writing HTML and CSS, so I design with the build in mind, and developers tend to find my files easy to work with."
+    ]
   },
   "cta": {
-    "heading": "Have something in mind?",
-    "body": "Tell us about your product, brand or idea. We would love to hear it. We take on a small number of projects at a time."
+    "heading": "Got something in mind?",
+    "body": "Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost."
   },
   "footer": {
-    "blurb": "Bentoji is an independent design studio based in Auckland, helping businesses create thoughtful digital products, websites and visual identities."
+    "blurb": "Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands."
   }
 }
