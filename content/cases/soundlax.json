@@ -1,6 +1,6 @@
 {
   "slug": "soundlax",
-  "name": "SoundLax",
+  "name": "SoundLax app",
   "theme": {
     "dark": "#060d27",
     "dark2": "#0d1838",
@@ -51,7 +51,7 @@
     {
       "id": "brief",
       "nav": "The brief",
-      "tone": "dark",
+      "tone": "grey",
       "pill": "The brief",
       "heading": "What are you listening to?",
       "blocks": [
@@ -147,7 +147,7 @@
     {
       "id": "visual-language",
       "nav": "Visual language",
-      "tone": "dark",
+      "tone": "grey",
       "pill": "Visual language",
       "heading": "Calm, without the blue gradients",
       "blocks": [
@@ -192,8 +192,7 @@
           "type": "image",
           "src": "/assets/img/work/soundlax/visual-language.webp",
           "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration",
-          "caption": "Type, colour, scenes and the bird set, side by side.",
-          "seamless": true
+          "caption": "Type, colour, scenes and the bird set, side by side."
         },
         {
           "type": "image",
@@ -258,7 +257,7 @@
     {
       "id": "after-launch",
       "nav": "After launch",
-      "tone": "dark",
+      "tone": "grey",
       "pill": "After launch",
       "heading": "What people said",
       "blocks": [

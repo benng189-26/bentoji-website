@@ -7,7 +7,7 @@
    JSON shape
    ----------
    {
-     "name":  "SoundLax",                        shown in the sticky section menu
+     "name":  "SoundLax app",                    shown in the section menu
      "theme": { "dark": "#060d27", "dark2": "#0d1736", "accent": "#f94e22" },
      "hero":  { "pill", "title", "intro", "links": [{text, href}], "image": IMAGE },
      "facts": [{ "k": "Role", "v": "…", "href": optional }],
@@ -32,10 +32,10 @@
    placeholder box shows what to export. Export the file to that exact
    path and it replaces the placeholder automatically.
 
-   Sections default to "tone": "dark", so the page reads as one
-   canvas. Use "grey" only for a deliberate change of mood.
-   Sections with "id" and "nav" appear in the sticky section menu,
-   numbered in order.
+   Sections alternate "tone": "dark" and "grey". Two dark sections in a
+   row get a hairline between them.
+   Sections with "id" and "nav" appear in the floating section menu at
+   the bottom of the screen, numbered in order.
 
    Image sizes (export at 2x, JPG quality 80, under 400 KB):
    hero          2400 x 1440  (5:3)
@@ -152,10 +152,10 @@
       }).join('') + '</dl>' : '');
     html += '</div></section>';
 
-    /* sticky section menu (stays under the site nav while reading) */
+    /* section menu: floating bar at the bottom, shown while reading */
     var navs = (d.sections || []).filter(function (s) { return s.nav && s.id; });
     if (navs.length) {
-      html += '<nav class="c-subnav" aria-label="Case study sections"><div class="container c-subnav-inner">' +
+      html += '<nav class="c-subnav" aria-label="Case study sections"><div class="c-subnav-inner">' +
         '<a class="c-subnav-name" href="#top">' + esc(d.name || '') + '</a>' +
         '<div class="c-subnav-links">' + navs.map(function (s, i) {
           return '<a href="#' + esc(s.id) + '" data-sub="' + esc(s.id) + '"><span>' + (i < 9 ? '0' : '') + (i + 1) + '</span>' + esc(s.nav) + '</a>';
@@ -203,11 +203,10 @@
     }
   }
 
-  /* ---------- sticky section menu ---------- */
+  /* ---------- section menu ---------- */
   function offset() {
     var nav = document.querySelector('.site-nav');
-    var sub = document.querySelector('.c-subnav');
-    return (nav ? nav.offsetHeight : 0) + (sub ? sub.offsetHeight : 0) - 1;
+    return nav ? nav.offsetHeight : 0;
   }
   function scrollToEl(el, smooth) {
     var top = el.id === 'top' ? 0 : el.getBoundingClientRect().top + window.scrollY - offset() + 1;
@@ -245,7 +244,12 @@
         a.classList.toggle('is-active', on);
         if (on) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
       });
-      sub.classList.toggle('is-stuck', sub.getBoundingClientRect().top <= (document.querySelector('.site-nav') || {offsetHeight: 0}).offsetHeight + 1);
+      /* show after the hero, hide again at the end of the case study */
+      var hero = main.querySelector('.c-hero');
+      var end = main.querySelector('.c-next');
+      var pastHero = hero && hero.getBoundingClientRect().bottom < window.innerHeight * 0.5;
+      var atEnd = end && end.getBoundingClientRect().top < window.innerHeight * 0.85;
+      sub.classList.toggle('is-visible', !!(pastHero && !atEnd));
     }
     var ticking = false;
     window.addEventListener('scroll', function () {

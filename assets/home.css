@@ -14,7 +14,7 @@ body.home{
   --h-orange:#f4552a;
   --h-orange-dark:#d9431c;
   --h-on-dark:#f3f4f6;
-  --h-muted-dark:rgba(243,244,246,.64);
+  --h-muted-dark:rgba(243,244,246,.8);
   --h-line-dark:rgba(255,255,255,.12);
   --h-ink:#0f151c;
   --h-muted-light:#4f5864;
@@ -213,3 +213,9 @@ body.home{
 .home .footer-col a{font-size:1.1rem;}
 .home .footer-col h5{font-size:.8rem;}
 .home .footer-bottom{font-size:1rem;}
+
+/* Pills use Space Grotesk: Darker Grotesque's tall ascent makes the
+   space above capitals bigger than below, so pills looked top-heavy. */
+.home .h-pill{font-family:var(--font-head);font-size:.72rem;font-weight:600;letter-spacing:.08em;padding:6px 12px;line-height:1.2;}
+.home .h-dark .h-pill,.home .h-grey .h-pill{color:#fff;}
+.home .h-pill.is-light,.home .h-dark .h-pill.is-light{color:var(--h-ink);}
