@@ -13,6 +13,7 @@ window.PROJECTS = [
   {
     slug: 'soundlax',
     featured: true,
+    link: '/work/soundlax/',
     title: 'SoundLax',
     year: '2026',
     category: 'Product & App Design',

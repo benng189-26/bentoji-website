@@ -1,0 +1,221 @@
+{
+  "slug": "soundlax",
+  "theme": { "dark": "#060d27", "dark2": "#0d1838", "accent": "#f94e22" },
+
+  "hero": {
+    "pill": "Product design and build",
+    "title": "A sound app you don't have to browse",
+    "intro": "I designed, built and launched SoundLax on my own. It's an ambient sound app for focus, rest and sleep.",
+    "links": [
+      { "text": "See it on the App Store", "href": "https://apps.apple.com/us/app/soundlax-focus-relax-sleep/id6764812942" },
+      { "text": "SoundLax website", "href": "/soundlax-app" }
+    ],
+    "image": { "src": "/assets/img/work/soundlax/hero.webp", "alt": "SoundLax home screen on an iPhone, held over an orange and red gradient" }
+  },
+
+  "facts": [
+    { "k": "Client", "v": "My own product" },
+    { "k": "Role", "v": "Product design, brand, SwiftUI build, launch" },
+    { "k": "Team", "v": "Just me" },
+    { "k": "Platforms", "v": "iPhone, iPad, Apple Watch, Mac" },
+    { "k": "Year", "v": "{{2025 to 2026, check the launch date}}" }
+  ],
+
+  "sections": [
+    {
+      "id": "brief", "nav": "The brief", "tone": "grey",
+      "pill": "The brief",
+      "heading": "What are you listening to?",
+      "blocks": [
+        { "type": "text", "p": ["Before I designed anything, I asked twelve friends one question: what do you listen to while you work?"] },
+        { "type": "chips", "items": ["An airport livestream", "A street camera in Tokyo", "A white noise playlist on Spotify", "A ten-hour rain video"] },
+        { "type": "statement", "text": "Four of the twelve used background sound. None of them used a sound app." },
+        { "type": "text", "p": [
+          "The need was there. The apps built for it just weren't worth opening, so people put up with ads and autoplay to get some rain on.",
+          "The brief I set myself was [[one place to put a sound on in a couple of seconds]], without being sold a programme. I was also building it alone, so every feature had to be something I could design, code and look after myself."
+        ] }
+      ]
+    },
+
+    {
+      "id": "decisions", "nav": "Decisions", "tone": "dark",
+      "pill": "Decisions",
+      "heading": "Three things I left out",
+      "blocks": [
+        {
+          "type": "decision", "num": "01",
+          "title": "No library on the home screen",
+          "p": [
+            "Most sound apps open on a grid of hundreds of tracks and a search bar. SoundLax opens on four birds, each one a mood: tūī for sharp focus, ruru for deep work, fantail for light and easy, kererū for relaxing.",
+            "People pick how they want to feel, and the sound is already chosen. {{Is the full sound list one tap away? If so, say so here.}}"
+          ],
+          "image": {
+            "src": "/assets/img/work/soundlax/closeup-start-here.jpg",
+            "alt": "Close-up of the four bird mood cards on the SoundLax home screen",
+            "prepare": "Close-up of the 'Start here' section on the home screen: the four bird cards, cropped tight enough to read the labels and see the grain. Fix KERERŪ spelling if needed.",
+            "size": "1600 × 1200 JPG, on navy #060D27",
+            "ratio": "4/3",
+            "caption": "The home screen asks for a mood, not a search term."
+          }
+        },
+        {
+          "type": "decision", "num": "02", "flip": true,
+          "title": "No player that disappears",
+          "p": [
+            "In the apps I tried, the playback controls vanished as soon as I went looking for something else.",
+            "In SoundLax the now-playing bar stays at the bottom of every screen, so changing the mix or stopping a sound is one tap from anywhere in the app."
+          ],
+          "image": {
+            "src": "/assets/img/work/soundlax/closeup-player-bar.jpg",
+            "alt": "The same now-playing bar at the bottom of two different SoundLax screens",
+            "prepare": "The bottom third of two different screens side by side (for example Home and Sleep), with the same now-playing bar on both.",
+            "size": "1600 × 1000 JPG, on navy #060D27",
+            "ratio": "16/10",
+            "caption": "Same bar, every screen."
+          }
+        },
+        {
+          "type": "decision", "num": "03",
+          "title": "No mixer on every screen",
+          "p": [
+            "Some people want to layer rain over café noise and set each volume. Most just want a sound on.",
+            "So the mixer sits behind one card, 'Mix your own set', instead of on every screen. It's there for the people who want it and out of the way for everyone else."
+          ],
+          "image": {
+            "src": "/assets/img/work/soundlax/closeup-mixer.jpg",
+            "alt": "The SoundLax mixer with three sounds layered and their volume sliders",
+            "prepare": "The mixer open with two or three sounds layered (for example Brown Noise, Café Ambience and Soft Piano) and their volume sliders.",
+            "size": "1600 × 1200 JPG, on navy #060D27",
+            "ratio": "4/3",
+            "caption": "One card on the home screen leads here."
+          }
+        }
+      ]
+    },
+
+    {
+      "id": "visual-language", "nav": "Visual language", "tone": "grey",
+      "pill": "Visual language",
+      "heading": "Calm, without the blue gradients",
+      "blocks": [
+        { "type": "text", "p": [
+          "Every calm app looks calm in exactly the same way: soft gradients, flat illustration, blue and purple. I wanted SoundLax to look like it came from somewhere.",
+          "Birdsong is part of everyday life in New Zealand, from suburban gardens to native bush, so native birds were an easy place to start. I took vintage naturalist illustrations and paired them with [[bold colour, grain and a plain modern interface]].",
+          "Each bird also stands for a mood, so the illustrations double as navigation."
+        ] },
+        { "type": "swatches", "items": [
+          { "name": "SL Orange", "hex": "#F94E22" },
+          { "name": "SL Yellow", "hex": "#FFAD00" },
+          { "name": "SL Light Brown", "hex": "#F7D5BA" },
+          { "name": "SL Light Blue", "hex": "#4F5565" },
+          { "name": "SL Off-white", "hex": "#F3F3F3" },
+          { "name": "SL Navy", "hex": "#060D27" }
+        ] },
+        {
+          "type": "image",
+          "src": "/assets/img/work/soundlax/visual-language.webp",
+          "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration",
+          "caption": "Type, colour, scenes and the bird set, side by side."
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/soundlax/closeup-bird-card.jpg",
+          "alt": "Close-up of the tūī card showing the illustration grain and the label",
+          "prepare": "One bird card (the tūī) at large size, close enough to see the grain, the illustration detail and how the label sits on the texture.",
+          "size": "2400 × 1350 JPG",
+          "ratio": "16/9",
+          "caption": "The text sits on busy texture, so I checked the contrast on every card."
+        }
+      ]
+    },
+
+    { "bleed": { "src": "/assets/img/work/soundlax/desk.webp", "alt": "SoundLax playing on a Mac at a desk in the evening" } },
+
+    {
+      "id": "screens", "nav": "Screens", "tone": "dark",
+      "pill": "Screens",
+      "heading": "By feature",
+      "blocks": [
+        {
+          "type": "image", "seamless": true, "title": "Focus and sleep",
+          "src": "/assets/img/work/soundlax/feature-screens.webp",
+          "alt": "Four SoundLax screens: a focus timer, a focus task list, adding a task, and sleep settings",
+          "caption": "The focus timer pairs a sound with a Pomodoro session. Sleep has a timer that fades the sound out, and an alarm that fades in instead of going off."
+        },
+        {
+          "type": "image", "title": "From open to playing",
+          "src": "/assets/img/work/soundlax/open-to-play.mp4", "video": true,
+          "alt": "Screen recording: opening SoundLax and starting a sound",
+          "prepare": "A 10 to 15 second screen recording on iPhone: open the app, tap a bird, sound playing. No cuts, no music overlay.",
+          "size": "MP4, 1080 wide, muted, under 4 MB",
+          "ratio": "16/9",
+          "caption": "{{One line on how long it takes, once you've timed it.}}"
+        },
+        {
+          "type": "image", "seamless": true, "title": "Four devices",
+          "src": "/assets/img/work/soundlax/devices.webp",
+          "alt": "SoundLax on Mac, Apple Watch and iPhone",
+          "caption": "One design across iPhone, iPad, Apple Watch and Mac. I built the Mac version with Mac Catalyst rather than as a separate app. {{Re-export this image with KERERŪ spelled correctly on the Mac and onboarding screens.}}"
+        },
+        {
+          "type": "image", "title": "App Store screenshots",
+          "src": "/assets/img/work/soundlax/app-store.webp",
+          "alt": "Four SoundLax App Store screenshots",
+          "caption": "Each screenshot leads with one reason to download, not a feature list."
+        }
+      ]
+    },
+
+    {
+      "id": "after-launch", "nav": "After launch", "tone": "grey",
+      "pill": "After launch",
+      "heading": "What people said",
+      "blocks": [
+        { "type": "quotes", "items": [
+          { "text": "When I was working or doing housework, I used to search YouTube for background music and often lose 30 minutes doing it. That doesn't happen with this app.", "source": "App Store review, Japan (translated) {{check the translation}}" },
+          { "text": "It actually wakes me up like a civilized human being, unlike the default Apple alarm which sounds like a localized nuclear siren designed to trigger a fight-or-flight response.", "source": "App Store review, Vietnam" },
+          { "text": "The sound quality is lovely, especially the rain and nature tracks, and the overall experience feels polished and easy to use.", "source": "App Store review, New Zealand" },
+          { "text": "I just really wish it could auto-save any tweaks I made to existing mixes so they will be ready next time without me having to manually readjust.", "source": "App Store review, Vietnam" }
+        ] },
+        { "type": "text", "p": [
+          "Not all of it was praise. People asked for more sounds and better balance between them, and several noticed that Brown Noise cut out for a split second every time it looped, first on the Mac version.",
+          "{{What did you change because of this feedback? List only what has shipped, with the version. For example: mixes now save edits automatically (version X), the Brown Noise loop is fixed (2.7).}}"
+        ] },
+        {
+          "type": "image",
+          "src": "/assets/img/work/soundlax/after-launch-change.jpg",
+          "alt": "A SoundLax screen changed after launch feedback",
+          "prepare": "If one of those changes shows on screen (for example saved mixes), a close-up of it. If not, delete this block from the JSON.",
+          "size": "1600 × 1000 JPG",
+          "ratio": "16/10"
+        }
+      ]
+    },
+
+    {
+      "id": "outcome", "nav": "Outcome", "tone": "dark",
+      "pill": "Outcome",
+      "heading": "The first two months",
+      "blocks": [
+        { "type": "stats", "items": [
+          { "value": "5.0", "label": "App Store rating, from 11 ratings" },
+          { "value": "500+", "label": "downloads" },
+          { "value": "22%", "label": "of people open it daily" }
+        ], "note": "{{These are from the first two months. Update them with current numbers and the date if you have them.}}" },
+        { "type": "text", "p": [
+          "It also put the whole product in my hands for the first time: the question to friends, the design, the Swift code, App Store review, subscriptions, and bugs that people found before I did."
+        ] },
+        { "type": "text", "heading": "What I'd do differently", "p": [
+          "{{One specific thing. A candidate: test every sound loop on every device before launch, since people found the Brown Noise cut before I did. Keep it only if it's true for you.}}"
+        ] },
+        {
+          "type": "image", "seamless": true,
+          "src": "/assets/img/work/soundlax/collage.webp",
+          "alt": "A tilted collage of SoundLax screens and App Store screenshots"
+        }
+      ]
+    }
+  ],
+
+  "next": { "title": "Cohesive Construction", "href": "/work/cohesive-construction/" }
+}
