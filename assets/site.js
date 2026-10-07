@@ -22,6 +22,7 @@
     /* ---- Lenis smooth scrolling ---- */
     if (window.Lenis && !reduce) {
       lenis = new Lenis({ duration: 1.1, easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); }, smoothWheel: true });
+      window.lenis = lenis;
       function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
       requestAnimationFrame(raf);
     }
