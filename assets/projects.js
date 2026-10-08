@@ -6,12 +6,14 @@
    - thumb   : card image
    - featured: true shows the project on the homepage (in file order, max 4)
    - hidden  : true hides it everywhere
+   - types   : which Work filters it appears under (see WORK_TYPES below)
    - gallery : screenshots shown on the detail page (native <img>)
    - body    : {h} heading, {p} paragraph, {list:[...]} bullet list
    =================================================================== */
 window.PROJECTS = [
   {
     slug: 'soundlax',
+    types: ['product', 'brand'],
     featured: true,
     link: '/work/soundlax/',
     title: 'SoundLax',
@@ -134,6 +136,7 @@ window.PROJECTS = [
 
   {
     slug: 'cohesive-construction',
+    types: ['web'],
     featured: true,
     title: 'Cohesive Construction',
     year: '2026',
@@ -188,6 +191,7 @@ window.PROJECTS = [
 
   {
     slug: 'clearpoint',
+    types: ['web'],
     hidden: true,
     title: 'ClearPoint',
     year: '2025',
@@ -216,6 +220,7 @@ window.PROJECTS = [
 
   {
     slug: 're-leased',
+    types: ['web'],
     hidden: true,
     title: 'Re-Leased',
     year: '2025',
@@ -241,6 +246,7 @@ window.PROJECTS = [
 
   {
     slug: 'lannock',
+    types: ['product'],
     hidden: true,
     title: 'Lannock / Strata Finance',
     year: '2025',
@@ -273,6 +279,7 @@ window.PROJECTS = [
 
   {
     slug: 'tedxauckland',
+    types: ['web'],
     title: 'TEDxAuckland',
     year: '2024',
     category: 'Website',
@@ -299,6 +306,7 @@ window.PROJECTS = [
 
   {
     slug: 'autodesk-flow-capture',
+    types: ['web'],
     featured: true,
     title: 'Autodesk Flow Capture',
     year: '2024',
@@ -326,6 +334,7 @@ window.PROJECTS = [
 
   {
     slug: 'kapili',
+    types: ['web'],
     hidden: true,
     title: 'Kapili Roofing & Painting',
     year: '2023',
@@ -354,6 +363,7 @@ window.PROJECTS = [
 
   {
     slug: 'kmart',
+    types: ['brand', 'web'],
     featured: true,
     title: 'Kmart Brand & Website Redesign Concept',
     year: '2024',
@@ -413,4 +423,108 @@ window.PROJECTS = [
     ]
   }
 
+];
+
+
+/* ===================================================================
+   Work types (the filters on /portfolio and the tiles on the homepage)
+   =================================================================== */
+window.WORK_TYPES = [
+  { id: 'web',     label: 'Websites and landing pages' },
+  { id: 'ads',     label: 'Ads and social' },
+  { id: 'print',   label: 'Print and brochures' },
+  { id: 'books',   label: 'Book covers' },
+  { id: 'brand',   label: 'Brand identity' },
+  { id: 'product', label: 'Apps and portals' }
+];
+
+/* ===================================================================
+   Single pieces: smaller work shown as one image (or a few) in a
+   lightbox, without a full case study page.
+   - id, title, type (one of WORK_TYPES), label ('Client work',
+     'Concept', 'Own product'), year
+   - images  : first one is the card image, all show in the lightbox
+   - caption : one or two sentences
+   - fit     : 'contain' for covers and posters that must not be cropped
+   - pos     : card crop position, e.g. 'center top'
+   - link    : optional live link shown in the lightbox
+   - prepare : marks a slot still to fill. Until the first image file
+               exists, the card shows what to make. Export the file to
+               that exact path and it turns into a normal card.
+   SHOW_DRAFTS: set to false before launch to hide all unfilled slots.
+   =================================================================== */
+window.SHOW_DRAFTS = true;
+
+window.PIECES = [
+  {
+    id: 'kmart-billboard', type: 'ads', label: 'Concept', year: '2024',
+    title: 'Kmart outdoor poster',
+    images: ['/assets/img/work/pieces/kmart-billboard.webp'],
+    caption: 'An outdoor poster from my Kmart rebrand concept. The campaign line, “See more, own less”, builds on the idea of buying everyday things on a budget and spending the savings on experiences.'
+  },
+  {
+    id: 'soundlax-app-store', type: 'ads', label: 'Own product', year: '2026',
+    title: 'SoundLax App Store screenshots',
+    images: ['/assets/img/work/pieces/soundlax-app-store.webp', '/assets/img/work/pieces/soundlax-app-store-collage.webp'],
+    caption: 'App Store screenshots for my own app. Each one leads with a single reason to download rather than a list of features.',
+    link: { text: 'See the App Store page', href: 'https://apps.apple.com/us/app/soundlax-focus-relax-sleep/id6764812942' }
+  },
+  {
+    id: 'kmart-posters', type: 'ads', label: 'Concept', year: '2024',
+    title: 'Kmart campaign posters', fit: 'contain',
+    images: ['/assets/img/work/pieces/kmart-posters.webp'],
+    caption: 'Two campaign posters from the same Kmart concept, written for the same “own less” idea.'
+  },
+  {
+    id: 'soundlax-landing', type: 'web', label: 'Own product', year: '2026',
+    title: 'SoundLax landing page', pos: 'center top',
+    images: ['/assets/img/work/pieces/soundlax-landing.webp'],
+    caption: 'The landing page for SoundLax, designed and built to send people to the App Store.',
+    link: { text: 'Visit the page', href: '/soundlax-app' }
+  },
+  {
+    id: 'kmart-identity', type: 'brand', label: 'Concept', year: '2024',
+    title: 'Kmart logo and stationery', pos: 'center top',
+    images: ['/assets/img/work/pieces/kmart-identity.webp'],
+    caption: 'A simplified Kmart logo and the stationery set that goes with it, from my rebrand concept.'
+  },
+  {
+    id: 'soundlax-brand', type: 'brand', label: 'Own product', year: '2026',
+    title: 'SoundLax visual identity', pos: 'center top',
+    images: ['/assets/img/work/pieces/soundlax-brand.webp'],
+    caption: 'The SoundLax brand: vintage bird illustrations paired with bold colour, grain and a clean interface.',
+    link: { text: 'Read the case study', href: '/work/soundlax/' }
+  },
+
+  /* ---------- slots to fill (shown only while SHOW_DRAFTS is true) ---------- */
+  { id: 'book-cover-1', type: 'books', label: 'Concept', title: 'Book cover: thriller', fit: 'contain',
+    images: ['/assets/img/work/pieces/book-cover-thriller.jpg'],
+    prepare: 'A front cover for a thriller, 1600 × 2560 JPG (the KDP 1:1.6 ratio).' },
+  { id: 'book-cover-2', type: 'books', label: 'Concept', title: 'Book cover: romance', fit: 'contain',
+    images: ['/assets/img/work/pieces/book-cover-romance.jpg'],
+    prepare: 'A front cover for a romance novel, 1600 × 2560 JPG.' },
+  { id: 'book-cover-3', type: 'books', label: 'Concept', title: 'Book cover: non-fiction', fit: 'contain',
+    images: ['/assets/img/work/pieces/book-cover-nonfiction.jpg'],
+    prepare: 'A non-fiction cover, plus a second image of the full paperback wrap with spine and back cover.' },
+  { id: 'brochure', type: 'print', label: 'Concept', title: 'Tri-fold brochure',
+    images: ['/assets/img/work/pieces/brochure.jpg'],
+    prepare: 'A tri-fold brochure for the concept local brand, shown as a print mockup. 1800 × 1350 JPG.' },
+  { id: 'suzuki-content-offer', type: 'print', label: 'Client work', title: 'Suzuki NZ content offer PDF',
+    images: ['/assets/img/work/pieces/suzuki-content-offer.jpg'],
+    prepare: 'Pages from the Suzuki NZ content offer PDF (Avidly). Check you have permission to show it first.' },
+  { id: 'ad-set', type: 'ads', label: 'Concept', title: 'Display ad set',
+    images: ['/assets/img/work/pieces/ad-set.jpg'],
+    prepare: 'One campaign in standard sizes (1080 × 1080, 1080 × 1920, 300 × 250, 728 × 90), laid out on one 1800 × 1350 board.' },
+  { id: 'social-pack', type: 'ads', label: 'Concept', title: 'Social post pack',
+    images: ['/assets/img/work/pieces/social-pack.jpg'],
+    prepare: 'Six posts and three stories for the concept local brand, on one 1800 × 1350 board.' },
+  { id: 'titan-it-landing', type: 'web', label: 'Client work', title: 'Titan IT landing pages',
+    images: ['/assets/img/work/pieces/titan-it-landing.jpg'],
+    prepare: 'The Titan IT landing pages from 2025, full-length page exports. 1800 wide JPG.' },
+  { id: 'eftpos-landing', type: 'web', label: 'Client work', title: 'EFTPOS NZ landing page',
+    images: ['/assets/img/work/pieces/eftpos-landing.jpg'],
+    prepare: 'The EFTPOS NZ device launch landing page (Avidly). Check permission first.' },
+  { id: 'local-brand-kit', type: 'brand', label: 'Concept', title: 'Local brand kit',
+    images: ['/assets/img/work/pieces/local-brand-kit.jpg'],
+    prepare: 'Logo, colours and type for the concept local brand (for example a Devonport bakery), on one 1800 × 1350 board.' }
 ];

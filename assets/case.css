@@ -246,3 +246,11 @@ body.case{
 }
 
 /* light sections: headings violet (set in home.css), accents stay orange */
+
+/* bullet lists (older projects) */
+.case .c-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px;}
+.case .c-list li{position:relative;padding-left:22px;font-size:clamp(1.25rem,1.6vw,1.45rem);line-height:1.38;}
+.case .c-list li::before{content:"";position:absolute;left:2px;top:.5em;width:9px;height:9px;border-radius:50%;background:var(--c-accent);}
+.case .h-dark .c-list li{color:var(--h-muted-dark);}
+.case .h-grey .c-list li{color:var(--h-muted-light);}
+.case .c-text a{border-bottom:1px solid currentColor;}

@@ -3,44 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-<title>Work with Bentoji – Design Studio Auckland | Open for Projects</title>
-<meta name="description" content="Bentoji is an Auckland-based UI/UX and product design studio currently open for new projects. Get in touch to discuss your app, website, or brand." />
+<title>Contact | Bentoji, Ben Nguyen</title>
+<meta name="description" content="Get in touch with Ben Nguyen about a small design job, monthly design support or a project. The first call is free." />
 <link rel="canonical" href="https://bentoji.co.nz/contact" />
-<meta property="og:title" content="Contact - Bentoji Studio" />
+<meta property="og:title" content="Contact | Bentoji, Ben Nguyen" />
+<meta property="og:description" content="Get in touch with Ben Nguyen about a small design job, monthly design support or a project. The first call is free." />
 <meta property="og:image" content="https://bentoji.co.nz/assets/img/app-icon.png" />
 <link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
 <script>document.documentElement.classList.add('js');</script>
+<link rel="preload" href="/assets/type/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=47" />
-<style>
-  .soundlax-contact .site-nav{display:none;}
-  .soundlax-contact .mobile-menu{display:none;}
-  .soundlax-contact .soundlax-header{display:block !important;}
-</style>
+<link rel="stylesheet" href="/assets/home.css?v=5" />
+<link rel="stylesheet" href="/assets/pages.css?v=3" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
-<body data-content="/content/contact.json">
+<body class="home" data-content="/content/contact.json">
 
-<header class="site-header soundlax-header" id="soundlax-contact-header" style="display:none;">
-  <div class="container header-inner">
-    <span class="brand" aria-label="SoundLax" style="cursor:default;pointer-events:none;">
-      <img src="/assets/img/logo.svg" alt="SoundLax" height="26" />
-    </span>
-    <nav class="main-nav" aria-label="Primary">
-      <a href="/soundlax/privacypolicy">Privacy Policy</a>
-      <a class="btn btn-ghost" href="/contact?app=soundlax" style="padding:10px 22px;font-size:.8125rem;letter-spacing:.06em;">Let's talk</a>
-    </nav>
-    <button class="menu-toggle" id="menuToggleSL" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-<div class="slideout" id="slideoutSL" aria-hidden="true">
-  <button class="slideout-close" id="slideoutSLClose" aria-label="Close menu">&times;</button>
-  <nav class="slideout-nav">
-    <a href="/soundlax/privacypolicy">Privacy Policy</a>
-    <a class="btn btn-light" href="/contact?app=soundlax">Let's talk</a>
-  </nav>
-</div>
 <header class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
@@ -64,124 +43,88 @@
   <a class="btn btn-light" href="/contact">Let's talk</a>
 </div>
 
-<section class="hero" style="padding-bottom:0">
-  <div class="aurora" aria-hidden="true"><span class="blob b2"></span><span class="blob b3"></span></div>
-  <div class="grain" aria-hidden="true"></div>
+<main>
+<section class="h-dark p-hero">
   <div class="container">
-    <h1 class="display reveal d1" data-cms="hero.title">Let's talk.</h1>
-    <p class="lead reveal d2" style="color:var(--muted);max-width:50ch" data-cms="hero.lead">Tell us a little about your project, timeline, and what you're hoping to make. We read every message.</p>
+    <p class="h-pill">Contact</p>
+    <h1 class="h-head"><span data-cms="hero.title">Let's talk</span></h1>
+    <p class="h-lead"><span data-cms="hero.lead">Tell me a little about what you need and when you need it. I read every message and usually reply within one or two working days.</span></p>
+    
   </div>
 </section>
-
-<section class="section">
-  <div class="container">
-    <div class="asym">
-      <!-- form -->
-      <div class="reveal">
-        <form class="form" data-web3form novalidate>
-          <!-- Web3Forms config -->
-          <input type="hidden" name="access_key" value="4af5bed8-bb14-4317-a9e7-d52b2387b2c3" />
-          <input type="hidden" name="subject" value="New enquiry from bentoji.co.nz" />
-          <input type="hidden" name="from_name" value="Bentoji.co.nz contact form" />
-          <input type="hidden" name="cc" value="ben.ng189@gmail.com" />
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
-
-          <div class="form-row">
-            <div class="field">
-              <label for="name">Name <span class="req">*</span></label>
-              <input id="name" name="name" type="text" placeholder="Your name" required />
-            </div>
-            <div class="field">
-              <label for="email">Email <span class="req">*</span></label>
-              <input id="email" name="email" type="email" placeholder="you@email.com" required />
-            </div>
-          </div>
-          <div class="field">
-            <label for="company">Company / project</label>
-            <input id="company" name="company" type="text" placeholder="Optional" />
-          </div>
-          <div class="field">
-            <label for="message">Message <span class="req">*</span></label>
-            <textarea id="message" name="message" rows="6" placeholder="What would you like to make?" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-light btn-lg">Send message</button>
-          <p class="form-note" aria-live="polite"></p>
-        </form>
+<section class="h-section h-grey">
+  <div class="container p-split">
+    <form class="p-form" data-web3form novalidate>
+      <input type="hidden" name="access_key" value="4af5bed8-bb14-4317-a9e7-d52b2387b2c3" />
+      <input type="hidden" name="subject" value="New enquiry from bentoji.co.nz" />
+      <input type="hidden" name="from_name" value="Bentoji.co.nz contact form" />
+      <input type="hidden" name="cc" value="ben.ng189@gmail.com" />
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" />
+      <div class="form-row">
+        <div><label for="name">Name <span class="req">*</span></label><input id="name" name="name" type="text" placeholder="Your name" required /></div>
+        <div><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" placeholder="you@email.com" required /></div>
       </div>
-
-      <!-- details -->
-      <div class="reveal d1">
-        <div class="contact-list">
-          <div>
-            <div class="k">Email</div>
-            <a href="mailto:ben.ng189@gmail.com" data-cms="details.email">ben.ng189@gmail.com</a>
-          </div>
-          <div>
-            <div class="k">Studio</div>
-            <div data-cms="details.studio">Aotearoa New Zealand · working worldwide</div>
-          </div>
-          <div>
-            <div class="k">What we take on</div>
-            <div class="muted" data-cms="details.takeOn">Product &amp; app design, brand &amp; identity, web design &amp; build, motion &amp; illustration.</div>
-          </div>
-          <div>
-            <div class="k">Response time</div>
-            <div class="muted" data-cms="details.response">Usually within 1–2 business days.</div>
-          </div>
+      <div class="form-row">
+        <div><label for="company">Company or project</label><input id="company" name="company" type="text" placeholder="Optional" /></div>
+        <div><label for="service">What do you need?</label>
+          <select id="service" name="service">
+            <option value="">Choose one</option>
+            <option value="small-job">A small job (landing page, ads, brochure, cover)</option>
+            <option value="monthly">Monthly design</option>
+            <option value="project">A project (website, app, brand)</option>
+            <option value="hourly">Hourly help</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
         </div>
       </div>
-    </div>
+      <div><label for="message">Message <span class="req">*</span></label><textarea id="message" name="message" rows="6" placeholder="What would you like to make, and when do you need it?" required></textarea></div>
+      <button type="submit" class="h-btn h-btn-primary">Send message</button>
+      <p class="form-note" aria-live="polite"></p>
+    </form>
+    <dl class="p-details">
+      <div><dt>Email</dt><dd><a href="mailto:ben.ng189@gmail.com" data-cms="details.email">ben.ng189@gmail.com</a></dd></div>
+      <div><dt>Based in</dt><dd data-cms="details.studio">Auckland, New Zealand, working with clients in New Zealand and Australia</dd></div>
+      <div><dt>What I take on</dt><dd data-cms="details.takeOn">Websites and landing pages, ads and social, print and brochures, book covers, brand identity, apps and portals.</dd></div>
+      <div><dt>Response time</dt><dd data-cms="details.response">Usually within one or two working days.</dd></div>
+    </dl>
   </div>
 </section>
+<script>
+  (function () {
+    var s = new URLSearchParams(location.search).get('service');
+    var el = document.getElementById('service');
+    if (s && el && el.querySelector('option[value="' + s + '"]')) el.value = s;
+  })();
+</script>
+</main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
         <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
-        <p data-cms="footer.blurb">An independent design &amp; product studio making calm, useful, beautifully crafted digital things.</p>
+        <p data-cms="footer.blurb">Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="/portfolio">Work</a>
+        <a href="/pricing">Pricing</a>
         <a href="/soundlax-app">SoundLax app</a>
-        <a href="/writing">Writing</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
         <h5>Connect</h5>
         <a href="mailto:ben.ng189@gmail.com">ben.ng189@gmail.com</a>
-        <a href="/contact">Start a project</a>
+        <a href="/contact">Book a free call</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bentoji Studio. All rights reserved.</span>
+      <span>© <span data-year>2026</span> Bentoji. All rights reserved.</span>
       <span>Made in Aotearoa New Zealand</span>
     </div>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=33"></script>
-<script>
-(function(){
-  if(new URLSearchParams(window.location.search).get("app")==="soundlax"){
-    document.body.classList.add("soundlax-contact");
-    var slHeader = document.getElementById("soundlax-contact-header");
-    if(slHeader) slHeader.style.display="";
-    // Mobile menu toggle for SoundLax header
-    var tog = document.getElementById("menuToggleSL");
-    var sl = document.getElementById("slideoutSL");
-    var cl = document.getElementById("slideoutSLClose");
-    if(tog && sl){
-      tog.addEventListener("click", function(){
-        sl.classList.add("open"); sl.setAttribute("aria-hidden","false"); tog.setAttribute("aria-expanded","true");
-      });
-      if(cl) cl.addEventListener("click", function(){
-        sl.classList.remove("open"); sl.setAttribute("aria-hidden","true"); tog.setAttribute("aria-expanded","false");
-      });
-    }
-  }
-})();
-</script>
+<script src="/assets/site.js?v=35"></script>
 </body>
 </html>

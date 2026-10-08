@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
 <title>Bentoji</title>
-<link rel="icon" href="/assets/img/favicon.ico"/>
-<link rel="stylesheet" href="/assets/site.css?v=47"/>
-<style>
-  body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:#fff;padding:32px 24px;}
-  .gate{width:100%;max-width:360px;text-align:center;}
-  .gate-logo{display:inline-block;margin-bottom:40px;}
-  .gate-logo img{height:22px;filter:invert(1) brightness(0);}
-  .gate h1{font-size:1.05rem;font-weight:600;color:var(--white);letter-spacing:-.02em;margin-bottom:8px;}
-  .gate p{font-size:.85rem;color:var(--muted);margin-bottom:32px;line-height:1.5;}
-  .gate-form{display:flex;flex-direction:column;gap:12px;}
-  .gate-input{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);font-size:.9rem;font-family:inherit;background:#fff;color:var(--white);outline:none;box-sizing:border-box;transition:border-color .15s;}
-  .gate-input:focus{border-color:var(--line-strong);}
-  .gate-btn{width:100%;padding:13px;background:var(--white);color:#fff;border:none;border-radius:var(--radius);font-size:.88rem;font-weight:600;font-family:inherit;cursor:pointer;transition:opacity .15s;}
-  .gate-btn:hover{opacity:.82;}
-  .gate-err{font-size:.8rem;color:#c0392b;display:none;margin-top:4px;}
-</style>
+<meta name="description" content="Private preview." />
+<link rel="canonical" href="https://bentoji.co.nz/access" />
+<meta property="og:title" content="Bentoji" />
+<meta property="og:description" content="Private preview." />
+<meta property="og:image" content="https://bentoji.co.nz/assets/img/app-icon.png" />
+<link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
+<script>document.documentElement.classList.add('js');</script>
+<link rel="preload" href="/assets/type/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="stylesheet" href="/assets/site.css?v=47" />
+<link rel="stylesheet" href="/assets/home.css?v=5" />
+<link rel="stylesheet" href="/assets/pages.css?v=3" />
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
-<body>
-<div class="gate">
-  <a class="gate-logo" href="/access/">
-    <img src="/assets/img/bentoji-logo.svg" alt="Bentoji"/>
-  </a>
-  <h1>This site is private</h1>
-  <p>Currently under construction. Enter the password to continue.</p>
-  <form class="gate-form" id="gf">
-    <input class="gate-input" type="password" id="pw" placeholder="Password" autocomplete="current-password" autofocus/>
-    <p class="gate-err" id="err">Incorrect password. Try again.</p>
-    <button class="gate-btn" type="submit">Continue</button>
-  </form>
-</div>
+<body class="home">
+<main class="p-gate">
+  <div class="p-gate-box">
+    <a class="brand" href="/access/" aria-label="Bentoji"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
+    <h1>Private preview</h1>
+    <p>This site is still being finished. Enter the password to continue.</p>
+    <form id="gf" autocomplete="off">
+      <input class="gate-input" type="password" id="pw" placeholder="Password" autocomplete="current-password" aria-label="Password" />
+      <button class="h-btn h-btn-primary" type="submit">Continue</button>
+      <p class="p-gate-err" id="err">That password didn't work. Try again.</p>
+    </form>
+  </div>
+</main>
 <script>
-  document.getElementById('gf').addEventListener('submit', function(e){
+  document.getElementById('gf').addEventListener('submit', function (e) {
     e.preventDefault();
     var pw = document.getElementById('pw').value;
     if (pw === 'bentoji26') {
@@ -49,7 +46,6 @@
       document.getElementById('pw').focus();
     }
   });
-  // Already authenticated
   if (sessionStorage.getItem('bentoji_ok')) {
     location.replace(sessionStorage.getItem('bentoji_ret') || '/');
   }

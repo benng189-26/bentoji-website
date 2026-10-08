@@ -51,7 +51,7 @@
    per section at most), {{words}} = a gap Ben still needs to fill.
    =================================================================== */
 (function () {
-  var main = document.querySelector('[data-case]');
+  var main = document.querySelector('[data-case], [data-case-project]');
   if (!main) return;
 
   var arrowRight = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
@@ -61,6 +61,13 @@
     return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
   function rich(s) {
+    /* arrays mix plain text and links: ["Live at ", {text, href}, "."] */
+    if (Array.isArray(s)) {
+      return s.map(function (part) {
+        if (part && typeof part === 'object') return '<a href="' + esc(part.href) + '">' + esc(part.text || part.href) + '</a>';
+        return rich(part);
+      }).join('');
+    }
     return esc(s)
       .replace(/\[\[(.+?)\]\]/g, '<mark class="c-hl">$1</mark>')
       .replace(/\{\{(.+?)\}\}/g, '<span class="c-todo">$1</span>');
@@ -119,6 +126,10 @@
       return '<div class="c-quotes">' + (b.items || []).map(function (q) {
         return '<blockquote class="c-quote"><p>' + rich(q.text) + '</p><cite>' + rich(q.source) + '</cite></blockquote>';
       }).join('') + '</div>';
+    },
+    list: function (b) {
+      return '<div class="c-text">' + (b.heading ? '<h3>' + esc(b.heading) + '</h3>' : '') +
+        '<ul class="c-list">' + (b.items || []).map(function (x) { return '<li>' + rich(x) + '</li>'; }).join('') + '</ul></div>';
     },
     stats: function (b) {
       return '<div class="c-stats">' + (b.items || []).map(function (s) {
@@ -269,6 +280,75 @@
       (s.blocks || []).forEach(function (b) { check(b); check(b.image); });
     });
     return found;
+  }
+
+  /* ---------- older projects: build the page from assets/projects.js ---------- */
+  function slugify(t) { return String(t).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  function fromProject() {
+    var all = window.PROJECTS || [];
+    var slug = new URLSearchParams(location.search).get('p');
+    if (!slug) {
+      var parts = location.pathname.replace(/\/+$/, '').split('/');
+      slug = parts[1] === 'work' && parts[2] ? decodeURIComponent(parts[2]) : '';
+    }
+    var p = all.filter(function (x) { return x.slug === slug; })[0];
+    if (!p) { location.replace('/portfolio'); return null; }
+    /* projects with their own page go there */
+    if (p.link && p.link.replace(/\/+$/, '') !== location.pathname.replace(/\/+$/, '')) { location.replace(p.link); return null; }
+    document.title = p.title + ' | Bentoji, Ben Nguyen';
+
+    var sections = [], cur = null;
+    function push(block) {
+      if (!cur) { cur = { blocks: [] }; sections.push(cur); }
+      cur.blocks.push(block);
+    }
+    (p.body || []).forEach(function (b) {
+      if (b.h) {
+        if (cur && !cur.blocks.length) { push({ type: 'text', heading: b.h, p: [] }); return; }
+        cur = { id: slugify(b.h), nav: b.h, heading: b.h, blocks: [] };
+        sections.push(cur);
+      } else if (b.p) {
+        var last = cur && cur.blocks[cur.blocks.length - 1];
+        if (last && last.type === 'text') last.p.push(b.p);
+        else push({ type: 'text', p: [b.p] });
+      } else if (b.list) {
+        push({ type: 'list', items: b.list });
+      } else if (b.image) {
+        push({ type: 'image', src: b.image.src, alt: b.image.alt || p.title });
+      }
+    });
+    var used = {};
+    sections.forEach(function (s) { s.blocks.forEach(function (b) { if (b.src) used[b.src] = 1; }); });
+    var gallery = (p.gallery || []).filter(function (g) { return !used[typeof g === 'string' ? g : g.src]; });
+    if (gallery.length) {
+      sections.push({ id: 'screens', nav: 'Screens', heading: 'Screens', blocks: gallery.map(function (g) {
+        return { type: 'image', src: typeof g === 'string' ? g : g.src, alt: (g && g.alt) || p.title };
+      }) });
+    }
+    sections.forEach(function (s, i) { s.tone = i % 2 ? 'dark' : 'grey'; });
+
+    var visible = all.filter(function (x) { return !x.hidden; });
+    var idx = visible.indexOf(p);
+    var next = visible[(idx + 1) % visible.length];
+    var facts = (p.facts || []).map(function (f) { return { k: f.k, v: f.v }; });
+    if (p.year) facts.push({ k: 'Year', v: p.year });
+    return {
+      name: p.title,
+      hero: {
+        pill: p.category, title: p.title, intro: p.tagline,
+        links: p.visit ? [{ text: 'Visit the live site', href: p.visit }] : [],
+        image: (p.cover || p.thumb) ? { src: p.cover || p.thumb, alt: p.title } : null
+      },
+      facts: facts,
+      sections: sections,
+      next: next && next !== p ? { title: next.title, href: next.link || ('/work?p=' + encodeURIComponent(next.slug)) } : null
+    };
+  }
+
+  if (main.hasAttribute('data-case-project')) {
+    var built = fromProject();
+    if (built) render(built);
+    return;
   }
 
   fetch(main.getAttribute('data-case'))

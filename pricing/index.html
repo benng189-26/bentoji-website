@@ -3,94 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-<title>Pricing – Design Packages & Monthly Support | Bentoji Studio</title>
-<meta name="description" content="Flexible design support for websites, products, brands and ongoing creative work. Project packages, monthly design support plans and hourly rates from Bentoji Studio, Auckland." />
-<link rel="canonical" href="https://bentoji.co.nz/pricing/" />
-<meta property="og:title" content="Pricing – Bentoji Studio" />
-<meta property="og:description" content="Flexible design support for websites, products, brands and ongoing creative work." />
+<title>Pricing | Bentoji, Ben Nguyen</title>
+<meta name="description" content="Fixed prices for small design jobs, monthly design plans from NZ$750, and projects quoted after a free call." />
+<link rel="canonical" href="https://bentoji.co.nz/pricing" />
+<meta property="og:title" content="Pricing | Bentoji, Ben Nguyen" />
+<meta property="og:description" content="Fixed prices for small design jobs, monthly design plans from NZ$750, and projects quoted after a free call." />
 <meta property="og:image" content="https://bentoji.co.nz/assets/img/app-icon.png" />
 <link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
 <script>document.documentElement.classList.add('js');</script>
+<link rel="preload" href="/assets/type/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=47" />
+<link rel="stylesheet" href="/assets/home.css?v=5" />
+<link rel="stylesheet" href="/assets/pages.css?v=3" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
-<style>
-/* ── Pricing page ──────────────────────────────────────────── */
-
-/* Hero */
-.pr-hero{padding:clamp(130px,16vh,190px) 0 clamp(64px,9vw,110px);border-bottom:1px solid rgba(255,255,255,.09);}
-.pr-hero h1{font-size:clamp(2.4rem,5.5vw,4.4rem);max-width:16ch;letter-spacing:-.03em;line-height:1.06;}
-.pr-hero-sub{display:flex;flex-direction:column;gap:20px;margin-top:clamp(24px,4vw,40px);}
-@media(min-width:760px){.pr-hero-sub{flex-direction:row;align-items:flex-end;justify-content:space-between;gap:40px;}}
-.pr-hero-sub p{max-width:48ch;color:var(--muted);font-size:1.05rem;line-height:1.65;margin:0;}
-.pr-hero-nav{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0;}
-.pr-hero-nav a{font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted-2);text-decoration:none;padding:8px 14px;border:1px solid var(--line);border-radius:99px;transition:border-color .2s,color .2s,background .2s;}
-.pr-hero-nav a:hover{border-color:var(--white);color:var(--white);}
-
-/* Section shell */
-.pr-section{padding:clamp(64px,9vw,110px) 0;}
-.pr-section-alt{background:var(--bg-soft);}
-.pr-section-dark{background:var(--white);color:var(--bg);}
-
-/* Section label */
-.pr-label{display:flex;align-items:center;gap:16px;margin-bottom:clamp(36px,5vw,60px);}
-.pr-label-n{font-family:var(--font-head);font-size:clamp(4rem,9vw,8rem);font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--line-strong);flex-shrink:0;user-select:none;}
-.pr-label-text{}
-.pr-label-text .eyebrow{margin-bottom:6px;}
-.pr-label-text h2{margin:0;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.025em;}
-
-/* ── SECTION 1: Project packages ───────────────────────────── */
-.pkg-types{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:clamp(32px,4vw,52px);}
-@media(min-width:760px){.pkg-types{grid-template-columns:1fr 1fr;}}
-.pkg-type{background:var(--bg);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;gap:14px;transition:background .2s;}
-.pkg-type:hover{background:var(--bg-soft);}
-.pkg-type-n{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-2);font-weight:600;}
-.pkg-type h3{font-family:var(--font-head);font-size:1.3rem;font-weight:700;color:var(--white);margin:0;letter-spacing:-.015em;}
-.pkg-type p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.6;}
-.pkg-type ul{margin:0;padding-left:1.1em;color:var(--muted);font-size:.9rem;line-height:1.85;display:flex;flex-direction:column;gap:1px;}
-.pkg-cta-strip{border:1px solid var(--line);border-radius:var(--radius);padding:clamp(32px,4.5vw,52px);display:flex;flex-direction:column;gap:20px;background:var(--bg-soft);}
-@media(min-width:700px){.pkg-cta-strip{flex-direction:row;align-items:center;justify-content:space-between;gap:40px;}}
-.pkg-cta-strip-text h3{margin:0 0 8px;font-size:1.4rem;letter-spacing:-.02em;}
-.pkg-cta-strip-text p{margin:0;color:var(--muted);font-size:.97rem;max-width:48ch;line-height:1.55;}
-.pkg-cta-strip-actions{display:flex;gap:12px;flex-shrink:0;}
-
-/* ── SECTION 2: Monthly Design Support ─────────────────────── */
-.mds-intro{margin-bottom:clamp(36px,5vw,56px);}
-.mds-intro p{color:var(--muted);max-width:58ch;line-height:1.7;font-size:1.02rem;}
-.plans-grid{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;}
-@media(min-width:760px){.plans-grid{grid-template-columns:repeat(3,1fr);}}
-.plan-card{background:var(--bg);padding:clamp(28px,3.5vw,44px);display:flex;flex-direction:column;transition:background .2s;}
-.plan-card.featured{background:var(--bg-soft);}
-.plan-eyebrow{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;}
-.plan-name{font-family:var(--font-head);font-weight:700;font-size:1.4rem;color:var(--white);letter-spacing:-.02em;margin:0 0 6px;}
-.plan-tagline{color:var(--muted);font-size:.9rem;margin:0 0 22px;line-height:1.5;}
-.plan-price{font-family:var(--font-head);font-weight:700;font-size:1.6rem;color:var(--white);letter-spacing:-.025em;margin:0 0 4px;}
-.plan-price span{font-size:.88rem;font-weight:400;color:var(--muted-2);}
-.plan-rule{height:1px;background:var(--line);border:0;margin:20px 0;}
-.plan-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;flex:1;}
-.plan-list li{font-size:.9rem;color:var(--muted);padding-left:16px;position:relative;line-height:1.45;}
-.plan-list li::before{content:"";position:absolute;left:0;top:.56em;width:5px;height:5px;border-radius:50%;background:var(--accent);}
-.plan-btn{margin-top:28px;}
-.mds-footer{margin-top:clamp(28px,3.5vw,40px);display:flex;align-items:center;gap:clamp(16px,3vw,32px);flex-wrap:wrap;}
-.mds-footer p{margin:0;color:var(--muted);font-size:.95rem;}
-
-/* ── SECTION 3: Hourly ──────────────────────────────────────── */
-.hourly-wrap{display:grid;grid-template-columns:1fr;gap:clamp(32px,5vw,64px);}
-@media(min-width:820px){.hourly-wrap{grid-template-columns:1fr 1fr;align-items:start;}}
-.hourly-rate{font-family:var(--font-head);font-weight:700;font-size:clamp(3rem,7vw,5.5rem);letter-spacing:-.04em;color:var(--white);line-height:1;}
-.hourly-rate span{font-size:1.1rem;font-weight:400;color:var(--muted-2);}
-.hourly-detail{display:flex;flex-direction:column;gap:18px;}
-.hourly-detail p{margin:0;color:var(--muted);font-size:.97rem;line-height:1.65;}
-
-/* ── SECTION 4: CTA ─────────────────────────────────────────── */
-.pr-cta{text-align:center;padding:clamp(80px,12vw,140px) 0;}
-.pr-cta h2{font-size:clamp(2rem,5vw,4rem);letter-spacing:-.03em;max-width:18ch;margin:0 auto 20px;}
-.pr-cta p{color:var(--muted);max-width:44ch;margin:0 auto 36px;font-size:1.02rem;line-height:1.65;}
-.pr-cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-</style>
 </head>
-<body>
+<body class="home">
 
-<!-- ── NAV ──────────────────────────────────────────────────── -->
 <header class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
@@ -114,271 +43,139 @@
   <a class="btn btn-light" href="/contact">Let's talk</a>
 </div>
 
-<!-- ── HERO ──────────────────────────────────────────────────── -->
-<section class="pr-hero section-ink ink-glow">
+<main>
+<section class="h-dark p-hero">
   <div class="container">
-    <p class="eyebrow no-line reveal">Pricing</p>
-    <h1 class="reveal d1">Ways to work<br>together.</h1>
-    <div class="pr-hero-sub reveal d2">
-      <p>Whether you need a one-off project, ongoing design help, or a few hours of focused work, there's a way to work together that fits.</p>
-      <nav class="pr-hero-nav" aria-label="Jump to section">
-        <a href="#packages">Project packages</a>
-        <a href="#monthly">Monthly support</a>
-        <a href="#hourly">Hourly</a>
-      </nav>
+    <p class="h-pill">Pricing</p>
+    <h1 class="h-head">Ways to work together</h1>
+    <p class="h-lead">A fixed price for small jobs, a designer every month, or a project quoted after a free call.</p>
+    <nav class="p-jump" aria-label="On this page"><a href="#small-jobs">Small jobs</a><a href="#monthly">Monthly design</a><a href="#projects">Projects</a><a href="#hourly">Hourly</a></nav>
+  </div>
+</section>
+<section class="h-section h-grey" id="small-jobs">
+  <div class="container">
+    <p class="h-pill"><span class="c-pill-num">01</span> Small jobs</p>
+    <h2 class="h-head p-section-title">Fixed price, quick turnaround</h2>
+    <p class="p-intro">For one piece of work with a clear brief. You will know the price before I start, so there are no surprises.</p>
+    <div class="p-rows">
+  <div class="p-row"><h3>Landing page</h3><p>One page designed for desktop and mobile, ready for your developer or website builder.</p><span class="p-row-price">From NZ$ <span class="p-todo">set price</span></span></div>
+  <div class="p-row"><h3>Ad set</h3><p>One campaign in up to five standard sizes for social and display ads.</p><span class="p-row-price">From NZ$ <span class="p-todo">set price</span></span></div>
+  <div class="p-row"><h3>Brochure or flyer</h3><p>A print-ready file with bleed, for a tri-fold, A5 or A4 layout.</p><span class="p-row-price">From NZ$ <span class="p-todo">set price</span></span></div>
+  <div class="p-row"><h3>Book cover</h3><p>A front cover for an ebook, or a full paperback wrap with spine and back cover for Amazon KDP.</p><span class="p-row-price">From NZ$ <span class="p-todo">set price</span></span></div>
+  <div class="p-row"><h3>Social post pack</h3><p>Six posts and three stories in your brand, with editable templates.</p><span class="p-row-price">From NZ$ <span class="p-todo">set price</span></span></div>
+  <div class="p-row"><h3>Logo and brand starter</h3><p>A logo, colours and type, ready to use in print and on screen.</p><span class="p-row-price">From NZ$ <span class="p-todo">set price</span></span></div>
     </div>
+    <div class="h-actions"><a class="h-btn h-btn-primary" href="/contact?service=small-job">Ask about a small job</a><a class="h-btn h-btn-ghost" href="/portfolio">See examples</a></div>
   </div>
 </section>
 
-<!-- ── SECTION 1: PROJECT PACKAGES ──────────────────────────── -->
-<section class="pr-section" id="packages">
+<section class="h-section h-dark" id="monthly">
   <div class="container">
-    <div class="pr-label reveal">
-      <span class="pr-label-n" aria-hidden="true">01</span>
-      <div class="pr-label-text">
-        <p class="eyebrow">Project packages</p>
-        <h2>Custom project work.</h2>
-      </div>
-    </div>
-
-    <div style="max-width:60ch;margin-bottom:clamp(36px,5vw,60px);" class="reveal">
-      <p style="color:var(--muted);line-height:1.7;font-size:1.02rem;">Every project is scoped individually. There are no fixed prices because no two briefs are the same. We look at what you're trying to achieve, what's already in place, and how much is involved, then put together a clear proposal with timeline and deliverables.</p>
-    </div>
-
-    <!-- 4 types -->
-    <div class="pkg-types reveal">
-      <!-- Landing Page -->
-      <div class="pkg-type">
-        <span class="pkg-type-n">01</span>
-        <h3>Landing Page</h3>
-        <p>A focused, conversion-ready page built to present one idea clearly. Useful for product launches, waitlists, campaign pages or a refined homepage that actually converts.</p>
-        <ul>
-          <li>Visual design + responsive layout</li>
-          <li>Copywriting direction and hierarchy</li>
-          <li>Figma handoff or built for your stack</li>
-          <li>Optimised for speed and clarity</li>
-        </ul>
-      </div>
-      <!-- Small Business Website -->
-      <div class="pkg-type">
-        <span class="pkg-type-n">02</span>
-        <h3>Small Business Website</h3>
-        <p>A complete, professionally designed web presence. Clean, fast and built to work for your business, from the homepage through to contact and key service pages.</p>
-        <ul>
-          <li>3 to 6 pages, full visual design</li>
-          <li>Mobile-first, accessible markup</li>
-          <li>Brand integration and content layout</li>
-          <li>CMS setup or static delivery</li>
-        </ul>
-      </div>
-      <!-- Product Design Sprint -->
-      <div class="pkg-type">
-        <span class="pkg-type-n">03</span>
-        <h3>Product Design Sprint</h3>
-        <p>Focused UX and UI work for a defined part of your product. Useful when you have a feature to ship, a flow to improve, or a new screen that needs to be right before going to development.</p>
-        <ul>
-          <li>User flows, wireframes and final UI</li>
-          <li>Component and pattern design</li>
-          <li>Figma deliverable, dev-ready</li>
-          <li>Feedback and iteration included</li>
-        </ul>
-      </div>
-      <!-- Brand Starter -->
-      <div class="pkg-type">
-        <span class="pkg-type-n">04</span>
-        <h3>Brand Starter</h3>
-        <p>A focused brand identity package for new businesses and projects that need to look the part without a full six-month brand programme. Fast, practical and built for real use.</p>
-        <ul>
-          <li>Logo and primary mark</li>
-          <li>Colour, type and usage guidelines</li>
-          <li>Key brand asset set</li>
-          <li>Ready to use across print and digital</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- Single CTA -->
-    <div class="pkg-cta-strip reveal">
-      <div class="pkg-cta-strip-text">
-        <h3>Get a proposal for your project.</h3>
-        <p>Tell us what you're building and we'll come back with a clear scope, timeline and price. No commitment needed.</p>
-      </div>
-      <div class="pkg-cta-strip-actions">
-        <a href="/contact" class="btn btn-light">Start the conversation</a>
-      </div>
-    </div>
+    <p class="h-pill"><span class="c-pill-num">02</span> Monthly design</p>
+    <h2 class="h-head p-section-title">A designer every month</h2>
+    <p class="p-intro">For businesses that need regular design help but not a full-time hire. Send requests as they come up, and I work through them one at a time. You can cancel at any time.</p>
+<div class="p-plans">
+  <div class="p-plan">
+    <h3>Design Light</h3>
+    <p class="p-plan-desc">For occasional help, a few tasks each month.</p>
+    <p class="p-price">NZ$750<small>/ month</small></p>
+    <p class="p-price-note">Up to 5 hours a month</p>
+    <ul><li>One active request at a time</li><li>Website updates and graphics</li><li>Basic brand support</li><li>Simple layouts and documents</li><li>One month of rollover on unused hours</li></ul>
+    <p class="p-price-note">Good for small businesses, consultants and local services.</p>
+    <a class="h-btn h-btn-primary" href="/contact?service=monthly">Ask about Design Light</a>
+  </div>
+  <div class="p-plan is-featured"><span class="p-plan-tag">Most popular</span>
+    <h3>Design Care</h3>
+    <p class="p-plan-desc">Regular support across website, marketing, brand and content.</p>
+    <p class="p-price">NZ$1,500<small>/ month</small></p>
+    <p class="p-price-note">Up to 10 hours a month</p>
+    <ul><li>One active request at a time</li><li>Website, marketing, UX/UI and presentations</li><li>Design QA and feedback</li><li>Priority over hourly work</li><li>One month of rollover on unused hours</li></ul>
+    <p class="p-price-note">Good for growing businesses, startups and small marketing teams.</p>
+    <a class="h-btn h-btn-primary" href="/contact?service=monthly">Ask about Design Care</a>
+  </div>
+  <div class="p-plan">
+    <h3>Design Partner</h3>
+    <p class="p-plan-desc">Ongoing work across several areas of your business.</p>
+    <p class="p-price">NZ$2,800<small>/ month</small></p>
+    <p class="p-price-note">Up to 20 hours a month</p>
+    <ul><li>Two active requests at a time</li><li>Website, product, brand and campaigns</li><li>A monthly planning call</li><li>Design input and priority support</li><li>One month of rollover on unused hours</li></ul>
+    <p class="p-price-note">Good for agencies, funded startups and active marketing teams.</p>
+    <a class="h-btn h-btn-primary" href="/contact?service=monthly">Ask about Design Partner</a>
+  </div>
+</div>
+    <div class="h-actions"><a class="h-link" href="/pricing/monthly">How monthly design works <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </div>
 </section>
 
-<!-- ── SECTION 2: MONTHLY DESIGN SUPPORT ────────────────────── -->
-<section class="pr-section pr-section-alt" id="monthly">
+<section class="h-section h-grey" id="projects">
   <div class="container">
-    <div class="pr-label reveal">
-      <span class="pr-label-n" aria-hidden="true">02</span>
-      <div class="pr-label-text">
-        <p class="eyebrow">Monthly design support</p>
-        <h2>Design help on retainer.</h2>
-      </div>
+    <p class="h-pill"><span class="c-pill-num">03</span> Projects</p>
+    <h2 class="h-head p-section-title">Bigger work, quoted after a call</h2>
+    <p class="p-intro">Every project is scoped on its own, because no two briefs are the same. We start with a free call, and I send a clear proposal with the timeline, what is included and the price.</p>
+    <div class="p-rows">
+  <div class="p-row"><h3>Small business website</h3><p>A complete website, from the homepage through to services and contact. Three to six pages, designed for mobile first and set up in your CMS or handed to your developer.</p><span class="p-row-price">Quoted after a call</span></div>
+  <div class="p-row"><h3>Website redesign</h3><p>A new structure and design for an existing site, starting with what your visitors need to find and what is getting in their way.</p><span class="p-row-price">Quoted after a call</span></div>
+  <div class="p-row"><h3>Product design sprint</h3><p>Focused UX and UI work on one part of an app or customer portal: user flows, wireframes and final screens, ready for development.</p><span class="p-row-price">Quoted after a call</span></div>
+  <div class="p-row"><h3>Brand identity</h3><p>A logo, colour and type system and a starter set of brand assets, for a new business or one that has outgrown its current look.</p><span class="p-row-price">Quoted after a call</span></div>
     </div>
-
-    <div class="mds-intro reveal">
-      <p>For businesses that need regular creative support without hiring in-house. Send requests as they come up and we work through them one at a time. Three plans to match how much you typically need. Cancel anytime.</p>
-    </div>
-
-    <!-- Plan cards -->
-    <div class="plans-grid reveal">
-      <!-- Design Light -->
-      <div class="plan-card">
-        <p class="plan-eyebrow">Design Light</p>
-        <h3 class="plan-name">Light</h3>
-        <p class="plan-tagline">A few tasks each month. Good for occasional work.</p>
-        <div class="plan-price">NZ$750 <span>/ month</span></div>
-        <hr class="plan-rule" />
-        <ul class="plan-list">
-          <li>Up to 5 hours per month</li>
-          <li>One active request at a time</li>
-          <li>Website updates, graphics, basic brand</li>
-          <li>1 month rollover on unused time</li>
-        </ul>
-        <div class="plan-btn">
-          <a href="/contact?plan=light" class="btn btn-ghost" style="width:100%;justify-content:center;">Enquire</a>
-        </div>
-      </div>
-      <!-- Design Care -->
-      <div class="plan-card featured">
-        <p class="plan-eyebrow">Most popular</p>
-        <h3 class="plan-name">Care</h3>
-        <p class="plan-tagline">Regular support across website, marketing and brand.</p>
-        <div class="plan-price">NZ$1,500 <span>/ month</span></div>
-        <hr class="plan-rule" />
-        <ul class="plan-list">
-          <li>Up to 10 hours per month</li>
-          <li>One active request at a time</li>
-          <li>Website, marketing, UX/UI, presentations</li>
-          <li>Design QA and feedback</li>
-          <li>1 month rollover on unused time</li>
-        </ul>
-        <div class="plan-btn">
-          <a href="/contact?plan=care" class="btn btn-light" style="width:100%;justify-content:center;">Enquire</a>
-        </div>
-      </div>
-      <!-- Design Partner -->
-      <div class="plan-card">
-        <p class="plan-eyebrow">Design Partner</p>
-        <h3 class="plan-name">Partner</h3>
-        <p class="plan-tagline">Ongoing collaboration across multiple areas of your business.</p>
-        <div class="plan-price">NZ$2,800 <span>/ month</span></div>
-        <hr class="plan-rule" />
-        <ul class="plan-list">
-          <li>Up to 20 hours per month</li>
-          <li>Two active requests at a time</li>
-          <li>Website, product, brand and campaigns</li>
-          <li>Monthly planning call + priority support</li>
-          <li>1 month rollover on unused time</li>
-        </ul>
-        <div class="plan-btn">
-          <a href="/contact?plan=partner" class="btn btn-ghost" style="width:100%;justify-content:center;">Enquire</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Full details CTA -->
-    <div class="mds-footer reveal">
-      <p>Not sure which plan fits, or want to understand what requests work well?</p>
-      <a href="/pricing/monthly/" class="btn btn-ghost">See how it works in detail</a>
-    </div>
+    <div class="h-actions"><a class="h-btn h-btn-primary" href="/contact?service=project">Book a free call</a></div>
   </div>
 </section>
 
-<!-- ── SECTION 3: HOURLY ──────────────────────────────────────── -->
-<section class="pr-section section-ink ink-glow" id="hourly">
-  <div class="container">
-    <div class="pr-label reveal">
-      <span class="pr-label-n" aria-hidden="true">03</span>
-      <div class="pr-label-text">
-        <p class="eyebrow">Hourly support</p>
-        <h2>Pay as you go.</h2>
-      </div>
+<section class="h-section h-dark" id="hourly">
+  <div class="container p-split">
+    <div>
+      <p class="h-pill"><span class="c-pill-num">04</span> Hourly</p>
+      <h2 class="h-head p-section-title">Pay as you go</h2>
+      <p class="p-intro">For one-off tasks, design reviews, quick consultations or overflow work, where a project or monthly plan is not the right fit. I always share a rough estimate before starting and invoice on the hours tracked.</p>
     </div>
-
-    <div class="hourly-wrap">
-      <div class="reveal">
-        <div class="hourly-rate">NZ$95 <span>/ hour</span></div>
-      </div>
-      <div class="hourly-detail reveal d1">
-        <p>For smaller one-off tasks, design audits, quick consultations or overflow work where a full project or monthly plan isn't the right fit.</p>
-        <p>Work is invoiced on hours tracked. A rough estimate is always shared before starting. No surprises.</p>
-        <a href="/contact" class="btn btn-light" style="align-self:flex-start;">Get in touch</a>
-      </div>
+    <div class="p-plan">
+      <h3>Hourly</h3>
+      <p class="p-price">NZ$95<small>/ hour</small></p>
+      <p class="p-price-note">Estimate shared before any work starts.</p>
+      <a class="h-btn h-btn-primary" href="/contact?service=hourly">Get in touch</a>
     </div>
   </div>
 </section>
-
-<!-- ── SECTION 4: CTA ─────────────────────────────────────────── -->
-<section class="pr-section section-ink" style="border-top:1px solid rgba(255,255,255,.09);">
+<section class="h-section h-grey h-close">
   <div class="container">
-    <div class="pr-cta reveal">
-      <h2>Not sure what you need?</h2>
-      <p>Tell us what you're working on and we'll suggest the simplest option. We respond within 1 to 2 business days.</p>
-      <div class="pr-cta-actions">
-        <a href="/contact" class="btn btn-light">Start a conversation</a>
-        <a href="/portfolio" class="btn btn-ghost">See our work first</a>
-      </div>
+    <h2 class="h-head h-title">Got something in mind?</h2>
+    <p class="h-lead">Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost.</p>
+    <div class="h-actions">
+      <a class="h-btn h-btn-dark" href="/contact">Book a free call</a>
     </div>
+    <p class="h-small">or email <a href="mailto:ben.ng189@gmail.com">ben.ng189@gmail.com</a></p>
   </div>
 </section>
+</main>
 
-<!-- ── FOOTER ──────────────────────────────────────────────────── -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand" href="/"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
-        <p>Independent design studio in Auckland, NZ. Available for new projects.</p>
+        <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
+        <p data-cms="footer.blurb">Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands.</p>
       </div>
       <div class="footer-col">
-        <h5>Work</h5>
-        <a href="/portfolio">All projects</a>
-        <a href="/work/soundlax/">SoundLax</a>
-        <a href="/work/kmart/">Kmart concept</a>
-        <a href="/work/cohesive-construction/">Cohesive Construction</a>
-      </div>
-      <div class="footer-col">
-        <h5>Studio</h5>
+        <h5>Explore</h5>
+        <a href="/portfolio">Work</a>
         <a href="/pricing">Pricing</a>
-        <a href="/writing">Writing</a>
-        <a href="/contact">Contact</a>
         <a href="/soundlax-app">SoundLax app</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h5>Connect</h5>
+        <a href="mailto:ben.ng189@gmail.com">ben.ng189@gmail.com</a>
+        <a href="/contact">Book a free call</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Bentoji Studio</span>
-      <a href="/soundlax/privacypolicy/">Privacy policy</a>
+      <span>© <span data-year>2026</span> Bentoji. All rights reserved.</span>
+      <span>Made in Aotearoa New Zealand</span>
     </div>
   </div>
 </footer>
 
-<script src="/assets/site.js?v=33"></script>
-<script>
-(function(){
-  // Reveal on scroll
-  var els = document.querySelectorAll('.reveal');
-  if (!els.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
-  },{threshold:.08});
-  els.forEach(function(el){ io.observe(el); });
-})();
-(function(){
-  // Mobile menu
-  var btn = document.querySelector('.nav-toggle');
-  var menu = document.querySelector('.mobile-menu');
-  if (!btn || !menu) return;
-  btn.addEventListener('click', function(){
-    var open = menu.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open);
-  });
-})();
-</script>
+<script src="/assets/site.js?v=35"></script>
 </body>
 </html>

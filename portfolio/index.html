@@ -3,25 +3,30 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-<title>Work - Bentoji Studio</title>
-<meta name="description" content="Selected design and product work from Bentoji Studio - apps, brands, websites, and motion." />
+<title>Work | Bentoji, Ben Nguyen</title>
+<meta name="description" content="Websites, landing pages, ads, print, brand and apps designed by Ben Nguyen in Auckland. Filter by the type of work you need." />
 <link rel="canonical" href="https://bentoji.co.nz/portfolio" />
-<meta property="og:title" content="Work - Bentoji Studio" />
-<meta property="og:description" content="Selected design and product work from Bentoji Studio." />
+<meta property="og:title" content="Work | Bentoji, Ben Nguyen" />
+<meta property="og:description" content="Websites, landing pages, ads, print, brand and apps designed by Ben Nguyen in Auckland. Filter by the type of work you need." />
 <meta property="og:image" content="https://bentoji.co.nz/assets/img/app-icon.png" />
 <link rel="icon" href="/assets/img/app-icon.png" sizes="any" />
 <script>document.documentElement.classList.add('js');</script>
+<link rel="preload" href="/assets/type/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=47" />
+<link rel="stylesheet" href="/assets/home.css?v=5" />
+<link rel="stylesheet" href="/assets/pages.css?v=3" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
-<body class="work-listing">
+<body class="home">
 
 <header class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/portfolio" aria-current="page">Work</a>
-      <a href="/soundlax-app">SoundLax app</a>
+      <a href="/pricing">Pricing</a>
+      <a href="/soundlax-app">SoundLax</a>
       <a href="/writing">Writing</a>
       <a href="/contact">Contact</a>
       <a class="btn btn-ghost nav-cta" href="/contact">Let's talk</a>
@@ -38,76 +43,61 @@
   <a class="btn btn-light" href="/contact">Let's talk</a>
 </div>
 
-<!-- header -->
-<section class="hero" style="padding-bottom:0">
-  <div class="aurora" aria-hidden="true"><span class="blob b1"></span><span class="blob b3"></span></div>
-  <div class="grain" aria-hidden="true"></div>
+<main>
+<section class="h-dark p-hero">
   <div class="container">
-    <h1 class="display reveal d1">Selected projects.</h1>
-    <p class="lead reveal d2" style="color:var(--muted);max-width:56ch">A selection of websites, platforms, and products Ben has worked on across New Zealand, Australia, and beyond. Tap any project to go deeper.</p>
+    <p class="h-pill">Work</p>
+    <h1 class="h-head">Websites, ads, print and apps</h1>
+    <p class="h-lead">Client projects, concept pieces and my own products. Use the filters to see one type of work at a time.</p>
+    
   </div>
 </section>
-
-<!-- grid -->
-<section class="section">
+<section class="h-section h-dark" style="padding-top:0">
   <div class="container">
-    <div class="work-grid" data-work-grid data-limit="0"></div>
+    <div data-work-index></div>
   </div>
 </section>
-
-<!-- CTA -->
-<section class="section" style="padding-top:0">
+<section class="h-section h-grey h-close">
   <div class="container">
-    <div class="cta-callout reveal">
-      <div class="cta-callout-inner">
-        <div class="cta-callout-text">
-          <h2>Want to work together?</h2>
-          <p>We take on a small number of projects at a time so each one gets real attention.</p>
-          <div class="hero-actions">
-            <a class="btn btn-light btn-lg" href="/contact">Start a project</a>
-            <a class="btn btn-ghost btn-lg" href="mailto:ben.ng189@gmail.com">Email us</a>
-          </div>
-        </div>
-        <div class="cta-visual" aria-hidden="true">
-          <div class="cta-visual-mark">
-            <div class="cta-visual-lines">
-              <span></span><span></span><span></span><span></span><span></span><span></span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <h2 class="h-head h-title">Got something in mind?</h2>
+    <p class="h-lead">Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost.</p>
+    <div class="h-actions">
+      <a class="h-btn h-btn-dark" href="/contact">Book a free call</a>
     </div>
+    <p class="h-small">or email <a href="mailto:ben.ng189@gmail.com">ben.ng189@gmail.com</a></p>
   </div>
 </section>
+</main>
 
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
         <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
-        <p>An independent design &amp; product studio making calm, useful, beautifully crafted digital things.</p>
+        <p data-cms="footer.blurb">Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands.</p>
       </div>
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="/portfolio">Work</a>
+        <a href="/pricing">Pricing</a>
         <a href="/soundlax-app">SoundLax app</a>
-        <a href="/writing">Writing</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
         <h5>Connect</h5>
         <a href="mailto:ben.ng189@gmail.com">ben.ng189@gmail.com</a>
-        <a href="/contact">Start a project</a>
+        <a href="/contact">Book a free call</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year>2026</span> Bentoji Studio. All rights reserved.</span>
+      <span>© <span data-year>2026</span> Bentoji. All rights reserved.</span>
       <span>Made in Aotearoa New Zealand</span>
     </div>
   </div>
 </footer>
 
-<script src="/assets/projects.js?v=17"></script>
-<script src="/assets/site.js?v=33"></script>
+<script src="/assets/projects.js?v=19"></script>
+<script src="/assets/site.js?v=35"></script>
+<script src="/assets/portfolio.js?v=1"></script>
 </body>
 </html>

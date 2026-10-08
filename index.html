@@ -18,6 +18,7 @@
 <link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=47" />
 <link rel="stylesheet" href="/assets/home.css?v=5" />
+<link rel="stylesheet" href="/assets/pages.css?v=3" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -72,8 +73,8 @@
 <section class="h-hero h-dark">
   <div class="container">
     <p class="h-pill reveal" data-cms="hero.pill">Ben Nguyen · Designer, Auckland</p>
-    <h1 class="h-head h-display reveal d1" data-cms="hero.title">I design websites, apps and brands.</h1>
-    <p class="h-lead reveal d2" data-cms="hero.lead">I've spent 10+ years designing for agencies, small businesses and my own apps. Here's some of that work.</p>
+    <h1 class="h-head h-display reveal d1" data-cms="hero.title">I design websites, ads, print and apps.</h1>
+    <p class="h-lead reveal d2" data-cms="hero.lead">I have spent more than ten years designing for agencies, small businesses and my own apps. I take on small jobs, monthly design work and full projects.</p>
     <div class="h-actions reveal d3">
       <a class="h-btn h-btn-primary" href="#work">See the work</a>
       <a class="h-btn h-btn-ghost" href="/contact">Book a free call</a>
@@ -81,18 +82,20 @@
   </div>
 </section>
 
-<!-- ============ SELECTED WORK (dark) ============ -->
-<!-- Cards come from assets/projects.js: projects marked featured: true, in file order. -->
+<!-- ============ WORK BY TYPE (dark) ============ -->
+<!-- Tiles and case study cards come from assets/projects.js (WORK_TYPES, PIECES, and projects with featured: true). -->
 <section class="h-section h-dark h-work" id="work">
   <div class="container">
     <div class="h-section-head reveal">
       <div>
-        <p class="h-pill" data-cms="work.pill">Selected work</p>
-        <h2 class="h-head h-title" data-cms="work.heading">The work</h2>
+        <p class="h-pill" data-cms="work.pill">Work</p>
+        <h2 class="h-head h-title" data-cms="work.heading">What I make</h2>
       </div>
       <a class="h-link" href="/portfolio">See all work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="work-grid" data-work-grid data-featured data-limit="4"></div>
+    <div class="w-tiles" data-type-tiles></div>
+    <p class="h-sub-label" data-cms="work.casesLabel">Case studies</p>
+    <div class="w-cases" data-case-cards data-limit="3"></div>
   </div>
 </section>
 
@@ -100,19 +103,25 @@
 <section class="h-section h-grey" id="services">
   <div class="container">
     <p class="h-pill reveal" data-cms="services.pill">Services</p>
-    <h2 class="h-head h-title is-orange reveal d1" data-cms="services.heading">Two ways to work together</h2>
-    <div class="h-services-grid">
+    <h2 class="h-head h-title reveal d1" data-cms="services.heading">Three ways to work together</h2>
+    <div class="h-services-grid is-three">
       <div class="h-service reveal">
         <span class="h-num">01</span>
-        <h3 class="h-head h-sub" data-cms="services.items.0.title">Monthly design</h3>
-        <p data-cms="services.items.0.body">For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up.</p>
-        <a class="h-link" href="/pricing/monthly"><span data-cms="services.items.0.linkText">How monthly design works</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <h3 class="h-head h-sub" data-cms="services.items.0.title">Small jobs</h3>
+        <p data-cms="services.items.0.body">One landing page, an ad set, a brochure or a book cover, at a fixed price agreed before I start.</p>
+        <a class="h-link" href="/pricing#small-jobs"><span data-cms="services.items.0.linkText">See small job prices</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="h-service reveal d2">
         <span class="h-num">02</span>
-        <h3 class="h-head h-sub" data-cms="services.items.1.title">Projects</h3>
-        <p data-cms="services.items.1.body">Websites, landing pages, apps and brand identities. We start with a free call, and I'll give you a clear estimate after it.</p>
-        <a class="h-link" href="/pricing"><span data-cms="services.items.1.linkText">See project pricing</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <h3 class="h-head h-sub" data-cms="services.items.1.title">Monthly design</h3>
+        <p data-cms="services.items.1.body">For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up.</p>
+        <a class="h-link" href="/pricing/monthly"><span data-cms="services.items.1.linkText">How monthly design works</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="h-service reveal">
+        <span class="h-num">03</span>
+        <h3 class="h-head h-sub" data-cms="services.items.2.title">Projects</h3>
+        <p data-cms="services.items.2.body">Websites, apps and brand identities. We start with a free call, and I send a clear estimate afterwards.</p>
+        <a class="h-link" href="/pricing#projects"><span data-cms="services.items.2.linkText">See how projects work</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
@@ -203,7 +212,8 @@
   </div>
 </footer>
 
-<script src="/assets/projects.js?v=18"></script>
+<script src="/assets/projects.js?v=19"></script>
 <script src="/assets/site.js?v=35"></script>
+<script src="/assets/portfolio.js?v=1"></script>
 </body>
 </html>

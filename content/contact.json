@@ -1,15 +1,15 @@
 {
   "hero": {
-    "title": "Let's talk.",
-    "lead": "Tell us a little about your project, timeline, and what you're hoping to make. We read every message."
+    "title": "Let's talk",
+    "lead": "Tell me a little about what you need and when you need it. I read every message and usually reply within one or two working days."
   },
   "details": {
     "email": "ben.ng189@gmail.com",
-    "studio": "Aotearoa New Zealand · working worldwide",
-    "takeOn": "Product & app design, brand & identity, web design & build.",
-    "response": "Usually within 1–2 business days."
+    "studio": "Auckland, New Zealand, working with clients in New Zealand and Australia",
+    "takeOn": "Websites and landing pages, ads and social, print and brochures, book covers, brand identity, apps and portals.",
+    "response": "Usually within one or two working days."
   },
   "footer": {
-    "blurb": "An independent design & product studio making calm, useful, beautifully crafted digital things."
+    "blurb": "Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands."
   }
 }
