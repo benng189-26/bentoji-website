@@ -245,5 +245,4 @@ body.case{
   .case .c-decision.is-flip .c-figure{order:1;}
 }
 
-/* light sections: violet accent (highlights, chips, numbers, quote cards) */
-.case .h-grey{--c-accent:var(--h-violet);}
+/* light sections: headings violet (set in home.css), accents stay orange */

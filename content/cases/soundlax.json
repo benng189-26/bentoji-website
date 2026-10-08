@@ -9,7 +9,7 @@
   "hero": {
     "pill": "Product design and build",
     "title": "A sound app you don't have to browse",
-    "intro": "I designed, built and launched SoundLax on my own. It's an ambient sound app for focus, rest and sleep.",
+    "intro": "I designed, built and launched SoundLax on my own. It is an ambient sound app for focus, rest and sleep, available on iPhone, iPad, Apple Watch and Mac.",
     "links": [
       {
         "text": "See it on the App Store",
@@ -36,7 +36,7 @@
     },
     {
       "k": "Team",
-      "v": "Just me"
+      "v": "Solo project"
     },
     {
       "k": "Platforms",
@@ -77,8 +77,8 @@
         {
           "type": "text",
           "p": [
-            "The need was there. The apps built for it just weren't worth opening, so people put up with ads and autoplay to get some rain on.",
-            "The brief I set myself was [[one place to put a sound on in a couple of seconds]], without being sold a programme. I was also building it alone, so every feature had to be something I could design, code and look after myself."
+            "The need was there, but the apps built for it were not worth opening. People accepted ads and autoplay just to play rain in the background.",
+            "The brief I set myself was [[one place to start a sound within a couple of seconds]], without being sold a programme. I was also building it on my own, so every feature had to be something I could design, build and maintain myself."
           ]
         }
       ]
@@ -95,8 +95,8 @@
           "num": "01",
           "title": "No library on the home screen",
           "p": [
-            "Most sound apps open on a grid of hundreds of tracks and a search bar. SoundLax opens on four birds, each one a mood: tūī for sharp focus, ruru for deep work, fantail for light and easy, kererū for relaxing.",
-            "People pick how they want to feel, and the sound is already chosen. {{Is the full sound list one tap away? If so, say so here.}}"
+            "Most sound apps open on a grid of hundreds of tracks and a search bar. SoundLax opens on four birds instead, and each one represents a mood: tūī for sharp focus, ruru for deep work, fantail for light and easy, and kererū for relaxing.",
+            "People choose how they want to feel, and the sound is already selected for them. {{Is the full sound list one tap away? If so, say so here.}}"
           ],
           "image": {
             "src": "/assets/img/work/soundlax/closeup-start-here.jpg",
@@ -104,7 +104,7 @@
             "prepare": "Close-up of the 'Start here' section on the home screen: the four bird cards, cropped tight enough to read the labels and see the grain. Fix KERERŪ spelling if needed.",
             "size": "1600 × 1200 JPG (4:3), on navy #060D27",
             "ratio": "4/3",
-            "caption": "The home screen asks for a mood, not a search term."
+            "caption": "The home screen asks for a mood rather than a search term."
           }
         },
         {
@@ -113,8 +113,8 @@
           "flip": true,
           "title": "No player that disappears",
           "p": [
-            "In the apps I tried, the playback controls vanished as soon as I went looking for something else.",
-            "In SoundLax the now-playing bar stays at the bottom of every screen, so changing the mix or stopping a sound is one tap from anywhere in the app."
+            "In the apps I tested, the playback controls disappeared as soon as I moved to another screen.",
+            "In SoundLax, the now-playing bar stays at the bottom of every screen, so changing the mix or stopping a sound takes one tap from anywhere in the app."
           ],
           "image": {
             "src": "/assets/img/work/soundlax/closeup-player-bar.jpg",
@@ -122,7 +122,7 @@
             "prepare": "The bottom third of two different screens side by side (for example Home and Sleep), with the same now-playing bar on both.",
             "size": "1600 × 1200 JPG (4:3), on navy #060D27",
             "ratio": "4/3",
-            "caption": "Same bar, every screen."
+            "caption": "The same now-playing bar appears on every screen."
           }
         },
         {
@@ -130,8 +130,8 @@
           "num": "03",
           "title": "No mixer on every screen",
           "p": [
-            "Some people want to layer rain over café noise and set each volume. Most just want a sound on.",
-            "So the mixer sits behind one card, 'Mix your own set', instead of on every screen. It's there for the people who want it and out of the way for everyone else."
+            "Some people want to layer rain over café noise and adjust each volume. Most people only want a sound playing.",
+            "For that reason, the mixer sits behind a single card, 'Mix your own set', rather than appearing on every screen. It is available to the people who want it and stays out of the way for everyone else."
           ],
           "image": {
             "src": "/assets/img/work/soundlax/closeup-mixer.jpg",
@@ -139,7 +139,7 @@
             "prepare": "The mixer open with two or three sounds layered (for example Brown Noise, Café Ambience and Soft Piano) and their volume sliders.",
             "size": "1600 × 1200 JPG (4:3), on navy #060D27",
             "ratio": "4/3",
-            "caption": "One card on the home screen leads here."
+            "caption": "The mixer opens from one card on the home screen."
           }
         }
       ]
@@ -154,9 +154,9 @@
         {
           "type": "text",
           "p": [
-            "Every calm app looks calm in exactly the same way: soft gradients, flat illustration, blue and purple. I wanted SoundLax to look like it came from somewhere.",
-            "Birdsong is part of everyday life in New Zealand, from suburban gardens to native bush, so native birds were an easy place to start. I took vintage naturalist illustrations and paired them with [[bold colour, grain and a plain modern interface]].",
-            "Each bird also stands for a mood, so the illustrations double as navigation."
+            "Many calm apps look calm in the same way: soft gradients, flat illustration, and blue and purple palettes. I wanted SoundLax to have more character and a clear connection to where it was made.",
+            "Birdsong is part of everyday life in New Zealand, from suburban gardens to native bush, so native birds were a natural starting point. I paired vintage naturalist illustrations with [[bold colour, subtle grain and a clean, modern interface]].",
+            "Each bird also represents a mood, so the illustrations work as navigation as well as decoration."
           ]
         },
         {
@@ -192,7 +192,7 @@
           "type": "image",
           "src": "/assets/img/work/soundlax/visual-language.webp",
           "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration",
-          "caption": "Type, colour, scenes and the bird set, side by side."
+          "caption": "Type, colour, scenes and the bird set shown together."
         },
         {
           "type": "image",
@@ -201,7 +201,7 @@
           "prepare": "One bird card (the tūī) at large size, close enough to see the grain, the illustration detail and how the label sits on the texture.",
           "size": "2400 × 1350 JPG (16:9), on navy #060D27",
           "ratio": "16/9",
-          "caption": "The text sits on busy texture, so I checked the contrast on every card."
+          "caption": "The text sits on detailed texture, so I checked the contrast on every card."
         }
       ]
     },
@@ -224,7 +224,7 @@
           "title": "Focus and sleep",
           "src": "/assets/img/work/soundlax/feature-screens.webp",
           "alt": "Four SoundLax screens: a focus timer, a focus task list, adding a task, and sleep settings",
-          "caption": "The focus timer pairs a sound with a Pomodoro session. Sleep has a timer that fades the sound out, and an alarm that fades in instead of going off."
+          "caption": "The focus timer pairs a sound with a Pomodoro session. The sleep screen has a timer that fades the sound out, and an alarm that fades in gradually rather than going off suddenly."
         },
         {
           "type": "image",
@@ -243,14 +243,14 @@
           "title": "Four devices",
           "src": "/assets/img/work/soundlax/devices.webp",
           "alt": "SoundLax on Mac, Apple Watch and iPhone",
-          "caption": "One design across iPhone, iPad, Apple Watch and Mac. I built the Mac version with Mac Catalyst rather than as a separate app. {{Re-export this image with KERERŪ spelled correctly on the Mac and onboarding screens.}}"
+          "caption": "One design runs across iPhone, iPad, Apple Watch and Mac. I built the Mac version with Mac Catalyst rather than as a separate app. {{Re-export this image with KERERŪ spelled correctly on the Mac and onboarding screens.}}"
         },
         {
           "type": "image",
           "title": "App Store screenshots",
           "src": "/assets/img/work/soundlax/app-store.webp",
           "alt": "Four SoundLax App Store screenshots",
-          "caption": "Each screenshot leads with one reason to download, not a feature list."
+          "caption": "Each screenshot leads with one reason to download the app rather than a list of features."
         }
       ]
     },
@@ -285,7 +285,7 @@
         {
           "type": "text",
           "p": [
-            "Not all of it was praise. People asked for more sounds and better balance between them, and several noticed that Brown Noise cut out for a split second every time it looped, first on the Mac version.",
+            "Not all of the feedback was positive. People asked for more sounds and better balance between them, and several people noticed that Brown Noise cut out briefly each time it looped, first on the Mac version.",
             "{{What did you change because of this feedback? List only what has shipped, with the version. For example: mixes now save edits automatically (version X), the Brown Noise loop is fixed (2.7).}}"
           ]
         },
@@ -319,7 +319,7 @@
             },
             {
               "value": "22%",
-              "label": "of people open it daily"
+              "label": "of people use it daily"
             }
           ],
           "note": "{{These are from the first two months. Update them with current numbers and the date if you have them.}}"
@@ -327,7 +327,7 @@
         {
           "type": "text",
           "p": [
-            "It also put the whole product in my hands for the first time: the question to friends, the design, the Swift code, App Store review, subscriptions, and bugs that people found before I did."
+            "The project also gave me responsibility for a whole product for the first time: the early research with friends, the design, building it in SwiftUI with AI assistance, App Store review, subscriptions, and fixing bugs that users found before I did."
           ]
         },
         {

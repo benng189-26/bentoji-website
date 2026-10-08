@@ -222,7 +222,6 @@ body.home{
 .home .h-dark .h-pill,.home .h-grey .h-pill{color:#fff;}
 .home .h-pill.is-light,.home .h-dark .h-pill.is-light{color:var(--h-ink);}
 
-/* Light sections use violet as the accent instead of orange.
-   Everything that reads --h-orange inside .h-grey (pills, orange
-   headings, numbers, primary buttons) switches automatically. */
-.home .h-grey{--h-orange:var(--h-violet);--h-orange-dark:var(--h-violet-hover);}
+/* Light sections: headings in violet, accents (pills, highlights,
+   chips, numbers, buttons) stay orange. */
+.home .h-grey .h-head,.home .h-grey .h-head.is-orange{color:var(--h-violet);}
