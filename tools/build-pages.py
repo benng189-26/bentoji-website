@@ -7,7 +7,7 @@ the case study shells and the SoundLax landing page are not built here.
 """
 import os
 
-V = {'site': 47, 'home': 5, 'pages': 3, 'case': 6, 'projects': 19, 'portfolio': 1, 'sitejs': 35, 'casejs': 6}
+V = {'site': 47, 'home': 5, 'pages': 3, 'case': 6, 'projects': 20, 'portfolio': 1, 'sitejs': 35, 'casejs': 6}
 EMAIL = 'ben.ng189@gmail.com'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'

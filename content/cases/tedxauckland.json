@@ -1,0 +1,287 @@
+{
+  "slug": "tedxauckland",
+  "name": "TEDxAuckland website",
+  "theme": {
+    "dark": "#1d1d1d",
+    "dark2": "#262626",
+    "accent": "#f94e22"
+  },
+  "hero": {
+    "pill": "Website design",
+    "title": "Helping Auckland audiences get closer to TEDx",
+    "intro": "TEDxAuckland is an independently run TED event. In 2018 I volunteered to redesign its website. I led the design and ended up running the project, with a team of four over about six months.",
+    "image": {
+      "src": "/assets/img/work/tedxauckland/hero.webp",
+      "alt": "The TEDxAuckland homepage in a browser window, over a dark photo of the event venue"
+    }
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "TEDxAuckland"
+    },
+    {
+      "k": "Role",
+      "v": "Volunteer. Led the design and ran the project"
+    },
+    {
+      "k": "Team",
+      "v": "Four volunteers"
+    },
+    {
+      "k": "Timeline",
+      "v": "About six months"
+    },
+    {
+      "k": "Year",
+      "v": "2018"
+    }
+  ],
+  "sections": [
+    {
+      "id": "brief",
+      "nav": "The brief",
+      "tone": "grey",
+      "pill": "The brief",
+      "heading": "Starting from a broken site",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The site from the previous year had been built in CloudCannon by a volunteer, and by the time I saw it, it was broken in enough places to be a problem. It loaded."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "There was no clear way to buy a ticket, which for an event site is most of the job."
+        },
+        {
+          "type": "text",
+          "p": [
+            "The organisation needed three things from the new site:"
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Reflect the energy of the events",
+            "Online ticket booking",
+            "Put speakers in front of a diverse local audience"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decisions",
+      "nav": "Decisions",
+      "tone": "dark",
+      "pill": "Decisions",
+      "heading": "Quick to find a talk, a speaker or a ticket",
+      "blocks": [
+        {
+          "type": "decision",
+          "num": "01",
+          "title": "Scannability over density",
+          "p": [
+            "I broke the content into clear sections with a strong hierarchy: short blocks instead of long paragraphs, clear headings and spacing, and content modules that are reused across pages."
+          ],
+          "image": {
+            "src": "/assets/img/work/tedxauckland/closeup-scan.webp",
+            "alt": "Four talk cards from the Talks page, each with a photo, title, speaker name and topic tags",
+            "prepare": "Talks page, the first two rows of talk cards, cropped tight.",
+            "size": "1600 × 1200 (4:3), exported at 2x",
+            "ratio": "4/3",
+            "caption": "Every talk card uses the same module: photo, title, speaker and topic tags."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "02",
+          "flip": true,
+          "title": "Easier navigation",
+          "p": [
+            "Speakers, the schedule and tickets are easy to find without digging through dense content.",
+            "Buy ticket sits at the right of the menu on every page, and a red strip under each page header names the next event, its date and the venue."
+          ],
+          "image": {
+            "src": "/assets/img/work/tedxauckland/closeup-nav.webp",
+            "alt": "Top of the TEDxAuckland homepage: menu, Buy ticket link, hero and the red upcoming event strip",
+            "prepare": "Homepage, from the menu down to the red upcoming event strip and the start of the speaker row.",
+            "size": "1600 × 1200 (4:3), exported at 2x",
+            "ratio": "4/3",
+            "caption": "The menu, the ticket link and the next event are visible before any scrolling."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "03",
+          "title": "A stronger focus on speakers",
+          "p": [
+            "Speakers are one of the main reasons people attend TEDx events. Choosing a speaker opens their bio, links and talk in place, so people can explore the line-up without leaving the page."
+          ],
+          "image": {
+            "src": "/assets/img/work/tedxauckland/closeup-speakers.webp",
+            "alt": "A speaker selected in the grid, with her bio, links and talk video opened below",
+            "prepare": "People page: the first speaker row with one speaker selected and the panel open below it.",
+            "size": "1600 × 1200 (4:3), exported at 2x",
+            "ratio": "4/3",
+            "caption": "Speaker details open inside the grid. Portraits are black and white until one is selected."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "04",
+          "flip": true,
+          "title": "More than one way in",
+          "p": [
+            "The homepage supports several entry points. People can browse by speaker, by topic and theme, or by previous talks, so they start from what they care about most instead of following a single path to the ticket."
+          ],
+          "image": {
+            "src": "/assets/img/work/tedxauckland/closeup-filter.webp",
+            "alt": "The most popular talks banner and the talk filter, with Popular, Category and Years tabs and hashtag topics",
+            "prepare": "Talks page: the red 'most popular talks' band and the filter below it, with the hashtag topics.",
+            "size": "1600 × 1200 (4:3), exported at 2x",
+            "ratio": "4/3",
+            "caption": "Talks can be filtered by popularity, category, year or topic."
+          }
+        }
+      ]
+    },
+    {
+      "id": "visual-language",
+      "nav": "Visual language",
+      "tone": "grey",
+      "pill": "Visual language",
+      "heading": "Black, white and one red",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "I kept the palette close to the TED brand: black and charcoal backgrounds, white type, and [[one red for actions and event information]]. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
+            "{{Optional: one line on why, if there was a reason beyond the TED brand. For example, whether the dark pages were meant to feel like the theatre on the night.}}"
+          ]
+        },
+        {
+          "type": "swatches",
+          "items": [
+            {
+              "name": "Black",
+              "hex": "#000000"
+            },
+            {
+              "name": "Charcoal",
+              "hex": "#353535"
+            },
+            {
+              "name": "TEDx red",
+              "hex": "#ED3624"
+            },
+            {
+              "name": "White",
+              "hex": "#FFFFFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "screens",
+      "nav": "Screens",
+      "tone": "dark",
+      "pill": "Screens",
+      "heading": "Page by page",
+      "blocks": [
+        {
+          "type": "image",
+          "seamless": true,
+          "title": "Home and talks",
+          "src": "/assets/img/work/tedxauckland/home-talks.webp",
+          "alt": "The rest of the TEDxAuckland homepage, with talks and upcoming events, and the Talks page",
+          "caption": "The homepage moves from speakers to talks to upcoming events. The Talks page opens on the most popular talks."
+        },
+        {
+          "type": "image",
+          "seamless": true,
+          "title": "People and speakers",
+          "src": "/assets/img/work/tedxauckland/people.webp",
+          "alt": "The People page and a speaker page with bio, links and the talk video",
+          "caption": "Each speaker also has a page of their own, with their bio, links and the talk they gave."
+        },
+        {
+          "type": "image",
+          "title": "Partners",
+          "src": "/assets/img/work/tedxauckland/partners.webp",
+          "alt": "The Partners page with a grid of partner logos",
+          "caption": "Partners are listed with a short note on how other organisations can get involved."
+        }
+      ]
+    },
+    {
+      "id": "what-got-cut",
+      "nav": "What got cut",
+      "tone": "grey",
+      "pill": "What got cut",
+      "heading": "Buying tickets on the site",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Ticket purchasing inside the site got complicated quickly. There were four of us, all volunteers, so we did not have the resource to build it properly, and ticketing moved to a third party. {{Name the ticketing provider if you can.}}",
+            "The site still carries the rest of the flow:"
+          ]
+        },
+        {
+          "type": "chips",
+          "items": [
+            "Learn about the event",
+            "Browse speakers and topics",
+            "Understand what you're buying",
+            "Commit"
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Only the last step happens somewhere else."
+        }
+      ]
+    },
+    {
+      "id": "what-i-got-wrong",
+      "nav": "What I got wrong",
+      "tone": "dark",
+      "pill": "What I got wrong",
+      "heading": "Nobody had said who was doing what",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "I had only worked in agencies, where everyone knows their role and the work moves without anyone having to ask. I turned up expecting that.",
+            "The producer was not used to working that way. He was not certain what needed doing, who should do it, or by when, and he assumed I would take care of all of it. So things sat still until I noticed they had.",
+            "What fixed it was a meeting where I said out loud what was missing and where we needed to get to. After that we had regular meetings, a timeline and deadlines. The producer took on the sponsors, briefed the copywriter, chased photographers for images and video, and pulled together the speakers and their details. Once people could see the whole project and their part in it, it moved."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "The lesson was not about design."
+        },
+        {
+          "type": "text",
+          "p": [
+            "On a volunteer team nobody is anyone's boss and every deadline is optional, so [[someone has to say who is doing what, and when]]. That was my job, and it took me too long to work out that it was."
+          ]
+        },
+        {
+          "type": "text",
+          "heading": "After launch",
+          "p": [
+            "{{One or two lines on how it went. Did the site launch in time for TEDxYouth@Auckland in May 2018? Anything you can state plainly, such as ticket sales, traffic or what the organisers said. Delete this block if there is nothing to add.}}"
+          ]
+        }
+      ]
+    }
+  ],
+  "next": {
+    "title": "Autodesk Flow Capture",
+    "href": "/work?p=autodesk-flow-capture"
+  }
+}

@@ -280,19 +280,20 @@ window.PROJECTS = [
   {
     slug: 'tedxauckland',
     types: ['web'],
+    link: '/work/tedxauckland/',
     title: 'TEDxAuckland',
-    year: '2024',
+    year: '2018',
     category: 'Website',
-    tagline: 'A website presenting speakers, ideas, and event information in a clear, engaging format - celebrating bold ideas from Aotearoa.',
+    tagline: 'A volunteer redesign of the TEDxAuckland event website, built around the speakers.',
     location: 'Auckland, NZ · Independent TED event',
-    thumb: '/assets/img/work/tedxauckland.jpg',
+    thumb: '/assets/img/work/tedxauckland/hero.webp',
     cover: '/assets/img/work/tedxauckland.jpg',
     coverClass: 'cover-full',
     gallery: ['/assets/img/work/tedxauckland-web-1.png', '/assets/img/work/tedxauckland-web-2.png', '/assets/img/work/tedxauckland-web-3.png', '/assets/img/work/tedxauckland-web-4.png'],
     facts: [
       { k: 'Discipline', v: 'Website · UI/UX' },
       { k: 'Sector', v: 'Events / Media' },
-      { k: 'Role', v: 'UX/UI Designer (Freelance)' }
+      { k: 'Role', v: 'Volunteer, design lead' }
     ],
     body: [
       { h: 'Client overview' },
