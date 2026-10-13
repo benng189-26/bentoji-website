@@ -58,15 +58,7 @@
         {
           "type": "text",
           "p": [
-            "The organisation needed the new site to do three things:"
-          ]
-        },
-        {
-          "type": "chips",
-          "items": [
-            "Reflect the energy of the events",
-            "Let people book tickets online",
-            "Bring speakers to a wide local audience"
+            "The organisation needed the new site to reflect the energy of its events, let people book tickets online, and bring its speakers to a wide local audience."
           ]
         }
       ]
@@ -157,7 +149,7 @@
         {
           "type": "text",
           "p": [
-            "I kept the palette close to the TED brand, with black and charcoal backgrounds, white type, and [[one red kept for actions and event details]]. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
+            "I kept the palette close to the TED brand, with black and charcoal backgrounds, white type, and one red kept for actions and event details. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
             "{{Optional: one line on why, if there was a reason beyond the TED brand. For example, whether the dark pages were meant to feel like the theatre on the night.}}"
           ]
         },
@@ -227,16 +219,7 @@
           "type": "text",
           "p": [
             "Selling tickets directly through the site became complicated quickly. With four volunteers, we did not have the time or resource to build it properly, so ticketing moved to a third-party service. {{Name the ticketing provider if you can.}}",
-            "The site still takes people through most of the process before they buy:"
-          ]
-        },
-        {
-          "type": "chips",
-          "items": [
-            "Learn about the event",
-            "Browse speakers and topics",
-            "Understand what the ticket includes",
-            "Buy the ticket"
+            "The site still takes people through most of the process before they buy, from learning about the event and browsing speakers and topics to understanding what the ticket includes."
           ]
         },
         {
@@ -267,7 +250,7 @@
         {
           "type": "text",
           "p": [
-            "On a volunteer team, nobody is anyone's boss and every deadline is optional, so [[someone has to say clearly who is doing what, and by when]]. That was my job, and it took me longer than it should have to realise it."
+            "On a volunteer team, nobody is anyone's boss and every deadline is optional, so someone has to say clearly who is doing what, and by when. That was my job, and it took me longer than it should have to realise it."
           ]
         },
         {

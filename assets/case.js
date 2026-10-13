@@ -26,6 +26,7 @@
    swatches   { "items": [{ "name", "hex" }] }
    quotes     { "items": [{ "text", "source" }] }
    stats      { "items": [{ "value", "label" }], "note" }
+   list       { "items": ["…"], "heading": optional }
 
    IMAGE      { "src", "alt", "prepare", "size", "ratio", "video": bool }
    If "prepare" is set and the file at "src" doesn't exist yet, a
@@ -47,8 +48,14 @@
    Export close-ups on the project's dark colour with at least 80 px of
    space around the subject, so they blend into the page.
 
-   Inline markup in any text: [[words]] = orange highlight (use once
-   per section at most), {{words}} = a gap Ben still needs to fill.
+   Inline markup in any text: [[words]] = orange highlight,
+   {{words}} = a gap Ben still needs to fill.
+
+   The template is a starting point, not a fixed format. Each case study
+   picks the sections, blocks and visual touches that suit its project:
+   add or remove sections freely, and use [[highlights]] and chips only
+   when they belong to that project's look (they come from SoundLax).
+   With nothing project-specific, plain text is the default.
    =================================================================== */
 (function () {
   var main = document.querySelector('[data-case], [data-case-project]');
