@@ -9,7 +9,7 @@
   "hero": {
     "pill": "Website design",
     "title": "Helping Auckland audiences get closer to TEDx",
-    "intro": "TEDxAuckland is an independently run TED event. In 2018 I volunteered to redesign its website. I led the design and ended up running the project, with a team of four over about six months.",
+    "intro": "TEDxAuckland is an independently run TED event. In 2018 I volunteered to redesign its website, and what started as leading the design turned into running the whole project, with a team of four over about six months.",
     "image": {
       "src": "/assets/img/work/tedxauckland/hero.webp",
       "alt": "The TEDxAuckland homepage in a browser window, over a dark photo of the event venue"
@@ -22,7 +22,7 @@
     },
     {
       "k": "Role",
-      "v": "Volunteer. Led the design and ran the project"
+      "v": "Volunteer, leading the design and the project"
     },
     {
       "k": "Team",
@@ -43,30 +43,30 @@
       "nav": "The brief",
       "tone": "grey",
       "pill": "The brief",
-      "heading": "Starting from a broken site",
+      "heading": "Starting from a site that only just worked",
       "blocks": [
         {
           "type": "text",
           "p": [
-            "The site from the previous year had been built in CloudCannon by a volunteer, and by the time I saw it, it was broken in enough places to be a problem. It loaded."
+            "The previous year's site had been built in CloudCannon by another volunteer, and by the time I first looked at it, it was broken in enough places to be a real problem. It still loaded, but the most important part was missing."
           ]
         },
         {
           "type": "statement",
-          "text": "There was no clear way to buy a ticket, which for an event site is most of the job."
+          "text": "There was no clear way to buy a ticket, which for an event website is most of what it needs to do."
         },
         {
           "type": "text",
           "p": [
-            "The organisation needed three things from the new site:"
+            "The organisation needed the new site to do three things:"
           ]
         },
         {
           "type": "chips",
           "items": [
             "Reflect the energy of the events",
-            "Online ticket booking",
-            "Put speakers in front of a diverse local audience"
+            "Let people book tickets online",
+            "Bring speakers to a wide local audience"
           ]
         }
       ]
@@ -76,14 +76,14 @@
       "nav": "Decisions",
       "tone": "dark",
       "pill": "Decisions",
-      "heading": "Quick to find a talk, a speaker or a ticket",
+      "heading": "Making talks, speakers and tickets easy to find",
       "blocks": [
         {
           "type": "decision",
           "num": "01",
-          "title": "Scannability over density",
+          "title": "Built to be scanned",
           "p": [
-            "I broke the content into clear sections with a strong hierarchy: short blocks instead of long paragraphs, clear headings and spacing, and content modules that are reused across pages."
+            "I broke the content into clear sections with a strong hierarchy, so each page reads as a series of short blocks with clear headings and generous spacing rather than long paragraphs. The same content modules are reused from page to page."
           ],
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-scan.webp",
@@ -91,17 +91,17 @@
             "prepare": "Talks page, the first two rows of talk cards, cropped tight.",
             "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
-            "caption": "Every talk card uses the same module: photo, title, speaker and topic tags."
+            "caption": "Every talk card uses the same module, with a photo, title, speaker and topic tags."
           }
         },
         {
           "type": "decision",
           "num": "02",
           "flip": true,
-          "title": "Easier navigation",
+          "title": "Simpler navigation",
           "p": [
-            "Speakers, the schedule and tickets are easy to find without digging through dense content.",
-            "Buy ticket sits at the right of the menu on every page, and a red strip under each page header names the next event, its date and the venue."
+            "I wanted the speakers, the schedule and the ticket link to be easy to find without anyone having to dig through dense content.",
+            "Buy ticket sits at the right of the menu on every page, and a red strip under each page header shows the next event, its date and the venue."
           ],
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-nav.webp",
@@ -109,15 +109,15 @@
             "prepare": "Homepage, from the menu down to the red upcoming event strip and the start of the speaker row.",
             "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
-            "caption": "The menu, the ticket link and the next event are visible before any scrolling."
+            "caption": "The menu, the ticket link and the next event are all visible before anyone scrolls."
           }
         },
         {
           "type": "decision",
           "num": "03",
-          "title": "A stronger focus on speakers",
+          "title": "Speakers at the centre",
           "p": [
-            "Speakers are one of the main reasons people attend TEDx events. Choosing a speaker opens their bio, links and talk in place, so people can explore the line-up without leaving the page."
+            "Speakers are one of the main reasons people come to TEDx events, so the speaker section needed to work especially well. Choosing a speaker opens their bio, links and talk right there in the grid, which lets people look through the line-up without leaving the page."
           ],
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-speakers.webp",
@@ -125,7 +125,7 @@
             "prepare": "People page: the first speaker row with one speaker selected and the panel open below it.",
             "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
-            "caption": "Speaker details open inside the grid. Portraits are black and white until one is selected."
+            "caption": "Speaker details open inside the grid, and the portraits stay black and white until one is selected."
           }
         },
         {
@@ -134,7 +134,7 @@
           "flip": true,
           "title": "More than one way in",
           "p": [
-            "The homepage supports several entry points. People can browse by speaker, by topic and theme, or by previous talks, so they start from what they care about most instead of following a single path to the ticket."
+            "The homepage offers several starting points. People can browse by speaker, by topic and theme, or through previous talks, so they can begin with whatever interests them most rather than being led down a single path to the ticket page."
           ],
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-filter.webp",
@@ -157,7 +157,7 @@
         {
           "type": "text",
           "p": [
-            "I kept the palette close to the TED brand: black and charcoal backgrounds, white type, and [[one red for actions and event information]]. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
+            "I kept the palette close to the TED brand, with black and charcoal backgrounds, white type, and [[one red kept for actions and event details]]. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
             "{{Optional: one line on why, if there was a reason beyond the TED brand. For example, whether the dark pages were meant to feel like the theatre on the night.}}"
           ]
         },
@@ -197,7 +197,7 @@
           "title": "Home and talks",
           "src": "/assets/img/work/tedxauckland/home-talks.webp",
           "alt": "The rest of the TEDxAuckland homepage, with talks and upcoming events, and the Talks page",
-          "caption": "The homepage moves from speakers to talks to upcoming events. The Talks page opens on the most popular talks."
+          "caption": "The homepage moves from speakers to talks and then to upcoming events, and the Talks page opens on the most popular talks."
         },
         {
           "type": "image",
@@ -212,7 +212,7 @@
           "title": "Partners",
           "src": "/assets/img/work/tedxauckland/partners.webp",
           "alt": "The Partners page with a grid of partner logos",
-          "caption": "Partners are listed with a short note on how other organisations can get involved."
+          "caption": "The Partners page lists the event's partners, along with a short note for organisations that would like to get involved."
         }
       ]
     },
@@ -226,8 +226,8 @@
         {
           "type": "text",
           "p": [
-            "Ticket purchasing inside the site got complicated quickly. There were four of us, all volunteers, so we did not have the resource to build it properly, and ticketing moved to a third party. {{Name the ticketing provider if you can.}}",
-            "The site still carries the rest of the flow:"
+            "Selling tickets directly through the site became complicated quickly. With four volunteers, we did not have the time or resource to build it properly, so ticketing moved to a third-party service. {{Name the ticketing provider if you can.}}",
+            "The site still takes people through most of the process before they buy:"
           ]
         },
         {
@@ -235,13 +235,13 @@
           "items": [
             "Learn about the event",
             "Browse speakers and topics",
-            "Understand what you're buying",
-            "Commit"
+            "Understand what the ticket includes",
+            "Buy the ticket"
           ]
         },
         {
           "type": "statement",
-          "text": "Only the last step happens somewhere else."
+          "text": "Only the final step happens somewhere else, and everything leading up to it stays on the TEDxAuckland site."
         }
       ]
     },
@@ -255,19 +255,19 @@
         {
           "type": "text",
           "p": [
-            "I had only worked in agencies, where everyone knows their role and the work moves without anyone having to ask. I turned up expecting that.",
-            "The producer was not used to working that way. He was not certain what needed doing, who should do it, or by when, and he assumed I would take care of all of it. So things sat still until I noticed they had.",
-            "What fixed it was a meeting where I said out loud what was missing and where we needed to get to. After that we had regular meetings, a timeline and deadlines. The producer took on the sponsors, briefed the copywriter, chased photographers for images and video, and pulled together the speakers and their details. Once people could see the whole project and their part in it, it moved."
+            "Before this project, I had only worked in agencies, where everyone knows their role and the work moves along without anyone having to ask. I arrived expecting the same thing.",
+            "The producer was not used to working that way. He was not sure what needed doing, who should do it or by when, and he assumed I would take care of all of it. As a result, things often stood still until I noticed they had.",
+            "What changed it was a meeting where I explained plainly what was missing and where we needed to get to. From then on we had regular meetings, a timeline and deadlines. The producer looked after the sponsors, briefed the copywriter, followed up with photographers for images and video, and gathered the speakers and their details. Once everyone could see the whole project and their own part in it, the work started to move."
           ]
         },
         {
           "type": "statement",
-          "text": "The lesson was not about design."
+          "text": "Looking back, the most useful lesson from this project had very little to do with design."
         },
         {
           "type": "text",
           "p": [
-            "On a volunteer team nobody is anyone's boss and every deadline is optional, so [[someone has to say who is doing what, and when]]. That was my job, and it took me too long to work out that it was."
+            "On a volunteer team, nobody is anyone's boss and every deadline is optional, so [[someone has to say clearly who is doing what, and by when]]. That was my job, and it took me longer than it should have to realise it."
           ]
         },
         {

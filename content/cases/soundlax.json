@@ -9,7 +9,7 @@
   "hero": {
     "pill": "Product design and build",
     "title": "A sound app you don't have to browse",
-    "intro": "I designed, built and launched SoundLax on my own. It is an ambient sound app for focus, rest and sleep, available on iPhone, iPad, Apple Watch and Mac.",
+    "intro": "I designed, built and launched SoundLax on my own. It is an ambient sound app for focus, rest and sleep, and it runs on iPhone, iPad, Apple Watch and Mac.",
     "links": [
       {
         "text": "See it on the App Store",
@@ -58,7 +58,7 @@
         {
           "type": "text",
           "p": [
-            "Before I designed anything, I asked twelve friends one question: what do you listen to while you work?"
+            "Before designing anything, I asked twelve friends a simple question: what do you listen to while you work?"
           ]
         },
         {
@@ -72,13 +72,13 @@
         },
         {
           "type": "statement",
-          "text": "Four of the twelve used background sound. None of them used a sound app."
+          "text": "Four of the twelve used background sound while they worked, but none of them used a sound app to do it."
         },
         {
           "type": "text",
           "p": [
-            "The need was there, but the apps built for it were not worth opening. People accepted ads and autoplay just to play rain in the background.",
-            "The brief I set myself was [[one place to start a sound within a couple of seconds]], without being sold a programme. I was also building it on my own, so every feature had to be something I could design, build and maintain myself."
+            "The need was there, but the apps built for it were not pleasant to open, and people accepted ads and autoplay just to have some rain playing in the background.",
+            "So the brief I set myself was [[one place to start a sound within a couple of seconds]], without being sold a programme along the way. Because I was building it on my own, every feature also had to be something I could realistically design, build and maintain myself."
           ]
         }
       ]
@@ -95,8 +95,8 @@
           "num": "01",
           "title": "No library on the home screen",
           "p": [
-            "Most sound apps open on a grid of hundreds of tracks and a search bar. SoundLax opens on four birds instead, and each one represents a mood: tūī for sharp focus, ruru for deep work, fantail for light and easy, and kererū for relaxing.",
-            "People choose how they want to feel, and the sound is already selected for them. {{Is the full sound list one tap away? If so, say so here.}}"
+            "Most sound apps open on a grid of hundreds of tracks and a search bar. SoundLax opens on four birds instead, each representing a mood: tūī for sharp focus, ruru for deep work, fantail for light and easy, and kererū for relaxing.",
+            "People choose how they would like to feel, and the sound is already chosen for them. {{Is the full sound list one tap away? If so, say so here.}}"
           ],
           "image": {
             "src": "/assets/img/work/soundlax/closeup-start-here.jpg",
@@ -113,8 +113,8 @@
           "flip": true,
           "title": "No player that disappears",
           "p": [
-            "In the apps I tested, the playback controls disappeared as soon as I moved to another screen.",
-            "In SoundLax, the now-playing bar stays at the bottom of every screen, so changing the mix or stopping a sound takes one tap from anywhere in the app."
+            "In the apps I tried, the playback controls disappeared as soon as I moved to another screen.",
+            "In SoundLax, the now-playing bar stays at the bottom of every screen, so changing the mix or stopping a sound is always one tap away from anywhere in the app."
           ],
           "image": {
             "src": "/assets/img/work/soundlax/closeup-player-bar.jpg",
@@ -130,8 +130,8 @@
           "num": "03",
           "title": "No mixer on every screen",
           "p": [
-            "Some people want to layer rain over café noise and adjust each volume. Most people only want a sound playing.",
-            "For that reason, the mixer sits behind a single card, 'Mix your own set', rather than appearing on every screen. It is available to the people who want it and stays out of the way for everyone else."
+            "Some people like to layer rain over café noise and adjust each volume, but most people simply want a sound playing.",
+            "For that reason, the mixer sits behind a single card, 'Mix your own set', rather than appearing on every screen. It is there for the people who want it and stays out of the way for everyone else."
           ],
           "image": {
             "src": "/assets/img/work/soundlax/closeup-mixer.jpg",
@@ -154,9 +154,9 @@
         {
           "type": "text",
           "p": [
-            "Many calm apps look calm in the same way: soft gradients, flat illustration, and blue and purple palettes. I wanted SoundLax to have more character and a clear connection to where it was made.",
-            "Birdsong is part of everyday life in New Zealand, from suburban gardens to native bush, so native birds were a natural starting point. I paired vintage naturalist illustrations with [[bold colour, subtle grain and a clean, modern interface]].",
-            "Each bird also represents a mood, so the illustrations work as navigation as well as decoration."
+            "Many calm apps look calm in the same way, with soft gradients, flat illustrations and blue and purple palettes. I wanted SoundLax to have a little more character and a clear connection to where it was made.",
+            "Birdsong is part of everyday life in New Zealand, from suburban gardens to native bush, so native birds felt like a natural place to start. I paired vintage naturalist illustrations with [[bold colour, subtle grain and a clean, modern interface]].",
+            "Because each bird also represents a mood, the illustrations work as navigation as well as decoration."
           ]
         },
         {
@@ -192,7 +192,7 @@
           "type": "image",
           "src": "/assets/img/work/soundlax/visual-language.webp",
           "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration",
-          "caption": "Type, colour, scenes and the bird set shown together."
+          "caption": "The type, colours, scenes and bird set, shown together."
         },
         {
           "type": "image",
@@ -201,7 +201,7 @@
           "prepare": "One bird card (the tūī) at large size, close enough to see the grain, the illustration detail and how the label sits on the texture.",
           "size": "2400 × 1350 JPG (16:9), on navy #060D27",
           "ratio": "16/9",
-          "caption": "The text sits on detailed texture, so I checked the contrast on every card."
+          "caption": "Because the labels sit on detailed texture, I checked the contrast on every card."
         }
       ]
     },
@@ -224,7 +224,7 @@
           "title": "Focus and sleep",
           "src": "/assets/img/work/soundlax/feature-screens.webp",
           "alt": "Four SoundLax screens: a focus timer, a focus task list, adding a task, and sleep settings",
-          "caption": "The focus timer pairs a sound with a Pomodoro session. The sleep screen has a timer that fades the sound out, and an alarm that fades in gradually rather than going off suddenly."
+          "caption": "The focus timer pairs a sound with a Pomodoro session. On the sleep screen, a timer fades the sound out, and the alarm fades in gradually rather than going off all at once."
         },
         {
           "type": "image",
@@ -250,7 +250,7 @@
           "title": "App Store screenshots",
           "src": "/assets/img/work/soundlax/app-store.webp",
           "alt": "Four SoundLax App Store screenshots",
-          "caption": "Each screenshot leads with one reason to download the app rather than a list of features."
+          "caption": "Each screenshot leads with one reason to download the app, rather than a list of features."
         }
       ]
     },
@@ -327,12 +327,12 @@
         {
           "type": "text",
           "p": [
-            "The project also gave me responsibility for a whole product for the first time: the early research with friends, the design, building it in SwiftUI with AI assistance, App Store review, subscriptions, and fixing bugs that users found before I did."
+            "The project also made me responsible for a whole product for the first time, from the early research with friends and the design, to building it in SwiftUI with AI assistance, getting through App Store review, setting up subscriptions, and fixing bugs that people found before I did."
           ]
         },
         {
           "type": "text",
-          "heading": "What I'd do differently",
+          "heading": "What I would do differently",
           "p": [
             "{{One specific thing. A candidate: test every sound loop on every device before launch, since people found the Brown Noise cut before I did. Keep it only if it's true for you.}}"
           ]
