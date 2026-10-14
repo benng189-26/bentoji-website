@@ -80,13 +80,6 @@
         {
           "type": "statement",
           "text": "Does this make buying cheap feel deliberate?"
-        },
-        {
-          "type": "image",
-          "side": true,
-          "src": "/assets/img/work/kmart/ig-stool.webp",
-          "alt": "A wooden stool and a mug under the line Buy better. Own less., with the Kmart wordmark",
-          "caption": "Spend less on the stool, and keep the rest for everything else."
         }
       ]
     },
@@ -339,19 +332,23 @@
         },
         {
           "type": "gallery",
-          "cols": 2,
+          "cols": 3,
           "title": "Social",
           "items": [
             {
-              "src": "/assets/img/work/kmart/ig-linen.webp",
-              "alt": "Instagram post: Buy better. Own less., above a folded linen cloth, with the Kmart wordmark"
+              "src": "/assets/img/work/kmart/ig-1.webp",
+              "alt": "Instagram post: Buy better, own less, above a folded linen cloth, with the Kmart wordmark"
             },
             {
-              "src": "/assets/img/work/kmart/ig-tshirt.webp",
-              "alt": "Instagram post: Buy better. Own less., above a folded white T-shirt, with the Kmart wordmark"
+              "src": "/assets/img/work/kmart/ig-2.webp",
+              "alt": "Instagram post: Buy better, own less, above a wooden stool and a mug, with the Kmart wordmark"
+            },
+            {
+              "src": "/assets/img/work/kmart/ig-3.webp",
+              "alt": "Instagram post: Buy better, own less, above a folded white T-shirt, with the Kmart wordmark"
             }
           ],
-          "caption": "On social, the line becomes Buy better. Own less., with one everyday product per post and very little else."
+          "caption": "On social, the line becomes Buy better, own less, with one everyday product per post and very little else."
         }
       ]
     }
