@@ -59,6 +59,11 @@
    Inline markup in any text: [[words]] = orange highlight,
    {{words}} = a gap Ben still needs to fill.
 
+   theme.highlight: "pill" (default, SoundLax) or "text" (bold coloured
+   words, TEDx); theme.highlightColor sets the colour for "text".
+   A run of text blocks that includes a statement is laid out in two
+   columns on wide screens: paragraphs left, statement right.
+
    The template is a starting point, not a fixed format. Each case study
    picks the sections, blocks and visual touches that suit its project:
    add or remove sections freely, and use [[highlights]] and chips only
@@ -174,11 +179,51 @@
     }
   };
 
+  /* Text runs that contain a statement use the empty space on the right:
+     paragraphs on the left, the statement beside them. Everything else
+     renders full width as before. On small screens it stacks in order. */
+  var TEXTISH = { text: 1, chips: 1, list: 1, statement: 1 };
+  function renderBlocks(list) {
+    var out = '', run = [];
+    function flush() {
+      var st = run.filter(function (b) { return b.type === 'statement'; });
+      var other = run.filter(function (b) { return b.type !== 'statement'; });
+      if (st.length && other.length) {
+        var n = other.length, row = 0, html = '';
+        run.forEach(function (b) {
+          var inner = blocks[b.type](b);
+          if (b.type === 'statement') {
+            var r = st.length === 1 ? '1 / span ' + n : String(Math.max(row, 1));
+            html += '<div class="c-split-side" style="--r:' + r + '">' + inner + '</div>';
+          } else {
+            row++;
+            html += '<div class="c-split-main" style="--r:' + row + '">' + inner + '</div>';
+          }
+        });
+        out += '<div class="c-split">' + html + '</div>';
+      } else {
+        run.forEach(function (b) { out += blocks[b.type](b); });
+      }
+      run = [];
+    }
+    list.forEach(function (b) {
+      if (!blocks[b.type]) return;
+      if (TEXTISH[b.type]) { run.push(b); return; }
+      flush();
+      out += blocks[b.type](b);
+    });
+    flush();
+    return out;
+  }
+
   function render(d) {
     var t = d.theme || {};
     if (t.dark) document.body.style.setProperty('--h-navy', t.dark);
     if (t.dark2) document.body.style.setProperty('--h-navy-2', t.dark2);
     if (t.accent) document.body.style.setProperty('--c-accent', t.accent);
+    /* highlight style per project: "pill" (SoundLax) or "text" (bold coloured words) */
+    if (t.highlight === 'text') document.body.classList.add('hl-text');
+    if (t.highlightColor) document.body.style.setProperty('--c-hl', t.highlightColor);
 
     var h = d.hero || {};
     var html = '';
@@ -202,7 +247,7 @@
     /* section menu: floating bar at the bottom, shown while reading */
     var navs = (d.sections || []).filter(function (s) { return s.nav && s.id; });
     if (navs.length) {
-      html += '<nav class="c-subnav" aria-label="Case study sections"><div class="c-subnav-inner">' +
+      html += '<nav class="c-subnav" data-adapt aria-label="Case study sections"><div class="c-subnav-inner">' +
         '<a class="c-subnav-name" href="#top">' + esc(d.name || '') + '</a>' +
         '<div class="c-subnav-links">' + navs.map(function (s, i) {
           return '<a href="#' + esc(s.id) + '" data-sub="' + esc(s.id) + '"><span>' + (i < 9 ? '0' : '') + (i + 1) + '</span>' + esc(s.nav) + '</a>';
@@ -219,10 +264,7 @@
       html += '<section class="h-section c-section h-' + (s.tone === 'grey' ? 'grey' : 'dark') + '"' + (s.id ? ' id="' + esc(s.id) + '"' : '') + '><div class="container">' +
         (s.pill ? '<p class="h-pill">' + (s.nav && s.id ? '<span class="c-pill-num">' + (++navIndex < 10 ? '0' : '') + navIndex + '</span> ' : '') + esc(s.pill) + '</p>' : '') +
         (s.heading ? '<h2 class="h-head h-title' + (s.tone === 'grey' ? ' is-orange' : '') + '">' + rich(s.heading) + '</h2>' : '') +
-        '<div class="c-blocks">' + (s.blocks || []).map(function (b) {
-          var fn = blocks[b.type];
-          return fn ? fn(b) : '';
-        }).join('') + '</div>' +
+        '<div class="c-blocks">' + renderBlocks(s.blocks || []) + '</div>' +
       '</div></section>';
     });
 

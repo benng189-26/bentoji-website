@@ -487,7 +487,7 @@
    Back to top + scroll-in reveal (Oct 2026)
    - A round "back to top" button appears after scrolling down about
      one and a half screens, on every page that loads this file.
-   - Content below the first screen slides up into place once as it scrolls into
+   - Content below the first screen flies in diagonally once as it scrolls into
      view. Nothing animates when scrolling back up, and anything that
      was skipped by a jump (menu link, back to top) just appears.
    Case study pages call window.bentojiReveal(main) after rendering.
@@ -517,8 +517,16 @@
     update();
   }
 
-  /* ---- reveal ---- */
-  var SEL = '.c-blocks > *, section > .container > *:not(.c-blocks)';
+  /* ---- reveal ----
+     Text and other blocks fly in diagonally from their own side (left
+     column from bottom left, right column from bottom right). Images
+     open up from a slightly cropped, zoomed-in frame instead. */
+  var SEL = [
+    '.c-blocks > *:not(.c-split):not(.c-decision)',
+    '.c-split > *',
+    '.c-decision > *',
+    'section > .container > *:not(.c-blocks)'
+  ].join(', ');
   var io = null;
   var pending = [];
 
@@ -538,16 +546,24 @@
         var n = 0;
         entries.forEach(function (e) {
           if (!e.isIntersecting) return;
-          e.target.style.transitionDelay = Math.min(n++ * 0.08, 0.24) + 's';
+          e.target.style.transitionDelay = Math.min(n++ * 0.1, 0.3) + 's';
           show(e.target, false);
         });
-      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+      }, { threshold: 0.06, rootMargin: '0px 0px -6% 0px' });
     }
     var vh = window.innerHeight;
     scope.querySelectorAll(SEL).forEach(function (el) {
       if (el.classList.contains('rv') || el.closest('.rv, .reveal, .c-subnav, .site-nav, .mobile-menu')) return;
-      if (el.getBoundingClientRect().top < vh) return; /* already on screen or above */
-      el.classList.add('rv');
+      var r = el.getBoundingClientRect();
+      if (r.top < vh) return; /* already on screen or above */
+      var isImage = el.matches('.c-figure') && el.querySelector('.c-media');
+      if (isImage) {
+        el.classList.add('rv', 'rv-img');
+      } else {
+        var box = (el.closest('.container') || document.body).getBoundingClientRect();
+        var right = r.width < box.width * 0.75 && (r.left - box.left) > box.width * 0.3;
+        el.classList.add('rv', right ? 'rv-r' : 'rv-l');
+      }
       pending.push(el);
       io.observe(el);
     });
@@ -566,9 +582,39 @@
     });
   }, { passive: true });
 
+  /* ---- floating controls adapt to the background under them ----
+     Elements with [data-adapt] (case study menu) and the back-to-top
+     button get .on-dark when they sit over a dark area. */
+  function bgIsDark(x, y, self) {
+    var stack = document.elementsFromPoint(x, y);
+    for (var i = 0; i < stack.length; i++) {
+      var el = stack[i];
+      if (self.contains(el) || el.closest('[data-adapt], .to-top, .site-nav')) continue;
+      for (var n = el; n && n !== document.documentElement; n = n.parentElement) {
+        var c = getComputedStyle(n).backgroundColor.match(/[\d.]+/g);
+        if (c && (c.length < 4 || +c[3] > 0.5)) {
+          var lum = (0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2]) / 255;
+          return lum < 0.45;
+        }
+      }
+    }
+    return false;
+  }
+  var aTick = false;
+  function adapt() {
+    aTick = false;
+    document.querySelectorAll('[data-adapt], .to-top').forEach(function (el) {
+      var r = el.getBoundingClientRect();
+      if (!r.width) return;
+      el.classList.toggle('on-dark', bgIsDark(r.left + r.width / 2, r.top + r.height / 2, el));
+    });
+  }
+  window.addEventListener('scroll', function () { if (!aTick) { aTick = true; requestAnimationFrame(adapt); } }, { passive: true });
+  window.addEventListener('resize', adapt);
+
   window.bentojiReveal = reveal;
 
-  function init() { addTopButton(); reveal(document); }
+  function init() { addTopButton(); reveal(document); adapt(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();

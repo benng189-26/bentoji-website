@@ -310,3 +310,39 @@ body.case{--c-gap:clamp(44px,5vw,76px);--c-text:44rem;}
 .case .c-type-chars{font-size:clamp(1rem,1.3vw,1.2rem);line-height:1.45;letter-spacing:.02em;opacity:.7;word-break:break-all;}
 .case .c-type-card.is-loading .c-type-sample{visibility:hidden;}
 .case .c-type-live,.case .c-type-live p{font-weight:400;font-synthesis:none;}
+
+/* ===================================================================
+   v1.4 (14 Oct 2026)
+   =================================================================== */
+/* two-column text runs: paragraphs left, statement right */
+.case .c-split{display:flex;flex-direction:column;gap:clamp(24px,2.8vw,36px);}
+@media(min-width:960px){
+  .case .c-split{
+    display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+    column-gap:clamp(40px,5vw,88px);row-gap:clamp(18px,2vw,26px);align-items:start;
+  }
+  .case .c-split-main{grid-column:1;grid-row:var(--r);}
+  .case .c-split-side{grid-column:2;grid-row:var(--r);align-self:center;}
+}
+.case .c-split-side .c-statement{
+  max-width:none;font-size:clamp(1.35rem,2vw,1.85rem);line-height:1.18;
+  border-left:4px solid var(--c-hl,var(--c-accent));padding-left:clamp(16px,1.6vw,22px);
+}
+
+/* highlight as bold coloured words (theme.highlight = "text") */
+body.case{--c-hl:var(--c-accent);}
+.case.hl-text .c-hl{
+  background:none;color:var(--c-hl);padding:0;border-radius:0;
+  font:inherit;font-weight:700;letter-spacing:inherit;
+}
+
+/* floating section menu: switches to a light bar over dark sections */
+.case .c-subnav{transition:transform .4s var(--ease),opacity .3s,background .3s,border-color .3s;}
+.case .c-subnav.on-dark{
+  background:rgba(243,243,243,.94);border-color:rgba(15,21,28,.08);
+  box-shadow:0 14px 36px rgba(0,0,0,.45);
+}
+.case .c-subnav.on-dark .c-subnav-name{color:#0f151c;border-right-color:rgba(15,21,28,.14);}
+.case .c-subnav.on-dark .c-subnav-links a{color:rgba(15,21,28,.72);}
+.case .c-subnav.on-dark .c-subnav-links a:hover{color:#0f151c;background:rgba(15,21,28,.07);}
+.case .c-subnav.on-dark .c-subnav-links a.is-active{color:#fff;background:var(--c-accent);}

@@ -827,8 +827,19 @@ html.js .reveal.d3{transition-delay:.21s;}
 @media(max-width:1180px){ .case .to-top{bottom:calc(clamp(14px,2.4vw,24px) + 64px);} }
 
 /* ---------- scroll-in reveal (once, downward only) ----------
-   Content slides up into place from a short distance, no fade. */
-html.js .rv{transform:translateY(64px);transition:transform 1.1s cubic-bezier(.16,1,.3,1);}
-html.js .rv.rv-in{opacity:1;transform:none;}
-html.js .rv.rv-now{transition:none;}
-@media(prefers-reduced-motion:reduce){ html.js .rv{transform:none;transition:none;} }
+   Blocks fly in diagonally from their own side, images open up from a
+   cropped, zoomed frame. Classes are added by site.js. */
+html.js .rv{transition:transform 1.1s cubic-bezier(.16,1,.3,1);}
+html.js .rv-l{transform:translate(-56px,56px);}
+html.js .rv-r{transform:translate(56px,56px);}
+html.js .rv-img .c-media{clip-path:inset(8% 6% 8% 6% round 14px);transition:clip-path 1.3s cubic-bezier(.16,1,.3,1);}
+html.js .rv-img .c-media img,html.js .rv-img .c-media video{transform:scale(1.1);transition:transform 1.6s cubic-bezier(.16,1,.3,1);}
+html.js .rv.rv-in{transform:none;}
+html.js .rv-img.rv-in .c-media{clip-path:inset(0 0 0 0 round 0);}
+html.js .rv-img.rv-in .c-media img,html.js .rv-img.rv-in .c-media video{transform:none;}
+html.js .rv.rv-now,html.js .rv.rv-now .c-media,html.js .rv.rv-now .c-media img{transition:none;}
+@media(prefers-reduced-motion:reduce){ html.js .rv,html.js .rv-img .c-media,html.js .rv-img .c-media img{transform:none;clip-path:none;transition:none;} }
+
+/* back to top: light over dark sections (set by site.js) */
+.to-top.on-dark{background:#f3f3f3;color:#0f151c;border-color:rgba(15,21,28,.1);box-shadow:0 12px 30px rgba(0,0,0,.45);}
+.to-top.on-dark:hover{background:#f4552a;color:#fff;}
