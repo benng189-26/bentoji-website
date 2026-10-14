@@ -27,6 +27,11 @@
    quotes     { "items": [{ "text", "source" }] }
    stats      { "items": [{ "value", "label" }], "note" }
    list       { "items": ["…"], "heading": optional }
+   type       { "items": [TYPEFACE], "dark": bool }   font specimens, one card each
+   TYPEFACE   { "name", "role", "sample",
+                "family": CSS font-family, if the font is on the site,
+                "src", "alt", "prepare", "size": an SVG/PNG of the
+                sample when the font can't be loaded (outlined text) }
 
    IMAGE      { "src", "alt", "prepare", "size", "ratio", "video": bool }
    If "prepare" is set and the file at "src" doesn't exist yet, a
@@ -123,6 +128,22 @@
         (b.caption ? '<figcaption>' + rich(b.caption) + '</figcaption>' : '') +
       '</figure>';
     },
+    type: function (b) {
+      return '<div class="c-type' + (b.dark ? ' is-dark' : '') + '">' + (b.items || []).map(function (t) {
+        var sample;
+        if (t.src) {
+          sample = media({ src: t.src, alt: t.alt || (t.name + ' sample'), prepare: t.prepare, size: t.size, ratio: t.ratio || '15/7' });
+        } else {
+          var ff = t.family ? ' style="font-family:' + esc(t.family) + '"' : '';
+          sample = '<p class="c-type-aa"' + ff + '>Aa</p>' + (t.sample ? '<p class="c-type-line"' + ff + '>' + esc(t.sample) + '</p>' : '');
+        }
+        return '<div class="c-type-card">' +
+          (t.role ? '<p class="c-type-role">' + esc(t.role) + '</p>' : '') +
+          '<div class="c-type-sample">' + sample + '</div>' +
+          '<p class="c-type-name">' + esc(t.name) + '</p>' +
+        '</div>';
+      }).join('') + '</div>';
+    },
     swatches: function (b) {
       return '<div class="c-swatches">' + (b.items || []).map(function (s) {
         return '<div><div class="c-swatch-chip" style="background:' + esc(s.hex) + '"></div>' +
@@ -205,6 +226,10 @@
 
     main.innerHTML = html;
 
+    /* fade content in as it scrolls into view (site.js); the whole page is
+       rescanned because the close section only moves below the fold now */
+    if (window.bentojiReveal) requestAnimationFrame(function () { window.bentojiReveal(document); });
+
     /* missing prepared images fall back to the placeholder */
     main.querySelectorAll('.c-media[data-prepare="1"] img, .c-media[data-prepare="1"] video').forEach(function (el) {
       el.addEventListener('error', function () {
@@ -284,7 +309,7 @@
     function check(o) { if (o && o.src === src) found = o; }
     check(d.hero && d.hero.image);
     (d.sections || []).forEach(function (s) {
-      (s.blocks || []).forEach(function (b) { check(b); check(b.image); });
+      (s.blocks || []).forEach(function (b) { check(b); check(b.image); (b.items || []).forEach(check); });
     });
     return found;
   }

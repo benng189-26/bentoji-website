@@ -482,3 +482,93 @@
   function slugify(s) { return String(s).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 
 })();
+
+/* ===================================================================
+   Back to top + scroll-in reveal (Oct 2026)
+   - A round "back to top" button appears after scrolling down about
+     one and a half screens, on every page that loads this file.
+   - Content below the first screen fades up once as it scrolls into
+     view. Nothing animates when scrolling back up, and anything that
+     was skipped by a jump (menu link, back to top) just appears.
+   Case study pages call window.bentojiReveal(main) after rendering.
+   =================================================================== */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---- back to top ---- */
+  function addTopButton() {
+    if (document.querySelector('.to-top')) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>';
+    btn.addEventListener('click', function () {
+      if (window.lenis && !reduce) window.lenis.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+    document.body.appendChild(btn);
+    var ticking = false;
+    function update() {
+      ticking = false;
+      btn.classList.toggle('is-visible', window.scrollY > window.innerHeight * 1.5);
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  }
+
+  /* ---- reveal ---- */
+  var SEL = '.c-blocks > *, section > .container > *:not(.c-blocks)';
+  var io = null;
+  var pending = [];
+
+  function show(el, instant) {
+    if (instant) el.classList.add('rv-now');
+    el.classList.add('rv-in');
+    var i = pending.indexOf(el);
+    if (i > -1) pending.splice(i, 1);
+    if (io) io.unobserve(el);
+  }
+
+  function reveal(scope) {
+    if (reduce || !('IntersectionObserver' in window)) return;
+    scope = scope || document;
+    if (!io) {
+      io = new IntersectionObserver(function (entries) {
+        var n = 0;
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          e.target.style.transitionDelay = Math.min(n++ * 0.08, 0.24) + 's';
+          show(e.target, false);
+        });
+      }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+    }
+    var vh = window.innerHeight;
+    scope.querySelectorAll(SEL).forEach(function (el) {
+      if (el.classList.contains('rv') || el.closest('.rv, .reveal, .c-subnav, .site-nav, .mobile-menu')) return;
+      if (el.getBoundingClientRect().top < vh) return; /* already on screen or above */
+      el.classList.add('rv');
+      pending.push(el);
+      io.observe(el);
+    });
+  }
+
+  /* anything a jump skipped past appears without animating */
+  var sTick = false;
+  window.addEventListener('scroll', function () {
+    if (sTick || !pending.length) return;
+    sTick = true;
+    requestAnimationFrame(function () {
+      sTick = false;
+      pending.slice().forEach(function (el) {
+        if (el.getBoundingClientRect().bottom < 0) show(el, true);
+      });
+    });
+  }, { passive: true });
+
+  window.bentojiReveal = reveal;
+
+  function init() { addTopButton(); reveal(document); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

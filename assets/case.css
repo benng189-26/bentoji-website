@@ -254,3 +254,51 @@ body.case{
 .case .h-dark .c-list li{color:var(--h-muted-dark);}
 .case .h-grey .c-list li{color:var(--h-muted-light);}
 .case .c-text a{border-bottom:1px solid currentColor;}
+
+/* ===================================================================
+   v1.3 (14 Oct 2026): more compact reading
+   Smaller body text and headings, tighter line height, wider measure
+   and less space between blocks and sections, so a case study takes
+   less scrolling. Overrides the sizes above.
+   =================================================================== */
+body.case{--c-gap:clamp(44px,5vw,76px);--c-text:44rem;}
+.case .c-hero{padding-bottom:clamp(56px,7vw,96px);}
+.case .c-hero .h-head{font-size:clamp(2.6rem,6.6vw,6.2rem);}
+.case .c-figure.c-hero-media{margin-top:clamp(36px,5vw,64px);}
+.case .c-facts{margin-top:clamp(36px,4vw,52px);}
+.case .c-fact dd{font-size:1.15rem;}
+.case .c-section{padding:clamp(64px,7.5vw,112px) 0;}
+.case .c-section .h-title{font-size:clamp(1.9rem,3.8vw,3.3rem);margin-bottom:clamp(24px,3vw,40px);}
+.case .c-blocks{gap:clamp(24px,2.8vw,36px);}
+.case .c-blocks > .c-quotes,.case .c-blocks > .c-stats{margin-top:calc(var(--c-gap) - clamp(24px,2.8vw,36px));}
+.case .c-text p{font-size:clamp(1.18rem,1.35vw,1.32rem);line-height:1.36;margin:0 0 .7em;}
+.case .c-decision{gap:20px 48px;}
+.case .c-decision h3{font-size:clamp(1.35rem,2vw,1.8rem);margin-bottom:14px;}
+.case .c-decision .c-text p{font-size:clamp(1.12rem,1.25vw,1.24rem);}
+.case .c-statement{font-size:clamp(1.45rem,2.4vw,2.1rem);line-height:1.12;max-width:26ch;}
+.case .c-figure figcaption{font-size:1.05rem;margin-top:10px;}
+.case .c-quote p{font-size:clamp(1.15rem,1.4vw,1.3rem);}
+.case .c-list li{font-size:clamp(1.15rem,1.35vw,1.3rem);}
+.case .c-stat-value{font-size:clamp(2.8rem,6vw,5rem);}
+.case .c-next{padding:clamp(56px,7vw,100px) 0;}
+.case .c-next .h-head{font-size:clamp(2rem,4.4vw,3.8rem);}
+
+/* type specimens (block "type") */
+.case .c-type{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;}
+.case .c-type-card{
+  display:flex;flex-direction:column;gap:16px;min-width:0;
+  background:#fff;color:var(--h-ink);border-radius:10px;padding:clamp(20px,2.4vw,30px);
+}
+.case .c-type.is-dark .c-type-card{background:#000;color:#fff;}
+.case .h-dark .c-type:not(.is-dark) .c-type-card{background:#f3f3f3;}
+.case .c-type-role{margin:0;font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.6;}
+.case .c-type-sample{flex:1;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:120px;}
+.case .c-type-sample .c-media{border-radius:0;background:none;}
+.case .c-type-sample img{display:block;width:100%;height:auto;}
+.case .c-type-aa{margin:0;font-size:clamp(4rem,8vw,6.5rem);line-height:.9;font-weight:700;}
+.case .c-type-line{margin:0;font-size:clamp(1.4rem,2.2vw,2rem);line-height:1.1;font-weight:700;}
+.case .c-type-name{margin:0;padding-top:14px;border-top:1px solid currentColor;border-top-color:color-mix(in srgb,currentColor 18%,transparent);font-weight:700;font-size:1.15rem;}
+.case .c-type-card .c-ph{color:var(--h-ink);}
+.case .c-type.is-dark .c-ph{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);}
+.home.case .h-section .c-type.is-dark .c-type-card p,.home.case .h-section .c-type.is-dark .c-ph p{color:#fff;}
+.home.case .h-section .c-type:not(.is-dark) .c-type-card p{color:var(--h-ink);}

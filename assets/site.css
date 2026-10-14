@@ -809,3 +809,25 @@ html.js .reveal.d3{transition-delay:.21s;}
 .back-to-top:hover{ border-color:var(--accent); background:rgba(28,28,30,.96); }
 .back-to-top svg{ width:18px; height:18px; }
 @media (prefers-reduced-motion:reduce){ .back-to-top{ transition:opacity .3s; transform:none; } }
+
+/* ---------- back to top (all pages, Oct 2026) ---------- */
+.to-top{
+  position:fixed;right:clamp(14px,2.4vw,28px);bottom:clamp(14px,2.4vw,24px);z-index:61;
+  width:48px;height:48px;border-radius:50%;display:grid;place-items:center;
+  background:#0f151c;color:#fff;border:1px solid rgba(255,255,255,.18);
+  box-shadow:0 10px 26px rgba(0,0,0,.28);cursor:pointer;
+  opacity:0;transform:translateY(16px);pointer-events:none;
+  transition:opacity .3s,transform .35s var(--ease),background .2s;
+}
+.to-top svg{width:20px;height:20px;}
+.to-top.is-visible{opacity:1;transform:none;pointer-events:auto;}
+.to-top:hover{background:#f4552a;}
+.to-top:focus-visible{outline:2px solid #f4552a;outline-offset:3px;}
+/* case studies: sit above the floating section menu on narrower screens */
+@media(max-width:1180px){ .case .to-top{bottom:calc(clamp(14px,2.4vw,24px) + 64px);} }
+
+/* ---------- scroll-in reveal (once, downward only) ---------- */
+html.js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .9s var(--ease);}
+html.js .rv.rv-in{opacity:1;transform:none;}
+html.js .rv.rv-now{transition:none;}
+@media(prefers-reduced-motion:reduce){ html.js .rv{opacity:1;transform:none;transition:none;} }
