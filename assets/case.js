@@ -47,7 +47,8 @@
    the bottom of the screen, numbered in order.
 
    Image sizes (export at 2x, JPG quality 80, under 400 KB):
-   hero          2400 x 1440  (5:3)
+   hero          1200 x 1000  (6:5), a 600 x 500 frame at 2x; it sits beside
+                 the headline on wide screens (column about 590 px wide)
    full width    2400 x 1350  (16:9), height can vary, width stays 2400
    decision      1600 x 1200  (4:3), same ratio for every decision
    bleed photo   2880 x 1440  (2:1), cropped to fit, keep the subject central
