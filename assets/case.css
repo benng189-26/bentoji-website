@@ -432,3 +432,6 @@ body.case{--c-hl:var(--c-accent);}
   padding:0 .18em;border-radius:3px;
 }
 .case .c-pair .c-type > .c-type-card:only-child{grid-column:1 / -1;}
+/* right column of a text run: statement and side image stacked */
+.case .c-split-side > * + *{margin-top:clamp(24px,2.6vw,36px);}
+.case .c-split-side .c-figure figcaption{max-width:none;}

@@ -19,10 +19,22 @@
     }
   },
   "facts": [
-    { "k": "Client", "v": "Kmart (concept)" },
-    { "k": "Role", "v": "Brand and UI designer" },
-    { "k": "Team", "v": "Solo project" },
-    { "k": "Scope", "v": "Logo, print, website, campaign" }
+    {
+      "k": "Client",
+      "v": "Kmart (concept)"
+    },
+    {
+      "k": "Role",
+      "v": "Brand and UI designer"
+    },
+    {
+      "k": "Team",
+      "v": "Solo project"
+    },
+    {
+      "k": "Scope",
+      "v": "Logo, print, website, campaign"
+    }
   ],
   "sections": [
     {
@@ -46,6 +58,12 @@
       ]
     },
     {
+      "bleed": {
+        "src": "/assets/img/work/kmart/store.webp",
+        "alt": "A Kmart store front with the new wordmark on a concrete facade, above a car park"
+      }
+    },
+    {
       "id": "idea",
       "nav": "The idea",
       "tone": "dark",
@@ -62,6 +80,13 @@
         {
           "type": "statement",
           "text": "Does this make buying cheap feel deliberate?"
+        },
+        {
+          "type": "image",
+          "side": true,
+          "src": "/assets/img/work/kmart/ig-stool.webp",
+          "alt": "A wooden stool and a mug under the line Buy better. Own less., with the Kmart wordmark",
+          "caption": "Spend less on the stool, and keep the rest for everything else."
         }
       ]
     },
@@ -83,25 +108,50 @@
           "type": "gallery",
           "cols": 2,
           "items": [
-            { "src": "/assets/img/work/kmart/logo-light.webp", "alt": "The new Kmart wordmark in black on white, with a small peach break in the k and est 1988 underneath" },
-            { "src": "/assets/img/work/kmart/logo-dark.webp", "alt": "The new Kmart wordmark reversed out in white on black" }
+            {
+              "src": "/assets/img/work/kmart/logo-light.webp",
+              "alt": "The new Kmart wordmark in black on white, with a small peach break in the k and est 1988 underneath"
+            },
+            {
+              "src": "/assets/img/work/kmart/logo-dark.webp",
+              "alt": "The new Kmart wordmark reversed out in white on black"
+            }
           ],
           "caption": "The wordmark on white and on black. The small peach break in the k is the only colour in it."
         },
         {
           "type": "swatches",
           "items": [
-            { "name": "Black", "hex": "#231F20" },
-            { "name": "Peach", "hex": "#FEAE76" },
-            { "name": "Mint", "hex": "#01FFCB" },
-            { "name": "White", "hex": "#FFFFFF" }
+            {
+              "name": "Black",
+              "hex": "#231F20"
+            },
+            {
+              "name": "Peach",
+              "hex": "#FEAE76"
+            },
+            {
+              "name": "Mint",
+              "hex": "#01FFCB"
+            },
+            {
+              "name": "White",
+              "hex": "#FFFFFF"
+            }
           ]
         },
         {
           "type": "type",
           "dark": true,
           "items": [
-            { "name": "Wavehaus 158 Extra Bold", "role": "Brand typeface", "sample": "Kmart, est 1988", "chars": true, "family": "Wavehaus 158 Extra Bold", "font": "/assets/type/cases/wavehaus-158-extrabold.woff2" }
+            {
+              "name": "Wavehaus 158 Extra Bold",
+              "role": "Brand typeface",
+              "sample": "Kmart, est 1988",
+              "chars": true,
+              "family": "Wavehaus 158 Extra Bold",
+              "font": "/assets/type/cases/wavehaus-158-extrabold.woff2"
+            }
           ]
         },
         {
@@ -168,18 +218,18 @@
           "type": "gallery",
           "cols": 2,
           "items": [
-            { "src": "/assets/img/work/kmart/bag-tote.webp", "alt": "A canvas Kmart tote bag with the wordmark" },
-            { "src": "/assets/img/work/kmart/bag-paper.webp", "alt": "A white paper Kmart shopping bag with a small wordmark" }
+            {
+              "src": "/assets/img/work/kmart/bag-tote.webp",
+              "alt": "A canvas Kmart tote bag with the wordmark"
+            },
+            {
+              "src": "/assets/img/work/kmart/bag-paper.webp",
+              "alt": "A white paper Kmart shopping bag with a small wordmark"
+            }
           ],
           "caption": "A reusable tote and a paper bag, with the mark and nothing else."
         }
       ]
-    },
-    {
-      "bleed": {
-        "src": "/assets/img/work/kmart/store.webp",
-        "alt": "A Kmart store front with the new wordmark on a concrete facade, above a car park"
-      }
     },
     {
       "id": "online",
@@ -191,7 +241,7 @@
         {
           "type": "text",
           "p": [
-            "The website redesign covers the homepage, a category page, a product page and the mobile site. The aim was for browsing to feel more like being helped to choose than being sold to."
+            "The website redesign covers the homepage, a category page and a product page."
           ]
         },
         {
@@ -241,14 +291,6 @@
           "src": "/assets/img/work/kmart/web-pages.webp",
           "alt": "Three Kmart web pages side by side: the homepage, the Living Room category page and the Charli armchair product page",
           "caption": "The homepage, the Living Room category page and a product page."
-        },
-        {
-          "type": "image",
-          "seamless": true,
-          "title": "Mobile",
-          "src": "/assets/img/work/kmart/mobile.webp",
-          "alt": "The Kmart mobile homepage with search, categories and We suggest tiles",
-          "caption": "On mobile, the homepage leads with suggestions by activity, with search and categories above them."
         }
       ]
     },
@@ -274,9 +316,18 @@
           "type": "gallery",
           "cols": 3,
           "items": [
-            { "src": "/assets/img/work/kmart/poster-1.webp", "alt": "Poster: Enjoy more, own less, over people jumping into a lake" },
-            { "src": "/assets/img/work/kmart/poster-2.webp", "alt": "Poster: See more, own less, over a person standing on a mountain ridge above a lake" },
-            { "src": "/assets/img/work/kmart/poster-3.webp", "alt": "Poster: Live more, own less, over a concert crowd under falling confetti" }
+            {
+              "src": "/assets/img/work/kmart/poster-1.webp",
+              "alt": "Poster: Enjoy more, own less, over people jumping into a lake"
+            },
+            {
+              "src": "/assets/img/work/kmart/poster-2.webp",
+              "alt": "Poster: See more, own less, over a person standing on a mountain ridge above a lake"
+            },
+            {
+              "src": "/assets/img/work/kmart/poster-3.webp",
+              "alt": "Poster: Live more, own less, over a concert crowd under falling confetti"
+            }
           ],
           "caption": "Three posters, one ending."
         },
@@ -288,29 +339,19 @@
         },
         {
           "type": "gallery",
-          "cols": 3,
+          "cols": 2,
           "title": "Social",
           "items": [
-            { "src": "/assets/img/work/kmart/ig-1.webp", "alt": "Instagram post: Own less, above a folded linen cloth" },
-            { "src": "/assets/img/work/kmart/ig-2.webp", "alt": "Instagram post: Buy better. Own less, above a wooden stool and a mug" },
-            { "src": "/assets/img/work/kmart/ig-3.webp", "alt": "Instagram post: Own less, above a folded white T-shirt" }
+            {
+              "src": "/assets/img/work/kmart/ig-linen.webp",
+              "alt": "Instagram post: Buy better. Own less., above a folded linen cloth, with the Kmart wordmark"
+            },
+            {
+              "src": "/assets/img/work/kmart/ig-tshirt.webp",
+              "alt": "Instagram post: Buy better. Own less., above a folded white T-shirt, with the Kmart wordmark"
+            }
           ],
-          "caption": "On social, the campaign moves from experiences to the products themselves, with quiet images and very few words."
-        }
-      ]
-    },
-    {
-      "id": "looking-back",
-      "nav": "Looking back",
-      "tone": "grey",
-      "pill": "Looking back",
-      "heading": "What I would do differently",
-      "blocks": [
-        {
-          "type": "text",
-          "p": [
-            "{{One specific thing. Pick one of the three options in the Google Doc (bring the website closer to the restraint of the logo; test the own-less message with real shoppers first; design with real product data from the start) or write your own, and delete the others.}}"
-          ]
+          "caption": "On social, the line becomes Buy better. Own less., with one everyday product per post and very little else."
         }
       ]
     }

@@ -22,7 +22,8 @@
    statement  { "text" }                       big sentence in the heading font
    chips      { "items": ["…"] }                row of orange pills
    decision   { "num", "title", "p": [], "image": IMAGE, "flip": bool }
-   image      IMAGE + { "title", "caption", "seamless": bool }
+   image      IMAGE + { "title", "caption", "seamless": bool,
+                "side": true puts it in the right column of a text run }
    bleed      { "src", "alt" }                  full-width photo between sections
    swatches   { "items": [{ "name", "hex" }] }
    quotes     { "items": [{ "text", "source" }] }
@@ -206,21 +207,24 @@
      paragraphs on the left, the statement beside them. Everything else
      renders full width as before. On small screens it stacks in order. */
   var TEXTISH = { text: 1, chips: 1, list: 1, statement: 1 };
+  function isSide(b) { return b.type === 'statement' || (b.type === 'image' && b.side); }
   function renderBlocks(list) {
     var out = '', run = [];
     function flush() {
-      var st = run.filter(function (b) { return b.type === 'statement'; });
-      var other = run.filter(function (b) { return b.type !== 'statement'; });
-      if (st.length && other.length) {
-        var n = other.length, row = 0, html = '';
+      var side = run.filter(isSide);
+      var main = run.filter(function (b) { return !isSide(b); });
+      if (side.length && main.length) {
+        /* paragraphs on the left; statements and side images stacked on the right */
+        var html = '', row = 0, sideDone = false;
         run.forEach(function (b) {
-          var inner = blocks[b.type](b);
-          if (b.type === 'statement') {
-            var r = st.length === 1 ? '1 / span ' + n : String(Math.max(row, 1));
-            html += '<div class="c-split-side" style="--r:' + r + '">' + inner + '</div>';
+          if (isSide(b)) {
+            if (sideDone) return;
+            sideDone = true;
+            html += '<div class="c-split-side" style="--r:1 / span ' + main.length + '">' +
+              side.map(function (x) { return blocks[x.type](x); }).join('') + '</div>';
           } else {
             row++;
-            html += '<div class="c-split-main" style="--r:' + row + '">' + inner + '</div>';
+            html += '<div class="c-split-main" style="--r:' + row + '">' + blocks[b.type](b) + '</div>';
           }
         });
         out += '<div class="c-split">' + html + '</div>';
@@ -232,7 +236,7 @@
     for (var i = 0; i < list.length; i++) {
       var b = list[i];
       if (!blocks[b.type]) continue;
-      if (TEXTISH[b.type]) { run.push(b); continue; }
+      if (TEXTISH[b.type] || (b.type === 'image' && b.side)) { run.push(b); continue; }
       flush();
       /* colours and type next to each other: shown side by side */
       var nx = list[i + 1];
