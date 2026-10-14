@@ -61,6 +61,8 @@
 
    theme.highlight: "pill" (default, SoundLax) or "text" (bold coloured
    words, TEDx); theme.highlightColor sets the colour for "text".
+   theme.eyebrow: "pill" (default) or "text" (plain uppercase labels
+   above headings, in the highlight colour; TEDx).
    A run of text blocks that includes a statement is laid out in two
    columns on wide screens: paragraphs left, statement right, starting
    50–60 px lower (less on small screens) for an asymmetric look. Default for every case study.
@@ -225,20 +227,25 @@
     /* highlight style per project: "pill" (SoundLax) or "text" (bold coloured words) */
     if (t.highlight === 'text') document.body.classList.add('hl-text');
     if (t.highlightColor) document.body.style.setProperty('--c-hl', t.highlightColor);
+    /* eyebrow labels above headings: "pill" (default) or "text" (plain uppercase) */
+    if (t.eyebrow === 'text') document.body.classList.add('eyebrow-text');
 
     var h = d.hero || {};
     var html = '';
 
-    /* hero + facts + jump links */
-    html += '<section class="h-dark c-hero" id="top"><div class="container">' +
-      '<a class="c-back" href="/portfolio">' + arrowLeft + 'All work</a><br>' +
+    /* hero: text and image side by side on wide screens (layout A), facts below */
+    html += '<section class="h-dark c-hero' + (h.image ? ' has-media' : '') + '" id="top"><div class="container">' +
+      '<div class="c-hero-grid"><div class="c-hero-text">' +
+      '<a class="c-back" href="/portfolio">' + arrowLeft + 'All work</a>' +
       (h.pill ? '<p class="h-pill">' + esc(h.pill) + '</p>' : '') +
       '<h1 class="h-head">' + rich(h.title) + '</h1>' +
       (h.intro ? '<p class="h-lead">' + rich(h.intro) + '</p>' : '') +
       ((h.links || []).length ? '<div class="h-actions">' + h.links.map(function (l, i) {
         return '<a class="h-btn ' + (i ? 'h-btn-ghost' : 'h-btn-primary') + '" href="' + esc(l.href) + '">' + esc(l.text) + '</a>';
       }).join('') + '</div>' : '') +
+      '</div>' +
       (h.image ? '<figure class="c-figure c-hero-media">' + media(h.image) + '</figure>' : '') +
+      '</div>' +
       ((d.facts || []).length ? '<dl class="c-facts">' + d.facts.map(function (f) {
         var v = f.href ? '<a href="' + esc(f.href) + '">' + rich(f.v) + '</a>' : rich(f.v);
         return '<div class="c-fact"><dt>' + esc(f.k) + '</dt><dd>' + v + '</dd></div>';

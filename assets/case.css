@@ -347,3 +347,32 @@ body.case{--c-hl:var(--c-accent);}
 .case .c-subnav.on-dark .c-subnav-links a{color:rgba(15,21,28,.72);}
 .case .c-subnav.on-dark .c-subnav-links a:hover{color:#0f151c;background:rgba(15,21,28,.07);}
 .case .c-subnav.on-dark .c-subnav-links a.is-active{color:#fff;background:var(--c-accent);}
+
+/* ===================================================================
+   v1.5 (14 Oct 2026): hero layout A
+   Wide screens: headline and intro on the left, hero image on the
+   right, facts row below, so the first screen shows the work straight
+   away. Phones and heroes without an image stay stacked.
+   =================================================================== */
+.case .c-back{display:flex;width:fit-content;}
+@media(min-width:960px){
+  .case .c-hero.has-media{padding-top:clamp(110px,13vh,140px);}
+  .case .c-hero.has-media .c-hero-grid{
+    display:grid;grid-template-columns:minmax(0,5.5fr) minmax(0,6.5fr);
+    column-gap:clamp(40px,4.5vw,64px);align-items:center;
+  }
+  .case .c-hero.has-media .h-head{font-size:clamp(2.3rem,4vw,4.1rem);max-width:13ch;margin-top:18px;}
+  .case .c-hero.has-media .h-lead{font-size:clamp(1.12rem,1.3vw,1.25rem);max-width:34rem;}
+  .case .c-hero.has-media .c-hero-media{margin-top:0;}
+  .case .c-hero.has-media .c-facts{margin-top:clamp(40px,4.5vw,64px);}
+}
+
+/* eyebrow labels as plain uppercase text instead of pills
+   (theme.eyebrow = "text"; TEDx) */
+.home.case.eyebrow-text .h-pill,
+.home.case.eyebrow-text .h-dark .h-pill,
+.home.case.eyebrow-text .h-grey .h-pill{
+  background:none;padding:0;border-radius:0;
+  color:var(--c-hl);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;
+}
+.home.case.eyebrow-text .h-pill .c-pill-num{opacity:.6;margin-right:6px;}

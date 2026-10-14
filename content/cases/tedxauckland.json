@@ -6,7 +6,8 @@
     "dark2": "#262626",
     "accent": "#f94e22",
     "highlight": "text",
-    "highlightColor": "#ed3624"
+    "highlightColor": "#ed3624",
+    "eyebrow": "text"
   },
   "hero": {
     "pill": "Website design",
