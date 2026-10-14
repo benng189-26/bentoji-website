@@ -376,3 +376,33 @@ body.case{--c-hl:var(--c-accent);}
   color:var(--c-hl);font-size:.82rem;letter-spacing:.16em;text-transform:uppercase;
 }
 .home.case.eyebrow-text .h-pill .c-pill-num{opacity:.6;margin-right:6px;}
+
+/* ===================================================================
+   v1.6 (14 Oct 2026)
+   =================================================================== */
+/* headings break into even lines instead of one long last line */
+.case .h-head,.case .c-statement,.case .c-decision h3{text-wrap:balance;}
+.case .h-lead,.case .c-text p{text-wrap:pretty;}
+
+/* text in two columns (text block "columns": 2) */
+@media(min-width:960px){
+  .case .c-text.is-cols{max-width:none;columns:2;column-gap:clamp(40px,5vw,88px);}
+  .case .c-text.is-cols p{break-inside:avoid;}
+}
+
+/* colours and typefaces side by side */
+.case .c-pair{display:flex;flex-direction:column;gap:clamp(24px,2.8vw,36px);}
+@media(min-width:960px){
+  .case .c-pair{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,2.6vw,40px);align-items:stretch;}
+  .case .c-pair .c-swatches{grid-template-columns:repeat(2,minmax(0,1fr));align-content:start;}
+  .case .c-pair .c-swatch-chip{height:auto;aspect-ratio:16/11;}
+  .case .c-pair .c-type{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .case .c-pair .c-type-card{padding:clamp(18px,2vw,26px);gap:12px;}
+  .case .c-pair .c-type-live .c-type-aa{font-size:clamp(3.4rem,5vw,4.6rem);}
+  .case .c-pair .c-type-live .c-type-line{font-size:clamp(1.15rem,1.6vw,1.5rem);}
+  .case .c-pair .c-type-chars{font-size:clamp(.82rem,.95vw,.95rem);}
+}
+@media(min-width:960px){
+  /* hero headline: slightly smaller so it sets on fewer, more even lines */
+  .case .c-hero.has-media .h-head{font-size:clamp(2.2rem,3.4vw,3.6rem);max-width:none;}
+}

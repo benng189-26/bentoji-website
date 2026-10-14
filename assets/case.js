@@ -17,7 +17,8 @@
 
    BLOCK types
    -----------
-   text       { "p": ["…"], "heading": optional small label }
+   text       { "p": ["…"], "heading": optional small label,
+                "columns": 2 for two text columns on wide screens }
    statement  { "text" }                       big sentence in the heading font
    chips      { "items": ["…"] }                row of orange pills
    decision   { "num", "title", "p": [], "image": IMAGE, "flip": bool }
@@ -67,6 +68,9 @@
    A run of text blocks that includes a statement is laid out in two
    columns on wide screens: paragraphs left, statement right, starting
    50–60 px lower (less on small screens) for an asymmetric look. Default for every case study.
+
+   A swatches block followed by a type block (or the reverse) sits side
+   by side on wide screens: colours left, typefaces right.
 
    The template is a starting point, not a fixed format. Each case study
    picks the sections, blocks and visual touches that suit its project:
@@ -119,7 +123,7 @@
 
   var blocks = {
     text: function (b) {
-      return '<div class="c-text">' + (b.heading ? '<h3>' + esc(b.heading) + '</h3>' : '') + paras(b.p) + '</div>';
+      return '<div class="c-text' + (b.columns === 2 ? ' is-cols' : '') + '">' + (b.heading ? '<h3>' + esc(b.heading) + '</h3>' : '') + paras(b.p) + '</div>';
     },
     statement: function (b) { return '<p class="c-statement">' + rich(b.text) + '</p>'; },
     chips: function (b) {
@@ -210,12 +214,20 @@
       }
       run = [];
     }
-    list.forEach(function (b) {
-      if (!blocks[b.type]) return;
-      if (TEXTISH[b.type]) { run.push(b); return; }
+    for (var i = 0; i < list.length; i++) {
+      var b = list[i];
+      if (!blocks[b.type]) continue;
+      if (TEXTISH[b.type]) { run.push(b); continue; }
       flush();
+      /* colours and type next to each other: shown side by side */
+      var nx = list[i + 1];
+      if (nx && ((b.type === 'swatches' && nx.type === 'type') || (b.type === 'type' && nx.type === 'swatches'))) {
+        out += '<div class="c-pair">' + blocks[b.type](b) + blocks[nx.type](nx) + '</div>';
+        i++;
+        continue;
+      }
       out += blocks[b.type](b);
-    });
+    }
     flush();
     return out;
   }

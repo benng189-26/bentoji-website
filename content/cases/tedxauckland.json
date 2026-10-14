@@ -25,11 +25,11 @@
     },
     {
       "k": "Role",
-      "v": "Volunteer, leading the design and the project"
+      "v": "Volunteer, UI/UX designer"
     },
     {
       "k": "Team",
-      "v": "Four volunteers"
+      "v": "Producer, copywriter, developer"
     },
     {
       "k": "Timeline",
@@ -143,7 +143,8 @@
             "I kept the palette close to the TED brand, with black and charcoal backgrounds, white type, and one red kept for actions and event details. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
             "Because the event's visuals, from the logo to the stage and its lighting, are built on a [[strong contrast between red and black]], we decided to keep the whole website dark, apart from the blog, which uses a light background for readability. That kept the site consistent with the feel of the event itself.",
             "The speaker thumbnails also have a [[spotlight effect]] that slowly changes each photo from B&W to colour. It mirrors the way speakers appear on stage, and it is a small touch that makes browsing the line-up a little more interesting."
-          ]
+          ],
+          "columns": 2
         },
         {
           "type": "swatches",
