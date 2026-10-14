@@ -9,7 +9,7 @@
   "hero": {
     "pill": "Website design",
     "title": "Helping Auckland audiences get closer to TEDx",
-    "intro": "TEDxAuckland is an independently run TED event. In 2018 I volunteered to redesign its website, and what started as leading the design turned into running the whole project, with a team of four over about six months.",
+    "intro": "TEDxAuckland is an independently run TED event. I volunteered to redesign its website, and what started as leading the design turned into running the whole project, with a team of four over about six months.",
     "image": {
       "src": "/assets/img/work/tedxauckland/hero.webp",
       "alt": "The TEDxAuckland homepage in a browser window, over a dark photo of the event venue"
@@ -31,10 +31,6 @@
     {
       "k": "Timeline",
       "v": "About six months"
-    },
-    {
-      "k": "Year",
-      "v": "2018"
     }
   ],
   "sections": [
@@ -80,8 +76,6 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-scan.webp",
             "alt": "Four talk cards from the Talks page, each with a photo, title, speaker name and topic tags",
-            "prepare": "Talks page, the first two rows of talk cards, cropped tight.",
-            "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
             "caption": "Every talk card uses the same module, with a photo, title, speaker and topic tags."
           }
@@ -98,8 +92,6 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-nav.webp",
             "alt": "Top of the TEDxAuckland homepage: menu, Buy ticket link, hero and the red upcoming event strip",
-            "prepare": "Homepage, from the menu down to the red upcoming event strip and the start of the speaker row.",
-            "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
             "caption": "The menu, the ticket link and the next event are all visible before anyone scrolls."
           }
@@ -114,10 +106,8 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-speakers.webp",
             "alt": "A speaker selected in the grid, with her bio, links and talk video opened below",
-            "prepare": "People page: the first speaker row with one speaker selected and the panel open below it.",
-            "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
-            "caption": "Speaker details open inside the grid, and the portraits stay black and white until one is selected."
+            "caption": "Speaker details open inside the grid, and each portrait fades from black and white to colour when it is selected."
           }
         },
         {
@@ -131,8 +121,6 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-filter.webp",
             "alt": "The most popular talks banner and the talk filter, with Popular, Category and Years tabs and hashtag topics",
-            "prepare": "Talks page: the red 'most popular talks' band and the filter below it, with the hashtag topics.",
-            "size": "1600 × 1200 (4:3), exported at 2x",
             "ratio": "4/3",
             "caption": "Talks can be filtered by popularity, category, year or topic."
           }
@@ -150,7 +138,8 @@
           "type": "text",
           "p": [
             "I kept the palette close to the TED brand, with black and charcoal backgrounds, white type, and one red kept for actions and event details. Main headings are set in Noe Display Bold and subheadings in Gotham Bold.",
-            "{{Optional: one line on why, if there was a reason beyond the TED brand. For example, whether the dark pages were meant to feel like the theatre on the night.}}"
+            "Because the event's visuals, from the logo to the stage and its lighting, are built on a strong contrast between red and black, we decided to keep the whole website dark, apart from the blog, which uses a light background for readability. That kept the site consistent with the feel of the event itself.",
+            "The speaker thumbnails also have a spotlight effect that slowly changes each photo from black and white to colour. It mirrors the way speakers appear on stage, and it is a small touch that makes browsing the line-up a little more interesting."
           ]
         },
         {
@@ -218,7 +207,7 @@
         {
           "type": "text",
           "p": [
-            "Selling tickets directly through the site became complicated quickly. With four volunteers, we did not have the time or resource to build it properly, so ticketing moved to a third-party service. {{Name the ticketing provider if you can.}}",
+            "Selling tickets directly through the site became complicated quickly. With four volunteers, we did not have the time or resource to build it properly, so ticketing moved to Ticketmaster.",
             "The site still takes people through most of the process before they buy, from learning about the event and browsing speakers and topics to understanding what the ticket includes."
           ]
         },
@@ -238,9 +227,8 @@
         {
           "type": "text",
           "p": [
-            "Before this project, I had only worked in agencies, where everyone knows their role and the work moves along without anyone having to ask. I arrived expecting the same thing.",
-            "The producer was not used to working that way. He was not sure what needed doing, who should do it or by when, and he assumed I would take care of all of it. As a result, things often stood still until I noticed they had.",
-            "What changed it was a meeting where I explained plainly what was missing and where we needed to get to. From then on we had regular meetings, a timeline and deadlines. The producer looked after the sponsors, briefed the copywriter, followed up with photographers for images and video, and gathered the speakers and their details. Once everyone could see the whole project and their own part in it, the work started to move."
+            "Before this project, I had only worked in agencies, where everyone knows their role and the work moves along without anyone having to ask. The producer was not used to working that way and assumed I would take care of everything, so for a while things stood still until I noticed they had.",
+            "What changed it was a meeting where I explained plainly what was missing and where we needed to get to. From then on we had regular meetings, a timeline and deadlines, and once everyone could see the whole project and their own part in it, the work started to move."
           ]
         },
         {
@@ -251,13 +239,6 @@
           "type": "text",
           "p": [
             "On a volunteer team, nobody is anyone's boss and every deadline is optional, so someone has to say clearly who is doing what, and by when. That was my job, and it took me longer than it should have to realise it."
-          ]
-        },
-        {
-          "type": "text",
-          "heading": "After launch",
-          "p": [
-            "{{One or two lines on how it went. Did the site launch in time for TEDxYouth@Auckland in May 2018? Anything you can state plainly, such as ticket sales, traffic or what the organisers said. Delete this block if there is nothing to add.}}"
           ]
         }
       ]
