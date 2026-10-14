@@ -62,7 +62,8 @@
    theme.highlight: "pill" (default, SoundLax) or "text" (bold coloured
    words, TEDx); theme.highlightColor sets the colour for "text".
    A run of text blocks that includes a statement is laid out in two
-   columns on wide screens: paragraphs left, statement right.
+   columns on wide screens: paragraphs left, statement right, starting
+   12–20 px lower for an asymmetric look. Default for every case study.
 
    The template is a starting point, not a fixed format. Each case study
    picks the sections, blocks and visual touches that suit its project:

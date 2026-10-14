@@ -322,7 +322,8 @@ body.case{--c-gap:clamp(44px,5vw,76px);--c-text:44rem;}
     column-gap:clamp(40px,5vw,88px);row-gap:clamp(18px,2vw,26px);align-items:start;
   }
   .case .c-split-main{grid-column:1;grid-row:var(--r);}
-  .case .c-split-side{grid-column:2;grid-row:var(--r);align-self:center;}
+  /* asymmetric: the side column starts a little lower than the paragraphs */
+  .case .c-split-side{grid-column:2;grid-row:var(--r);align-self:start;margin-top:clamp(12px,1.4vw,20px);}
 }
 .case .c-split-side .c-statement{
   max-width:none;font-size:clamp(1.35rem,2vw,1.85rem);line-height:1.18;
