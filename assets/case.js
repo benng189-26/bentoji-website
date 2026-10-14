@@ -28,6 +28,8 @@
    quotes     { "items": [{ "text", "source" }] }
    stats      { "items": [{ "value", "label" }], "note" }
    list       { "items": ["…"], "heading": optional }
+   gallery    { "items": [IMAGE], "cols": 2 | 3, "title", "caption" }
+              images side by side; one column on phones
    type       { "items": [TYPEFACE], "dark": bool }   font specimens, one card each
    TYPEFACE   { "name", "role", "sample", "chars": bool (show A–Z, a–z, 0–9),
                 "family": CSS font-family name,
@@ -65,6 +67,11 @@
    words, TEDx); theme.highlightColor sets the colour for "text".
    theme.eyebrow: "pill" (default) or "text" (plain uppercase labels
    above headings, in the highlight colour; TEDx).
+   theme.accentInk: text colour on top of a light accent (Kmart mint):
+   pills, chips and the active menu item use it, and accent-coloured
+   labels on light sections switch to ink so they stay readable.
+   theme.highlight "marker": highlighted words sit on the accent colour
+   like a highlighter pen (works on light and dark sections).
    A run of text blocks that includes a statement is laid out in two
    columns on wide screens: paragraphs left, statement right, starting
    50–60 px lower (less on small screens) for an asymmetric look. Default for every case study.
@@ -165,6 +172,14 @@
         '</div>';
       }).join('') + '</div>';
     },
+    gallery: function (b) {
+      var cols = b.cols || 2;
+      return '<figure class="c-figure c-gallery" style="--cols:' + cols + '">' +
+        (b.title ? '<p class="c-figure-title">' + esc(b.title) + '</p>' : '') +
+        '<div class="c-gallery-grid">' + (b.items || []).map(function (it) { return media(it); }).join('') + '</div>' +
+        (b.caption ? '<figcaption>' + rich(b.caption) + '</figcaption>' : '') +
+      '</figure>';
+    },
     swatches: function (b) {
       return '<div class="c-swatches">' + (b.items || []).map(function (s) {
         return '<div><div class="c-swatch-chip" style="background:' + esc(s.hex) + '"></div>' +
@@ -240,6 +255,9 @@
     /* highlight style per project: "pill" (SoundLax) or "text" (bold coloured words) */
     if (t.highlight === 'text') document.body.classList.add('hl-text');
     if (t.highlightColor) document.body.style.setProperty('--c-hl', t.highlightColor);
+    /* light accents (e.g. mint) need dark text on pills, chips and markers */
+    if (t.accentInk) { document.body.classList.add('accent-light'); document.body.style.setProperty('--c-accent-ink', t.accentInk); }
+    if (t.highlight === 'marker') document.body.classList.add('hl-marker');
     /* eyebrow labels above headings: "pill" (default) or "text" (plain uppercase) */
     if (t.eyebrow === 'text') document.body.classList.add('eyebrow-text');
 

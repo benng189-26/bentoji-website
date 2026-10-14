@@ -363,14 +363,14 @@ window.PROJECTS = [
 
   {
     slug: 'kmart',
-    types: ['brand', 'web'],
+    types: ['brand', 'web', 'print', 'ads'],
+    link: '/work/kmart/',
     featured: true,
-    title: 'Kmart Brand & Website Redesign Concept',
-    year: '2024',
+    title: 'Kmart rebrand concept',
     category: 'Brand & Web Concept',
-    tagline: 'A full brand and digital redesign concept for Kmart NZ, bringing a fresh, modern identity to a retail icon while keeping everyday value at its core.',
+    tagline: 'A rebrand concept built around one idea: making low prices feel like a choice.',
     location: 'Auckland, NZ · Retail / eCommerce',
-    thumb: '/assets/img/work/kmart-cover.jpg',
+    thumb: '/assets/img/work/kmart/hero.webp',
     cover: '/assets/img/work/kmart-cover.jpg',
     coverClass: 'cover-full',
     gallery: [
@@ -457,7 +457,7 @@ window.SHOW_DRAFTS = true;
 
 window.PIECES = [
   {
-    id: 'kmart-billboard', type: 'ads', label: 'Concept', year: '2024',
+    id: 'kmart-billboard', type: 'ads', label: 'Concept',
     title: 'Kmart outdoor poster',
     images: ['/assets/img/work/pieces/kmart-billboard.webp'],
     caption: 'An outdoor poster from my Kmart rebrand concept. The campaign line, “See more, own less”, builds on the idea of buying everyday things on a budget and spending the savings on experiences.'
@@ -470,7 +470,7 @@ window.PIECES = [
     link: { text: 'See the App Store page', href: 'https://apps.apple.com/us/app/soundlax-focus-relax-sleep/id6764812942' }
   },
   {
-    id: 'kmart-posters', type: 'ads', label: 'Concept', year: '2024',
+    id: 'kmart-posters', type: 'ads', label: 'Concept',
     title: 'Kmart campaign posters', fit: 'contain',
     images: ['/assets/img/work/pieces/kmart-posters.webp'],
     caption: 'Two campaign posters from the same Kmart concept, written for the same “own less” idea.'
@@ -483,7 +483,7 @@ window.PIECES = [
     link: { text: 'Visit the page', href: '/soundlax-app' }
   },
   {
-    id: 'kmart-identity', type: 'brand', label: 'Concept', year: '2024',
+    id: 'kmart-identity', type: 'brand', label: 'Concept',
     title: 'Kmart logo and stationery', pos: 'center top',
     images: ['/assets/img/work/pieces/kmart-identity.webp'],
     caption: 'A simplified Kmart logo and the stationery set that goes with it, from my rebrand concept.'

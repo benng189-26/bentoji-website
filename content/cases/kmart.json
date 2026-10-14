@@ -1,0 +1,322 @@
+{
+  "slug": "kmart",
+  "name": "Kmart rebrand concept",
+  "theme": {
+    "dark": "#2d2a30",
+    "dark2": "#38343c",
+    "accent": "#01ffcb",
+    "accentInk": "#0f151c",
+    "highlight": "marker",
+    "highlightColor": "#01ffcb"
+  },
+  "hero": {
+    "pill": "Brand and website concept",
+    "title": "Making low prices feel like a choice",
+    "intro": "Kmart opened New Zealand's first discount department store in Henderson, Auckland, in 1988, and it now runs more than 200 stores across Australia and New Zealand. This is a rebrand concept rather than a commissioned project: a new logo, the shop itself, an online store and a campaign, all built around one idea.",
+    "image": {
+      "src": "/assets/img/work/kmart/hero.webp",
+      "alt": "Two Kmart business cards with the new wordmark, on a light grey surface"
+    }
+  },
+  "facts": [
+    { "k": "Client", "v": "Kmart (concept)" },
+    { "k": "Role", "v": "Brand and UI designer" },
+    { "k": "Team", "v": "Solo project" },
+    { "k": "Scope", "v": "Logo, print, website, campaign" }
+  ],
+  "sections": [
+    {
+      "id": "problem",
+      "nav": "The problem",
+      "tone": "grey",
+      "pill": "The problem",
+      "heading": "Cheap is not the same as budget",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Cheap and budget are not the same thing, but Kmart's identity treated them as one. The prices were the reason to shop there, and they were also the reason people did not like to admit that they did.",
+            "That looked like a design problem, but it was really a [[positioning problem]]."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "The brand was apologising for the exact thing that made it good."
+        }
+      ]
+    },
+    {
+      "id": "idea",
+      "nav": "The idea",
+      "tone": "dark",
+      "pill": "The idea",
+      "heading": "Buying cheap, on purpose",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The idea was to stop selling low prices as a compromise and start selling them as a choice. If you spend less on a chair, you have [[more left for everything that is not a chair]].",
+            "The whole rebrand hangs off that one reframe, so every decision after it had to answer to the same question."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Does this make buying cheap feel deliberate?"
+        }
+      ]
+    },
+    {
+      "id": "logo",
+      "nav": "The logo",
+      "tone": "grey",
+      "pill": "The logo",
+      "heading": "A logo that does less",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The old logo worked hard to be noticed: loud, red and shouting across a car park. Confidence does not need to shout, so the new mark does less, with one letterform, one small break in it, and black on a neutral background. It is [[restrained because restraint is the argument]].",
+            "I kept \"est 1988\" under the wordmark as a quiet reminder of how long Kmart has been part of New Zealand."
+          ]
+        },
+        {
+          "type": "gallery",
+          "cols": 2,
+          "items": [
+            { "src": "/assets/img/work/kmart/logo-light.webp", "alt": "The new Kmart wordmark in black on white, with a small peach break in the k and est 1988 underneath" },
+            { "src": "/assets/img/work/kmart/logo-dark.webp", "alt": "The new Kmart wordmark reversed out in white on black" }
+          ],
+          "caption": "The wordmark on white and on black. The small peach break in the k is the only colour in it."
+        },
+        {
+          "type": "swatches",
+          "items": [
+            { "name": "Black", "hex": "#231F20" },
+            { "name": "Peach", "hex": "#FEAE76" },
+            { "name": "Mint", "hex": "#01FFCB" },
+            { "name": "White", "hex": "#FFFFFF" }
+          ]
+        },
+        {
+          "type": "type",
+          "dark": true,
+          "items": [
+            { "name": "Wavehaus 158 Extra Bold", "role": "Brand typeface", "sample": "Kmart, est 1988", "chars": true, "family": "Wavehaus 158 Extra Bold", "font": "/assets/type/cases/wavehaus-158-extrabold.woff2" }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/kmart/stationery.webp",
+          "alt": "Kmart letterhead, envelopes and business cards with the new wordmark",
+          "caption": "Business cards, letterhead and envelopes, kept almost entirely white so the mark does the work."
+        }
+      ]
+    },
+    {
+      "id": "in-store",
+      "nav": "In store",
+      "tone": "dark",
+      "pill": "In store",
+      "heading": "The idea, at the till",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The concept also covers the places where people meet the brand in person, because that is where the idea has the most to prove."
+          ]
+        },
+        {
+          "type": "decision",
+          "num": "01",
+          "title": "Price tags with a reason",
+          "p": [
+            "Each price comes with a short line about what the saving is for. A $12 tag reads [[More left for the weekend]], which is the whole idea in five words, printed on every shelf."
+          ],
+          "image": {
+            "src": "/assets/img/work/kmart/price-tags.webp",
+            "alt": "A Kmart swing tag and shelf label, both showing $12 and the line More left for the weekend",
+            "caption": "The same line on the swing tag and the shelf label."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "02",
+          "flip": true,
+          "title": "A receipt that ends on the rest",
+          "p": [
+            "Instead of a standard thank-you, the receipt finishes with \"You spent $46 today. Enjoy the rest.\", so the last thing people read after paying is a reminder of what the money they did not spend is for."
+          ],
+          "image": {
+            "src": "/assets/img/work/kmart/receipt.webp",
+            "alt": "A Kmart receipt ending with the line You spent $46 today. Enjoy the rest.",
+            "caption": "The closing line replaces the usual thank-you."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "03",
+          "title": "A catalogue worth keeping",
+          "p": [
+            "The catalogue becomes a home magazine, Home & Living, with one styled room on the cover and very little else. It is a quieter way to show that low prices and good taste can sit together."
+          ],
+          "image": {
+            "src": "/assets/img/work/kmart/catalogue.webp",
+            "alt": "A Kmart Home & Living catalogue cover with a styled room, a stool and ceramics"
+          }
+        },
+        {
+          "type": "gallery",
+          "cols": 2,
+          "items": [
+            { "src": "/assets/img/work/kmart/bag-tote.webp", "alt": "A canvas Kmart tote bag with the wordmark" },
+            { "src": "/assets/img/work/kmart/bag-paper.webp", "alt": "A white paper Kmart shopping bag with a small wordmark" }
+          ],
+          "caption": "A reusable tote and a paper bag, with the mark and nothing else."
+        }
+      ]
+    },
+    {
+      "bleed": {
+        "src": "/assets/img/work/kmart/store.webp",
+        "alt": "A Kmart store front with the new wordmark on a concrete facade, above a car park"
+      }
+    },
+    {
+      "id": "online",
+      "nav": "Online store",
+      "tone": "grey",
+      "pill": "Online store",
+      "heading": "A store that helps you choose",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The website redesign covers the homepage, a category page, a product page and the mobile site. The aim was for browsing to feel more like being helped to choose than being sold to."
+          ]
+        },
+        {
+          "type": "decision",
+          "num": "01",
+          "title": "Shop by mood and season",
+          "p": [
+            "The homepage opens on the K-Collection, a set of moods such as summer, wanderlust, be active and good time, rather than a grid of discounts. It helps people [[find what they need quickly]], and the collection is designed to change with the seasons and with promotion and sale periods."
+          ],
+          "image": {
+            "src": "/assets/img/work/kmart/closeup-collection.webp",
+            "alt": "The K-Collection on the Kmart homepage: photo tiles labelled summer, wanderlust, outside, be active, good time and fashion",
+            "caption": "Browsing starts from a mood, and the collection changes with the season."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "02",
+          "flip": true,
+          "title": "Help with styling, not only products",
+          "p": [
+            "A \"Meet our designers\" section and a form to book a styling consultation sit on the homepage, next to the products. It is the clearest place where the idea shows up online: the products are cheap, but [[choosing them is treated with care]]."
+          ],
+          "image": {
+            "src": "/assets/img/work/kmart/closeup-styling.webp",
+            "alt": "The Meet our designers banner and the Book a styling consultation form on the Kmart homepage",
+            "caption": "A styling consultation can be booked from the homepage."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "03",
+          "title": "Customers' homes as proof",
+          "p": [
+            "K-stagram collects photos that customers share with #loveNewKmart and shows them on the homepage and on product pages. It works as social proof, and it also shows the products [[being used in real homes]] rather than only on white backgrounds."
+          ],
+          "image": {
+            "src": "/assets/img/work/kmart/closeup-kstagram.webp",
+            "alt": "The K-stagram row of customer photos above the Kmart website footer",
+            "caption": "Real homes, shared by customers, appear next to the products."
+          }
+        },
+        {
+          "type": "image",
+          "seamless": true,
+          "title": "Pages",
+          "src": "/assets/img/work/kmart/web-pages.webp",
+          "alt": "Three Kmart web pages side by side: the homepage, the Living Room category page and the Charli armchair product page",
+          "caption": "The homepage, the Living Room category page and a product page."
+        },
+        {
+          "type": "image",
+          "seamless": true,
+          "title": "Mobile",
+          "src": "/assets/img/work/kmart/mobile.webp",
+          "alt": "The Kmart mobile homepage with search, categories and We suggest tiles",
+          "caption": "On mobile, the homepage leads with suggestions by activity, with search and categories above them."
+        }
+      ]
+    },
+    {
+      "id": "campaign",
+      "nav": "Campaign",
+      "tone": "dark",
+      "pill": "Campaign",
+      "heading": "Own less",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The campaign says the idea out loud. Each poster pairs a moment, a jump into a lake, a view from a ridge or a concert, with the same ending: Enjoy more, own less. See more, own less. Live more, own less.",
+            "The line underneath, \"Save your money. Fill your life with experiences, not things.\", connects the low prices to what people can do with the money they save, which is [[the reframe from the start, written for a station wall]]."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Spend less on things, and more on everything else."
+        },
+        {
+          "type": "gallery",
+          "cols": 3,
+          "items": [
+            { "src": "/assets/img/work/kmart/poster-1.webp", "alt": "Poster: Enjoy more, own less, over people jumping into a lake" },
+            { "src": "/assets/img/work/kmart/poster-2.webp", "alt": "Poster: See more, own less, over a person standing on a mountain ridge above a lake" },
+            { "src": "/assets/img/work/kmart/poster-3.webp", "alt": "Poster: Live more, own less, over a concert crowd under falling confetti" }
+          ],
+          "caption": "Three posters, one ending."
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/kmart/billboard.webp",
+          "alt": "The See more, own less poster on a billboard in a train station",
+          "caption": "The same line at the scale of a station platform."
+        },
+        {
+          "type": "gallery",
+          "cols": 3,
+          "title": "Social",
+          "items": [
+            { "src": "/assets/img/work/kmart/ig-1.webp", "alt": "Instagram post: Own less, above a folded linen cloth" },
+            { "src": "/assets/img/work/kmart/ig-2.webp", "alt": "Instagram post: Buy better. Own less, above a wooden stool and a mug" },
+            { "src": "/assets/img/work/kmart/ig-3.webp", "alt": "Instagram post: Own less, above a folded white T-shirt" }
+          ],
+          "caption": "On social, the campaign moves from experiences to the products themselves, with quiet images and very few words."
+        }
+      ]
+    },
+    {
+      "id": "looking-back",
+      "nav": "Looking back",
+      "tone": "grey",
+      "pill": "Looking back",
+      "heading": "What I would do differently",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "{{One specific thing. Pick one of the three options in the Google Doc (bring the website closer to the restraint of the logo; test the own-less message with real shoppers first; design with real product data from the start) or write your own, and delete the others.}}"
+          ]
+        }
+      ]
+    }
+  ],
+  "next": {
+    "title": "TEDxAuckland website",
+    "href": "/work/tedxauckland/"
+  }
+}

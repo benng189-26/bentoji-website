@@ -406,3 +406,29 @@ body.case{--c-hl:var(--c-accent);}
   /* hero headline: slightly smaller so it sets on fewer, more even lines */
   .case .c-hero.has-media .h-head{font-size:clamp(2.2rem,3.4vw,3.6rem);max-width:none;}
 }
+
+/* ===================================================================
+   v1.7 (15 Oct 2026): gallery block, light accents, marker highlights
+   =================================================================== */
+.case .c-gallery-grid{display:grid;grid-template-columns:repeat(var(--cols,2),minmax(0,1fr));gap:clamp(12px,1.4vw,20px);align-items:start;}
+@media(max-width:700px){ .case .c-gallery-grid{grid-template-columns:1fr;} }
+
+/* light accent colour: dark text on top of it, ink for labels on light sections */
+.home.case.accent-light .h-pill,
+.home.case.accent-light .h-dark .h-pill,
+.home.case.accent-light .h-grey .h-pill{background:var(--c-accent);color:var(--c-accent-ink);}
+.case.accent-light .c-subnav-links a.is-active,
+.case.accent-light .c-subnav.on-dark .c-subnav-links a.is-active{color:var(--c-accent-ink);}
+.case.accent-light .c-chips li{color:var(--c-accent-ink);}
+.case.accent-light .h-grey .c-num,
+.case.accent-light .h-grey .c-figure-title,
+.case.accent-light .h-grey .c-text h3,
+.case.accent-light .h-grey .c-stat-value{color:var(--h-ink);}
+
+/* marker highlight: words sit on the accent like a highlighter */
+.case.hl-marker .c-hl{
+  background:var(--c-hl);color:var(--c-accent-ink,#0f151c);
+  font:inherit;font-weight:700;letter-spacing:inherit;
+  padding:0 .18em;border-radius:3px;
+}
+.case .c-pair .c-type > .c-type-card:only-child{grid-column:1 / -1;}
