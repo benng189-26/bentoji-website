@@ -171,19 +171,17 @@
               "name": "Noe Display Bold",
               "role": "Main headings",
               "sample": "Ideas worth spreading",
-              "src": "/assets/img/work/tedxauckland/type-noe-display.svg",
-              "alt": "Noe Display Bold sample: Aa, Ideas worth spreading",
-              "prepare": "In Figma: a 600 × 280 frame with no fill. Inside it, 'Aa' at 120 px with 'Ideas worth spreading' at 40 px below, both in Noe Display Bold, white, left aligned. Export the frame as SVG; Figma outlines the text, so the font does not need to be on the website.",
-              "size": "SVG, 600 × 280 frame"
+              "chars": true,
+              "family": "Noe Display Bold",
+              "font": "/assets/type/cases/noe-display-bold.woff2"
             },
             {
               "name": "Gotham Bold",
               "role": "Subheadings",
               "sample": "TEDxYouth@Auckland",
-              "src": "/assets/img/work/tedxauckland/type-gotham.svg",
-              "alt": "Gotham Bold sample: Aa, TEDxYouth@Auckland",
-              "prepare": "In Figma: a 600 × 280 frame with no fill. Inside it, 'Aa' at 120 px with 'TEDxYouth@Auckland' at 40 px below, both in Gotham Bold, white, left aligned. Export the frame as SVG; Figma outlines the text, so the font does not need to be on the website.",
-              "size": "SVG, 600 × 280 frame"
+              "chars": true,
+              "family": "Gotham Bold",
+              "font": "/assets/type/cases/gotham-bold.woff2"
             }
           ]
         }

@@ -302,3 +302,11 @@ body.case{--c-gap:clamp(44px,5vw,76px);--c-text:44rem;}
 .case .c-type.is-dark .c-ph{color:#fff;border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.04);}
 .home.case .h-section .c-type.is-dark .c-type-card p,.home.case .h-section .c-type.is-dark .c-ph p{color:#fff;}
 .home.case .h-section .c-type:not(.is-dark) .c-type-card p{color:var(--h-ink);}
+/* live-text specimens */
+.case .c-type-live{display:flex;flex-direction:column;gap:10px;}
+.case .c-type-live p{margin:0;font-family:inherit;}
+.case .c-type-live .c-type-aa{font-size:clamp(4.5rem,9vw,7.5rem);line-height:.9;}
+.case .c-type-live .c-type-line{font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1.1;}
+.case .c-type-chars{font-size:clamp(1rem,1.3vw,1.2rem);line-height:1.45;letter-spacing:.02em;opacity:.7;word-break:break-all;}
+.case .c-type-card.is-loading .c-type-sample{visibility:hidden;}
+.case .c-type-live,.case .c-type-live p{font-weight:400;font-synthesis:none;}

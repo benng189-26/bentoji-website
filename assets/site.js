@@ -487,7 +487,7 @@
    Back to top + scroll-in reveal (Oct 2026)
    - A round "back to top" button appears after scrolling down about
      one and a half screens, on every page that loads this file.
-   - Content below the first screen fades up once as it scrolls into
+   - Content below the first screen slides up into place once as it scrolls into
      view. Nothing animates when scrolling back up, and anything that
      was skipped by a jump (menu link, back to top) just appears.
    Case study pages call window.bentojiReveal(main) after rendering.

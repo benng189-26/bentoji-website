@@ -28,10 +28,13 @@
    stats      { "items": [{ "value", "label" }], "note" }
    list       { "items": ["…"], "heading": optional }
    type       { "items": [TYPEFACE], "dark": bool }   font specimens, one card each
-   TYPEFACE   { "name", "role", "sample",
-                "family": CSS font-family, if the font is on the site,
-                "src", "alt", "prepare", "size": an SVG/PNG of the
-                sample when the font can't be loaded (outlined text) }
+   TYPEFACE   { "name", "role", "sample", "chars": bool (show A–Z, a–z, 0–9),
+                "family": CSS font-family name,
+                "font": "/assets/type/cases/<file>.woff2"  loads the font
+                        for this card only; until the file exists the card
+                        says which file to add, rather than faking the look,
+                "src", "alt", "prepare", "size": an SVG/PNG sample instead,
+                        if the font can't be used on the web }
 
    IMAGE      { "src", "alt", "prepare", "size", "ratio", "video": bool }
    If "prepare" is set and the file at "src" doesn't exist yet, a
@@ -134,10 +137,15 @@
         if (t.src) {
           sample = media({ src: t.src, alt: t.alt || (t.name + ' sample'), prepare: t.prepare, size: t.size, ratio: t.ratio || '15/7' });
         } else {
-          var ff = t.family ? ' style="font-family:' + esc(t.family) + '"' : '';
-          sample = '<p class="c-type-aa"' + ff + '>Aa</p>' + (t.sample ? '<p class="c-type-line"' + ff + '>' + esc(t.sample) + '</p>' : '');
+          var ff = t.family ? ' style="font-family:\'' + esc(t.family) + '\',sans-serif"' : '';
+          sample = '<div class="c-type-live"' + ff + '>' +
+            '<p class="c-type-aa">Aa</p>' +
+            (t.sample ? '<p class="c-type-line">' + esc(t.sample) + '</p>' : '') +
+            (t.chars ? '<p class="c-type-chars">ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>abcdefghijklmnopqrstuvwxyz<br>0123456789 &amp;@!?</p>' : '') +
+          '</div>';
         }
-        return '<div class="c-type-card">' +
+        var attrs = (t.font && t.family) ? ' data-font="' + esc(t.font) + '" data-family="' + esc(t.family) + '"' : '';
+        return '<div class="c-type-card' + (attrs ? ' is-loading' : '') + '"' + attrs + '>' +
           (t.role ? '<p class="c-type-role">' + esc(t.role) + '</p>' : '') +
           '<div class="c-type-sample">' + sample + '</div>' +
           '<p class="c-type-name">' + esc(t.name) + '</p>' +
@@ -229,6 +237,22 @@
     /* fade content in as it scrolls into view (site.js); the whole page is
        rescanned because the close section only moves below the fold now */
     if (window.bentojiReveal) requestAnimationFrame(function () { window.bentojiReveal(document); });
+
+    /* type specimens: load each font file just for its card */
+    main.querySelectorAll('.c-type-card[data-font]').forEach(function (card) {
+      var src = card.getAttribute('data-font'), fam = card.getAttribute('data-family');
+      function missing() {
+        card.classList.remove('is-loading');
+        card.querySelector('.c-type-sample').innerHTML =
+          '<div class="c-ph" style="--ratio:15/7"><span class="c-ph-tag">Font file to add</span>' +
+          '<p class="c-ph-file">' + esc(src) + '</p></div>';
+      }
+      if (!('FontFace' in window)) return missing();
+      new FontFace(fam, 'url(' + src + ')').load().then(function (f) {
+        document.fonts.add(f);
+        card.classList.remove('is-loading');
+      }, missing);
+    });
 
     /* missing prepared images fall back to the placeholder */
     main.querySelectorAll('.c-media[data-prepare="1"] img, .c-media[data-prepare="1"] video').forEach(function (el) {
