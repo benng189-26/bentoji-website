@@ -431,6 +431,15 @@ window.PROJECTS = [
     category: 'Website redesign',
     tagline: 'A website redesign for a real estate company in Vietnam, built to let its projects make the first impression.',
     thumb: '/assets/img/work/beehouse/hero.webp'
+  },
+  {
+    slug: 'robarica',
+    types: ['brand', 'print', 'ads'],
+    link: '/work/robarica/',
+    title: 'Robarica Coffee',
+    category: 'Packaging design',
+    tagline: 'Packaging and marketing images for a Vietnamese robusta coffee, sold mainly on Amazon in the US.',
+    thumb: '/assets/img/work/robarica/hero.webp'
   }
 
 ];
