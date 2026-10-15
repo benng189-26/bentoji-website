@@ -65,6 +65,14 @@
           "rot": 10,
           "x": -50,
           "y": 40
+        },
+        {
+          "src": "/assets/img/work/robarica/decor-leaf-1.webp",
+          "pos": "bottom-left",
+          "w": 130,
+          "rot": -28,
+          "x": -30,
+          "y": 30
         }
       ]
     },
@@ -97,9 +105,9 @@
           ],
           "image": {
             "src": "/assets/img/work/robarica/closeup-front.webp",
-            "alt": "The Robarica logo above Coffee of Viet Nam, with a star between Viet and Nam, framed by painted coffee leaves and cherries",
+            "alt": "The text from the black panel of the whole bean pouch: Coffee of Viet Nam, Whole Beans, Dark Roast, 100% Pure, and Espresso in a box above Filter",
             "ratio": "4/3",
-            "caption": "The origin is now the largest line on the pack, and the logo steps back."
+            "caption": "The new order in the black panel: origin first, then the product, the roast and purity, and how to brew it."
           }
         },
         {
@@ -127,9 +135,9 @@
           ],
           "image": {
             "src": "/assets/img/work/robarica/closeup-back.webp",
-            "alt": "The back of the pouch: Make a perfect cup of coffee, with numbered steps for a Vietnamese phin filter and an espresso machine",
+            "alt": "The brewing steps from the back of the pouch: seven steps for a Vietnamese phin filter and seven for an espresso machine, each with an icon",
             "ratio": "4/3",
-            "caption": "The back label, rewritten for 100% robusta. The QR code to the guide sits further down."
+            "caption": "The brewing steps on the back label, for a phin filter and an espresso machine."
           }
         },
         {
@@ -149,10 +157,23 @@
           }
         },
         {
-          "type": "image",
-          "src": "/assets/img/work/robarica/instant-mockup.webp",
-          "alt": "The Robarica instant coffee pouch standing on a white surface",
-          "caption": "The instant coffee pouch, in the same family as the whole bean pouch."
+          "type": "gallery",
+          "cols": 3,
+          "items": [
+            {
+              "src": "/assets/img/work/robarica/instant-1.webp",
+              "alt": "The Robarica instant coffee pouch standing, seen from the front"
+            },
+            {
+              "src": "/assets/img/work/robarica/instant-2.webp",
+              "alt": "Two instant coffee pouches showing the back with the one-minute method, and the front"
+            },
+            {
+              "src": "/assets/img/work/robarica/instant-3.webp",
+              "alt": "The instant coffee pouch laid flat, showing the zip and the full front label"
+            }
+          ],
+          "caption": "The instant coffee pouch from the front, the back and laid flat."
         },
         {
           "type": "gallery",
@@ -252,6 +273,14 @@
           "rot": -6,
           "x": -20,
           "y": 30
+        },
+        {
+          "src": "/assets/img/work/robarica/decor-leaf-2.webp",
+          "pos": "bottom-left",
+          "w": 150,
+          "rot": 32,
+          "x": -40,
+          "y": 50
         }
       ]
     },
@@ -304,20 +333,20 @@
       ],
       "decor": [
         {
-          "src": "/assets/img/work/robarica/decor-bean-sack.webp",
+          "src": "/assets/img/work/robarica/decor-flower-cherry.webp",
           "pos": "top-right",
-          "w": 320,
-          "rot": -4,
-          "x": -40,
-          "y": 90
+          "w": 220,
+          "rot": 8,
+          "x": -30,
+          "y": 60
         },
         {
-          "src": "/assets/img/work/robarica/decor-flower-cherry.webp",
+          "src": "/assets/img/work/robarica/decor-bean-sack.webp",
           "pos": "bottom-left",
-          "w": 200,
-          "rot": -10,
-          "x": -85,
-          "y": 40
+          "w": 280,
+          "rot": 4,
+          "x": -120,
+          "y": 20
         }
       ]
     }
