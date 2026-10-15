@@ -13,7 +13,7 @@
   "hero": {
     "pill": "Packaging design",
     "title": "Giving robusta a reason to be chosen",
-    "intro": "Robarica is a Wellington brand selling Vietnamese robusta coffee, grown in the Central Highlands of Vietnam and sold mainly on Amazon in the US. Working with the founder, I refreshed its main coffee pouch, designed the packaging for a new instant coffee, made its marketing images and designed the cover of its brewing guide.",
+    "intro": "Robarica is a Wellington brand selling Vietnamese robusta coffee, grown in the Central Highlands of Vietnam and sold mainly on Amazon in the US. Working with the founder, I redesigned the label of its whole bean pouch, updated its Amazon listing images, adapted the label for a new instant coffee and designed the cover of its brewing guide.",
     "image": {
       "src": "/assets/img/work/robarica/hero.webp",
       "alt": "The Robarica Coffee of Vietnam pouch lying on a white desk next to a cup of black coffee"
@@ -34,7 +34,7 @@
     },
     {
       "k": "Scope",
-      "v": "Packaging, marketing images, ebook cover"
+      "v": "Packaging, listing images, book cover"
     }
   ],
   "sections": [
@@ -49,19 +49,12 @@
           "type": "text",
           "p": [
             "Robarica sells 100% Vietnamese robusta: dark roasted, low in acidity and naturally high in caffeine. Most people know robusta, if they know it at all, as the cheap filler in instant coffee, and that reputation was the main thing standing between the product and a new customer.",
-            "Robarica already had a pouch, built around the brand's botanical artwork and a serif title. My job was to refresh it so that robusta comes across as a bold, distinctive coffee with [[a character of its own]], next to arabica brands that have never had to explain themselves."
+            "Robarica already had a pouch for its ground coffee, built around the brand's botanical artwork and a serif title. The coffee was changing to 100% robusta whole beans, and the founder wanted a new label that would [[stand out on an Amazon search page]], where most of its customers find it."
           ]
         },
         {
           "type": "statement",
           "text": "The packaging needed to treat robusta as a coffee worth choosing, not a cheaper substitute."
-        },
-        {
-          "type": "image",
-          "src": "/assets/img/work/robarica/before-after.webp",
-          "alt": "Two Robarica pouches side by side: the previous design with a serif Coffee of Vietnam title, and the refreshed design with a wide Coffee of Vietnam title",
-          "caption": "The previous pouch with its serif title on the left, and the refreshed design on the right.",
-          "side": true
         }
       ]
     },
@@ -76,52 +69,64 @@
       "nav": "Packaging",
       "tone": "dark",
       "pill": "The packaging",
-      "heading": "Proud of where it comes from",
+      "heading": "Read at the size of a thumbnail",
       "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "On Amazon, most people first see the pouch as a small image in a list of search results, next to a dozen other coffees. The founder's concern was that the old label was hard to read at that size, and that [[the words people actually look for were lost]]."
+          ]
+        },
         {
           "type": "decision",
           "num": "01",
-          "title": "Vietnam on the front",
+          "title": "Keywords first, the brand second",
           "p": [
-            "The new front leads with the origin: Coffee of Vietnam, set large in a wide typeface, with the star from the Vietnamese flag in the middle of the name.",
-            "The border of coffee leaves, cherries, flowers and star anise is the brand's own artwork, so I kept it as the frame and gave the type a dark panel of its own. That makes [[the origin the first thing people read]], before the product details."
+            "The founder asked for the label to lead with the words that catch a shopper's attention rather than the brand name: Coffee of Vietnam, Whole Beans and 100% Pure.",
+            "I made the logo smaller and rebuilt the text in the black panel in a clear order, with the origin set largest in a wide typeface, then the product, then the roast and purity, and [[espresso and filter in a box of their own]]. The botanical border is the brand's own artwork, so it stayed as the frame."
           ],
           "image": {
             "src": "/assets/img/work/robarica/closeup-front.webp",
             "alt": "The Robarica logo above Coffee of Viet Nam, with a star between Viet and Nam, framed by painted coffee leaves and cherries",
             "ratio": "4/3",
-            "caption": "The origin became the headline, inside the brand's existing botanical border."
+            "caption": "The origin is now the largest line on the pack, and the logo steps back."
           }
         },
         {
           "type": "decision",
           "num": "02",
           "flip": true,
-          "title": "One frame, two products",
+          "title": "Tested before it was printed",
           "p": [
-            "The new instant 3-in-1 coffee uses the same frame, logo and type as the whole bean pouch, with only the product name changing. That keeps the two products [[clearly part of one family]], and it gives Robarica a layout it can reuse for future products."
+            "Rather than choosing a label by eye, the founder wanted to test it on the listing. I supplied three main images on white: the old label with coffee beans scattered around it, the new label without beans, and the new label with beans.",
+            "He ran them on Amazon, and [[the new label won the test]], so that is the version that went to print."
           ],
           "image": {
-            "src": "/assets/img/work/robarica/closeup-family.webp",
-            "alt": "The front artwork of the whole bean pouch and the smaller instant coffee pack, side by side on black",
-            "ratio": "4/3",
-            "caption": "The whole bean pouch and the new instant coffee share one layout."
+            "src": "/assets/img/work/robarica/before-after.webp",
+            "alt": "Two Robarica pouches side by side: the original ground coffee label with a serif Coffee of Vietnam title, and the new whole bean label",
+            "caption": "The original ground coffee label and the new whole bean label, as main images on white."
           }
         },
         {
           "type": "decision",
           "num": "03",
-          "title": "The back of the pack teaches",
+          "title": "A back label for a new product",
           "p": [
-            "Robusta behaves differently from the coffee most people are used to, so the back of the pack is [[a short brewing guide]] rather than a block of marketing copy.",
-            "It has numbered steps for a Vietnamese phin filter and an espresso machine, with simple icons, and a QR code that leads to the full brewing guide."
+            "The back label changed at the same time. The coffee was now 100% robusta rather than a robusta and arabica blend, so the founder rewrote the description, the ingredients and the tasting notes, and the tagline became Steal a heart away.",
+            "I set the new copy and added [[a QR code with a Scan me prompt]] that leads to the free brewing guide, so the help is on the pack itself."
           ],
           "image": {
             "src": "/assets/img/work/robarica/closeup-back.webp",
             "alt": "The back of the pouch: Make a perfect cup of coffee, with numbered steps for a Vietnamese phin filter and an espresso machine",
             "ratio": "4/3",
-            "caption": "Brewing steps for a phin and an espresso machine, with a QR code to the free guide further down."
+            "caption": "The back label, rewritten for 100% robusta. The QR code to the guide sits further down."
           }
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/robarica/closeup-family.webp",
+          "alt": "The front artwork of the whole bean pouch and the smaller instant coffee pack, side by side on black",
+          "caption": "The same layout was later adapted for a new instant 3-in-1 coffee, with only the product name changing."
         },
         {
           "type": "gallery",
@@ -159,8 +164,8 @@
         {
           "type": "text",
           "p": [
-            "Robarica sells mainly on Amazon, so for many people the marketing images are their first look at the coffee, long before they hold the pouch.",
-            "One image explains the pack itself, with its zip, one-way valve and protective inner layer. The others repeat the points that matter most for robusta, [[100% pure and 100% Vietnamese]], strong and aromatic, and pair the coffee with the people and places it comes from."
+            "Robarica sells mainly on Amazon, so for many people the listing images are their first proper look at the coffee. All six had been made for the earlier ground coffee, so they needed updating to match the new pouch and the new product.",
+            "I put the main image on a pure white background, updated the zip at the top and made the pack brighter so it reads well on screen. I added the new label to the packaging image, made [[100% pure and 100% Vietnamese]] easier to read, and corrected the copy on the others so every claim matched 100% robusta, from the tasting notes to how the beans are roasted."
           ]
         },
         {
@@ -192,7 +197,7 @@
               "alt": "Friends laughing around a table with phin filters, with the line 100% Robusta whole beans with intense caffeine effect"
             }
           ],
-          "caption": "Marketing images, from the main product shot to the pack features, the taste and the origin."
+          "caption": "The six updated listing images, from the main image on white to the pack features, the taste and the origin."
         }
       ]
     },
@@ -206,9 +211,10 @@
         {
           "type": "text",
           "p": [
-            "Robusta can be unforgiving when it is brewed casually, and a harsh first cup can easily turn into a bad review. The ebook, How to Make a Perfect Cup of Coffee, was designed as a practical brewing guide: part education, part product support, and part confidence for first-time customers.",
+            "Robusta can be unforgiving when it is brewed casually, and a harsh first cup can easily turn into a bad review. The ebook, How to Make a Perfect Cup of Coffee, is a practical brewing guide: part education, part product support, and part confidence for first-time customers.",
+            "The founder's brief for the cover was specific. It needed the Robarica look and feel without the logo or the brand name, a title that [[stands out among the other coffee books on Amazon]], and a familiar cup of coffee rather than a Vietnamese phin, because most of the audience is in the US.",
             [
-              "It is linked from a QR code on the back of every pack, so the help is there when people open the coffee. The inside of the guide is mostly text, so [[the cover had to do most of the work]], and the ebook is ",
+              "The inside is mostly text, so the cover does most of the work. The author chose the final design from eight drafts, and I supplied it as a Kindle cover, a PDF book cover, 3D images for Facebook ads and a paperback cover. The ebook is ",
               {
                 "text": "still sold on Amazon",
                 "href": "https://www.amazon.com/dp/B09837JWN5"
@@ -223,9 +229,16 @@
         },
         {
           "type": "image",
-          "src": "/assets/img/work/robarica/ebook-flatlay.webp",
-          "alt": "The green How to Make a Perfect Cup of Coffee ebook cover on a hessian tablecloth, next to a laptop, a cup of coffee and lavender",
-          "caption": "The final cover: an illustrated cafe scene on green, chosen by the author from the drafts below."
+          "src": "/assets/img/work/robarica/ebook-cover.webp",
+          "alt": "The green How to Make a Perfect Cup of Coffee book standing at an angle on a green background",
+          "caption": "The final cover: two friends over coffee, a familiar cup, and no brand name."
+        },
+        {
+          "type": "image",
+          "title": "Paperback",
+          "src": "/assets/img/work/robarica/paperback.webp",
+          "alt": "The full paperback cover laid flat: back cover copy on the left, the spine, and the illustrated front cover on the right",
+          "caption": "The paperback wrap, with the back cover copy, the spine and space for the barcode."
         },
         {
           "type": "image",
