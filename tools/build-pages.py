@@ -7,11 +7,14 @@ the case study shells and the SoundLax landing page are not built here.
 """
 import os
 
-V = {'site': 50, 'home': 5, 'pages': 3, 'case': 16, 'projects': 22, 'portfolio': 1, 'sitejs': 37, 'casejs': 14}
+V = {'site': 50, 'home': 5, 'pages': 4, 'case': 17, 'projects': 23, 'portfolio': 2, 'sitejs': 37, 'casejs': 15}
 EMAIL = 'ben.ng189@gmail.com'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'
-NAV = [('Work', '/portfolio'), ('Pricing', '/pricing'), ('SoundLax', '/soundlax-app'), ('Writing', '/writing'), ('Contact', '/contact')]
+# Pricing and Writing are hidden for now (Oct 2026). To bring them back, restore:
+# NAV = [('Work', '/portfolio'), ('Pricing', '/pricing'), ('SoundLax', '/soundlax-app'), ('Writing', '/writing'), ('Contact', '/contact')]
+# plus the footer Pricing link and the redirects in vercel.json.
+NAV = [('Work', '/portfolio'), ('SoundLax', '/soundlax-app'), ('Contact', '/contact')]
 
 
 def head(title, desc, canonical, extra_css=()):
@@ -57,7 +60,7 @@ def nav(current):
 CLOSE = f'''<section class="h-section h-grey h-close">
   <div class="container">
     <h2 class="h-head h-title">Got something in mind?</h2>
-    <p class="h-lead">Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost.</p>
+    <p class="h-lead">Tell me what you're working on. The first call is free, and you'll get a straight answer on what it would take.</p>
     <div class="h-actions">
       <a class="h-btn h-btn-dark" href="/contact">Book a free call</a>
     </div>
@@ -76,7 +79,6 @@ FOOTER = f'''<footer class="site-footer">
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="/portfolio">Work</a>
-        <a href="/pricing">Pricing</a>
         <a href="/soundlax-app">SoundLax app</a>
         <a href="/contact">Contact</a>
       </div>
@@ -158,10 +160,10 @@ def plan_cards(btn_class='h-btn-primary'):
 # ---------------------------------------------------------------- Work
 page('portfolio/index.html',
      'Work | Bentoji, Ben Nguyen',
-     'Websites, landing pages, ads, print, brand and apps designed by Ben Nguyen in Auckland. Filter by the type of work you need.',
+     'Selected case studies by Ben Nguyen, a designer in Auckland: apps, websites and brand identity.',
      '/portfolio',
-     hero('Work', 'Websites, ads, print and apps',
-          'Client projects, concept pieces and my own products. Use the filters to see one type of work at a time.') +
+     hero('Work', 'Selected case studies',
+          'My own app, two client websites and a brand concept, each with the thinking behind the design.') +
      '''<section class="h-section h-dark" style="padding-top:0">
   <div class="container">
     <div data-work-index></div>

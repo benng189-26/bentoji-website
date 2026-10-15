@@ -14,6 +14,10 @@
   var PROJECTS = (window.PROJECTS || []).filter(function (p) { return !p.hidden; });
   var PIECES = window.PIECES || [];
   var SHOW_DRAFTS = window.SHOW_DRAFTS !== false;
+  var SHOWCASE = window.SHOWCASE || null;
+  function showcase() {
+    return SHOWCASE.map(function (s) { return PROJECTS.filter(function (p) { return p.slug === s; })[0]; }).filter(Boolean);
+  }
 
   var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>';
   function esc(s) {
@@ -89,6 +93,11 @@
 
   /* ---------- Work page ---------- */
   function workIndex(root) {
+    if (SHOWCASE) {
+      root.innerHTML = '<div class="w-cases is-showcase"></div>';
+      caseCards(root.firstChild);
+      return;
+    }
     var list = items();
     var counts = {};
     list.forEach(function (it) {
@@ -211,7 +220,8 @@
 
   /* ---------- homepage: case study cards ---------- */
   function caseCards(root) {
-    var featured = PROJECTS.filter(function (p) { return p.featured; }).slice(0, parseInt(root.getAttribute('data-limit') || '3', 10));
+    var featured = SHOWCASE ? showcase() :
+      PROJECTS.filter(function (p) { return p.featured; }).slice(0, parseInt(root.getAttribute('data-limit') || '3', 10));
     root.innerHTML = featured.map(function (p) {
       return '<a class="w-case" href="' + esc(p.link || ('/work?p=' + encodeURIComponent(p.slug))) + '">' +
         '<div class="w-media"><img src="' + esc(p.thumb) + '" alt="' + esc(p.title) + '" loading="lazy"' +

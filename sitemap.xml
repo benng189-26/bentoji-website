@@ -51,19 +51,9 @@
   </url>
 
   <url>
-    <loc>https://bentoji.co.nz/writing/</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-  <url>
     <loc>https://bentoji.co.nz/soundlax/privacypolicy/</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-
-  <url><loc>https://bentoji.co.nz/pricing/</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://bentoji.co.nz/pricing/monthly/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>

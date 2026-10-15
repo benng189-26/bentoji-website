@@ -421,6 +421,16 @@ window.PROJECTS = [
       { p: 'The new identity and digital experience positions Kmart as a more desirable brand for younger shoppers, while keeping the emphasis on accessible pricing and practical product value.' },
       { p: 'The campaign direction gives the brand a genuine point of view, moving beyond product promotion toward a lifestyle message that connects with how its audience actually thinks.' }
     ]
+  },
+  {
+    slug: 'beehouse',
+    types: ['web'],
+    link: '/work/beehouse/',
+    title: 'Beehouse',
+    year: '2019',
+    category: 'Website redesign',
+    tagline: 'A website redesign for a real estate company in Vietnam, built to let its projects make the first impression.',
+    thumb: '/assets/img/work/beehouse/hero.webp'
   }
 
 ];
@@ -454,6 +464,12 @@ window.WORK_TYPES = [
    SHOW_DRAFTS: set to false before launch to hide all unfilled slots.
    =================================================================== */
 window.SHOW_DRAFTS = true;
+
+/* SHOWCASE: while set, the homepage and the Work page show only these
+   case studies, in this order, with no type tiles or filters (Oct 2026,
+   portfolio for job applications). Set to null to bring back the full
+   Work page with filters, pieces and homepage tiles. */
+window.SHOWCASE = ['soundlax', 'kmart', 'cohesive-construction', 'beehouse'];
 
 window.PIECES = [
   {

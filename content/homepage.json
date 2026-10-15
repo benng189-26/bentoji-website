@@ -15,7 +15,7 @@
     "items": [
       {
         "title": "Small jobs",
-        "body": "One landing page, an ad set, a brochure or a book cover, at a fixed price agreed before I start.",
+        "body": "One landing page, an ad set, a brochure or a book cover, with a clear brief and a quick turnaround.",
         "linkText": "See small job prices"
       },
       {
@@ -25,7 +25,7 @@
       },
       {
         "title": "Projects",
-        "body": "Websites, apps and brand identities. We start with a free call, and I send a clear estimate afterwards.",
+        "body": "Websites, apps and brand identities. We start with a free call to talk through what you need.",
         "linkText": "See how projects work"
       }
     ]
@@ -43,7 +43,7 @@
   },
   "cta": {
     "heading": "Got something in mind?",
-    "body": "Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost."
+    "body": "Tell me what you're working on. The first call is free, and you'll get a straight answer on what it would take."
   },
   "footer": {
     "blurb": "Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands."

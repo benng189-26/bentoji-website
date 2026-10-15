@@ -66,5 +66,26 @@
       "destination": "/api/auth"
     }
   ],
-  "redirects": []
+  "redirects": [
+    {
+      "source": "/pricing",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/pricing/:path*",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/writing",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/writing/:path*",
+      "destination": "/",
+      "permanent": false
+    }
+  ]
 }

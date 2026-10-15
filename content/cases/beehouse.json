@@ -1,0 +1,218 @@
+{
+  "slug": "beehouse",
+  "name": "Beehouse website",
+  "theme": {
+    "dark": "#161616",
+    "dark2": "#202020",
+    "accent": "#fcb040",
+    "accentInk": "#111111",
+    "highlight": "text",
+    "highlightColor": "#fcb040",
+    "eyebrow": "text"
+  },
+  "hero": {
+    "pill": "Website redesign",
+    "title": "Letting the projects make the first impression",
+    "intro": "Beehouse is a real estate services company based in Hanoi and Da Nang, Vietnam. Its website had become dated, so the company brought me in as a freelance designer to refresh it, with one main aim: to present its past and ongoing projects in a way that does them justice.",
+    "image": {
+      "src": "/assets/img/work/beehouse/hero.webp",
+      "alt": "The Beehouse homepage, with the Bitexco Condo project in the slider, over a photo of an apartment building at dusk"
+    }
+  },
+  "facts": [
+    {
+      "k": "Client",
+      "v": "Beehouse, Vietnam"
+    },
+    {
+      "k": "Role",
+      "v": "Freelance UI/UX designer"
+    },
+    {
+      "k": "Worked with",
+      "v": "Marketing manager, CEO, development team"
+    },
+    {
+      "k": "Year",
+      "v": "2018–2019"
+    }
+  ],
+  "sections": [
+    {
+      "id": "brief",
+      "nav": "The brief",
+      "tone": "grey",
+      "pill": "The brief",
+      "heading": "A refresh, led by the visuals",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Beehouse works across the whole life of a property project, from development consulting and marketing to branding and sales, for developers such as BRG Group, T&T Group and FLC Group. The website is where it shows that work, and the old one [[no longer matched the quality of the projects]] on it.",
+            "The brief was mainly visual. The site needed a modern look, a better way to present each project, and room for the company's story and team, in both English and Vietnamese. I worked directly with the marketing manager and the CEO through the design, and after sign-off I worked with the development team, who built the site in three months."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "In real estate, the projects are the portfolio, so they needed to come first."
+        }
+      ]
+    },
+    {
+      "bleed": {
+        "src": "/assets/img/work/beehouse/overview.webp",
+        "alt": "The Beehouse homepage, a project page, the About page and the News page, laid out at an angle on black"
+      }
+    },
+    {
+      "id": "decisions",
+      "nav": "Decisions",
+      "tone": "dark",
+      "pill": "Decisions",
+      "heading": "Built around the projects",
+      "blocks": [
+        {
+          "type": "decision",
+          "num": "01",
+          "title": "Projects at the top of the homepage",
+          "p": [
+            "The homepage opens on a full-width slider that presents Beehouse's projects one at a time, each with its city, its name in large type and a short line about the company's approach.",
+            "A list of popular projects sits beside it, and a numbered strip along the bottom shows what comes next, so people can [[see the range of work before they scroll]] at all."
+          ],
+          "image": {
+            "src": "/assets/img/work/beehouse/closeup-slider.webp",
+            "alt": "The popular projects list on the homepage slider, with Bitexco Condo Ho Chi Minh selected, and social links running down the left",
+            "ratio": "4/3",
+            "caption": "The popular projects list sits on top of the slider, so each project is one click away."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "02",
+          "flip": true,
+          "title": "Details beside the photos, contact always in reach",
+          "p": [
+            "Project pages hold a lot of information, from location and floor area to room counts, floor plans and the design consultant. I placed the project name and contact panel in a column on the left, with the details on the right, so the text stays readable and [[the way to get in touch is always close by]].",
+            "People can contact a dealer by phone or through a chat app directly, or leave their details in a short form."
+          ],
+          "image": {
+            "src": "/assets/img/work/beehouse/closeup-contact.webp",
+            "alt": "The TMS Luxury Hotel project page: a photo of the hotel at night, the contact panel with chat app icons, and the project description",
+            "ratio": "4/3",
+            "caption": "The contact panel offers a call, a chat app or a short form, next to the project details."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "03",
+          "title": "The team, introduced properly",
+          "p": [
+            "The About page introduces the company, its business philosophy and its leadership team. Each person has a short bio that [[expands to show their work history]], so the page stays short but the detail is there for anyone who wants it.",
+            "Photos from the office sit alongside, to give a sense of the working environment the client wanted to show."
+          ],
+          "image": {
+            "src": "/assets/img/work/beehouse/closeup-team.webp",
+            "alt": "The About page: featured project, office photos, the company introduction and the leadership team with one bio expanded",
+            "ratio": "4/3",
+            "caption": "Bios open to show each person's work history, and close again to keep the page short."
+          }
+        }
+      ]
+    },
+    {
+      "id": "visual-language",
+      "nav": "Visual language",
+      "tone": "grey",
+      "pill": "Visual language",
+      "heading": "Yellow, black and a lot of white",
+      "blocks": [
+        {
+          "type": "text",
+          "columns": 2,
+          "p": [
+            "The palette comes straight from the logo: Beehouse yellow, black and a dark charcoal, with white for the content. Every page starts with a dark header and moves into white, which keeps long pages of project details and news comfortable to read, and [[the yellow is kept for small moments]] such as the active menu item, numbers, thin rules and links.",
+            "Headings use Montserrat, body text uses Open Sans, and Oswald is used for the slide counters and numbers. One small detail repeats across the site: [[text cards that cut into the corner of a photo]], on the slider, the news cards and the featured projects, which helps the pages feel like one set."
+          ]
+        },
+        {
+          "type": "swatches",
+          "items": [
+            {
+              "name": "Beehouse yellow",
+              "hex": "#FCB040"
+            },
+            {
+              "name": "Black",
+              "hex": "#111111"
+            },
+            {
+              "name": "Charcoal",
+              "hex": "#333333"
+            },
+            {
+              "name": "White",
+              "hex": "#FFFFFF"
+            }
+          ]
+        },
+        {
+          "type": "type",
+          "dark": true,
+          "items": [
+            {
+              "name": "Montserrat Bold",
+              "role": "Headings",
+              "sample": "Bitexco Condo",
+              "chars": true,
+              "family": "Montserrat Bold",
+              "font": "/assets/type/cases/montserrat-bold.woff2"
+            },
+            {
+              "name": "Oswald Regular",
+              "role": "Numbers and counters",
+              "sample": "01 / 06",
+              "chars": true,
+              "family": "Oswald Regular",
+              "font": "/assets/type/cases/oswald-regular.woff2"
+            }
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/beehouse/closeup-card.webp",
+          "alt": "The numbered project strip on the homepage, a white panel cutting into the bottom of the slider photo",
+          "caption": "The numbered project strip cuts into the bottom of the slider photo. The same detail repeats on the news cards and the featured projects."
+        }
+      ]
+    },
+    {
+      "id": "screens",
+      "nav": "Screens",
+      "tone": "dark",
+      "pill": "Screens",
+      "heading": "Page by page",
+      "blocks": [
+        {
+          "type": "image",
+          "seamless": true,
+          "title": "Home and project page",
+          "src": "/assets/img/work/beehouse/web-home-project.webp",
+          "alt": "The full Beehouse homepage and the TMS Luxury Hotel project page, side by side",
+          "caption": "The homepage moves from the project slider to an introduction, the services, other projects and the latest news. Project pages open on photos, then the contact panel beside the details, floor plans and specification."
+        },
+        {
+          "type": "image",
+          "seamless": true,
+          "title": "About and news",
+          "src": "/assets/img/work/beehouse/web-about-news.webp",
+          "alt": "The Beehouse About page and the News and events page, side by side",
+          "caption": "The About page covers the company, its philosophy, the team and the office. News and events leads with a featured story, then the latest news and recommended articles."
+        }
+      ]
+    }
+  ],
+  "next": {
+    "title": "SoundLax",
+    "href": "/work/soundlax/"
+  }
+}

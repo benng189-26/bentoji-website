@@ -435,3 +435,20 @@ body.case{--c-hl:var(--c-accent);}
 /* right column of a text run: statement and side image stacked */
 .case .c-split-side > * + *{margin-top:clamp(24px,2.6vw,36px);}
 .case .c-split-side .c-figure figcaption{max-width:none;}
+
+/* ===================================================================
+   v1.8 (15 Oct 2026): light accent with text eyebrows and text
+   highlights (Beehouse yellow)
+   =================================================================== */
+.home.case.eyebrow-text.accent-light .h-pill,
+.home.case.eyebrow-text.accent-light .h-dark .h-pill{background:none;color:var(--c-hl);}
+.home.case.eyebrow-text.accent-light .h-grey .h-pill{background:none;color:var(--h-ink);}
+.home.case.eyebrow-text.accent-light .h-grey .h-pill::before{
+  content:"";display:inline-block;width:22px;height:3px;margin-right:10px;
+  vertical-align:middle;background:var(--c-accent);transform:translateY(-1px);
+}
+/* yellow text is unreadable on light grey: ink text with a yellow underline instead */
+.case.accent-light.hl-text .h-grey .c-hl{
+  color:var(--h-ink);
+  background:linear-gradient(transparent 62%, var(--c-accent) 62%, var(--c-accent) 92%, transparent 92%);
+}

@@ -18,7 +18,7 @@
 <link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=50" />
 <link rel="stylesheet" href="/assets/home.css?v=5" />
-<link rel="stylesheet" href="/assets/pages.css?v=3" />
+<link rel="stylesheet" href="/assets/pages.css?v=4" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script type="application/ld+json">
 {
@@ -49,9 +49,7 @@
     <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg" alt="Bentoji" /></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="/portfolio">Work</a>
-      <a href="/pricing">Pricing</a>
       <a href="/soundlax-app">SoundLax</a>
-      <a href="/writing">Writing</a>
       <a href="/contact">Contact</a>
       <a class="btn btn-ghost nav-cta" href="/contact">Let's talk</a>
     </nav>
@@ -60,9 +58,7 @@
 </header>
 <div class="mobile-menu">
   <a href="/portfolio">Work</a>
-  <a href="/pricing">Pricing</a>
   <a href="/soundlax-app">SoundLax</a>
-  <a href="/writing">Writing</a>
   <a href="/contact">Contact</a>
   <a class="btn btn-light" href="/contact">Let's talk</a>
 </div>
@@ -91,11 +87,10 @@
         <p class="h-pill" data-cms="work.pill">Work</p>
         <h2 class="h-head h-title" data-cms="work.heading">What I make</h2>
       </div>
-      <a class="h-link" href="/portfolio">See all work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="w-tiles" data-type-tiles></div>
+    <!-- Type tiles hidden while the categories are being filled: <div class="w-tiles" data-type-tiles></div> -->
     <p class="h-sub-label" data-cms="work.casesLabel">Case studies</p>
-    <div class="w-cases" data-case-cards data-limit="3"></div>
+    <div class="w-cases" data-case-cards data-limit="4"></div>
   </div>
 </section>
 
@@ -108,20 +103,17 @@
       <div class="h-service reveal">
         <span class="h-num">01</span>
         <h3 class="h-head h-sub" data-cms="services.items.0.title">Small jobs</h3>
-        <p data-cms="services.items.0.body">One landing page, an ad set, a brochure or a book cover, at a fixed price agreed before I start.</p>
-        <a class="h-link" href="/pricing#small-jobs"><span data-cms="services.items.0.linkText">See small job prices</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p data-cms="services.items.0.body">One landing page, an ad set, a brochure or a book cover, with a clear brief and a quick turnaround.</p>
       </div>
       <div class="h-service reveal d2">
         <span class="h-num">02</span>
         <h3 class="h-head h-sub" data-cms="services.items.1.title">Monthly design</h3>
         <p data-cms="services.items.1.body">For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up.</p>
-        <a class="h-link" href="/pricing/monthly"><span data-cms="services.items.1.linkText">How monthly design works</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="h-service reveal">
         <span class="h-num">03</span>
         <h3 class="h-head h-sub" data-cms="services.items.2.title">Projects</h3>
-        <p data-cms="services.items.2.body">Websites, apps and brand identities. We start with a free call, and I send a clear estimate afterwards.</p>
-        <a class="h-link" href="/pricing#projects"><span data-cms="services.items.2.linkText">See how projects work</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <p data-cms="services.items.2.body">Websites, apps and brand identities. We start with a free call to talk through what you need.</p>
       </div>
     </div>
   </div>
@@ -174,7 +166,7 @@
 <section class="h-section h-grey h-close">
   <div class="container">
     <h2 class="h-head h-title is-orange reveal" data-cms="cta.heading">Got something in mind?</h2>
-    <p class="h-lead reveal d1" data-cms="cta.body">Tell me what you're working on. The first call is free, and you'll get a straight answer on time and cost.</p>
+    <p class="h-lead reveal d1" data-cms="cta.body">Tell me what you're working on. The first call is free, and you'll get a straight answer on what it would take.</p>
     <div class="h-actions reveal d2">
       <a class="h-btn h-btn-dark" href="/contact">Book a free call</a>
     </div>
@@ -195,8 +187,7 @@
       <div class="footer-col">
         <h5>Explore</h5>
         <a href="/portfolio">Work</a>
-        <a href="/pricing">Pricing</a>
-        <a href="/soundlax-app">SoundLax app</a>
+          <a href="/soundlax-app">SoundLax app</a>
         <a href="/contact">Contact</a>
       </div>
       <div class="footer-col">
@@ -212,8 +203,8 @@
   </div>
 </footer>
 
-<script src="/assets/projects.js?v=22"></script>
+<script src="/assets/projects.js?v=23"></script>
 <script src="/assets/site.js?v=37"></script>
-<script src="/assets/portfolio.js?v=1"></script>
+<script src="/assets/portfolio.js?v=2"></script>
 </body>
 </html>

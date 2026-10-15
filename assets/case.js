@@ -469,6 +469,10 @@
     sections.forEach(function (s, i) { s.tone = i % 2 ? 'dark' : 'grey'; });
 
     var visible = all.filter(function (x) { return !x.hidden; });
+    /* while the showcase list is set, its case studies link to each other in that order */
+    if (window.SHOWCASE && window.SHOWCASE.indexOf(p.slug) > -1) {
+      visible = window.SHOWCASE.map(function (s) { return all.filter(function (x) { return x.slug === s; })[0]; }).filter(Boolean);
+    }
     var idx = visible.indexOf(p);
     var next = visible[(idx + 1) % visible.length];
     var facts = (p.facts || []).map(function (f) { return { k: f.k, v: f.v }; });
