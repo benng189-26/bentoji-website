@@ -56,6 +56,16 @@
           "type": "statement",
           "text": "The packaging needed to treat robusta as a coffee worth choosing, not a cheaper substitute."
         }
+      ],
+      "decor": [
+        {
+          "src": "/assets/img/work/robarica/decor-branch-cherries.webp",
+          "pos": "top-right",
+          "w": 300,
+          "rot": 10,
+          "x": -50,
+          "y": 40
+        }
       ]
     },
     {
@@ -123,10 +133,26 @@
           }
         },
         {
+          "type": "decision",
+          "num": "04",
+          "flip": true,
+          "title": "The same label, a new product",
+          "p": [
+            "Later, the label was adapted for a new instant 3-in-1 coffee. The front keeps the same frame, logo and order, with [[only the product name changing]], so the two products sit together as one family.",
+            "The back follows the same layout but carries what instant coffee needs instead: a one-minute method, the ingredients and quality details, and the same QR code to the brewing guide."
+          ],
+          "image": {
+            "src": "/assets/img/work/robarica/closeup-instant.webp",
+            "alt": "The front and back artwork of the Robarica instant 3-in-1 coffee pack, side by side on black",
+            "ratio": "4/3",
+            "caption": "The instant coffee pack, front and back."
+          }
+        },
+        {
           "type": "image",
-          "src": "/assets/img/work/robarica/closeup-family.webp",
-          "alt": "The front artwork of the whole bean pouch and the smaller instant coffee pack, side by side on black",
-          "caption": "The same layout was later adapted for a new instant 3-in-1 coffee, with only the product name changing."
+          "src": "/assets/img/work/robarica/instant-mockup.webp",
+          "alt": "The Robarica instant coffee pouch standing on a white surface",
+          "caption": "The instant coffee pouch, in the same family as the whole bean pouch."
         },
         {
           "type": "gallery",
@@ -151,6 +177,24 @@
             }
           ],
           "caption": "The printed pouch. The coffee was produced and sold on Amazon, mainly in the US."
+        }
+      ],
+      "decor": [
+        {
+          "src": "/assets/img/work/robarica/decor-flower-beans.webp",
+          "pos": "top-right",
+          "w": 280,
+          "rot": -8,
+          "x": -30,
+          "y": 60
+        },
+        {
+          "src": "/assets/img/work/robarica/decor-cherries.webp",
+          "pos": "bottom-left",
+          "w": 230,
+          "rot": 14,
+          "x": -80,
+          "y": 60
         }
       ]
     },
@@ -199,6 +243,16 @@
           ],
           "caption": "The six updated listing images, from the main image on white to the pack features, the taste and the origin."
         }
+      ],
+      "decor": [
+        {
+          "src": "/assets/img/work/robarica/decor-branch-flower.webp",
+          "pos": "top-right",
+          "w": 240,
+          "rot": -6,
+          "x": -20,
+          "y": 30
+        }
       ]
     },
     {
@@ -246,6 +300,24 @@
           "src": "/assets/img/work/robarica/ebook-drafts.webp",
           "alt": "Eight draft covers for How to Make a Perfect Cup of Coffee, from type-only layouts to illustrations of a man sitting in a giant cup",
           "caption": "Eight early cover directions, from type-led layouts to illustrated scenes."
+        }
+      ],
+      "decor": [
+        {
+          "src": "/assets/img/work/robarica/decor-bean-sack.webp",
+          "pos": "top-right",
+          "w": 320,
+          "rot": -4,
+          "x": -40,
+          "y": 90
+        },
+        {
+          "src": "/assets/img/work/robarica/decor-flower-cherry.webp",
+          "pos": "bottom-left",
+          "w": 200,
+          "rot": -10,
+          "x": -85,
+          "y": 40
         }
       ]
     }

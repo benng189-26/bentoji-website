@@ -108,6 +108,26 @@
       .replace(/\[\[(.+?)\]\]/g, '<mark class="c-hl">$1</mark>')
       .replace(/\{\{(.+?)\}\}/g, '<span class="c-todo">$1</span>');
   }
+  /* decorative artwork in a section's corners (Robarica plants):
+     "decor": [{ "src", "pos": "top-right" | "top-left" | "bottom-right" | "bottom-left",
+                 "w": 280 (px at full size), "rot": 8, "x": -40, "y": 40 }] */
+  function decorHTML(list) {
+    return (list || []).map(function (d) {
+      var pos = (d.pos || 'top-right').split('-');
+      var st = '--w:' + (d.w || 260) + 'px;--rot:' + (d.rot || 0) + 'deg;' +
+        pos[0] + ':' + (d.y != null ? d.y : 48) + 'px;' + pos[1] + ':' + (d.x != null ? d.x : -40) + 'px;';
+      return '<span class="c-decor is-' + pos[1] + '" style="' + st + '" aria-hidden="true"><img src="' + esc(d.src) + '" alt="" loading="lazy" decoding="async"></span>';
+    }).join('');
+  }
+  function wireDecor(scope) {
+    var els = scope.querySelectorAll('.c-decor');
+    if (!els.length) return;
+    if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('is-in'); }); return; }
+    var io = new IntersectionObserver(function (en) {
+      en.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    els.forEach(function (e) { io.observe(e); });
+  }
   function paras(list) {
     return (list || []).map(function (p) { return '<p>' + rich(p) + '</p>'; }).join('');
   }
@@ -308,7 +328,7 @@
         (s.pill ? '<p class="h-pill">' + (s.nav && s.id ? '<span class="c-pill-num">' + (++navIndex < 10 ? '0' : '') + navIndex + '</span> ' : '') + esc(s.pill) + '</p>' : '') +
         (s.heading ? '<h2 class="h-head h-title' + (s.tone === 'grey' ? ' is-orange' : '') + '">' + rich(s.heading) + '</h2>' : '') +
         '<div class="c-blocks">' + renderBlocks(s.blocks || []) + '</div>' +
-      '</div></section>';
+      '</div>' + decorHTML(s.decor) + '</section>';
     });
 
     /* next project */
@@ -322,6 +342,7 @@
     /* fade content in as it scrolls into view (site.js); the whole page is
        rescanned because the close section only moves below the fold now */
     if (window.bentojiReveal) requestAnimationFrame(function () { window.bentojiReveal(document); });
+    wireDecor(document);
 
     /* type specimens: load each font file just for its card */
     main.querySelectorAll('.c-type-card[data-font]').forEach(function (card) {

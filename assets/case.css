@@ -452,3 +452,25 @@ body.case{--c-hl:var(--c-accent);}
   color:var(--h-ink);
   background:linear-gradient(transparent 62%, var(--c-accent) 62%, var(--c-accent) 92%, transparent 92%);
 }
+
+/* ===================================================================
+   v1.9 (16 Oct 2026): decorative artwork in section corners
+   =================================================================== */
+.case .c-section{position:relative;overflow:hidden;overflow:clip;}
+.case .c-section > .container{position:relative;z-index:1;}
+.case .c-decor{
+  position:absolute;z-index:0;pointer-events:none;user-select:none;
+  width:min(var(--w,260px),19vw);
+  opacity:0;transform:translate(70px,50px) rotate(calc(var(--rot,0deg) + 14deg));
+  transition:opacity 1.2s ease,transform 1.8s cubic-bezier(.16,1,.3,1);
+}
+.case .c-decor.is-left{transform:translate(-70px,50px) rotate(calc(var(--rot,0deg) - 14deg));}
+.case .c-decor.is-in{opacity:1;transform:rotate(var(--rot,0deg));}
+.case .c-decor img{display:block;width:100%;height:auto;transform-origin:50% 90%;animation:c-sway 9s ease-in-out infinite;}
+.case .c-decor.is-left img{animation-delay:-4.5s;}
+@keyframes c-sway{0%,100%{transform:rotate(-1.6deg);}50%{transform:rotate(1.6deg);}}
+@media(max-width:899px){ .case .c-decor{display:none;} }
+@media(prefers-reduced-motion:reduce){
+  .case .c-decor{transition:none;opacity:1;transform:rotate(var(--rot,0deg));}
+  .case .c-decor img{animation:none;}
+}
