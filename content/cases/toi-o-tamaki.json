@@ -1,0 +1,264 @@
+{
+  "slug": "toi-o-tamaki",
+  "name": "Toi o Tāmaki typeface",
+  "theme": {
+    "dark": "#1c0e33",
+    "dark2": "#261640",
+    "accent": "#e2b77e",
+    "accentInk": "#1c0e33",
+    "highlight": "text",
+    "highlightColor": "#e2b77e",
+    "eyebrow": "text"
+  },
+  "hero": {
+    "pill": "Typeface design",
+    "title": "An alphabet built from Auckland's Arts Precinct",
+    "intro": "Toi o Tāmaki means \"the art of Auckland\" in te reo Māori. It is a display typeface drawn from the buildings around the city's Arts Precinct, where a Victorian art gallery, an Edwardian town hall and a modern timber canopy stand within a few streets of each other.",
+    "image": {
+      "src": "/assets/img/work/toi-o-tamaki/hero.webp",
+      "alt": "The Toi o Tāmaki title above the first letters of the typeface, drawn as white line work on deep purple"
+    }
+  },
+  "facts": [
+    { "k": "Project", "v": "Study project, concept only" },
+    { "k": "Role", "v": "Type designer" },
+    { "k": "Tools", "v": "Pencil, Illustrator" },
+    { "k": "Set", "v": "Lowercase a to z" }
+  ],
+  "sections": [
+    {
+      "id": "brief",
+      "nav": "The brief",
+      "tone": "grey",
+      "pill": "The brief",
+      "heading": "A typeface for one part of the city",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The brief imagined Auckland Council launching a promotional campaign, with a travel and tourism website, street displays and signage, and asked designers to submit a typeface that reflects one part of the city. It was a study project, but the brief was written to work like a real one, so I treated it that way.",
+            "I chose the Arts Precinct, in the heart of the city centre. It is home to the Auckland Art Gallery, the Central City Library, Aotea Square, the Town Hall, the Aotea Centre and the Civic Theatre, so [[old and new architecture stand on the same few streets]]."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "The precinct mixes old and new buildings on the same streets, so the typeface does the same."
+        }
+      ]
+    },
+    {
+      "bleed": {
+        "src": "/assets/img/work/toi-o-tamaki/bleed.webp",
+        "alt": "The kauri-lined canopy of the Auckland Art Gallery seen from below against a blue sky"
+      }
+    },
+    {
+      "id": "inspiration",
+      "nav": "Inspiration",
+      "tone": "dark",
+      "pill": "Inspiration",
+      "heading": "Starting on foot",
+      "decor": [
+        { "src": "/assets/img/work/toi-o-tamaki/decor-o.webp", "pos": "top-right", "w": 300, "rot": 0, "x": -60, "y": 60 }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "I walked around the area with a camera and tried to capture what gives the precinct its feel. Two things kept coming up.",
+            "The first was the Auckland Art Gallery, which joins its original 1887 building, with its French Renaissance details, to the kauri-lined canopies added in 2011. The second was the [[Victorian and Edwardian architecture]] around the city centre, with its columns, arched windows, keystones and clock towers, from the gallery itself to the Town Hall."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "The gallery holds the whole idea in one building: a Victorian facade with a modern timber canopy beside it."
+        },
+        {
+          "type": "gallery",
+          "cols": 3,
+          "items": [
+            { "src": "/assets/img/work/toi-o-tamaki/insp-1.webp", "alt": "The clock tower of the Auckland Art Gallery's original building, with a gallery banner" },
+            { "src": "/assets/img/work/toi-o-tamaki/insp-2.webp", "alt": "The Auckland Art Gallery entrance under its timber canopy and tree-like columns" },
+            { "src": "/assets/img/work/toi-o-tamaki/insp-3.webp", "alt": "The underside of the kauri canopy, with timber panels fanning out from a steel cross" },
+            { "src": "/assets/img/work/toi-o-tamaki/insp-4.webp", "alt": "A Victorian facade with arched windows, pilasters and decorated gables" },
+            { "src": "/assets/img/work/toi-o-tamaki/insp-5.webp", "alt": "The Auckland Town Hall and its clock tower at dusk, seen down Queen Street" },
+            { "src": "/assets/img/work/toi-o-tamaki/insp-6.webp", "alt": "The Civic Theatre on the corner of Queen Street, with its tower and patterned facade" }
+          ],
+          "caption": "Some of the photos from the walk: the gallery's clock tower and canopy, its older facades, the Town Hall and the Civic Theatre."
+        }
+      ]
+    },
+    {
+      "id": "letters",
+      "nav": "The letters",
+      "tone": "grey",
+      "pill": "The letters",
+      "heading": "Columns, arches, stairs and a canopy",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Every letter is assembled from a small set of parts taken from those buildings, drawn as line work over a construction grid, like an architect's elevation. The same parts repeat across the alphabet, so [[even the most detailed letters belong to one set]]."
+          ]
+        },
+        {
+          "type": "decision",
+          "num": "01",
+          "title": "Columns as stems",
+          "p": [
+            "The upright strokes of letters such as b, d, h, i, l, p and q are classical columns, with fluted shafts and scrolled capitals like those on the older facades around the precinct. On its own, [[a single column already reads as architecture]], which makes it the simplest building block in the set."
+          ],
+          "image": {
+            "src": "/assets/img/work/toi-o-tamaki/detail-columns.webp",
+            "alt": "A Victorian facade with pilasters beside the letters i and l, drawn as fluted columns",
+            "ratio": "4/3",
+            "caption": "Pilasters on an older facade, and the i and l."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "02",
+          "flip": true,
+          "title": "Arches and keystones as bowls",
+          "p": [
+            "The rounded parts of the a, m, n and o are arches, and most of them carry a keystone at the top, like the arched windows on the gallery and the Town Hall. The o is the simplest version: [[a ring of mouldings with one keystone]]."
+          ],
+          "image": {
+            "src": "/assets/img/work/toi-o-tamaki/detail-arches.webp",
+            "alt": "The Auckland Art Gallery's clock tower and arched windows beside the letters n and o, each with a keystone at the top",
+            "ratio": "4/3",
+            "caption": "The gallery's tower and arched windows, and the n and o."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "03",
+          "title": "Stairs inside the letters",
+          "p": [
+            "Staircases fill the inside of the k, s and z, and a set of steps forms the base of the v. They bring in the steps and entrances that lead into these buildings, and they give the flatter letters [[a sense of depth]]."
+          ],
+          "image": {
+            "src": "/assets/img/work/toi-o-tamaki/detail-stairs.webp",
+            "alt": "The letters k, s and z, each with a staircase drawn inside it",
+            "ratio": "4/3",
+            "caption": "The k, s and z, with staircases inside."
+          }
+        },
+        {
+          "type": "decision",
+          "num": "04",
+          "flip": true,
+          "title": "The canopy as a crown",
+          "p": [
+            "The flared, fanned shape on top of the t and z comes from the kauri canopy of the Art Gallery, the newest part of the precinct. It is [[the one modern element in the alphabet]], and on the t it sits on top of a classical column, so the old and new parts of the precinct meet in a single letter."
+          ],
+          "image": {
+            "src": "/assets/img/work/toi-o-tamaki/detail-canopy.webp",
+            "alt": "The Auckland Art Gallery's timber canopy beside the letters t and z, both topped with a fanned canopy shape",
+            "ratio": "4/3",
+            "caption": "The gallery's kauri canopy, and the t and z."
+          }
+        }
+      ]
+    },
+    {
+      "id": "alphabet",
+      "nav": "The alphabet",
+      "tone": "dark",
+      "pill": "The alphabet",
+      "heading": "Twenty-six small buildings",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Seen together, the letters read like a row of facades. I drew the full lowercase alphabet and kept the line weight and the grid the same throughout, so [[the decoration never breaks the set]].",
+            "The letters exist as Illustrator artwork. Turning them into a working font file is a step I have not taken yet, so for now every word is set by hand."
+          ]
+        },
+        {
+          "type": "image",
+          "side": true,
+          "src": "/assets/img/work/toi-o-tamaki/poster-alphabet.webp",
+          "alt": "An A0 specimen poster: Toi o Tāmaki above the full lowercase alphabet in white line work on purple",
+          "caption": "The full alphabet as an A0 specimen poster."
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "nav": "Process",
+      "tone": "grey",
+      "pill": "Process",
+      "heading": "From photos to pencil to line work",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The printed photos went on the desk next to the computer, and the letters started in a sketchbook. The early sketches were quick capitals and outlines, mostly to test [[which building parts could carry a letter]]. Once a part worked, I redrew it carefully in pencil and then traced it in Illustrator."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/toi-o-tamaki/desk.webp",
+          "alt": "A desk with printed photos of the precinct's buildings laid out in rows in front of a keyboard",
+          "caption": "Photos from the walk laid out on the desk."
+        },
+        {
+          "type": "gallery",
+          "cols": 3,
+          "items": [
+            { "src": "/assets/img/work/toi-o-tamaki/sketch-1.webp", "alt": "Sketchbook pages with early pencil capitals built from building parts" },
+            { "src": "/assets/img/work/toi-o-tamaki/sketch-2.webp", "alt": "A sketchbook page of pencil letters testing columns and arches" },
+            { "src": "/assets/img/work/toi-o-tamaki/sketch-3.webp", "alt": "A pencil drawing of the o, built from two columns and an arch" },
+            { "src": "/assets/img/work/toi-o-tamaki/sketch-4.webp", "alt": "A pencil study of an arched window with columns and a keystone" },
+            { "src": "/assets/img/work/toi-o-tamaki/sketch-5.webp", "alt": "Printed tests of the n, o and g, each in two versions" },
+            { "src": "/assets/img/work/toi-o-tamaki/sketch-6.webp", "alt": "The o being traced as line work in Illustrator" }
+          ],
+          "caption": "From pencil sketches and an arched window study to printed tests and the final line work in Illustrator."
+        }
+      ]
+    },
+    {
+      "id": "poster",
+      "nav": "Poster",
+      "tone": "dark",
+      "pill": "In use",
+      "heading": "Art is all around",
+      "decor": [
+        { "src": "/assets/img/work/toi-o-tamaki/decor-m.webp", "pos": "top-right", "w": 320, "rot": 0, "x": -60, "y": 70 }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "To show the typeface doing its job, I set a campaign line in it, Art is all around, for posters and street displays in the precinct. The line is short, so [[the letters do most of the talking]], with a short description of the precinct and the council logo kept small underneath."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/toi-o-tamaki/mock-street.webp",
+          "alt": "The white Art is all around poster in a street lightbox on a wet night in the city",
+          "caption": "Concept mock-ups of the poster on the street."
+        },
+        {
+          "type": "gallery",
+          "cols": 2,
+          "items": [
+            { "src": "/assets/img/work/toi-o-tamaki/mock-framed.webp", "alt": "The purple Art is all around poster in a white frame" },
+            { "src": "/assets/img/work/toi-o-tamaki/mock-desk.webp", "alt": "The white Toi o Tāmaki specimen printed and clipped to a drawing board with a ruler and coffee" }
+          ],
+          "caption": "The purple version of the poster, and the specimen printed on paper."
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/toi-o-tamaki/mock-shelter.webp",
+          "alt": "The Art is all around poster in a bus shelter at night, in black and white"
+        }
+      ]
+    }
+  ],
+  "next": {
+    "title": "SoundLax",
+    "href": "/work/soundlax/"
+  }
+}

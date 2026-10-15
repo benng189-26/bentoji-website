@@ -440,6 +440,15 @@ window.PROJECTS = [
     category: 'Packaging design',
     tagline: 'Packaging and marketing images for a Vietnamese robusta coffee, sold mainly on Amazon in the US.',
     thumb: '/assets/img/work/robarica/hero.webp'
+  },
+  {
+    slug: 'toi-o-tamaki',
+    types: ['brand', 'print'],
+    link: '/work/toi-o-tamaki/',
+    title: 'Toi o Tāmaki typeface',
+    category: 'Typeface design',
+    tagline: 'A display typeface drawn from the columns, arches and kauri canopy of Auckland\'s Arts Precinct.',
+    thumb: '/assets/img/work/toi-o-tamaki/hero.webp'
   }
 
 ];
