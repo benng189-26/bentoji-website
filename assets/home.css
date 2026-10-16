@@ -288,17 +288,10 @@ body.home{
 .home .h-space::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,4,7,.62) 0%,rgba(3,4,7,.3) 45%,rgba(3,4,7,0) 70%);}
 .home .h-stars,.home .h-moon{left:0;top:0;will-change:transform;}
 .home .h-moon{z-index:3;}
-.home .h-planet-wrap{inset:0;will-change:transform;z-index:2;}
-.home .h-disc{border-radius:50%;overflow:hidden;}
-.home .h-disc img{position:absolute;max-width:none;}
-.home .h-planet{background:#000;filter:brightness(.95) contrast(1.18);
-  -webkit-mask:radial-gradient(closest-side,#000 96.5%,transparent 100%);mask:radial-gradient(closest-side,#000 96.5%,transparent 100%);}
-/* the glow is the photo itself, blurred and screened outwards */
-.home .h-bloom{mix-blend-mode:screen;filter:blur(14px) brightness(1.8) saturate(1.15);opacity:.85;}
-.home .h-bloom.is-wide{filter:blur(90px) brightness(2.2) saturate(1.2);opacity:.5;}
-.home .h-fx{left:0;top:0;}
-.home .h-space .h-planet-wrap,.home .h-starfield{opacity:0;transition:opacity 1.6s ease;}
-.home .h-space.is-ready .h-planet-wrap{opacity:1;}
+.home .h-planet,.home .h-fx{left:0;top:0;z-index:2;}
+.home .h-planet{opacity:0;transition:opacity 1.6s ease;}
+.home .h-space.is-ready .h-planet{opacity:1;}
+.home .h-starfield{opacity:0;transition:opacity 1.6s ease;}
 .home .h-space.is-ready .h-starfield{opacity:.62;}
 .home .hero-track .h-hero.has-space > .container{position:relative;z-index:4;will-change:transform,opacity;}
 /* the next section slides over the pinned hero */
