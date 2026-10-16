@@ -140,7 +140,8 @@
           ],
           "image": {
             "src": "/assets/img/work/cohesive/closeup-project.webp",
-            "alt": "A project page: the Cochranes of Canterbury building with an award badge, the project overview strip, and a Project in Focus gallery of the finished building"
+            "alt": "The top of a project page: the Cochranes of Canterbury building with an award badge, the project overview strip and the first photo of the Project in Focus gallery",
+            "ratio": "4/3"
           }
         },
         {
@@ -154,7 +155,8 @@
           ],
           "image": {
             "src": "/assets/img/work/cohesive/closeup-process.webp",
-            "alt": "Five capability cards for design, pricing and project management, above a project process timeline from defining the vision to handover"
+            "alt": "The capabilities page: five capability cards, the project process timeline from defining the vision to handover, and a call to talk to the team",
+            "ratio": "4/3"
           }
         },
         {
@@ -167,7 +169,8 @@
           ],
           "image": {
             "src": "/assets/img/work/cohesive/closeup-widespan.webp",
-            "alt": "The In Partnership with Wide Span Sheds section on the homepage, with an aerial photo of a shed"
+            "alt": "The In Partnership with Wide Span Sheds section on the homepage, over an aerial photo of a shed",
+            "ratio": "4/3"
           }
         },
         {
@@ -180,7 +183,8 @@
           ],
           "image": {
             "src": "/assets/img/work/cohesive/closeup-offices.webp",
-            "alt": "The regional offices grid: one card per region with a photo, address and contact details"
+            "alt": "The regional offices on the contact page: one card per region with a photo, address and contact details",
+            "ratio": "4/3"
           }
         }
       ]
@@ -311,19 +315,14 @@
           "masonry": true,
           "items": [
             {
+              "src": "/assets/img/work/cohesive/page-project.webp",
+              "alt": "The full Cochranes of Canterbury project page: overview, Project in Focus gallery, testimonial, similar projects and an estimate form",
+              "label": "Project"
+            },
+            {
               "src": "/assets/img/work/cohesive/page-projects.webp",
               "alt": "The projects listing page with filters and a grid of project cards",
               "label": "Projects"
-            },
-            {
-              "src": "/assets/img/work/cohesive/page-capability.webp",
-              "alt": "The Design and Consent capability page: what Cohesive solves, what is included, the design process and FAQs",
-              "label": "Capability: Design & Consent"
-            },
-            {
-              "src": "/assets/img/work/cohesive/page-location.webp",
-              "alt": "The Nelson branch page: local projects, services, the Wide Span Sheds supplier section and the Nelson office details",
-              "label": "Regional office: Nelson"
             },
             {
               "src": "/assets/img/work/cohesive/page-resources.webp",
@@ -331,9 +330,19 @@
               "label": "Resources"
             },
             {
+              "src": "/assets/img/work/cohesive/page-capability.webp",
+              "alt": "The Design and Consent capability page: what Cohesive solves, what is included, the design process and FAQs",
+              "label": "Capability: Design & Consent"
+            },
+            {
               "src": "/assets/img/work/cohesive/page-careers.webp",
               "alt": "The careers page: why join, open positions and an expression of interest form",
               "label": "Careers"
+            },
+            {
+              "src": "/assets/img/work/cohesive/page-location.webp",
+              "alt": "The Nelson branch page: local projects, services, the Wide Span Sheds supplier section and the Nelson office details",
+              "label": "Regional office: Nelson"
             },
             {
               "src": "/assets/img/work/cohesive/page-article.webp",

@@ -235,10 +235,8 @@
       return '<a class="w-case" href="' + esc(p.link || ('/work?p=' + encodeURIComponent(p.slug))) + '">' +
         '<div class="w-media"><img src="' + esc(p.thumb) + '" alt="' + esc(p.title) + '" loading="lazy"' +
           ((p.thumbClass || '').indexOf('thumb-top') > -1 ? ' style="object-position:center top"' : '') + '></div>' +
-        '<span class="w-type">' + esc((p.types || []).map(typeLabel).join(' · ')) + '</span>' +
-        '<h3 class="w-title">' + esc(p.title) + '</h3>' +
+        '<h3 class="w-title">' + esc(p.title) + arrow + '</h3>' +
         '<p class="w-desc">' + esc(p.tagline) + '</p>' +
-        '<span class="w-more">Read the case study ' + arrow + '</span>' +
       '</a>';
     }).join('');
   }

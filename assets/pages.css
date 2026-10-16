@@ -217,3 +217,10 @@
 
 /* Oct 2026 showcase: four case studies in a 2 x 2 grid */
 @media(min-width:900px){.home .w-cases{grid-template-columns:repeat(2,minmax(0,1fr));}}
+
+/* Case study cards, simplified (16 Oct 2026): image, title with arrow, one line of description.
+   The description already says what kind of work it is, so the category label is gone. */
+.home .w-case .w-title{display:flex;align-items:center;gap:10px;margin-top:20px;}
+.home .w-case .w-title svg{flex:0 0 auto;width:18px;height:18px;opacity:.55;transition:transform .3s ease,opacity .3s ease;}
+.home .w-case:hover .w-title svg,.home .w-case:focus-visible .w-title svg{opacity:1;transform:translate(3px,-3px);}
+.home .w-case .w-desc{max-width:52ch;}
