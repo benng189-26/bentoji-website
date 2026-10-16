@@ -321,8 +321,8 @@
         },
         {
           "type": "image",
-          "src": "/assets/img/work/toi-o-tamaki/mock-street.webp",
-          "alt": "The white Art is all around poster in a street lightbox on a wet night in the city",
+          "src": "/assets/img/work/toi-o-tamaki/poster-mockup.webp",
+          "alt": "The purple Art is all around poster in a bus shelter on an Auckland street, with a bus and people walking past",
           "caption": "Concept mock-ups."
         },
         {
@@ -341,8 +341,8 @@
         },
         {
           "type": "image",
-          "src": "/assets/img/work/toi-o-tamaki/poster-mockup.webp",
-          "alt": "The purple Art is all around poster in a bus shelter on an Auckland street, with a bus and people walking past"
+          "src": "/assets/img/work/toi-o-tamaki/poster-dark.webp",
+          "alt": "The A0 specimen poster: Toi o Tāmaki above every lowercase letter in white line work on deep purple"
         }
       ]
     }

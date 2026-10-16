@@ -487,7 +487,7 @@ window.SHOW_DRAFTS = true;
    case studies, in this order, with no type tiles or filters (Oct 2026,
    portfolio for job applications). Set to null to bring back the full
    Work page with filters, pieces and homepage tiles. */
-window.SHOWCASE = ['soundlax', 'kmart', 'cohesive-construction', 'beehouse', 'robarica'];
+window.SHOWCASE = ['soundlax', 'kmart', 'cohesive-construction', 'beehouse', 'robarica', 'toi-o-tamaki'];
 
 window.PIECES = [
   {
