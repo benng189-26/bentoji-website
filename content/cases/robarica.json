@@ -106,8 +106,7 @@
           "image": {
             "src": "/assets/img/work/robarica/closeup-front.webp",
             "alt": "The text from the black panel of the whole bean pouch: Coffee of Viet Nam, Whole Beans, Dark Roast, 100% Pure, and Espresso in a box above Filter",
-            "ratio": "4/3",
-            "caption": "The new order in the black panel: origin first, then the product, the roast and purity, and how to brew it."
+            "ratio": "4/3"
           }
         },
         {
@@ -122,7 +121,7 @@
           "image": {
             "src": "/assets/img/work/robarica/before-after.webp",
             "alt": "Two Robarica pouches side by side: the original ground coffee label with a serif Coffee of Vietnam title, and the new whole bean label",
-            "caption": "The original ground coffee label and the new whole bean label, as main images on white."
+            "caption": "The original label on the left, and the new label that won the test."
           }
         },
         {
@@ -136,8 +135,7 @@
           "image": {
             "src": "/assets/img/work/robarica/closeup-back.webp",
             "alt": "The brewing steps from the back of the pouch: seven steps for a Vietnamese phin filter and seven for an espresso machine, each with an icon",
-            "ratio": "4/3",
-            "caption": "The brewing steps on the back label, for a phin filter and an espresso machine."
+            "ratio": "4/3"
           }
         },
         {
@@ -147,13 +145,12 @@
           "title": "The same label, a new product",
           "p": [
             "Later, the label was adapted for a new instant 3-in-1 coffee. The front keeps the same frame, logo and order, with [[only the product name changing]], so the two products sit together as one family.",
-            "The back follows the same layout but carries what instant coffee needs instead: a one-minute method, the ingredients and quality details, and the same QR code to the brewing guide."
+            "The back keeps the same layout, with a one-minute method in place of the brewing steps."
           ],
           "image": {
             "src": "/assets/img/work/robarica/closeup-instant.webp",
             "alt": "The front and back artwork of the Robarica instant 3-in-1 coffee pack, side by side on black",
-            "ratio": "4/3",
-            "caption": "The instant coffee pack, front and back."
+            "ratio": "4/3"
           }
         },
         {
@@ -172,8 +169,7 @@
               "src": "/assets/img/work/robarica/instant-3.webp",
               "alt": "The instant coffee pouch laid flat, showing the zip and the full front label"
             }
-          ],
-          "caption": "The instant coffee pouch from the front, the back and laid flat."
+          ]
         },
         {
           "type": "gallery",
@@ -197,7 +193,7 @@
               "alt": "The printed Robarica pouch on a balcony ledge next to a plant"
             }
           ],
-          "caption": "The printed pouch. The coffee was produced and sold on Amazon, mainly in the US."
+          "caption": "Produced and sold on Amazon, mainly in the US."
         }
       ],
       "decor": [
@@ -261,8 +257,7 @@
               "src": "/assets/img/work/robarica/listing-6.webp",
               "alt": "Friends laughing around a table with phin filters, with the line 100% Robusta whole beans with intense caffeine effect"
             }
-          ],
-          "caption": "The six updated listing images, from the main image on white to the pack features, the taste and the origin."
+          ]
         }
       ],
       "decor": [
@@ -297,7 +292,7 @@
             "Robusta can be unforgiving when it is brewed casually, and a harsh first cup can easily turn into a bad review. The ebook, How to Make a Perfect Cup of Coffee, is a practical brewing guide: part education, part product support, and part confidence for first-time customers.",
             "The founder's brief for the cover was specific. It needed the Robarica look and feel without the logo or the brand name, a title that [[stands out among the other coffee books on Amazon]], and a familiar cup of coffee rather than a Vietnamese phin, because most of the audience is in the US.",
             [
-              "The inside is mostly text, so the cover does most of the work. The author chose the final design from eight drafts, and I supplied it as a Kindle cover, a PDF book cover, 3D images for Facebook ads and a paperback cover. The ebook is ",
+              "The inside is mostly text, so the cover does most of the work. I supplied it as a Kindle cover, a PDF book cover, 3D images for Facebook ads and a paperback cover. The ebook is ",
               {
                 "text": "still sold on Amazon",
                 "href": "https://www.amazon.com/dp/B09837JWN5"
@@ -314,21 +309,19 @@
           "type": "image",
           "src": "/assets/img/work/robarica/ebook-cover.webp",
           "alt": "The green How to Make a Perfect Cup of Coffee book standing at an angle on a green background",
-          "caption": "The final cover: two friends over coffee, a familiar cup, and no brand name."
+          "caption": "The final cover, chosen by the author."
         },
         {
           "type": "image",
           "title": "Paperback",
           "src": "/assets/img/work/robarica/paperback.webp",
-          "alt": "The full paperback cover laid flat: back cover copy on the left, the spine, and the illustrated front cover on the right",
-          "caption": "The paperback wrap, with the back cover copy, the spine and space for the barcode."
+          "alt": "The full paperback cover laid flat: back cover copy on the left, the spine, and the illustrated front cover on the right"
         },
         {
           "type": "image",
           "title": "Cover drafts",
           "src": "/assets/img/work/robarica/ebook-drafts.webp",
-          "alt": "Eight draft covers for How to Make a Perfect Cup of Coffee, from type-only layouts to illustrations of a man sitting in a giant cup",
-          "caption": "Eight early cover directions, from type-led layouts to illustrated scenes."
+          "alt": "Eight draft covers for How to Make a Perfect Cup of Coffee, from type-only layouts to illustrations of a man sitting in a giant cup"
         }
       ],
       "decor": [

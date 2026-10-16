@@ -103,8 +103,7 @@
             "alt": "Close-up of the four bird mood cards on the SoundLax home screen",
             "prepare": "Close-up of the 'Start here' section on the home screen: the four bird cards, cropped tight enough to read the labels and see the grain. Fix KERERŪ spelling if needed.",
             "size": "1600 × 1200 JPG (4:3), on navy #060D27",
-            "ratio": "4/3",
-            "caption": "The home screen asks for a mood rather than a search term."
+            "ratio": "4/3"
           }
         },
         {
@@ -121,8 +120,7 @@
             "alt": "The same now-playing bar at the bottom of two different SoundLax screens",
             "prepare": "The bottom third of two different screens side by side (for example Home and Sleep), with the same now-playing bar on both.",
             "size": "1600 × 1200 JPG (4:3), on navy #060D27",
-            "ratio": "4/3",
-            "caption": "The same now-playing bar appears on every screen."
+            "ratio": "4/3"
           }
         },
         {
@@ -138,8 +136,7 @@
             "alt": "The SoundLax mixer with three sounds layered and their volume sliders",
             "prepare": "The mixer open with two or three sounds layered (for example Brown Noise, Café Ambience and Soft Piano) and their volume sliders.",
             "size": "1600 × 1200 JPG (4:3), on navy #060D27",
-            "ratio": "4/3",
-            "caption": "The mixer opens from one card on the home screen."
+            "ratio": "4/3"
           }
         }
       ]
@@ -191,8 +188,7 @@
         {
           "type": "image",
           "src": "/assets/img/work/soundlax/visual-language.webp",
-          "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration",
-          "caption": "The type, colours, scenes and bird set, shown together."
+          "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration"
         },
         {
           "type": "image",

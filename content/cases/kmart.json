@@ -110,7 +110,7 @@
               "alt": "The new Kmart wordmark reversed out in white on black"
             }
           ],
-          "caption": "The wordmark on white and on black. The small peach break in the k is the only colour in it."
+          "caption": "The small peach break in the k is the only colour in the mark."
         },
         {
           "type": "swatches",
@@ -177,8 +177,7 @@
           ],
           "image": {
             "src": "/assets/img/work/kmart/price-tags.webp",
-            "alt": "A Kmart swing tag and shelf label, both showing $12 and the line More left for the weekend",
-            "caption": "The same line on the swing tag and the shelf label."
+            "alt": "A Kmart swing tag and shelf label, both showing $12 and the line More left for the weekend"
           }
         },
         {
@@ -191,8 +190,7 @@
           ],
           "image": {
             "src": "/assets/img/work/kmart/receipt.webp",
-            "alt": "A Kmart receipt ending with the line You spent $46 today. Enjoy the rest.",
-            "caption": "The closing line replaces the usual thank-you."
+            "alt": "A Kmart receipt ending with the line You spent $46 today. Enjoy the rest."
           }
         },
         {
@@ -219,8 +217,7 @@
               "src": "/assets/img/work/kmart/bag-paper.webp",
               "alt": "A white paper Kmart shopping bag with a small wordmark"
             }
-          ],
-          "caption": "A reusable tote and a paper bag, with the mark and nothing else."
+          ]
         }
       ]
     },
@@ -246,8 +243,7 @@
           ],
           "image": {
             "src": "/assets/img/work/kmart/closeup-collection.webp",
-            "alt": "The K-Collection on the Kmart homepage: photo tiles labelled summer, wanderlust, outside, be active, good time and fashion",
-            "caption": "Browsing starts from a mood, and the collection changes with the season."
+            "alt": "The K-Collection on the Kmart homepage: photo tiles labelled summer, wanderlust, outside, be active, good time and fashion"
           }
         },
         {
@@ -260,8 +256,7 @@
           ],
           "image": {
             "src": "/assets/img/work/kmart/closeup-styling.webp",
-            "alt": "The Meet our designers banner and the Book a styling consultation form on the Kmart homepage",
-            "caption": "A styling consultation can be booked from the homepage."
+            "alt": "The Meet our designers banner and the Book a styling consultation form on the Kmart homepage"
           }
         },
         {
@@ -273,8 +268,7 @@
           ],
           "image": {
             "src": "/assets/img/work/kmart/closeup-kstagram.webp",
-            "alt": "The K-stagram row of customer photos above the Kmart website footer",
-            "caption": "Real homes, shared by customers, appear next to the products."
+            "alt": "The K-stagram row of customer photos above the Kmart website footer"
           }
         },
         {
@@ -282,8 +276,7 @@
           "seamless": true,
           "title": "Pages",
           "src": "/assets/img/work/kmart/web-pages.webp",
-          "alt": "Three Kmart web pages side by side: the homepage, the Living Room category page and the Charli armchair product page",
-          "caption": "The homepage, the Living Room category page and a product page."
+          "alt": "Three Kmart web pages side by side: the homepage, the Living Room category page and the Charli armchair product page"
         }
       ]
     },

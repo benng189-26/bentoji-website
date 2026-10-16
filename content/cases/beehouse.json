@@ -82,8 +82,7 @@
           "image": {
             "src": "/assets/img/work/beehouse/closeup-slider.webp",
             "alt": "The popular projects list on the homepage slider, with Bitexco Condo Ho Chi Minh selected, and social links running down the left",
-            "ratio": "4/3",
-            "caption": "The popular projects list sits on top of the slider, so each project is one click away."
+            "ratio": "4/3"
           }
         },
         {
@@ -98,8 +97,7 @@
           "image": {
             "src": "/assets/img/work/beehouse/closeup-contact.webp",
             "alt": "The TMS Luxury Hotel project page: a photo of the hotel at night, the contact panel with chat app icons, and the project description",
-            "ratio": "4/3",
-            "caption": "The contact panel offers a call, a chat app or a short form, next to the project details."
+            "ratio": "4/3"
           }
         },
         {
@@ -113,8 +111,7 @@
           "image": {
             "src": "/assets/img/work/beehouse/closeup-team.webp",
             "alt": "The About page: featured project, office photos, the company introduction and the leadership team with one bio expanded",
-            "ratio": "4/3",
-            "caption": "Bios open to show each person's work history, and close again to keep the page short."
+            "ratio": "4/3"
           }
         }
       ]
@@ -180,8 +177,7 @@
         {
           "type": "image",
           "src": "/assets/img/work/beehouse/closeup-card.webp",
-          "alt": "The numbered project strip on the homepage, a white panel cutting into the bottom of the slider photo",
-          "caption": "The numbered project strip cuts into the bottom of the slider photo. The same detail repeats on the news cards and the featured projects."
+          "alt": "The numbered project strip on the homepage, a white panel cutting into the bottom of the slider photo"
         }
       ]
     },
@@ -197,16 +193,14 @@
           "seamless": true,
           "title": "Home and project page",
           "src": "/assets/img/work/beehouse/web-home-project.webp",
-          "alt": "The full Beehouse homepage and the TMS Luxury Hotel project page, side by side",
-          "caption": "The homepage moves from the project slider to an introduction, the services, other projects and the latest news. Project pages open on photos, then the contact panel beside the details, floor plans and specification."
+          "alt": "The full Beehouse homepage and the TMS Luxury Hotel project page, side by side"
         },
         {
           "type": "image",
           "seamless": true,
           "title": "About and news",
           "src": "/assets/img/work/beehouse/web-about-news.webp",
-          "alt": "The Beehouse About page and the News and events page, side by side",
-          "caption": "The About page covers the company, its philosophy, the team and the office. News and events leads with a featured story, then the latest news and recommended articles."
+          "alt": "The Beehouse About page and the News and events page, side by side"
         }
       ]
     }

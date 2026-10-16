@@ -79,8 +79,7 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-scan.webp",
             "alt": "Four talk cards from the Talks page, each with a photo, title, speaker name and topic tags",
-            "ratio": "4/3",
-            "caption": "Every talk card uses the same module, with a photo, title, speaker and topic tags."
+            "ratio": "4/3"
           }
         },
         {
@@ -95,8 +94,7 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-nav.webp",
             "alt": "Top of the TEDxAuckland homepage: menu, Buy ticket link, hero and the red upcoming event strip",
-            "ratio": "4/3",
-            "caption": "The menu, the ticket link and the next event are all visible before anyone scrolls."
+            "ratio": "4/3"
           }
         },
         {
@@ -109,8 +107,7 @@
           "image": {
             "src": "/assets/img/work/tedxauckland/closeup-speakers.webp",
             "alt": "A speaker selected in the grid, with her bio, links and talk video opened below",
-            "ratio": "4/3",
-            "caption": "Speaker details open inside the grid, and each portrait fades from B&W to colour when it is selected."
+            "ratio": "4/3"
           }
         },
         {
@@ -203,8 +200,7 @@
           "seamless": true,
           "title": "Home and talks",
           "src": "/assets/img/work/tedxauckland/home-talks.webp",
-          "alt": "The rest of the TEDxAuckland homepage, with talks and upcoming events, and the Talks page",
-          "caption": "The homepage moves from speakers to talks and then to upcoming events, and the Talks page opens on the most popular talks."
+          "alt": "The rest of the TEDxAuckland homepage, with talks and upcoming events, and the Talks page"
         },
         {
           "type": "image",
@@ -218,8 +214,7 @@
           "type": "image",
           "title": "Partners",
           "src": "/assets/img/work/tedxauckland/partners.webp",
-          "alt": "The Partners page with a grid of partner logos",
-          "caption": "The Partners page lists the event's partners, along with a short note for organisations that would like to get involved."
+          "alt": "The Partners page with a grid of partner logos"
         }
       ]
     },

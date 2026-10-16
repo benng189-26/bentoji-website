@@ -256,7 +256,7 @@
     for (var i = 0; i < list.length; i++) {
       var b = list[i];
       if (!blocks[b.type]) continue;
-      if (TEXTISH[b.type] || (b.type === 'image' && b.side)) { run.push(b); continue; }
+      if (TEXTISH[b.type] || (b.type === 'image' && b.side) || (b.type === 'gallery' && b.inline)) { run.push(b); continue; }
       flush();
       /* colours and type next to each other: shown side by side */
       var nx = list[i + 1];

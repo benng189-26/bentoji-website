@@ -120,8 +120,7 @@
               "src": "/assets/img/work/toi-o-tamaki/insp-6.webp",
               "alt": "The Civic Theatre on the corner of Queen Street, with its tower and patterned facade"
             }
-          ],
-          "caption": "Some of the photos from the walk: the gallery's clock tower and canopy, its older facades, the Town Hall and the Civic Theatre."
+          ]
         }
       ]
     },
@@ -148,8 +147,7 @@
           "image": {
             "src": "/assets/img/work/toi-o-tamaki/detail-columns.webp",
             "alt": "A Victorian facade with pilasters beside the letters i and l, drawn as fluted columns",
-            "ratio": "4/3",
-            "caption": "Pilasters on an older facade, and the i and l."
+            "ratio": "4/3"
           }
         },
         {
@@ -163,8 +161,7 @@
           "image": {
             "src": "/assets/img/work/toi-o-tamaki/detail-arches.webp",
             "alt": "The Auckland Art Gallery's clock tower and arched windows beside the letters n and o, each with a keystone at the top",
-            "ratio": "4/3",
-            "caption": "The gallery's tower and arched windows, and the n and o."
+            "ratio": "4/3"
           }
         },
         {
@@ -177,8 +174,7 @@
           "image": {
             "src": "/assets/img/work/toi-o-tamaki/detail-stairs.webp",
             "alt": "The letters k, s and z, each with a staircase drawn inside it",
-            "ratio": "4/3",
-            "caption": "The k, s and z, with staircases inside."
+            "ratio": "4/3"
           }
         },
         {
@@ -192,8 +188,7 @@
           "image": {
             "src": "/assets/img/work/toi-o-tamaki/detail-canopy.webp",
             "alt": "The Auckland Art Gallery's timber canopy beside the letters t and z, both topped with a fanned canopy shape",
-            "ratio": "4/3",
-            "caption": "The gallery's kauri canopy, and the t and z."
+            "ratio": "4/3"
           }
         }
       ]
@@ -213,11 +208,41 @@
           ]
         },
         {
+          "type": "gallery",
+          "inline": true,
+          "cols": 3,
+          "items": [
+            {
+              "src": "/assets/img/work/toi-o-tamaki/letter-a.webp",
+              "alt": "The letter a drawn as white line work"
+            },
+            {
+              "src": "/assets/img/work/toi-o-tamaki/letter-h.webp",
+              "alt": "The letter h drawn as white line work"
+            },
+            {
+              "src": "/assets/img/work/toi-o-tamaki/letter-w.webp",
+              "alt": "The letter w drawn as white line work"
+            },
+            {
+              "src": "/assets/img/work/toi-o-tamaki/letter-x.webp",
+              "alt": "The letter x drawn as white line work"
+            },
+            {
+              "src": "/assets/img/work/toi-o-tamaki/letter-y.webp",
+              "alt": "The letter y drawn as white line work"
+            },
+            {
+              "src": "/assets/img/work/toi-o-tamaki/letter-j.webp",
+              "alt": "The letter j drawn as white line work"
+            }
+          ]
+        },
+        {
           "type": "image",
           "side": true,
           "src": "/assets/img/work/toi-o-tamaki/specimen-light.webp",
-          "alt": "A white type specimen sheet: Toi o Tāmaki above every lowercase letter from a to z in fine black line work",
-          "caption": "The specimen sheet, with every lowercase letter from a to z."
+          "alt": "A white type specimen sheet: Toi o Tāmaki above every lowercase letter from a to z in fine black line work"
         }
       ]
     },
@@ -231,14 +256,13 @@
         {
           "type": "text",
           "p": [
-            "The printed photos went on the desk next to the computer, and the letters started in a sketchbook. The early sketches were quick capitals and outlines, mostly to test [[which building parts could carry a letter]]. Once a part worked, I redrew it carefully in pencil and then traced it in Illustrator."
+            "The letters started in a sketchbook, mostly to test [[which building parts could carry a letter]]. Once a part worked, I redrew it in pencil and traced it in Illustrator."
           ]
         },
         {
           "type": "image",
           "src": "/assets/img/work/toi-o-tamaki/desk.webp",
-          "alt": "A desk with printed photos of the precinct's buildings laid out in rows in front of a keyboard",
-          "caption": "Photos from the walk laid out on the desk."
+          "alt": "A desk with printed photos of the precinct's buildings laid out in rows in front of a keyboard"
         },
         {
           "type": "gallery",
@@ -268,8 +292,7 @@
               "src": "/assets/img/work/toi-o-tamaki/sketch-6.webp",
               "alt": "The o being traced as line work in Illustrator"
             }
-          ],
-          "caption": "From pencil sketches and a drawing of an arched window to printed tests and the final line work in Illustrator."
+          ]
         }
       ]
     },
@@ -293,14 +316,14 @@
         {
           "type": "text",
           "p": [
-            "To show the typeface doing its job, I set a campaign line in it, Art is all around, for posters and street displays in the precinct. The line is short, so [[the letters do most of the talking]], with a short description of the precinct and the council logo kept small underneath."
+            "To show the typeface doing its job, I set a campaign line in it, Art is all around, for posters and street displays in the precinct. The line is short, so [[the letters do most of the talking]]."
           ]
         },
         {
           "type": "image",
           "src": "/assets/img/work/toi-o-tamaki/mock-street.webp",
           "alt": "The white Art is all around poster in a street lightbox on a wet night in the city",
-          "caption": "Concept mock-ups of the poster on the street."
+          "caption": "Concept mock-ups."
         },
         {
           "type": "gallery",
@@ -314,14 +337,12 @@
               "src": "/assets/img/work/toi-o-tamaki/mock-desk.webp",
               "alt": "The white Toi o Tāmaki specimen printed and clipped to a drawing board with a ruler and coffee"
             }
-          ],
-          "caption": "The purple version of the poster, and the specimen printed on paper."
+          ]
         },
         {
           "type": "image",
-          "src": "/assets/img/work/toi-o-tamaki/poster-dark.webp",
-          "alt": "The A0 specimen poster: Toi o Tāmaki above every lowercase letter in white line work on deep purple",
-          "caption": "The A0 specimen poster on purple."
+          "src": "/assets/img/work/toi-o-tamaki/poster-mockup.webp",
+          "alt": "The purple Art is all around poster in a bus shelter on an Auckland street, with a bus and people walking past"
         }
       ]
     }
