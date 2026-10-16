@@ -486,7 +486,9 @@ window.SHOW_DRAFTS = true;
    case studies, in this order, with no type tiles or filters (Oct 2026,
    portfolio for job applications). Set to null to bring back the full
    Work page with filters, pieces and homepage tiles. */
-window.SHOWCASE = ['soundlax', 'cohesive-construction', 'robarica', 'kmart'];
+/* All six, two per row. Cohesive and Beehouse (both building websites) are kept
+   apart: different rows, different columns. */
+window.SHOWCASE = ['soundlax', 'cohesive-construction', 'robarica', 'kmart', 'beehouse', 'toi-o-tamaki'];
 /* SHOWCASE_ALL: the unlisted page /portfolio/all (not in the nav), for
    roles where the visual work matters more. Same case studies plus
    Beehouse and Toi o Tāmaki, visual work first. */
