@@ -38,7 +38,7 @@
     G.cx = narrow ? W * 0.34 + G.R : Math.max(W * 0.30, W - 1100) + G.R;
     G.cy = narrow ? H * 0.70 + G.R : H * 0.47 + G.R;
     G.k = G.R / 1320;                       /* scale for falloff distances */
-    moon = narrow ? { x: W * 0.84, y: H * 0.17, r: 12 } : { x: Math.max(70, W * 0.075), y: H * 0.16, r: 19 };
+    moon = narrow ? { x: W * 0.83, y: H * 0.17, r: 16 } : { x: Math.max(80, W * 0.08), y: H * 0.17, r: 28 };
     /* orbit: tilted ellipse just outside the rim */
     orbit = { rx: G.R * 1.085, ry: G.R * 1.03, rot: -0.12, range: null };
     var vis = [];
@@ -65,6 +65,44 @@
   }
 
   /* ---- the planet and its atmosphere, rendered once per size ---- */
+  /* real photographs underneath the rendered light:
+     a Milky Way star field, and a dark planet's surface mapped onto the disc */
+  var PHOTO = { stars: '/assets/img/space/stars.webp', surface: '/assets/img/space/planet-surface.webp', moon: '/assets/img/space/moon.webp' };
+  var SURFACE_R = 1165;                     /* radius of the disc inside planet-surface.webp (2400 px) */
+  var pics = {};
+  function loadPics(done) {
+    var keys = Object.keys(PHOTO), left = keys.length;
+    keys.forEach(function (k) {
+      var im = new Image(); im.decoding = 'async';
+      im.onload = im.onerror = function () { if (im.naturalWidth) pics[k] = im; if (--left === 0) done(); };
+      im.src = PHOTO[k];
+    });
+  }
+  function baseLayer(w, h, scale) {
+    var c = document.createElement('canvas'); c.width = w; c.height = h;
+    var x = c.getContext('2d');
+    x.fillStyle = '#000'; x.fillRect(0, 0, w, h);
+    if (pics.stars) {
+      var iw = pics.stars.naturalWidth, ih = pics.stars.naturalHeight, f = Math.max(w / iw, h / ih);
+      x.globalAlpha = 0.5;
+      x.drawImage(pics.stars, (w - iw * f) / 2, (h - ih * f) / 2, iw * f, ih * f);
+      x.globalAlpha = 1;
+      /* keep it quieter behind the headline */
+      var v = x.createLinearGradient(0, 0, w * 0.7, 0);
+      v.addColorStop(0, 'rgba(0,0,0,0.55)'); v.addColorStop(0.75, 'rgba(0,0,0,0.25)'); v.addColorStop(1, 'rgba(0,0,0,0)');
+      x.fillStyle = v; x.fillRect(0, 0, w, h);
+    }
+    var R = G.R * scale, cx = G.cx * scale, cy = G.cy * scale;
+    x.save(); x.beginPath(); x.arc(cx, cy, R, 0, 6.2832); x.clip();
+    x.fillStyle = '#000'; x.fillRect(0, 0, w, h);
+    if (pics.surface) {
+      var s = R / SURFACE_R, sz = 2400 * s;
+      x.drawImage(pics.surface, cx - sz / 2, cy - sz / 2, sz, sz);
+    }
+    x.restore();
+    return x.getImageData(0, 0, w, h).data;
+  }
+
   function renderGlow() {
     var scale = W > 1600 ? 0.75 : 1;        /* soft light: a little lower resolution is fine on big screens */
     var w = Math.round(W * scale), h = Math.round(HS * scale);
@@ -72,12 +110,13 @@
     glowC.style.width = W + 'px'; glowC.style.height = HS + 'px';
     var ctx = glowC.getContext('2d');
     var img = ctx.createImageData(w, h), d = img.data;
+    var base = baseLayer(w, h, scale);
     var R = G.R * scale, cx = G.cx * scale, cy = G.cy * scale, k = G.k * scale;
     var exp = Math.exp, sqrt = Math.sqrt, max = Math.max, pow = Math.pow;
     for (var y = 0; y < h; y++) {
       var fy = y / h;
       /* deep space: almost black at the top, a touch of navy lower down */
-      var br = 5 + fy * 4, bg = 7 + fy * 6, bb = 11 + fy * 9;
+      var br = 2 + fy * 4, bg = 3 + fy * 6, bb = 6 + fy * 9;
       var dy = y - cy;
       for (var x = 0; x < w; x++) {
         var dx = x - cx;
@@ -98,13 +137,16 @@
           var ti = -t / k;
           var rim = exp(-ti / 1.6), glow = exp(-ti / 22), deep = exp(-ti / 140);
           /* night side: dark, with the atmosphere showing just inside the edge */
-          r = 4 + lit * (rim * 255 + glow * 130 + deep * 22);
-          g = 5 + lit * (rim * 226 + glow * 50 + deep * 10);
-          b = 9 + lit * (rim * 210 + glow * 40 + deep * 28);
+          r = lit * (rim * 255 + glow * 130 + deep * 22);
+          g = lit * (rim * 226 + glow * 50 + deep * 10);
+          b = 2 + lit * (rim * 210 + glow * 40 + deep * 28);
         }
         var n = (Math.random() - 0.5) * 3;  /* grain: hides banding */
         var o = (y * w + x) * 4;
-        d[o] = r + n; d[o + 1] = g + n; d[o + 2] = b + n; d[o + 3] = 255;
+        /* add the light on top of the photo (stars outside, planet surface inside) */
+        var pr = base[o], pg = base[o + 1], pb = base[o + 2];
+        if (t < 0) { var keep = 0.42; pr *= keep; pg *= keep; pb *= keep; }
+        d[o] = pr + r + n; d[o + 1] = pg + g + n; d[o + 2] = pb + b + n; d[o + 3] = 255;
       }
     }
     ctx.putImageData(img, 0, 0);
@@ -115,7 +157,7 @@
     starC.width = W * DPR; starC.height = HS * DPR;
     starC.style.width = W + 'px'; starC.style.height = HS + 'px';
     stars = [];
-    var n = Math.round(W * HS / 7000);
+    var n = Math.round(W * HS / 26000);
     for (var i = 0; i < n; i++) {
       var x = Math.random() * W, y = Math.random() * HS;
       var dist = Math.sqrt((x - G.cx) * (x - G.cx) + (y - G.cy) * (y - G.cy));
@@ -146,26 +188,23 @@
   }
   function drawMoon(ctx) {
     var m = moon, r = m.r;
-    var halo = ctx.createRadialGradient(m.x, m.y, r * 0.8, m.x, m.y, r * 4);
-    halo.addColorStop(0, 'rgba(255,200,170,0.10)'); halo.addColorStop(1, 'rgba(255,200,170,0)');
-    ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(m.x, m.y, r * 4, 0, 6.2832); ctx.fill();
-    ctx.save();
-    ctx.beginPath(); ctx.arc(m.x, m.y, r, 0, 6.2832); ctx.clip();
-    ctx.fillStyle = '#0d0f16'; ctx.fillRect(m.x - r, m.y - r, r * 2, r * 2);
-    /* lit side faces the sun: a soft-edged crescent */
-    var lx = m.x + SUN.x * r * 0.95, ly = m.y + SUN.y * r * 0.95;
-    var lg = ctx.createRadialGradient(lx, ly, r * 0.15, lx, ly, r * 1.35);
-    lg.addColorStop(0, 'rgba(255,240,228,0.98)');
-    lg.addColorStop(0.45, 'rgba(250,206,180,0.75)');
-    lg.addColorStop(0.75, 'rgba(160,110,140,0.18)');
-    lg.addColorStop(1, 'rgba(40,30,60,0)');
-    ctx.fillStyle = lg; ctx.fillRect(m.x - r, m.y - r, r * 2, r * 2);
-    /* the dark side, offset away from the sun */
-    var sx = m.x - SUN.x * r * 0.62, sy = m.y - SUN.y * r * 0.62;
-    var sg = ctx.createRadialGradient(sx, sy, r * 0.55, sx, sy, r * 1.05);
-    sg.addColorStop(0, 'rgba(10,11,17,0.98)'); sg.addColorStop(0.8, 'rgba(10,11,17,0.9)'); sg.addColorStop(1, 'rgba(10,11,17,0)');
-    ctx.fillStyle = sg; ctx.fillRect(m.x - r, m.y - r, r * 2, r * 2);
-    ctx.restore();
+    var halo = ctx.createRadialGradient(m.x, m.y, r * 0.9, m.x, m.y, r * 3.2);
+    halo.addColorStop(0, 'rgba(220,226,255,0.10)'); halo.addColorStop(1, 'rgba(220,226,255,0)');
+    ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(m.x, m.y, r * 3.2, 0, 6.2832); ctx.fill();
+    if (!pics.moon) return;
+    var mc = document.createElement('canvas'), S = Math.ceil(r * 2 * DPR);
+    mc.width = mc.height = S;
+    var x = mc.getContext('2d');
+    x.drawImage(pics.moon, 0, 0, S, S);
+    /* shade the side facing away from the light, so it sits in the same scene */
+    x.globalCompositeOperation = 'source-atop';
+    var c = S / 2, sx = c - SUN.x * c * 0.95, sy = c - SUN.y * c * 0.95;
+    var g = x.createRadialGradient(sx, sy, c * 0.1, sx, sy, c * 1.6);
+    g.addColorStop(0, 'rgba(4,5,9,0.85)'); g.addColorStop(0.55, 'rgba(4,5,9,0.4)'); g.addColorStop(1, 'rgba(4,5,9,0)');
+    x.fillStyle = g; x.fillRect(0, 0, S, S);
+    ctx.globalAlpha = 1;
+    ctx.drawImage(mc, m.x - r, m.y - r, r * 2, r * 2);
+    ctx.globalAlpha = 1;
   }
   function drawFx(t) {
     var ctx = fxC.getContext('2d');
@@ -202,17 +241,17 @@
       /* trail */
       for (var k = 0; k < 28; k++) {
         var q1 = orbitPoint(a - span * 0.004 * k), q2 = orbitPoint(a - span * 0.004 * (k + 1));
-        ctx.strokeStyle = 'rgba(255,214,190,' + (0.45 * (1 - k / 28) * fade).toFixed(3) + ')';
-        ctx.lineWidth = 1.6;
+        ctx.strokeStyle = 'rgba(255,214,190,' + (0.32 * (1 - k / 28) * fade).toFixed(3) + ')';
+        ctx.lineWidth = 1.1;
         ctx.beginPath(); ctx.moveTo(q1.x, q1.y); ctx.lineTo(q2.x, q2.y); ctx.stroke();
       }
       var s = orbitPoint(a);
-      var gl = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, 16);
-      gl.addColorStop(0, 'rgba(255,226,206,' + (0.9 * fade).toFixed(3) + ')');
+      var gl = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, 6);
+      gl.addColorStop(0, 'rgba(255,226,206,' + (0.35 * fade).toFixed(3) + ')');
       gl.addColorStop(1, 'rgba(255,170,130,0)');
-      ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(s.x, s.y, 16, 0, 6.2832); ctx.fill();
+      ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(s.x, s.y, 6, 0, 6.2832); ctx.fill();
       ctx.fillStyle = 'rgba(255,250,245,' + fade.toFixed(3) + ')';
-      ctx.beginPath(); ctx.arc(s.x, s.y, 2.8, 0, 6.2832); ctx.fill();
+      ctx.beginPath(); ctx.arc(s.x, s.y, 2, 0, 6.2832); ctx.fill();
     }
   }
   /* the moon sits on its own layer so it can move at its own speed on scroll */
@@ -255,7 +294,8 @@
     var t = performance.now() / 1000; drawStars(t); drawFx(t); onScroll();
   }
   all();
-  space.classList.add('is-ready');
+  loadPics(function () { renderGlow(); renderMoon(); space.classList.add('is-ready'); });
+  setTimeout(function () { space.classList.add('is-ready'); }, 2500);
   var rt = 0, lastW = W;
   window.addEventListener('resize', function () {
     clearTimeout(rt);
