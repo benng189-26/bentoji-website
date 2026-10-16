@@ -1,0 +1,279 @@
+{
+  "slug": "cohesive-construction",
+  "name": "Cohesive Construction website",
+  "theme": {
+    "dark": "#001542",
+    "dark2": "#0a2257",
+    "accent": "#fdb525",
+    "accentInk": "#001542",
+    "highlight": "text",
+    "highlightColor": "#fdb525",
+    "eyebrow": "text"
+  },
+  "hero": {
+    "pill": "Website design",
+    "title": "A website for people who already know the name",
+    "intro": "Cohesive Construction designs and builds commercial and industrial buildings across New Zealand, mostly in the South Island. I designed its new website as a contractor with Zib Digital, working with Zib's project manager, Cohesive's marketing team and a contract developer, over about three months.",
+    "links": [
+      { "text": "Visit the live site", "href": "https://cohesive.net.nz" }
+    ],
+    "image": {
+      "src": "/assets/img/work/cohesive/hero.webp",
+      "alt": "The Cohesive Construction commercial projects section: a large project photo beside a grid of four more projects, under an angled navy panel"
+    }
+  },
+  "facts": [
+    { "k": "Client", "v": "Cohesive Construction, through Zib Digital" },
+    { "k": "Role", "v": "UX/UI designer" },
+    { "k": "Scope", "v": "Discovery, persona, sitemap, wireframes, UI design, style guide, handover" },
+    { "k": "Year", "v": "2025" }
+  ],
+  "sections": [
+    {
+      "id": "brief",
+      "nav": "The brief",
+      "tone": "grey",
+      "pill": "The brief",
+      "heading": "A credibility check, not a sales funnel",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Cohesive's old website was built on Webflow when the company was starting out, and even small changes needed a developer. It no longer showed the scale of the work, the clients or the team, and Cohesive wanted a site its own team could edit.",
+            "The more useful part of the brief came from the discovery questionnaire. Most of Cohesive's work comes through its network, so people rarely find the company through a search. They arrive after a referral, after seeing one of its buildings, or after a quote from Wide Span Sheds, and they come to the site to [[check whether Cohesive is the real thing]].",
+            "Those visitors range from a plumber building a small workshop to an investor planning a $20 million commercial development. In Cohesive's own words, the site should not overwhelm the small customers or underwhelm the large ones."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Most visitors were not looking for a builder. They were checking whether this one could be trusted."
+        }
+      ]
+    },
+    {
+      "bleed": {
+        "src": "/assets/img/work/cohesive/bleed.webp",
+        "alt": "The underside of a large steel canopy on a Cohesive industrial building, against a blue sky"
+      }
+    },
+    {
+      "id": "audience",
+      "nav": "Who it is for",
+      "tone": "dark",
+      "pill": "Who it is for",
+      "heading": "One persona, one journey",
+      "decor": [
+        { "src": "/assets/img/work/cohesive/decor-device.webp", "pos": "top-right", "w": 300, "rot": 0, "x": -70, "y": 60 }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Cohesive described two main audiences, owner-occupiers and investors, but both follow the same journey: verify credibility, find projects like their own, understand the process, then get in touch or pass the details to a business partner. So I combined them into one persona, David, a South Island business owner with a growing industrial property portfolio, who wants [[proof and clarity rather than a sales pitch]].",
+            "Wide Span Sheds customers became a smaller, separate segment. Cohesive supplies Wide Span Sheds in the South Island, so people who ask Wide Span for a quote receive emails and documents with Cohesive's name on them. They visit to understand how the two brands are connected, not to start a new project."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/cohesive/persona.webp",
+          "alt": "The David Carter persona board: scenario, positioning, what he is looking for, pain points, goals, expectations and the Wide Span Sheds segment"
+        }
+      ]
+    },
+    {
+      "id": "structure",
+      "nav": "Structure",
+      "tone": "grey",
+      "pill": "Structure",
+      "heading": "Built around how people check a builder",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The sitemap follows the order in which people check a company like this: see the projects, understand the capabilities, learn who the team is, download the details, then make contact. Projects sit first in the menu, and every main section ends with a way to get in touch.",
+            "Several structure decisions were made together with Cohesive in the review. \"In partnership\" became [[Wide Span Sheds]] in the main menu, because that is the name those visitors are looking for. The regional offices moved into the contact page rather than the menu, while keeping their own pages for search. \"Request a call\" was removed, and Careers stayed, because comparable companies have one and it helps Cohesive look like the size it is."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/cohesive/sitemap.webp",
+          "alt": "Sitemap v2: Home, then Projects, Capabilities, About Us, Resources, Careers, Wide Span Sheds and Contact, each with its second-level pages"
+        }
+      ]
+    },
+    {
+      "id": "decisions",
+      "nav": "Decisions",
+      "tone": "dark",
+      "pill": "Decisions",
+      "heading": "Proof first, pitch second",
+      "blocks": [
+        {
+          "type": "decision",
+          "num": "01",
+          "title": "Projects as the proof",
+          "p": [
+            "Completed work sits at the centre of the site. Project pages lead with photos, then a short overview with key facts such as type, completion date and duration, so a visitor can [[judge the work before reading any marketing copy]].",
+            "Testimonials sit next to a photo of the project they describe, which was Cohesive's idea and makes them much more believable for large commercial work."
+          ],
+          "image": {
+            "src": "/assets/img/work/cohesive/closeup-project.webp",
+            "alt": "The top of a project page: the Cochranes of Canterbury building with an award badge, and a project overview strip with type, completion date, value and duration"
+          }
+        },
+        {
+          "type": "decision",
+          "num": "02",
+          "flip": true,
+          "title": "The whole process, not a list of services",
+          "p": [
+            "The capabilities pages explain what Cohesive handles from start to finish, from land and design to consent, pricing and delivery, with a project timeline from the first meeting to handover.",
+            "Cohesive said many of its customers do not know where to start, so the site [[answers \"what happens next?\" before they have to ask]]."
+          ],
+          "image": {
+            "src": "/assets/img/work/cohesive/closeup-process.webp",
+            "alt": "Five capability cards for design, pricing and project management, above a project process timeline from defining the vision to handover"
+          }
+        },
+        {
+          "type": "decision",
+          "num": "03",
+          "title": "An honest link to Wide Span Sheds",
+          "p": [
+            "A Wide Span Sheds item in the main menu and a short homepage section explain the partnership, with photos of sheds that link out to the Wide Span site rather than to Cohesive project pages.",
+            "Wide Span visitors get their answer quickly, [[without being mixed into the commercial portfolio]]."
+          ],
+          "image": {
+            "src": "/assets/img/work/cohesive/closeup-widespan.webp",
+            "alt": "The In Partnership with Wide Span Sheds section on the homepage, with an aerial photo of a shed"
+          }
+        },
+        {
+          "type": "decision",
+          "num": "04",
+          "flip": true,
+          "title": "Built from modules the team can reuse",
+          "p": [
+            "Cohesive's main goal was to stop paying a developer for small changes. Every page is built from a set of repeatable modules, with templates for projects, capabilities, regional offices and resources, so [[the team can add a new project or branch page themselves]]."
+          ],
+          "image": {
+            "src": "/assets/img/work/cohesive/closeup-offices.webp",
+            "alt": "The regional offices grid: one card per region with a photo, address and contact details"
+          }
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "nav": "Wireframe to final",
+      "tone": "grey",
+      "pill": "Wireframe to final",
+      "heading": "Four rounds of the homepage",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The wireframes were reviewed with the persona and the sitemap before any visual design started. We decided to wait for Cohesive's new brand guidelines rather than design around the old ones, which delayed the start a little but [[avoided redoing the work]]. The homepage then went through four rounds of feedback before sign-off."
+          ]
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/cohesive/wireframe-final.webp",
+          "alt": "The top of the homepage wireframe in grey beside the top of the final homepage design",
+          "caption": "Wireframe on the left, final design on the right."
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/cohesive/homepage-rounds.webp",
+          "alt": "Four versions of the homepage design side by side",
+          "caption": "From the first round to sign-off, left to right."
+        }
+      ]
+    },
+    {
+      "id": "visual-language",
+      "nav": "Visual language",
+      "tone": "dark",
+      "pill": "Visual language",
+      "heading": "Navy, yellow and real buildings",
+      "decor": [
+        { "src": "/assets/img/work/cohesive/decor-device.webp", "pos": "bottom-left", "w": 260, "rot": 0, "x": -90, "y": 80 }
+      ],
+      "blocks": [
+        {
+          "type": "text",
+          "columns": 2,
+          "p": [
+            "The palette comes from Cohesive's new brand: CC Midnight Blue and CC Yellow Spark as the main pair, with Steel Grey and Emerald Green in support. Cohesive's own project photography carries most pages, and the angled shapes of the brand's CC device frame the photos.",
+            "I also put together a [[digital style guide]] with the colours, a full grey scale, the type scale for desktop and mobile, and every button state, so the developer and Cohesive's team have one reference for keeping new pages consistent."
+          ]
+        },
+        {
+          "type": "swatches",
+          "items": [
+            { "name": "CC Midnight Blue", "hex": "#001542" },
+            { "name": "CC Yellow Spark", "hex": "#FDB525" },
+            { "name": "CC Steel Grey", "hex": "#7A7A7A" },
+            { "name": "CC Emerald Green", "hex": "#085454" }
+          ]
+        },
+        {
+          "type": "type",
+          "dark": true,
+          "items": [
+            {
+              "name": "Manrope Bold",
+              "role": "Headings",
+              "sample": "From concept to completion",
+              "chars": true,
+              "family": "Manrope Bold",
+              "font": "/assets/type/cases/manrope-bold.woff2"
+            },
+            {
+              "name": "Roboto Regular",
+              "role": "Body text",
+              "sample": "Commercial and industrial builds",
+              "chars": true,
+              "family": "Roboto Regular",
+              "font": "/assets/type/cases/roboto-regular.woff2"
+            }
+          ]
+        },
+        {
+          "type": "gallery",
+          "cols": 2,
+          "title": "Style guide",
+          "items": [
+            { "src": "/assets/img/work/cohesive/styleguide-basics.webp", "alt": "The style guide: colour palette, grey scale and type scale for desktop and mobile" },
+            { "src": "/assets/img/work/cohesive/styleguide-components.webp", "alt": "The style guide: primary, secondary, ghost and small buttons in each state, and the icon set" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "screens",
+      "nav": "Screens",
+      "tone": "grey",
+      "pill": "Screens",
+      "heading": "Page by page",
+      "blocks": [
+        {
+          "type": "gallery",
+          "cols": 2,
+          "items": [
+            { "src": "/assets/img/work/cohesive/screen-1.webp", "alt": "The homepage" },
+            { "src": "/assets/img/work/cohesive/screen-2.webp", "alt": "The projects listing" },
+            { "src": "/assets/img/work/cohesive/screen-3.webp", "alt": "A project page" },
+            { "src": "/assets/img/work/cohesive/screen-4.webp", "alt": "The capabilities overview" },
+            { "src": "/assets/img/work/cohesive/screen-5.webp", "alt": "A capability page" },
+            { "src": "/assets/img/work/cohesive/screen-6.webp", "alt": "The regional offices on the contact page" }
+          ]
+        }
+      ]
+    }
+  ],
+  "next": {
+    "title": "Beehouse",
+    "href": "/work/beehouse/"
+  }
+}

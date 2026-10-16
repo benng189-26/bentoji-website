@@ -477,3 +477,8 @@ body.case{--c-hl:var(--c-accent);}
 
 /* small inline galleries in a text column (Toi o Tāmaki letters) keep their columns on phones */
 @media(max-width:700px){ .case .c-split-main .c-gallery-grid{grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));gap:10px;} }
+
+/* Hero buttons follow the case accent (v20) */
+.home.case .h-btn-primary{background:var(--c-accent);color:#fff;}
+.home.case .h-btn-primary:hover{filter:brightness(1.08);background:var(--c-accent);}
+.home.case.accent-light .h-btn-primary{color:var(--c-accent-ink);}
