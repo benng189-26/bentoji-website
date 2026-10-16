@@ -1,14 +1,4 @@
-/* --- Access guard (remove this block to disable) --- */
-(function(){
-  var p = location.pathname.replace(/\/+$/, '') || '/';
-  var open = /^\/(access|soundlax|soundlax-app)(\/|$)/;
-  if (open.test(p)) return;
-  if (!sessionStorage.getItem('bentoji_ok')) {
-    sessionStorage.setItem('bentoji_ret', p + location.search);
-    location.replace('/access/');
-  }
-})();
-/* --------------------------------------------------- */
+/* Access guard removed 16 Oct 2026: the site is public. */
 
 /* ===================================================================
    Bentoji Studio - shared site behaviour

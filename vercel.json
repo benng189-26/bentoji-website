@@ -86,6 +86,16 @@
       "source": "/writing/:path*",
       "destination": "/",
       "permanent": false
+    },
+    {
+      "source": "/access",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/access/:path*",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }
