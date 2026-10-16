@@ -17,7 +17,7 @@
 <link rel="preload" href="/assets/type/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=52" />
-<link rel="stylesheet" href="/assets/home.css?v=15" />
+<link rel="stylesheet" href="/assets/home.css?v=18" />
 <link rel="stylesheet" href="/assets/pages.css?v=7" />
 <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script type="application/ld+json">
@@ -41,7 +41,7 @@
 }
 </script>
 <link rel="preload" href="/assets/img/space/stars.webp" as="image" />
-<link rel="preload" href="/assets/img/space/planet-surface.webp" as="image" />
+<link rel="preload" href="/assets/img/space/planet-lit.webp" as="image" />
 </head>
 <body class="home is-index" data-content="/content/homepage.json">
 
@@ -66,11 +66,18 @@
 <main>
 
 <!-- ============ HERO (dark) ============ -->
+<div class="hero-track">
 <section class="h-hero h-dark has-space">
   <div class="h-space" aria-hidden="true">
-    <canvas class="h-glow"></canvas>
+    <img class="h-starfield" src="/assets/img/space/stars.webp" alt="" fetchpriority="high" />
     <canvas class="h-stars"></canvas>
-    <canvas class="h-fx"></canvas>
+    <div class="h-planet-wrap">
+      <div class="h-disc h-bloom is-wide"><img src="/assets/img/space/planet-lit.webp" alt="" /></div>
+      <div class="h-disc h-bloom"><img src="/assets/img/space/planet-lit.webp" alt="" /></div>
+      <div class="h-disc h-planet"><img src="/assets/img/space/planet-lit.webp" alt="" /></div>
+      <canvas class="h-fx"></canvas>
+    </div>
+    <canvas class="h-moon"></canvas>
   </div>
   <div class="container">
     <p class="h-pill reveal" data-cms="hero.pill">Ben Nguyen · Designer, Auckland</p>
@@ -82,6 +89,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <!-- ============ WORK BY TYPE (dark) ============ -->
 <!-- Tiles and case study cards come from assets/projects.js (WORK_TYPES, PIECES, and projects with featured: true). -->
@@ -213,7 +221,7 @@
 
 <script src="/assets/projects.js?v=30"></script>
 <script src="/assets/site.js?v=38"></script>
-<script src="/assets/space.js?v=8"></script>
+<script src="/assets/space.js?v=11"></script>
 <!-- Jellyfish paused (16 Oct 2026): <script src="/assets/jelly.js?v=4"></script> -->
 <script src="/assets/portfolio.js?v=5"></script>
 </body>

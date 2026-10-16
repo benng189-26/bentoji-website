@@ -1,309 +1,235 @@
 /* ===================================================================
-   Homepage hero: space scene (17 Oct 2026)
-   - A large dark planet, lower right. Its atmosphere is rendered pixel
-     by pixel with real light falloff (a thin hot rim, warm scattering,
-     violet haze further out), brightest where it faces the sun and fading
-     towards both ends, with fine grain so there is no gradient banding.
-   - A crisp rim line on top, whose bright patch drifts slowly.
-   - One orbit (a tilted ellipse around the planet) with a small moon-like
-     satellite travelling along it, leaving a short fading trail.
-   - A small crescent moon on the left, lit from the same sun.
-   - Slowly twinkling stars.
-   - On scroll: layers move at different speeds (parallax) and the scene
-     fades into the next section, so the page changes smoothly.
-   The scene pauses when off screen. With "reduce motion" on it is still.
+   Homepage hero: space scene (17 Oct 2026, v3)
+   Photographs do the heavy lifting; code only places and moves them.
+   - Star field: a Milky Way photo, full resolution.
+   - Planet: a real photo of a dark planet's lit edge, clipped to a large
+     disc lower right. Its glow is the same photo, blurred and screened
+     outwards, so the light colour comes from the photograph.
+   - Moon: a real moon photo, shaded on the side away from the light.
+   - Code: drifting, blinking stars and one orbiting light on a curve.
+   - Scroll: the hero is pinned while the view moves in towards the
+     planet; the text lifts away, then the next section slides over it.
+   With "reduce motion" on, nothing moves and the hero is not pinned.
    =================================================================== */
 (function () {
   var hero = document.querySelector('.h-hero.has-space');
   if (!hero) return;
+  var track = hero.parentElement && hero.parentElement.classList.contains('hero-track') ? hero.parentElement : null;
   var space = hero.querySelector('.h-space');
-  var glowC = space.querySelector('.h-glow');
-  var fxC = space.querySelector('.h-fx');
+  var field = space.querySelector('.h-starfield');
   var starC = space.querySelector('.h-stars');
+  var wrap = space.querySelector('.h-planet-wrap');
+  var discs = wrap.querySelectorAll('.h-disc');
+  var fxC = wrap.querySelector('.h-fx');
+  var moonC = space.querySelector('.h-moon');
   var content = hero.querySelector('.container');
-  if (!glowC || !glowC.getContext) return;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
-
-  var SUN = norm(-0.58, -0.81);          /* light comes from the upper left */
-  var W, H, HS, G = {}, stars = [], moon = {}, orbit = {};
+  var SUN = norm(-0.58, -0.81);              /* light from the upper left, matching the photo */
+  var IMG_FROM = -1.03, IMG_TO = 0.12;        /* planet-lit.webp covers this part of the disc, in radii */
+  var W, H, G = {}, moon = {}, orbit = {}, stars = [];
 
   function norm(x, y) { var l = Math.sqrt(x * x + y * y); return { x: x / l, y: y / l }; }
   function rnd(a, b) { return a + Math.random() * (b - a); }
 
   function geometry() {
-    W = hero.offsetWidth; H = hero.offsetHeight; HS = space.offsetHeight;
+    W = hero.offsetWidth; H = hero.offsetHeight;
     var narrow = W < 900;
-    G.R = narrow ? 720 : 1320;
-    G.cx = narrow ? W * 0.34 + G.R : Math.max(W * 0.30, W - 1100) + G.R;
-    G.cy = narrow ? H * 0.70 + G.R : H * 0.47 + G.R;
-    G.k = G.R / 1320;                       /* scale for falloff distances */
-    moon = narrow ? { x: W * 0.83, y: H * 0.17, r: 16 } : { x: Math.max(80, W * 0.08), y: H * 0.17, r: 28 };
-    /* orbit: tilted ellipse just outside the rim */
+    G.R = narrow ? 760 : 1320;
+    G.cx = narrow ? W * 0.22 + G.R : Math.max(W * 0.30, W - 1100) + G.R;
+    G.cy = narrow ? H * 0.64 + G.R : H * 0.50 + G.R;
+    moon = narrow ? { x: W * 0.82, y: H * 0.16, r: 17 } : { x: Math.max(84, W * 0.08), y: H * 0.18, r: 30 };
     orbit = { rx: G.R * 1.085, ry: G.R * 1.03, rot: -0.12, range: null };
-    var vis = [];
-    for (var i = 0; i < 1440; i++) {
-      var a = i / 1440 * Math.PI * 2, p = orbitPoint(a);
-      if (p.x > -40 && p.x < W + 40 && p.y > -40 && p.y < HS * 0.86) vis.push(a);
+    /* the discs (planet and its two glows) share one box */
+    /* the box is a little larger than the planet so the photo's soft edge is kept */
+    var BR = G.R * 1.025, size = BR * 2;
+    for (var i = 0; i < discs.length; i++) {
+      var d = discs[i].style;
+      d.width = d.height = size + 'px';
+      d.left = (G.cx - BR) + 'px'; d.top = (G.cy - BR) + 'px';
+      var im = discs[i].querySelector('img').style;
+      im.left = (BR + IMG_FROM * G.R) + 'px'; im.top = (BR + IMG_FROM * G.R) + 'px';
+      im.width = im.height = ((IMG_TO - IMG_FROM) * G.R) + 'px';
     }
+    /* zoom towards the lit edge */
+    wrap.style.transformOrigin = (G.cx + SUN.x * G.R) + 'px ' + (G.cy + SUN.y * G.R) + 'px';
+    /* visible stretch of the orbit */
+    var vis = [];
+    for (var a = 0; a < 1440; a++) {
+      var ang = a / 1440 * Math.PI * 2, p = orbitPoint(ang);
+      if (p.x > -30 && p.x < W + 30 && p.y > -30 && p.y < H + 30) vis.push(ang);
+    }
+    orbit.range = null;
     if (vis.length) {
-      /* the visible stretch can wrap past 2π; find the largest gap and start after it */
-      var gaps = 0, gi = 0;
+      var gap = 0, gi = 0;
       for (var j = 0; j < vis.length; j++) {
-        var nxt = j + 1 < vis.length ? vis[j + 1] : vis[0] + Math.PI * 2;
-        if (nxt - vis[j] > gaps) { gaps = nxt - vis[j]; gi = j; }
+        var nx = j + 1 < vis.length ? vis[j + 1] : vis[0] + Math.PI * 2;
+        if (nx - vis[j] > gap) { gap = nx - vis[j]; gi = j; }
       }
-      var start = vis[(gi + 1) % vis.length], end = vis[gi];
-      if (end < start) end += Math.PI * 2;
-      orbit.range = [start, end];
+      var s = vis[(gi + 1) % vis.length], e = vis[gi];
+      if (e < s) e += Math.PI * 2;
+      orbit.range = [s, e];
     }
   }
   function orbitPoint(a) {
-    var x = Math.cos(a) * orbit.rx, y = Math.sin(a) * orbit.ry;
-    var c = Math.cos(orbit.rot), s = Math.sin(orbit.rot);
+    var x = Math.cos(a) * orbit.rx, y = Math.sin(a) * orbit.ry, c = Math.cos(orbit.rot), s = Math.sin(orbit.rot);
     return { x: G.cx + x * c - y * s, y: G.cy + x * s + y * c };
   }
 
-  /* ---- the planet and its atmosphere, rendered once per size ---- */
-  /* real photographs underneath the rendered light:
-     a Milky Way star field, and a dark planet's surface mapped onto the disc */
-  var PHOTO = { stars: '/assets/img/space/stars.webp', surface: '/assets/img/space/planet-surface.webp', moon: '/assets/img/space/moon.webp' };
-  var SURFACE_R = 1165;                     /* radius of the disc inside planet-surface.webp (2400 px) */
-  var pics = {};
-  function loadPics(done) {
-    var keys = Object.keys(PHOTO), left = keys.length;
-    keys.forEach(function (k) {
-      var im = new Image(); im.decoding = 'async';
-      im.onload = im.onerror = function () { if (im.naturalWidth) pics[k] = im; if (--left === 0) done(); };
-      im.src = PHOTO[k];
-    });
-  }
-  function baseLayer(w, h, scale) {
-    var c = document.createElement('canvas'); c.width = w; c.height = h;
-    var x = c.getContext('2d');
-    x.fillStyle = '#000'; x.fillRect(0, 0, w, h);
-    if (pics.stars) {
-      var iw = pics.stars.naturalWidth, ih = pics.stars.naturalHeight, f = Math.max(w / iw, h / ih);
-      x.globalAlpha = 0.5;
-      x.drawImage(pics.stars, (w - iw * f) / 2, (h - ih * f) / 2, iw * f, ih * f);
-      x.globalAlpha = 1;
-      /* keep it quieter behind the headline */
-      var v = x.createLinearGradient(0, 0, w * 0.7, 0);
-      v.addColorStop(0, 'rgba(0,0,0,0.55)'); v.addColorStop(0.75, 'rgba(0,0,0,0.25)'); v.addColorStop(1, 'rgba(0,0,0,0)');
-      x.fillStyle = v; x.fillRect(0, 0, w, h);
-    }
-    var R = G.R * scale, cx = G.cx * scale, cy = G.cy * scale;
-    x.save(); x.beginPath(); x.arc(cx, cy, R, 0, 6.2832); x.clip();
-    x.fillStyle = '#000'; x.fillRect(0, 0, w, h);
-    if (pics.surface) {
-      var s = R / SURFACE_R, sz = 2400 * s;
-      x.drawImage(pics.surface, cx - sz / 2, cy - sz / 2, sz, sz);
-    }
-    x.restore();
-    return x.getImageData(0, 0, w, h).data;
-  }
+  function sizeCanvas(c) { c.width = W * DPR; c.height = H * DPR; c.style.width = W + 'px'; c.style.height = H + 'px'; }
 
-  function renderGlow() {
-    var scale = W > 1600 ? 0.75 : 1;        /* soft light: a little lower resolution is fine on big screens */
-    var w = Math.round(W * scale), h = Math.round(HS * scale);
-    glowC.width = w; glowC.height = h;
-    glowC.style.width = W + 'px'; glowC.style.height = HS + 'px';
-    var ctx = glowC.getContext('2d');
-    var img = ctx.createImageData(w, h), d = img.data;
-    var base = baseLayer(w, h, scale);
-    var R = G.R * scale, cx = G.cx * scale, cy = G.cy * scale, k = G.k * scale;
-    var exp = Math.exp, sqrt = Math.sqrt, max = Math.max, pow = Math.pow;
-    for (var y = 0; y < h; y++) {
-      var fy = y / h;
-      /* deep space: almost black at the top, a touch of navy lower down */
-      var br = 2 + fy * 4, bg = 3 + fy * 6, bb = 6 + fy * 9;
-      var dy = y - cy;
-      for (var x = 0; x < w; x++) {
-        var dx = x - cx;
-        var dist = sqrt(dx * dx + dy * dy);
-        var t = dist - R;                   /* <0 inside the planet */
-        var nx = dx / dist, ny = dy / dist;
-        var facing = nx * SUN.x + ny * SUN.y;
-        var lit = facing > 0 ? 0.06 + 0.94 * pow(facing, 4) : 0.06 * max(0, 1 + facing);
-        var r, g, b;
-        if (t >= 0) {
-          var tt = t / k;
-          var core = exp(-tt / 1.4), inner = exp(-tt / 8), mid = exp(-tt / 38), outer = exp(-tt / 150), far = exp(-tt / 440);
-          /* warm close to the rim (brand orange), cooling to violet further out */
-          r = br + lit * (core * 255 + inner * 240 + mid * 150 + outer * 52 + far * 14);
-          g = bg + lit * (core * 240 + inner * 120 + mid * 52 + outer * 26 + far * 8);
-          b = bb + lit * (core * 228 + inner * 70 + mid * 46 + outer * 96 + far * 30);
-        } else {
-          var ti = -t / k;
-          var rim = exp(-ti / 1.6), glow = exp(-ti / 22), deep = exp(-ti / 140);
-          /* night side: dark, with the atmosphere showing just inside the edge */
-          r = lit * (rim * 255 + glow * 130 + deep * 22);
-          g = lit * (rim * 226 + glow * 50 + deep * 10);
-          b = 2 + lit * (rim * 210 + glow * 40 + deep * 28);
-        }
-        var n = (Math.random() - 0.5) * 3;  /* grain: hides banding */
-        var o = (y * w + x) * 4;
-        /* add the light on top of the photo (stars outside, planet surface inside) */
-        var pr = base[o], pg = base[o + 1], pb = base[o + 2];
-        if (t < 0) { var keep = 0.42; pr *= keep; pg *= keep; pb *= keep; }
-        d[o] = pr + r + n; d[o + 1] = pg + g + n; d[o + 2] = pb + b + n; d[o + 3] = 255;
-      }
-    }
-    ctx.putImageData(img, 0, 0);
-  }
-
-  /* ---- stars ---- */
+  /* ---- stars that drift and blink, over the photo ---- */
   function buildStars() {
-    starC.width = W * DPR; starC.height = HS * DPR;
-    starC.style.width = W + 'px'; starC.style.height = HS + 'px';
+    sizeCanvas(starC);
     stars = [];
-    var n = Math.round(W * HS / 26000);
+    var n = Math.round(W * H / 5200);
     for (var i = 0; i < n; i++) {
-      var x = Math.random() * W, y = Math.random() * HS;
-      var dist = Math.sqrt((x - G.cx) * (x - G.cx) + (y - G.cy) * (y - G.cy));
-      if (dist < G.R + 30) continue;        /* no stars in front of the planet */
-      var warm = Math.random();
-      stars.push({ x: x, y: y,
-        r: Math.random() < 0.07 ? rnd(1, 1.5) : rnd(0.35, 0.85),
-        a: rnd(0.15, 0.7), s: rnd(0.12, 0.5), p: rnd(0, 6.28),
-        c: warm < 0.12 ? '255,214,190' : warm < 0.24 ? '200,205,255' : '236,238,246' });
+      var tint = Math.random();
+      stars.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() < 0.06 ? rnd(0.9, 1.4) : rnd(0.3, 0.75),
+        a: rnd(0.25, 0.85),
+        vx: rnd(-2.2, -0.4), vy: rnd(-0.6, 0.6),         /* a slow drift, mostly to the left */
+        tw: rnd(0.2, 0.7), p: rnd(0, 6.28),
+        blink: Math.random() < 0.18 ? { every: rnd(5, 14), off: rnd(0, 14), len: rnd(0.8, 1.6) } : null,
+        c: tint < 0.12 ? '255,220,200' : tint < 0.28 ? '205,215,255' : '240,242,250'
+      });
     }
   }
-  function drawStars(t) {
+  function drawStars(t, dt) {
     var ctx = starC.getContext('2d');
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    ctx.clearRect(0, 0, W, HS);
+    ctx.clearRect(0, 0, W, H);
     for (var i = 0; i < stars.length; i++) {
       var s = stars[i];
-      var a = reduce ? s.a : s.a * (0.5 + 0.5 * Math.sin(t * s.s + s.p));
+      if (!reduce) {
+        s.x += s.vx * dt; s.y += s.vy * dt;
+        if (s.x < -4) s.x = W + 4;
+        if (s.y < -4) s.y = H + 4; else if (s.y > H + 4) s.y = -4;
+      }
+      var a = reduce ? s.a : s.a * (0.6 + 0.4 * Math.sin(t * s.tw + s.p));
+      if (s.blink && !reduce) {
+        /* now and then a star fades out completely and comes back */
+        var ph = ((t + s.blink.off) % s.blink.every) / s.blink.len;
+        if (ph < 1) a *= Math.abs(1 - ph * 2);
+      }
+      if (a < 0.01) continue;
       ctx.fillStyle = 'rgba(' + s.c + ',' + a.toFixed(3) + ')';
       ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.2832); ctx.fill();
     }
   }
 
-  /* ---- crisp rim, orbit, satellite, moon ---- */
-  function sizeFx() {
-    fxC.width = W * DPR; fxC.height = HS * DPR;
-    fxC.style.width = W + 'px'; fxC.style.height = HS + 'px';
-  }
-  function drawMoon(ctx) {
-    var m = moon, r = m.r;
-    var halo = ctx.createRadialGradient(m.x, m.y, r * 0.9, m.x, m.y, r * 3.2);
-    halo.addColorStop(0, 'rgba(220,226,255,0.10)'); halo.addColorStop(1, 'rgba(220,226,255,0)');
-    ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(m.x, m.y, r * 3.2, 0, 6.2832); ctx.fill();
-    if (!pics.moon) return;
-    var mc = document.createElement('canvas'), S = Math.ceil(r * 2 * DPR);
-    mc.width = mc.height = S;
-    var x = mc.getContext('2d');
-    x.drawImage(pics.moon, 0, 0, S, S);
-    /* shade the side facing away from the light, so it sits in the same scene */
-    x.globalCompositeOperation = 'source-atop';
-    var c = S / 2, sx = c - SUN.x * c * 0.95, sy = c - SUN.y * c * 0.95;
-    var g = x.createRadialGradient(sx, sy, c * 0.1, sx, sy, c * 1.6);
-    g.addColorStop(0, 'rgba(4,5,9,0.85)'); g.addColorStop(0.55, 'rgba(4,5,9,0.4)'); g.addColorStop(1, 'rgba(4,5,9,0)');
-    x.fillStyle = g; x.fillRect(0, 0, S, S);
-    ctx.globalAlpha = 1;
-    ctx.drawImage(mc, m.x - r, m.y - r, r * 2, r * 2);
-    ctx.globalAlpha = 1;
-  }
+  /* ---- orbit and the light travelling along it ---- */
   function drawFx(t) {
     var ctx = fxC.getContext('2d');
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    ctx.clearRect(0, 0, W, HS);
-    /* crisp rim line, brightest where it faces the sun; the bright patch drifts */
-    var drift = reduce ? 0 : Math.sin(t / 30 * Math.PI * 2) * 0.07;
-    var sunA = Math.atan2(SUN.y, SUN.x) + drift;
-    if (ctx.createConicGradient) {
-      var cg = ctx.createConicGradient(sunA - Math.PI * 0.42, G.cx, G.cy);
-      cg.addColorStop(0, 'rgba(255,236,220,0)');
-      cg.addColorStop(0.42 * 0.5, 'rgba(255,236,220,0.55)');
-      cg.addColorStop(0.42, 'rgba(255,248,240,1)');
-      cg.addColorStop(0.42 * 1.5, 'rgba(255,236,220,0.55)');
-      cg.addColorStop(0.84, 'rgba(255,236,220,0)');
-      cg.addColorStop(1, 'rgba(255,236,220,0)');
-      ctx.strokeStyle = cg;
-    } else ctx.strokeStyle = 'rgba(255,236,220,0.75)';
-    ctx.lineWidth = 1.1;
-    ctx.beginPath(); ctx.arc(G.cx, G.cy, G.R + 0.5, 0, 6.2832); ctx.stroke();
-
-    /* orbit and satellite */
-    if (orbit.range) {
-      var a0 = orbit.range[0], a1 = orbit.range[1], span = a1 - a0;
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(230,222,255,0.16)';
-      ctx.beginPath();
-      for (var i = 0; i <= 160; i++) { var p = orbitPoint(a0 + span * i / 160); i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y); }
-      ctx.stroke();
-      var period = 40;                         /* seconds to cross the screen */
-      var f = reduce ? 0.42 : (t / period) % 1;
-      var a = a0 + span * f;
-      var fade = Math.min(1, f / 0.08, (1 - f) / 0.08);
-      /* trail */
-      for (var k = 0; k < 28; k++) {
-        var q1 = orbitPoint(a - span * 0.004 * k), q2 = orbitPoint(a - span * 0.004 * (k + 1));
-        ctx.strokeStyle = 'rgba(255,214,190,' + (0.32 * (1 - k / 28) * fade).toFixed(3) + ')';
-        ctx.lineWidth = 1.1;
-        ctx.beginPath(); ctx.moveTo(q1.x, q1.y); ctx.lineTo(q2.x, q2.y); ctx.stroke();
-      }
-      var s = orbitPoint(a);
-      var gl = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, 6);
-      gl.addColorStop(0, 'rgba(255,226,206,' + (0.35 * fade).toFixed(3) + ')');
-      gl.addColorStop(1, 'rgba(255,170,130,0)');
-      ctx.fillStyle = gl; ctx.beginPath(); ctx.arc(s.x, s.y, 6, 0, 6.2832); ctx.fill();
-      ctx.fillStyle = 'rgba(255,250,245,' + fade.toFixed(3) + ')';
-      ctx.beginPath(); ctx.arc(s.x, s.y, 2, 0, 6.2832); ctx.fill();
+    ctx.clearRect(0, 0, W, H);
+    if (!orbit.range) return;
+    var a0 = orbit.range[0], span = orbit.range[1] - a0;
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(214,222,255,0.13)';
+    ctx.beginPath();
+    for (var i = 0; i <= 180; i++) { var p = orbitPoint(a0 + span * i / 180); if (i) ctx.lineTo(p.x, p.y); else ctx.moveTo(p.x, p.y); }
+    ctx.stroke();
+    var f = reduce ? 0.42 : (t / 40) % 1;
+    var a = a0 + span * f, fade = Math.min(1, f / 0.08, (1 - f) / 0.08);
+    for (var k = 0; k < 26; k++) {
+      var q1 = orbitPoint(a - span * 0.004 * k), q2 = orbitPoint(a - span * 0.004 * (k + 1));
+      ctx.strokeStyle = 'rgba(235,240,255,' + (0.3 * (1 - k / 26) * fade).toFixed(3) + ')';
+      ctx.beginPath(); ctx.moveTo(q1.x, q1.y); ctx.lineTo(q2.x, q2.y); ctx.stroke();
     }
+    var s = orbitPoint(a);
+    ctx.fillStyle = 'rgba(255,255,255,' + (0.95 * fade).toFixed(3) + ')';
+    ctx.beginPath(); ctx.arc(s.x, s.y, 1.8, 0, 6.2832); ctx.fill();
   }
-  /* the moon sits on its own layer so it can move at its own speed on scroll */
-  var moonC = document.createElement('canvas');
-  moonC.className = 'h-moon';
-  space.appendChild(moonC);
+
+  /* ---- the moon: real photo, shaded away from the light ---- */
+  var moonImg = new Image();
+  moonImg.decoding = 'async';
+  moonImg.onload = function () { renderMoon(); };
+  moonImg.src = '/assets/img/space/moon.webp';
   function renderMoon() {
-    var pad = moon.r * 4;
-    moonC.width = pad * 2 * DPR; moonC.height = pad * 2 * DPR;
-    moonC.style.width = pad * 2 + 'px'; moonC.style.height = pad * 2 + 'px';
+    if (!moon.r) return;
+    var r = moon.r, pad = r * 3.2, S = pad * 2;
+    moonC.width = S * DPR; moonC.height = S * DPR;
+    moonC.style.width = S + 'px'; moonC.style.height = S + 'px';
     moonC.style.left = (moon.x - pad) + 'px'; moonC.style.top = (moon.y - pad) + 'px';
     var ctx = moonC.getContext('2d');
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-    var real = moon; moon = { x: pad, y: pad, r: real.r };
-    drawMoon(ctx);
-    moon = real;
+    ctx.clearRect(0, 0, S, S);
+    var halo = ctx.createRadialGradient(pad, pad, r * 0.9, pad, pad, pad);
+    halo.addColorStop(0, 'rgba(210,220,255,0.10)'); halo.addColorStop(1, 'rgba(210,220,255,0)');
+    ctx.fillStyle = halo; ctx.fillRect(0, 0, S, S);
+    if (!moonImg.naturalWidth) return;
+    var mc = document.createElement('canvas'), M = Math.ceil(r * 2 * DPR);
+    mc.width = mc.height = M;
+    var x = mc.getContext('2d');
+    x.drawImage(moonImg, 0, 0, M, M);
+    x.globalCompositeOperation = 'source-atop';
+    var c = M / 2, sx = c - SUN.x * c * 0.95, sy = c - SUN.y * c * 0.95;
+    var g = x.createRadialGradient(sx, sy, c * 0.1, sx, sy, c * 1.6);
+    g.addColorStop(0, 'rgba(4,5,9,0.85)'); g.addColorStop(0.55, 'rgba(4,5,9,0.4)'); g.addColorStop(1, 'rgba(4,5,9,0)');
+    x.fillStyle = g; x.fillRect(0, 0, M, M);
+    ctx.drawImage(mc, pad - r, pad - r, r * 2, r * 2);
   }
 
-  /* ---- scroll: parallax and a soft hand-over to the next section ---- */
+  /* ---- scroll: pinned hero, the view moves in towards the planet ---- */
+  var lastP = -1;
   function onScroll() {
-    var y = window.scrollY || window.pageYOffset || 0;
-    if (y > H * 1.6) return;
-    var p = Math.min(1, y / H);
-    glowC.style.transform = fxC.style.transform = 'translate3d(0,' + (y * 0.38).toFixed(1) + 'px,0) scale(' + (1 + p * 0.05).toFixed(4) + ')';
-    starC.style.transform = 'translate3d(0,' + (y * 0.62).toFixed(1) + 'px,0)';
-    moonC.style.transform = 'translate3d(0,' + (y * 0.18).toFixed(1) + 'px,0)';
+    if (reduce) return;
+    var p;
+    if (track) {
+      var rect = track.getBoundingClientRect(), run = track.offsetHeight - H;
+      p = run > 0 ? Math.min(1, Math.max(0, -rect.top / run)) : 0;
+    } else {
+      p = Math.min(1, Math.max(0, (window.scrollY || 0) / H));
+    }
+    if (Math.abs(p - lastP) < 0.0005) return;
+    lastP = p;
+    var e = p * p * (3 - 2 * p);               /* ease in and out */
+    wrap.style.transform = 'translate3d(0,' + (-H * 0.16 * e).toFixed(1) + 'px,0) scale(' + (1 + 0.38 * e).toFixed(4) + ')';
+    field.style.transform = 'scale(' + (1 + 0.10 * e).toFixed(4) + ')';
+    starC.style.transform = 'scale(' + (1 + 0.22 * e).toFixed(4) + ')';
+    moonC.style.transform = 'translate3d(' + (-W * 0.05 * e).toFixed(1) + 'px,' + (-H * 0.22 * e).toFixed(1) + 'px,0) scale(' + (1 + 0.5 * e).toFixed(3) + ')';
+    moonC.style.opacity = (1 - e * 0.7).toFixed(3);
     if (content) {
-      content.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
-      content.style.opacity = Math.max(0, 1 - p * 1.25).toFixed(3);
+      var tp = Math.min(1, p / 0.55);
+      content.style.transform = 'translate3d(0,' + (-H * 0.10 * tp).toFixed(1) + 'px,0)';
+      content.style.opacity = (1 - tp).toFixed(3);
+      content.style.visibility = tp >= 1 ? 'hidden' : '';
     }
   }
 
-  var running = false, raf = 0, visible = true;
-  function frame(now) { var t = now / 1000; drawStars(t); drawFx(t); raf = requestAnimationFrame(frame); }
-  function start() { if (!reduce && !running && visible && !document.hidden) { running = true; raf = requestAnimationFrame(frame); } }
+  var running = false, raf = 0, visible = true, last = 0;
+  function frame(now) {
+    var t = now / 1000, dt = last ? Math.min(0.1, t - last) : 0; last = t;
+    drawStars(t, dt); drawFx(t);
+    raf = requestAnimationFrame(frame);
+  }
+  function start() { if (!running && visible && !document.hidden) { running = true; last = 0; raf = requestAnimationFrame(frame); } }
   function stop() { running = false; cancelAnimationFrame(raf); }
 
   function all() {
-    geometry(); renderGlow(); buildStars(); sizeFx(); renderMoon();
-    var t = performance.now() / 1000; drawStars(t); drawFx(t); onScroll();
+    geometry(); buildStars(); sizeCanvas(fxC); renderMoon();
+    var t = performance.now() / 1000; drawStars(t, 0); drawFx(t);
+    lastP = -1; onScroll();
   }
   all();
-  loadPics(function () { renderGlow(); renderMoon(); space.classList.add('is-ready'); });
-  setTimeout(function () { space.classList.add('is-ready'); }, 2500);
-  var rt = 0, lastW = W;
+  var ready = function () { space.classList.add('is-ready'); };
+  var lit = wrap.querySelector('.h-planet img');
+  if (lit.complete) ready(); else { lit.addEventListener('load', ready); setTimeout(ready, 3000); }
+
+  var rt = 0, lastW = W, lastH = H;
   window.addEventListener('resize', function () {
     clearTimeout(rt);
-    rt = setTimeout(function () { if (hero.offsetWidth !== lastW || Math.abs(hero.offsetHeight - H) > 80) { lastW = hero.offsetWidth; all(); } }, 200);
+    rt = setTimeout(function () {
+      if (hero.offsetWidth !== lastW || Math.abs(hero.offsetHeight - lastH) > 120) { lastW = hero.offsetWidth; lastH = hero.offsetHeight; all(); }
+    }, 180);
   }, { passive: true });
-  if (!reduce) window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', function () { requestAnimationFrame(onScroll); }, { passive: true });
+  if (reduce) return;
   if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) start(); else stop(); }).observe(space);
+    new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) start(); else stop(); }).observe(hero);
   }
   document.addEventListener('visibilitychange', function () { if (document.hidden) stop(); else start(); });
   start();

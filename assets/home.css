@@ -273,18 +273,39 @@ body.home{
 }
 @media(prefers-reduced-motion:reduce){ .home .h-hero-art{animation:none;} }
 
-/* ===== Hero background (17 Oct 2026, v2): space scene drawn in assets/space.js =====
-   The scene layer runs 45vh past the hero and fades out underneath the work
-   section, whose top is transparent, so scrolling hands over smoothly. */
-.home .h-hero.has-space{background:transparent;overflow:visible;z-index:0;}
-.home .h-space{
-  position:absolute;left:0;right:0;top:0;height:calc(100% + 45vh);z-index:0;overflow:hidden;pointer-events:none;
-  background:linear-gradient(#05070b,#0b0f15);
-  -webkit-mask:linear-gradient(to bottom,#000 0,#000 calc(100% - 52vh),rgba(0,0,0,.55) calc(100% - 26vh),transparent 100%);
-          mask:linear-gradient(to bottom,#000 0,#000 calc(100% - 52vh),rgba(0,0,0,.55) calc(100% - 26vh),transparent 100%);
+/* ===== Hero background (17 Oct 2026, v3): photographic space scene, assets/space.js =====
+   The hero is pinned inside .hero-track while the view moves in towards the
+   planet; the work section then slides up over it with a soft dark edge. */
+.home .hero-track{position:relative;height:175svh;}
+.home .hero-track > .h-hero.has-space{
+  position:sticky;top:0;height:100svh;min-height:600px;
+  background:#030407;overflow:hidden;z-index:0;
 }
-.home .h-space canvas{position:absolute;left:0;top:0;will-change:transform;transform-origin:70% 60%;}
-.home .h-space .h-glow,.home .h-space .h-fx{opacity:0;transition:opacity 1.6s ease;}
-.home .h-space.is-ready .h-glow,.home .h-space.is-ready .h-fx{opacity:1;}
-.home .h-hero.has-space > .container{position:relative;z-index:2;will-change:transform,opacity;}
-.home .h-hero.has-space + .h-work{position:relative;z-index:1;background:linear-gradient(to bottom,rgba(15,21,28,0) 0,rgba(15,21,28,0) 8vh,var(--h-navy) 46vh);}
+.home .h-space{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.home .h-space > *,.home .h-planet-wrap > *{position:absolute;}
+.home .h-starfield{inset:0;width:100%;height:100%;object-fit:cover;opacity:.62;will-change:transform;}
+/* darker behind the headline so it stays easy to read */
+.home .h-space::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,4,7,.62) 0%,rgba(3,4,7,.3) 45%,rgba(3,4,7,0) 70%);}
+.home .h-stars,.home .h-moon{left:0;top:0;will-change:transform;}
+.home .h-moon{z-index:3;}
+.home .h-planet-wrap{inset:0;will-change:transform;z-index:2;}
+.home .h-disc{border-radius:50%;overflow:hidden;}
+.home .h-disc img{position:absolute;max-width:none;}
+.home .h-planet{background:#000;filter:brightness(.95) contrast(1.18);
+  -webkit-mask:radial-gradient(closest-side,#000 96.5%,transparent 100%);mask:radial-gradient(closest-side,#000 96.5%,transparent 100%);}
+/* the glow is the photo itself, blurred and screened outwards */
+.home .h-bloom{mix-blend-mode:screen;filter:blur(14px) brightness(1.8) saturate(1.15);opacity:.85;}
+.home .h-bloom.is-wide{filter:blur(90px) brightness(2.2) saturate(1.2);opacity:.5;}
+.home .h-fx{left:0;top:0;}
+.home .h-space .h-planet-wrap,.home .h-starfield{opacity:0;transition:opacity 1.6s ease;}
+.home .h-space.is-ready .h-planet-wrap{opacity:1;}
+.home .h-space.is-ready .h-starfield{opacity:.62;}
+.home .hero-track .h-hero.has-space > .container{position:relative;z-index:4;will-change:transform,opacity;}
+/* the next section slides over the pinned hero */
+.home .hero-track + .h-work{position:relative;z-index:1;margin-top:-30svh;
+  background:linear-gradient(to bottom,rgba(15,21,28,0) 0,rgba(15,21,28,.85) 14svh,var(--h-navy) 30svh);}
+@media(prefers-reduced-motion:reduce){
+  .home .hero-track{height:auto;}
+  .home .hero-track > .h-hero.has-space{position:relative;}
+  .home .hero-track + .h-work{margin-top:0;background:var(--h-navy);}
+}
