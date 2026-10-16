@@ -224,3 +224,13 @@
 .home .w-case .w-title svg{flex:0 0 auto;width:18px;height:18px;opacity:.55;transition:transform .3s ease,opacity .3s ease;}
 .home .w-case:hover .w-title svg,.home .w-case:focus-visible .w-title svg{opacity:1;transform:translate(3px,-3px);}
 .home .w-case .w-desc{max-width:52ch;}
+
+/* category tag on case cards: a small frosted label on the image (16 Oct 2026) */
+.home .w-case .w-media{position:relative;}
+.home .w-tag{
+  position:absolute;left:14px;top:14px;z-index:1;
+  padding:6px 11px;border-radius:999px;
+  font-family:var(--font-head);font-size:.68rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;line-height:1;
+  color:#fff;background:rgba(15,21,28,.55);border:1px solid rgba(255,255,255,.18);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}

@@ -234,7 +234,8 @@
     root.innerHTML = featured.map(function (p) {
       return '<a class="w-case" href="' + esc(p.link || ('/work?p=' + encodeURIComponent(p.slug))) + '">' +
         '<div class="w-media"><img src="' + esc(p.thumb) + '" alt="' + esc(p.title) + '" loading="lazy"' +
-          ((p.thumbClass || '').indexOf('thumb-top') > -1 ? ' style="object-position:center top"' : '') + '></div>' +
+          ((p.thumbClass || '').indexOf('thumb-top') > -1 ? ' style="object-position:center top"' : '') + '>' +
+          (p.category ? '<span class="w-tag">' + esc(p.category) + '</span>' : '') + '</div>' +
         '<h3 class="w-title">' + esc(p.title) + arrow + '</h3>' +
         '<p class="w-desc">' + esc(p.tagline) + '</p>' +
       '</a>';

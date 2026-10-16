@@ -232,3 +232,24 @@ body.home{
 
 /* services call to action (Oct 2026) */
 .home .h-services-cta{margin-top:clamp(36px,4vw,56px);}
+
+/* ===== 16 Oct 2026: slimmer uppercase buttons, smaller homepage headings, jellyfish hero ===== */
+.home .h-btn{
+  font-family:var(--h-head);font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:12px 22px;line-height:1.2;
+}
+@media(max-width:700px){ .home .h-btn{padding:11px 18px;} }
+.home .mobile-menu .btn{font-family:var(--h-head);font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:13px 24px;}
+
+/* homepage only: calmer heading sizes */
+.home.is-index .h-display{font-size:clamp(2.5rem,5.4vw,5rem);line-height:.95;max-width:17ch;}
+.home.is-index .h-title{font-size:clamp(2.1rem,4.4vw,4rem);}
+.home.is-index .h-close .h-title{max-width:14ch;}
+.home.is-index .h-sub{font-size:clamp(1.3rem,1.9vw,1.7rem);}
+
+/* moon jellyfish drifting behind the hero text */
+.home .h-hero{position:relative;overflow:hidden;}
+.home .h-hero > .container{position:relative;z-index:2;}
+.home .jelly-layer{position:absolute;inset:0;z-index:1;pointer-events:none;animation:jellyIn 2.4s ease both;}
+.home .jelly-layer .jelly{position:absolute;left:0;top:0;height:auto;max-width:none;will-change:transform;transform-origin:50% 35%;user-select:none;}
+@keyframes jellyIn{from{opacity:0;}to{opacity:1;}}

@@ -184,7 +184,8 @@
     {
       "bleed": {
         "src": "/assets/img/work/soundlax/visual-language.webp",
-        "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration"
+        "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration",
+        "contain": true
       }
     },
     {

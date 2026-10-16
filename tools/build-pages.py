@@ -7,7 +7,7 @@ the case study shells and the SoundLax landing page are not built here.
 """
 import os
 
-V = {'site': 50, 'home': 6, 'pages': 5, 'case': 22, 'projects': 28, 'portfolio': 4, 'sitejs': 37, 'casejs': 20}
+V = {'site': 51, 'home': 7, 'pages': 6, 'case': 23, 'projects': 29, 'portfolio': 5, 'sitejs': 37, 'casejs': 21}
 EMAIL = 'ben.ng189@gmail.com'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'
@@ -60,7 +60,7 @@ def nav(current):
 
 CLOSE = f'''<section class="h-section h-grey h-close">
   <div class="container">
-    <h2 class="h-head h-title">Got something in mind?</h2>
+    <h2 class="h-head h-title">Have a project in mind?</h2>
     <p class="h-lead">Tell me what you're working on. The first call is free, and you'll get a straight answer on what it would take.</p>
     <div class="h-actions">
       <a class="h-btn h-btn-dark" href="/contact">Book a free call</a>

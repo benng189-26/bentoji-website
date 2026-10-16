@@ -843,3 +843,6 @@ html.js .rv.rv-now,html.js .rv.rv-now .c-media,html.js .rv.rv-now .c-media img{t
 /* back to top: light over dark sections (set by site.js) */
 .to-top.on-dark{background:#f3f3f3;color:#0f151c;border-color:rgba(15,21,28,.1);box-shadow:0 12px 30px rgba(0,0,0,.45);}
 .to-top.on-dark:hover{background:#f4552a;color:#fff;}
+
+/* uppercase, slimmer buttons site-wide (16 Oct 2026) */
+.btn{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:600;padding:11px 20px;}

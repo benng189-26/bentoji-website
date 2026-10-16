@@ -504,3 +504,11 @@ body.case{--c-hl:var(--c-accent);}
 .case .c-badge a{display:inline-block;transition:transform .25s ease;}
 .case .c-badge a:hover{transform:translateY(-2px);}
 .case .c-badge img{display:block;height:56px;width:auto;}
+
+/* full-screen band with the image centred at its own size (v23) */
+.case .c-bleed-wrap.is-contain{
+  min-height:100svh;display:flex;align-items:center;
+  padding:clamp(64px,8vw,120px) 0;background:var(--h-navy-2,var(--h-navy));
+}
+.case .c-bleed-wrap.is-contain .container{width:100%;}
+.case .c-bleed-inner{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto;border-radius:14px;}

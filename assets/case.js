@@ -344,7 +344,10 @@
     var navIndex = 0;
     (d.sections || []).forEach(function (s) {
       if (s.bleed) {
-        html += '<div class="c-bleed-wrap"><img class="c-bleed" src="' + esc(s.bleed.src) + '" alt="' + esc(s.bleed.alt) + '" loading="lazy" decoding="async"></div>';
+        /* "contain": a full-screen band with the image at its own size in the middle, for images too small to stretch */
+        html += s.bleed.contain
+          ? '<div class="c-bleed-wrap is-contain"><div class="container"><img class="c-bleed-inner" src="' + esc(s.bleed.src) + '" alt="' + esc(s.bleed.alt) + '" loading="lazy" decoding="async"></div></div>'
+          : '<div class="c-bleed-wrap"><img class="c-bleed" src="' + esc(s.bleed.src) + '" alt="' + esc(s.bleed.alt) + '" loading="lazy" decoding="async"></div>';
         return;
       }
       html += '<section class="h-section c-section h-' + (s.tone === 'grey' ? 'grey' : 'dark') + '"' + (s.id ? ' id="' + esc(s.id) + '"' : '') + '><div class="container">' +

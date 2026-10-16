@@ -1,17 +1,17 @@
 {
   "hero": {
     "pill": "Ben Nguyen · Designer, Auckland",
-    "title": "I design websites, ads, print and apps.",
+    "title": "I design websites, apps and brands that are easy to use.",
     "lead": "I have spent more than ten years designing for agencies, small businesses and my own apps. I take on small jobs, monthly design work and full projects."
   },
   "work": {
     "pill": "Work",
-    "heading": "What I make",
+    "heading": "Selected work",
     "casesLabel": "Case studies"
   },
   "services": {
     "pill": "Services",
-    "heading": "Three ways to work together",
+    "heading": "Ways to work with me",
     "items": [
       {
         "title": "Small jobs",
@@ -43,7 +43,7 @@
     ]
   },
   "cta": {
-    "heading": "Got something in mind?",
+    "heading": "Have a project in mind?",
     "body": "Tell me what you're working on. The first call is free, and you'll get a straight answer on what it would take."
   },
   "footer": {
