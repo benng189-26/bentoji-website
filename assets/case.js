@@ -26,7 +26,8 @@
                 "side": true puts it in the right column of a text run }
    bleed      { "src", "alt" }                  full-width photo between sections
    swatches   { "items": [{ "name", "hex" }] }
-   quotes     { "items": [{ "text", "source" }] }
+   quotes     { "items": [{ "text", "source", "stars": 5, "avatar", "name" }] }
+   badge      { "href", "src", "alt", "text" }  (e.g. the App Store badge)
    stats      { "items": [{ "value", "label" }], "note" }
    list       { "items": ["…"], "heading": optional }
    gallery    { "items": [IMAGE + optional "label"], "cols": 2 | 3, "masonry": true, "title", "caption" }
@@ -211,8 +212,15 @@
     },
     quotes: function (b) {
       return '<div class="c-quotes">' + (b.items || []).map(function (q) {
-        return '<blockquote class="c-quote"><p>' + rich(q.text) + '</p><cite>' + rich(q.source) + '</cite></blockquote>';
+        var stars = q.stars ? '<span class="c-quote-stars" role="img" aria-label="' + q.stars + ' out of 5 stars">' + new Array(q.stars + 1).join('\u2605') + '</span>' : '';
+        var who = (q.avatar ? '<img class="c-quote-avatar" src="' + esc(q.avatar) + '" alt="" loading="lazy">' : '') +
+          '<span class="c-quote-who">' + (q.name ? '<strong>' + esc(q.name) + '</strong>' : '') + '<cite>' + rich(q.source) + '</cite></span>';
+        return '<blockquote class="c-quote">' + stars + '<p>' + rich(q.text) + '</p><footer class="c-quote-by">' + who + '</footer></blockquote>';
       }).join('') + '</div>';
+    },
+    badge: function (b) {
+      return '<div class="c-badge">' + (b.text ? '<p>' + rich(b.text) + '</p>' : '') +
+        '<a href="' + esc(b.href) + '" target="_blank" rel="noopener"><img src="' + esc(b.src) + '" alt="' + esc(b.alt) + '" height="56"></a></div>';
     },
     list: function (b) {
       return '<div class="c-text">' + (b.heading ? '<h3>' + esc(b.heading) + '</h3>' : '') +

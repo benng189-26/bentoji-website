@@ -140,12 +140,12 @@
       "nav": "Visual language",
       "tone": "grey",
       "pill": "Visual language",
-      "heading": "Calm, without the blue gradients",
+      "heading": "Inspired by New Zealand's native birds",
       "blocks": [
         {
           "type": "text",
           "p": [
-            "Many calm apps look calm in the same way, with soft gradients, flat illustrations and blue and purple palettes. I wanted SoundLax to have a little more character and a clear connection to where it was made.",
+            "Calm apps often share a similar look, with soft gradients and cool blue and purple palettes. I wanted SoundLax to feel calm in its own way, with a clear connection to where it was made.",
             "Birdsong is part of everyday life in New Zealand, from suburban gardens to native bush, so native birds felt like a natural place to start. I paired vintage naturalist illustrations with [[bold colour, subtle grain and a clean, modern interface]].",
             "Because each bird also represents a mood, the illustrations work as navigation as well as decoration."
           ]
@@ -178,23 +178,13 @@
               "hex": "#060D27"
             }
           ]
-        },
-        {
-          "type": "image",
-          "src": "/assets/img/work/soundlax/visual-language.webp",
-          "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration"
-        },
-        {
-          "type": "image",
-          "src": "/assets/img/work/soundlax/closeup-bird-card.webp",
-          "alt": "A vintage naturalist illustration of a toucan on a branch, from the SoundLax visual language"
         }
       ]
     },
     {
       "bleed": {
-        "src": "/assets/img/work/soundlax/desk.webp",
-        "alt": "SoundLax playing on a Mac at a desk in the evening"
+        "src": "/assets/img/work/soundlax/visual-language.webp",
+        "alt": "SoundLax visual language: type, colour gradients, sound scenes, bird portraits and a vintage toucan illustration"
       }
     },
     {
@@ -215,10 +205,15 @@
         {
           "type": "image",
           "title": "The Mac app",
-          "src": "/assets/img/work/soundlax/mac-walkthrough.mp4",
+          "src": "/assets/img/work/soundlax/desk.webp",
+          "alt": "SoundLax playing on a Mac at a desk in the evening"
+        },
+        {
+          "type": "image",
+          "src": "/assets/img/work/soundlax/mac-app.mp4",
           "video": true,
-          "alt": "Screen recording of the SoundLax Mac app: the home screen, the sound library, a mix in the Now Playing panel, and a focus session",
-          "ratio": "4/3"
+          "alt": "Screen recording of the SoundLax Mac app: the home screen, the sound library, the noise sounds and the Start here moods",
+          "ratio": "1312/964"
         },
         {
           "type": "image",
@@ -250,19 +245,27 @@
           "items": [
             {
               "text": "When I was working or doing housework, I used to search YouTube for background music and often lose 30 minutes doing it. That doesn't happen with this app.",
-              "source": "App Store review, Japan (translated)"
+              "source": "App Store review, Japan (translated)",
+              "stars": 5,
+              "avatar": "/assets/img/work/soundlax/avatar-toucan.webp"
             },
             {
               "text": "It actually wakes me up like a civilized human being, unlike the default Apple alarm which sounds like a localized nuclear siren designed to trigger a fight-or-flight response.",
-              "source": "App Store review, Vietnam"
+              "source": "App Store review, Vietnam",
+              "stars": 5,
+              "avatar": "/assets/img/work/soundlax/avatar-oriole.webp"
             },
             {
               "text": "The sound quality is lovely, especially the rain and nature tracks, and the overall experience feels polished and easy to use.",
-              "source": "App Store review, New Zealand"
+              "source": "App Store review, New Zealand",
+              "stars": 5,
+              "avatar": "/assets/img/work/soundlax/avatar-cardinal.webp"
             },
             {
               "text": "I just really wish it could auto-save any tweaks I made to existing mixes so they will be ready next time without me having to manually readjust.",
-              "source": "App Store review, Vietnam"
+              "source": "App Store review, US",
+              "stars": 5,
+              "avatar": "/assets/img/work/soundlax/avatar-honeyeater.webp"
             }
           ]
         },
@@ -317,6 +320,13 @@
           "seamless": true,
           "src": "/assets/img/work/soundlax/collage.webp",
           "alt": "A tilted collage of SoundLax screens and App Store screenshots"
+        },
+        {
+          "type": "badge",
+          "text": "SoundLax is available for iPhone, iPad, Apple Watch and Mac.",
+          "href": "https://apps.apple.com/us/app/soundlax-focus-relax-sleep/id6764812942",
+          "src": "https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1778630400",
+          "alt": "Download on the App Store"
         }
       ]
     }

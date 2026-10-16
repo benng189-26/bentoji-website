@@ -490,3 +490,17 @@ body.case{--c-hl:var(--c-accent);}
 .case .c-gallery-item{display:block;}
 .case .c-gallery-label{display:block;margin-top:10px;font-size:.95rem;line-height:1.35;color:var(--h-muted-light);}
 .case .h-dark .c-gallery-label{color:var(--h-muted-dark);}
+
+/* Reviews: stars, reviewer avatar and name (v22) */
+.case .c-quote-stars{display:block;color:var(--c-accent);font-size:1.05rem;letter-spacing:.12em;margin-bottom:12px;}
+.case .c-quote-by{display:flex;align-items:center;gap:12px;}
+.case .c-quote-avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
+.case .c-quote-who{display:flex;flex-direction:column;gap:2px;}
+.case .c-quote-who strong{font-family:var(--font-head);font-weight:700;font-size:.95rem;color:var(--h-ink);}
+/* App Store badge at the end of a case study */
+.case .c-badge{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;}
+.case .c-badge p{margin:0;font-size:1.25rem;}
+.case .h-dark .c-badge p{color:var(--h-on-dark);}
+.case .c-badge a{display:inline-block;transition:transform .25s ease;}
+.case .c-badge a:hover{transform:translateY(-2px);}
+.case .c-badge img{display:block;height:56px;width:auto;}
