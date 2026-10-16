@@ -15,8 +15,8 @@
   var PIECES = window.PIECES || [];
   var SHOW_DRAFTS = window.SHOW_DRAFTS !== false;
   var SHOWCASE = window.SHOWCASE || null;
-  function showcase() {
-    return SHOWCASE.map(function (s) { return PROJECTS.filter(function (p) { return p.slug === s; })[0]; }).filter(Boolean);
+  function showcase(list) {
+    return (list || SHOWCASE).map(function (s) { return PROJECTS.filter(function (p) { return p.slug === s; })[0]; }).filter(Boolean);
   }
 
   var arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>';
@@ -95,6 +95,7 @@
   function workIndex(root) {
     if (SHOWCASE) {
       root.innerHTML = '<div class="w-cases is-showcase"></div>';
+      ['data-set', 'data-back'].forEach(function (a) { if (root.hasAttribute(a)) root.firstChild.setAttribute(a, root.getAttribute(a)); });
       caseCards(root.firstChild);
       return;
     }
@@ -220,8 +221,16 @@
 
   /* ---------- homepage: case study cards ---------- */
   function caseCards(root) {
-    var featured = SHOWCASE ? showcase() :
+    var set = root.getAttribute('data-set');
+    var featured = set && window[set] ? showcase(window[set]) : SHOWCASE ? showcase() :
       PROJECTS.filter(function (p) { return p.featured; }).slice(0, parseInt(root.getAttribute('data-limit') || '3', 10));
+    /* case pages read this to link "Next project" and "All work" back to the list the visitor came from */
+    try {
+      sessionStorage.setItem('bentoji_trail', JSON.stringify({
+        back: root.getAttribute('data-back') || '/portfolio',
+        items: featured.map(function (p) { return { slug: p.slug, title: p.title, href: p.link || ('/work?p=' + encodeURIComponent(p.slug)) }; })
+      }));
+    } catch (e) {}
     root.innerHTML = featured.map(function (p) {
       return '<a class="w-case" href="' + esc(p.link || ('/work?p=' + encodeURIComponent(p.slug))) + '">' +
         '<div class="w-media"><img src="' + esc(p.thumb) + '" alt="' + esc(p.title) + '" loading="lazy"' +

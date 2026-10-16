@@ -99,7 +99,7 @@ body.home{
 .home .nav-toggle span{background:#fff;}
 .home .mobile-menu{background:var(--h-navy);}
 .home .mobile-menu a{color:#fff;border-bottom-color:var(--h-line-dark);}
-.home .mobile-menu .btn{background:var(--h-orange);border-color:var(--h-orange);color:#fff;border-radius:999px;}
+.home .mobile-menu .btn{background:var(--h-orange);border-color:var(--h-orange);color:#fff;border-radius:999px;font-size:1.15rem;letter-spacing:0;padding:16px 30px;border-bottom:0;}
 
 /* ---------- hero ---------- */
 .home .h-hero{
@@ -192,7 +192,11 @@ body.home{
 /* one-colour logo row on the grey band (also fixes white-text logos) */
 .home .h-brands .client-logo img,
 .home .h-brands .client-logo img.logo-light{filter:brightness(0) opacity(.62);mix-blend-mode:normal;}
-.home .h-brands .client-logo img[src*="suzuki"]{filter:grayscale(1);mix-blend-mode:multiply;}
+/* hover: the logo darkens a little and lifts (the row already pauses on hover) */
+.home .h-brands .client-logo img{transition:filter .3s ease,transform .3s ease;}
+@media(hover:hover){
+  .home .h-brands .client-logo:hover img{filter:brightness(0) opacity(.9);transform:translateY(-3px) scale(1.04);}
+}
 
 /* ---------- body text sizing for Darker Grotesque ----------
    It has a small x-height, so body copy runs about 20% larger
@@ -225,3 +229,6 @@ body.home{
 /* Light sections: headings in violet, accents (pills, highlights,
    chips, numbers, buttons) stay orange. */
 .home .h-grey .h-head,.home .h-grey .h-head.is-orange{color:var(--h-violet);}
+
+/* services call to action (Oct 2026) */
+.home .h-services-cta{margin-top:clamp(36px,4vw,56px);}

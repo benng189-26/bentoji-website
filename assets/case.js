@@ -290,10 +290,23 @@
     var h = d.hero || {};
     var html = '';
 
+    /* the list the visitor came from (homepage, /portfolio or /portfolio/all)
+       decides "Next project" and where "All work" goes back to */
+    var backHref = '/portfolio';
+    try {
+      var trail = JSON.parse(sessionStorage.getItem('bentoji_trail') || 'null');
+      var slug = d.slug || location.pathname.split('/').filter(Boolean).pop();
+      var at = trail && trail.items ? trail.items.map(function (x) { return x.slug; }).indexOf(slug) : -1;
+      if (at > -1) {
+        backHref = trail.back || backHref;
+        if (trail.items.length > 1) d.next = trail.items[(at + 1) % trail.items.length];
+      }
+    } catch (e) {}
+
     /* hero: text and image side by side on wide screens (layout A), facts below */
     html += '<section class="h-dark c-hero' + (h.image ? ' has-media' : '') + '" id="top"><div class="container">' +
       '<div class="c-hero-grid"><div class="c-hero-text">' +
-      '<a class="c-back" href="/portfolio">' + arrowLeft + 'All work</a>' +
+      '<a class="c-back" href="' + esc(backHref) + '">' + arrowLeft + 'All work</a>' +
       (h.pill ? '<p class="h-pill">' + esc(h.pill) + '</p>' : '') +
       '<h1 class="h-head">' + rich(h.title) + '</h1>' +
       (h.intro ? '<p class="h-lead">' + rich(h.intro) + '</p>' : '') +

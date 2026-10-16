@@ -7,14 +7,15 @@ the case study shells and the SoundLax landing page are not built here.
 """
 import os
 
-V = {'site': 50, 'home': 5, 'pages': 4, 'case': 21, 'projects': 27, 'portfolio': 2, 'sitejs': 37, 'casejs': 18}
+V = {'site': 50, 'home': 6, 'pages': 4, 'case': 21, 'projects': 28, 'portfolio': 3, 'sitejs': 37, 'casejs': 19}
 EMAIL = 'ben.ng189@gmail.com'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'
 # Pricing and Writing are hidden for now (Oct 2026). To bring them back, restore:
 # NAV = [('Work', '/portfolio'), ('Pricing', '/pricing'), ('SoundLax', '/soundlax-app'), ('Writing', '/writing'), ('Contact', '/contact')]
 # plus the footer Pricing link and the redirects in vercel.json.
-NAV = [('Work', '/portfolio'), ('SoundLax', '/soundlax-app'), ('Contact', '/contact')]
+# Contact is reached through the Let's talk button, so it is not repeated as a nav link (Oct 2026).
+NAV = [('Work', '/portfolio'), ('SoundLax app', '/soundlax-app')]
 
 
 def head(title, desc, canonical, extra_css=()):
@@ -163,7 +164,7 @@ page('portfolio/index.html',
      'Selected case studies by Ben Nguyen, a designer in Auckland: apps, websites and brand identity.',
      '/portfolio',
      hero('Work', 'Selected case studies',
-          'My own app, client websites, packaging, a brand concept and a typeface, each with the thinking behind the design.') +
+          'My own app, a client website, packaging and a brand concept, each with the thinking behind the design.') +
      '''<section class="h-section h-dark" style="padding-top:0">
   <div class="container">
     <div data-work-index></div>
@@ -171,6 +172,25 @@ page('portfolio/index.html',
 </section>
 ''' + CLOSE,
      js=('projects', 'site', 'portfolio'))
+
+# Unlisted: every case study, visual work first (SHOWCASE_ALL in projects.js).
+# Not in the nav or sitemap; shared as a direct link for design roles where
+# the visuals matter more.
+page('portfolio/all/index.html',
+     'Work | Bentoji, Ben Nguyen',
+     'Case studies by Ben Nguyen, a designer in Auckland: packaging, brand identity, a typeface, websites and an app.',
+     '/portfolio',
+     hero('Work', 'Selected case studies',
+          'Packaging, a brand concept, a typeface, client websites and my own app, each with the thinking behind the design.') +
+     '''<section class="h-section h-dark" style="padding-top:0">
+  <div class="container">
+    <div data-work-index data-set="SHOWCASE_ALL" data-back="/portfolio/all"></div>
+  </div>
+</section>
+''' + CLOSE,
+     js=('projects', 'site', 'portfolio'))
+_all = open('portfolio/all/index.html').read()
+open('portfolio/all/index.html', 'w').write(_all.replace('<link rel="canonical"', '<meta name="robots" content="noindex" />\n<link rel="canonical"', 1))
 
 # ---------------------------------------------------------------- Pricing
 small_jobs = [
