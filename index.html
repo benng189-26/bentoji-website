@@ -17,7 +17,7 @@
 <link rel="preload" href="/assets/type/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/assets/type/darker-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="stylesheet" href="/assets/site.css?v=52" />
-<link rel="stylesheet" href="/assets/home.css?v=11" />
+<link rel="stylesheet" href="/assets/home.css?v=14" />
 <link rel="stylesheet" href="/assets/pages.css?v=7" />
 <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <script type="application/ld+json">
@@ -40,7 +40,6 @@
   "sameAs": []
 }
 </script>
-<link rel="preload" href="/assets/img/hero-portrait.webp?v=3" as="image" />
 </head>
 <body class="home is-index" data-content="/content/homepage.json">
 
@@ -65,8 +64,16 @@
 <main>
 
 <!-- ============ HERO (dark) ============ -->
-<section class="h-hero h-dark has-art">
-  <img class="h-hero-art" src="/assets/img/hero-portrait.webp?v=3" alt="" width="1100" height="1488" fetchpriority="high" />
+<section class="h-hero h-dark has-space">
+  <div class="h-space" aria-hidden="true">
+    <canvas class="h-stars"></canvas>
+    <div class="h-haze"></div>
+    <div class="h-planet"><i class="h-atmo"></i><i class="h-atmo is-hot"></i></div>
+    <svg class="h-orbit" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <path id="orbitPath" d="M 560 1000 C 900 640, 1250 330, 1820 -60" fill="none" />
+      <circle r="3.2"><animateMotion dur="38s" repeatCount="indefinite" rotate="auto"><mpath href="#orbitPath" /></animateMotion></circle>
+    </svg>
+  </div>
   <div class="container">
     <p class="h-pill reveal" data-cms="hero.pill">Ben Nguyen · Designer, Auckland</p>
     <h1 class="h-head h-display reveal d1" data-cms="hero.title">I design websites, apps and brands that are easy to use.</h1>
@@ -208,6 +215,7 @@
 
 <script src="/assets/projects.js?v=30"></script>
 <script src="/assets/site.js?v=38"></script>
+<script src="/assets/space.js?v=2"></script>
 <!-- Jellyfish paused (16 Oct 2026): <script src="/assets/jelly.js?v=4"></script> -->
 <script src="/assets/portfolio.js?v=5"></script>
 </body>

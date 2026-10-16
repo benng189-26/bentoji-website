@@ -272,3 +272,57 @@ body.home{
   @keyframes artInM{from{opacity:0;}to{opacity:1;}}
 }
 @media(prefers-reduced-motion:reduce){ .home .h-hero-art{animation:none;} }
+
+/* ===== Hero background (17 Oct 2026): abstract planet edge, stars, one orbit =====
+   Replaces the portrait. Everything is code; see assets/space.js for the stars. */
+.home .h-hero.has-space{background:#07090d;}
+.home .h-hero.has-space::after{content:"";position:absolute;left:0;right:0;bottom:0;height:140px;background:linear-gradient(to bottom,rgba(15,21,28,0),var(--h-navy));pointer-events:none;z-index:1;}
+.home .h-space{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;}
+.home .h-stars{position:absolute;inset:0;}
+/* the planet: a huge dark disc; its atmosphere is a ring drawn with a radial
+   gradient (smoother than big box-shadows, which band in some browsers) */
+.home .h-planet{
+  --d:2600px;--g:220px;
+  position:absolute;width:var(--d);height:var(--d);border-radius:50%;
+  left:max(30vw,calc(100vw - 1100px));top:47%;
+  background:radial-gradient(circle at 22% 22%,#0e1119 0%,#06070b 45%);
+  animation:planetIn 2.4s cubic-bezier(.2,.7,.2,1) both;
+}
+.home .h-atmo{
+  position:absolute;inset:calc(var(--g) * -1);border-radius:50%;
+  background:radial-gradient(closest-side,
+    transparent 0,
+    transparent calc(85.5%),
+    rgba(150,100,255,.10) 87.2%,
+    rgba(244,85,42,.42) 88.0%,
+    rgba(255,226,206,.95) 88.35%,
+    rgba(255,140,96,.55) 88.75%,
+    rgba(160,96,240,.30) 90.3%,
+    rgba(110,70,200,.12) 93.5%,
+    transparent 100%);
+}
+/* a brighter patch that drifts slowly along the edge */
+.home .h-atmo.is-hot{
+  background:radial-gradient(closest-side,
+    transparent 0, transparent 86.8%,
+    rgba(255,150,100,.45) 88%, rgba(255,245,235,1) 88.35%, rgba(255,170,120,.7) 89%,
+    rgba(244,85,42,.25) 91.5%, transparent 96%);
+  -webkit-mask:conic-gradient(from 0deg,transparent 0deg 285deg,#000 312deg,transparent 340deg 360deg);
+          mask:conic-gradient(from 0deg,transparent 0deg 285deg,#000 312deg,transparent 340deg 360deg);
+  animation:glowDrift 28s ease-in-out infinite alternate;
+}
+/* soft violet haze above the horizon */
+.home .h-haze{
+  position:absolute;right:-10vw;bottom:-20%;width:80vw;height:90%;
+  background:radial-gradient(ellipse at 70% 75%,rgba(120,72,210,.20),rgba(120,72,210,0) 62%);
+  animation:planetIn 3s ease both;
+}
+@keyframes planetIn{from{opacity:0;}to{opacity:1;}}
+@keyframes glowDrift{from{transform:rotate(-8deg);}to{transform:rotate(10deg);}}
+.home .h-orbit{position:absolute;inset:0;width:100%;height:100%;}
+.home .h-orbit path{stroke:rgba(255,255,255,.16);stroke-width:1;vector-effect:non-scaling-stroke;}
+.home .h-orbit circle{fill:#fff;filter:drop-shadow(0 0 6px rgba(255,190,150,.9));}
+@media(max-width:900px){
+  .home .h-planet{--d:1400px;--g:130px;left:34vw;top:70%;}
+}
+@media(prefers-reduced-motion:reduce){ .home .h-planet,.home .h-atmo,.home .h-haze{animation:none;} }
