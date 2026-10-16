@@ -364,6 +364,7 @@
     }
 
     main.innerHTML = html;
+    document.body.classList.add('is-ready');
 
     /* fade content in as it scrolls into view (site.js); the whole page is
        rescanned because the close section only moves below the fold now */
@@ -539,7 +540,7 @@
 
   if (main.hasAttribute('data-case-project')) {
     var built = fromProject();
-    if (built) render(built);
+    if (built) render(built); else document.body.classList.add('is-ready');
     return;
   }
 
@@ -548,5 +549,6 @@
     .then(render)
     .catch(function () {
       main.innerHTML = '<section class="h-dark c-hero"><div class="container"><p class="h-lead">This case study could not load. <a class="h-link" href="/portfolio">Back to all work</a></p></div></section>';
+      document.body.classList.add('is-ready');
     });
 })();

@@ -512,3 +512,11 @@ body.case{--c-hl:var(--c-accent);}
 }
 .case .c-bleed-wrap.is-contain .container{width:100%;}
 .case .c-bleed-inner{display:block;width:100%;max-width:1200px;height:auto;margin:0 auto;border-radius:14px;}
+
+/* Page load (v24): case pages are built from JSON after load. Until then only the
+   nav and a plain dark page show, so the footer and the closing section do not
+   flash at the top. A CSS fallback shows everything after 3 s if scripts fail. */
+html.js body.case:not(.is-ready) > :not(.site-nav):not(.mobile-menu){opacity:0;animation:caseShow .01s 3s forwards;}
+html.js body.case > main,html.js body.case > .h-close,html.js body.case > .site-footer{transition:opacity .45s ease;}
+@keyframes caseShow{to{opacity:1;}}
+html.js body.case{background:var(--h-navy);}

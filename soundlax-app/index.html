@@ -31,7 +31,7 @@
 <!-- enables JS-only reveal hiding (so content stays visible if JS fails) -->
 <script>document.documentElement.classList.add('js');</script>
 <!-- Lenis: Apple-style smooth scrolling -->
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
 <body>
 
@@ -42,6 +42,7 @@
       <img src="/assets/img/logo.svg" alt="SoundLax" height="26" />
     </span>
     <nav class="main-nav" aria-label="Primary">
+      <a class="back-bentoji" href="/" hidden>&larr; Bentoji</a>
       <a href="/soundlax/privacypolicy">Privacy Policy</a>
       <a class="btn btn-ghost nav-cta" href="/lets-talk">Let's talk</a>
     </nav>
@@ -51,10 +52,31 @@
   </div>
 </header>
 
+<script>
+/* "Back to Bentoji" only for visitors who came here from the Bentoji site.
+   People arriving from the App Store, search or a shared link never see it. */
+(function () {
+  var fromSite = false;
+  try {
+    var r = document.referrer ? new URL(document.referrer) : null;
+    if (r && r.host === location.host && !/^\/soundlax(-app)?(\/|$)/.test(r.pathname)) {
+      fromSite = true;
+      sessionStorage.setItem('sl_from_bentoji', '1');
+    } else if (sessionStorage.getItem('sl_from_bentoji') === '1') {
+      fromSite = true;
+    }
+  } catch (e) {}
+  if (fromSite) document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.back-bentoji').forEach(function (a) { a.hidden = false; });
+  });
+})();
+</script>
+
 <!-- mobile slide-out -->
 <div class="slideout" id="slideout" aria-hidden="true">
   <button class="slideout-close" id="slideoutClose" aria-label="Close menu">&times;</button>
   <nav class="slideout-nav">
+    <a class="back-bentoji" href="/" hidden>&larr; Bentoji</a>
     <a href="/soundlax/privacypolicy">Privacy Policy</a>
     <a class="btn btn-light" href="/lets-talk">Let's talk</a>
   </nav>

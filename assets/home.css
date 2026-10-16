@@ -251,5 +251,5 @@ body.home{
 .home .h-hero{position:relative;overflow:hidden;}
 .home .h-hero > .container{position:relative;z-index:2;}
 .home .jelly-layer{position:absolute;inset:0;z-index:1;pointer-events:none;animation:jellyIn 2.4s ease both;}
-.home .jelly-layer .jelly{position:absolute;left:0;top:0;height:auto;max-width:none;will-change:transform;transform-origin:50% 35%;user-select:none;}
+.home .jelly-layer .jelly{position:absolute;left:0;top:0;background:no-repeat center/contain;will-change:transform;transform-origin:50% 35%;}
 @keyframes jellyIn{from{opacity:0;}to{opacity:1;}}

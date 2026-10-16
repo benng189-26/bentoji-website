@@ -846,3 +846,9 @@ html.js .rv.rv-now,html.js .rv.rv-now .c-media,html.js .rv.rv-now .c-media img{t
 
 /* uppercase, slimmer buttons site-wide (16 Oct 2026) */
 .btn{text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;font-weight:600;padding:11px 20px;}
+
+/* Smooth page changes in browsers that support cross-document view transitions
+   (Chrome, Edge, Safari 18.2+): the old page fades into the new one. */
+@view-transition{navigation:auto;}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.35s;animation-timing-function:ease;}
+@media(prefers-reduced-motion:reduce){@view-transition{navigation:none;}}
