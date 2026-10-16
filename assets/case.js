@@ -29,7 +29,7 @@
    quotes     { "items": [{ "text", "source" }] }
    stats      { "items": [{ "value", "label" }], "note" }
    list       { "items": ["…"], "heading": optional }
-   gallery    { "items": [IMAGE], "cols": 2 | 3, "title", "caption" }
+   gallery    { "items": [IMAGE + optional "label"], "cols": 2 | 3, "masonry": true, "title", "caption" }
               images side by side; one column on phones
    type       { "items": [TYPEFACE], "dark": bool }   font specimens, one card each
    TYPEFACE   { "name", "role", "sample", "chars": bool (show A–Z, a–z, 0–9),
@@ -197,7 +197,9 @@
       var cols = b.cols || 2;
       return '<figure class="c-figure c-gallery" style="--cols:' + cols + '">' +
         (b.title ? '<p class="c-figure-title">' + esc(b.title) + '</p>' : '') +
-        '<div class="c-gallery-grid">' + (b.items || []).map(function (it) { return media(it); }).join('') + '</div>' +
+        '<div class="c-gallery-grid' + (b.masonry ? ' is-masonry' : '') + '">' + (b.items || []).map(function (it) {
+          return it.label ? '<div class="c-gallery-item">' + media(it) + '<span class="c-gallery-label">' + esc(it.label) + '</span></div>' : media(it);
+        }).join('') + '</div>' +
         (b.caption ? '<figcaption>' + rich(b.caption) + '</figcaption>' : '') +
       '</figure>';
     },

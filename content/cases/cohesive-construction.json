@@ -15,18 +15,33 @@
     "title": "A website for people who already know the name",
     "intro": "Cohesive Construction designs and builds commercial and industrial buildings across New Zealand, mostly in the South Island. I designed its new website as a contractor with Zib Digital, working with Zib's project manager, Cohesive's marketing team and a contract developer, over about three months.",
     "links": [
-      { "text": "Visit the live site", "href": "https://cohesive.net.nz" }
+      {
+        "text": "Visit the live site",
+        "href": "https://cohesive.net.nz"
+      }
     ],
     "image": {
       "src": "/assets/img/work/cohesive/hero.webp",
-      "alt": "The Cohesive Construction commercial projects section: a large project photo beside a grid of four more projects, under an angled navy panel"
+      "alt": "A Cohesive Construction building at dusk, timber and dark steel cladding with the windows lit, under the Cohesive logo"
     }
   },
   "facts": [
-    { "k": "Client", "v": "Cohesive Construction, through Zib Digital" },
-    { "k": "Role", "v": "UX/UI designer" },
-    { "k": "Scope", "v": "Discovery, persona, sitemap, wireframes, UI design, style guide, handover" },
-    { "k": "Year", "v": "2025" }
+    {
+      "k": "Client",
+      "v": "Cohesive Construction, through Zib Digital"
+    },
+    {
+      "k": "Role",
+      "v": "UX/UI designer"
+    },
+    {
+      "k": "Scope",
+      "v": "Discovery, persona, sitemap, wireframes, UI design, style guide, handover"
+    },
+    {
+      "k": "Year",
+      "v": "2025"
+    }
   ],
   "sections": [
     {
@@ -63,7 +78,14 @@
       "pill": "Who it is for",
       "heading": "One persona, one journey",
       "decor": [
-        { "src": "/assets/img/work/cohesive/decor-device.webp", "pos": "top-right", "w": 300, "rot": 0, "x": -70, "y": 60 }
+        {
+          "src": "/assets/img/work/cohesive/decor-device.webp",
+          "pos": "top-right",
+          "w": 300,
+          "rot": 0,
+          "x": -70,
+          "y": 60
+        }
       ],
       "blocks": [
         {
@@ -113,12 +135,12 @@
           "num": "01",
           "title": "Projects as the proof",
           "p": [
-            "Completed work sits at the centre of the site. Project pages lead with photos, then a short overview with key facts such as type, completion date and duration, so a visitor can [[judge the work before reading any marketing copy]].",
+            "Completed work sits at the centre of the site. Project pages lead with photos, then a short overview with key facts such as type, completion date and duration, and a gallery of the finished building. For a builder, [[a well-photographed building says more about its capability than a description]], so the copy comes after the pictures.",
             "Testimonials sit next to a photo of the project they describe, which was Cohesive's idea and makes them much more believable for large commercial work."
           ],
           "image": {
             "src": "/assets/img/work/cohesive/closeup-project.webp",
-            "alt": "The top of a project page: the Cochranes of Canterbury building with an award badge, and a project overview strip with type, completion date, value and duration"
+            "alt": "A project page: the Cochranes of Canterbury building with an award badge, the project overview strip, and a Project in Focus gallery of the finished building"
           }
         },
         {
@@ -173,7 +195,8 @@
         {
           "type": "text",
           "p": [
-            "The wireframes were reviewed with the persona and the sitemap before any visual design started. We decided to wait for Cohesive's new brand guidelines rather than design around the old ones, which delayed the start a little but [[avoided redoing the work]]. The homepage then went through four rounds of feedback before sign-off."
+            "The wireframes were reviewed with the persona and the sitemap before any visual design started. We decided to wait for Cohesive's new brand guidelines rather than design around the old ones, which delayed the start a little but [[avoided redoing the work]]. The homepage then went through four rounds of feedback before sign-off.",
+            "The first version leaned on the emerald green from the brand. Cohesive did not want to go too far in that direction, so I kept the later rounds in navy and yellow and let the project photos carry the colour."
           ]
         },
         {
@@ -185,8 +208,8 @@
         {
           "type": "image",
           "src": "/assets/img/work/cohesive/homepage-rounds.webp",
-          "alt": "Four versions of the homepage design side by side",
-          "caption": "From the first round to sign-off, left to right."
+          "alt": "Three versions of the full homepage side by side: the first round with an emerald green section, the second round, and the signed-off design in navy and yellow",
+          "caption": "The first round, the second round and the signed-off homepage. The client logo rows are blurred, as they held sample logos."
         }
       ]
     },
@@ -197,7 +220,14 @@
       "pill": "Visual language",
       "heading": "Navy, yellow and real buildings",
       "decor": [
-        { "src": "/assets/img/work/cohesive/decor-device.webp", "pos": "bottom-left", "w": 260, "rot": 0, "x": -90, "y": 80 }
+        {
+          "src": "/assets/img/work/cohesive/decor-device.webp",
+          "pos": "bottom-left",
+          "w": 260,
+          "rot": 0,
+          "x": -90,
+          "y": 80
+        }
       ],
       "blocks": [
         {
@@ -211,10 +241,22 @@
         {
           "type": "swatches",
           "items": [
-            { "name": "CC Midnight Blue", "hex": "#001542" },
-            { "name": "CC Yellow Spark", "hex": "#FDB525" },
-            { "name": "CC Steel Grey", "hex": "#7A7A7A" },
-            { "name": "CC Emerald Green", "hex": "#085454" }
+            {
+              "name": "CC Midnight Blue",
+              "hex": "#001542"
+            },
+            {
+              "name": "CC Yellow Spark",
+              "hex": "#FDB525"
+            },
+            {
+              "name": "CC Steel Grey",
+              "hex": "#7A7A7A"
+            },
+            {
+              "name": "CC Emerald Green",
+              "hex": "#085454"
+            }
           ]
         },
         {
@@ -244,8 +286,14 @@
           "cols": 2,
           "title": "Style guide",
           "items": [
-            { "src": "/assets/img/work/cohesive/styleguide-basics.webp", "alt": "The style guide: colour palette, grey scale and type scale for desktop and mobile" },
-            { "src": "/assets/img/work/cohesive/styleguide-components.webp", "alt": "The style guide: primary, secondary, ghost and small buttons in each state, and the icon set" }
+            {
+              "src": "/assets/img/work/cohesive/styleguide-basics.webp",
+              "alt": "The style guide: colour palette, grey scale and type scale for desktop and mobile"
+            },
+            {
+              "src": "/assets/img/work/cohesive/styleguide-components.webp",
+              "alt": "The style guide: primary, secondary, ghost and small buttons in each state, and the icon set"
+            }
           ]
         }
       ]
@@ -255,18 +303,43 @@
       "nav": "Screens",
       "tone": "grey",
       "pill": "Screens",
-      "heading": "Page by page",
+      "heading": "More of the templates",
       "blocks": [
         {
           "type": "gallery",
-          "cols": 2,
+          "cols": 3,
+          "masonry": true,
           "items": [
-            { "src": "/assets/img/work/cohesive/screen-1.webp", "alt": "The homepage" },
-            { "src": "/assets/img/work/cohesive/screen-2.webp", "alt": "The projects listing" },
-            { "src": "/assets/img/work/cohesive/screen-3.webp", "alt": "A project page" },
-            { "src": "/assets/img/work/cohesive/screen-4.webp", "alt": "The capabilities overview" },
-            { "src": "/assets/img/work/cohesive/screen-5.webp", "alt": "A capability page" },
-            { "src": "/assets/img/work/cohesive/screen-6.webp", "alt": "The regional offices on the contact page" }
+            {
+              "src": "/assets/img/work/cohesive/page-projects.webp",
+              "alt": "The projects listing page with filters and a grid of project cards",
+              "label": "Projects"
+            },
+            {
+              "src": "/assets/img/work/cohesive/page-capability.webp",
+              "alt": "The Design and Consent capability page: what Cohesive solves, what is included, the design process and FAQs",
+              "label": "Capability: Design & Consent"
+            },
+            {
+              "src": "/assets/img/work/cohesive/page-location.webp",
+              "alt": "The Nelson branch page: local projects, services, the Wide Span Sheds supplier section and the Nelson office details",
+              "label": "Regional office: Nelson"
+            },
+            {
+              "src": "/assets/img/work/cohesive/page-resources.webp",
+              "alt": "The resources listing page with a featured guide and a grid of articles",
+              "label": "Resources"
+            },
+            {
+              "src": "/assets/img/work/cohesive/page-careers.webp",
+              "alt": "The careers page: why join, open positions and an expression of interest form",
+              "label": "Careers"
+            },
+            {
+              "src": "/assets/img/work/cohesive/page-article.webp",
+              "alt": "A resources article page with related posts",
+              "label": "Article"
+            }
           ]
         }
       ]
