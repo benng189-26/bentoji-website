@@ -1,8 +1,8 @@
 {
   "hero": {
-    "pill": "Ben Nguyen · Designer, Auckland",
-    "title": "I design websites, apps and brands that are easy to use.",
-    "lead": "I have spent more than ten years designing for agencies, small businesses and my own apps. I take on small jobs, monthly design work and full projects."
+    "pill": "Ben Nguyen · Product & Digital Designer, Auckland",
+    "title": "I design websites and apps that are easy to use, and the brands behind them.",
+    "lead": "I have more than ten years of experience across agency and independent work, designing marketing websites, customer portals, brand identities and apps. I am open to a full-time or contract role, and I also take on freelance projects."
   },
   "work": {
     "pill": "Work",
@@ -10,26 +10,62 @@
     "casesLabel": "Case studies"
   },
   "services": {
-    "pill": "Services",
-    "heading": "Ways to work with me",
+    "pill": "Working together",
+    "heading": "There are four ways we can work together.",
     "items": [
       {
-        "title": "Small jobs",
-        "body": "One landing page, an ad set, a brochure or a book cover, with a clear brief and a quick turnaround.",
-        "linkText": "See small job prices"
-      },
-      {
-        "title": "Monthly design",
-        "body": "For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up.",
-        "linkText": "How monthly design works"
+        "title": "Full-time or contract role",
+        "body": "I am looking for a product, UI/UX or digital design role, permanent or contract. I live in Auckland and am happy to work hybrid or on site.",
+        "listLabel": "What I bring",
+        "list": [
+          "Design from discovery and information architecture through to UI, prototypes, handover and QA",
+          "Figma design systems with reusable components and notes for developers",
+          "Websites, customer portals, dashboards and mobile apps",
+          "Close work with project managers, business analysts, developers and marketing"
+        ],
+        "startLabel": "How it starts",
+        "start": "Get in touch and I will send you my CV."
       },
       {
         "title": "Projects",
-        "body": "Websites, apps and brand identities. We start with a free call to talk through what you need.",
-        "linkText": "See how projects work"
+        "body": "Websites, apps and brand identities, from the first brief through to launch. I start with the people who will use it and how the content is organised, before any visual design.",
+        "listLabel": "What it usually includes",
+        "list": [
+          "Requirements, audience and a sitemap",
+          "Wireframes and a clickable prototype",
+          "Visual design for desktop and mobile",
+          "Developer handover and a check of the build before launch"
+        ],
+        "startLabel": "How it starts",
+        "start": "A free call to talk through what you need, then a fixed quote."
+      },
+      {
+        "title": "Monthly design",
+        "body": "For small teams who need a designer most weeks, but not forty hours of one. You get a set number of hours each month for whatever comes up, from someone who already knows your brand.",
+        "listLabel": "Good for",
+        "list": [
+          "Landing pages and website updates",
+          "Email newsletters, social posts and ads",
+          "Brochures, flyers and other print work",
+          "Small changes to an existing app or portal"
+        ],
+        "startLabel": "How it starts",
+        "start": "A free call to agree the hours and how requests come through."
+      },
+      {
+        "title": "Small jobs",
+        "body": "One landing page, an ad set, a brochure, a book cover or a pack design, with a clear brief and a quick turnaround.",
+        "listLabel": "How it works",
+        "list": [
+          "Send the brief and any brand files you have",
+          "Agree a fixed price before any work starts",
+          "Receive files ready for print or the web"
+        ],
+        "startLabel": "How it starts",
+        "start": "Email the brief, or book a free call if it needs talking through."
       }
     ],
-    "cta": "Book a free call"
+    "cta": "Get in touch"
   },
   "brands": {
     "heading": "Brands I've designed for"
@@ -38,15 +74,16 @@
     "pill": "About",
     "heading": "Hi, I'm Ben.",
     "paragraphs": [
-      "I spent six years at Avidly, an APAC HubSpot partner, the last four leading design on websites, customer portals and web apps for clients across New Zealand and Australia.",
-      "Since 2025 I've worked for myself, designing for small businesses and building my own apps. I started out writing HTML and CSS, so I design with the build in mind, and developers tend to find my files easy to work with."
+      "I am a product and digital designer with more than ten years of experience. Six of those years were at Avidly, an APAC HubSpot partner, where I started as a digital designer and spent the last four years leading design on websites, customer portals and web apps for clients across New Zealand and Australia.",
+      "Since July 2025 I have worked for myself. I design for small businesses, have contracted with Zib Digital on client websites, and design and ship my own iOS apps, including SoundLax. Taking an app from the first sketch to the App Store changed how I work: I now think about a product from the start through to release, not only the screens.",
+      "I came up building sites in HTML and CSS, so I understand how a design gets built. On a team, I see my role as a bridge between marketing, business analysts, project managers and developers."
     ]
   },
   "cta": {
-    "heading": "Have a project in mind?",
-    "body": "Tell me what you're working on. The first call is free, and you'll get a straight answer on what it would take."
+    "heading": "Hiring, or have a project in mind?",
+    "body": "Tell me about the role or what you are working on. The first call is free, and I will give you a straight answer on whether I am the right fit."
   },
   "footer": {
-    "blurb": "Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands."
+    "blurb": "Bentoji is the design practice of Ben Nguyen, a product and digital designer in Auckland working on websites, apps and brands."
   }
 }

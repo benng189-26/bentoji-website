@@ -150,7 +150,8 @@
             var val = dig(d, el.getAttribute('data-cms'));
             if (val == null) return;
             if (Array.isArray(val)) {
-              el.innerHTML = val.map(function (x) { return '<p>' + escCms(x) + '</p>'; }).join('');
+              var tg = el.tagName === 'UL' || el.tagName === 'OL' ? 'li' : 'p';
+              el.innerHTML = val.map(function (x) { return '<' + tg + '>' + escCms(x) + '</' + tg + '>'; }).join('');
             } else {
               el.textContent = val;
             }

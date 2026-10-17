@@ -316,3 +316,12 @@ body.home{
   background:url(/assets/img/space/planet-sm.webp) center/contain no-repeat;opacity:.95;}
 .home .site-footer .container{position:relative;z-index:1;}
 @media(max-width:700px){ .home .site-footer::after{width:110vw;right:-48vw;bottom:-78vw;opacity:.8;} }
+
+/* services: four ways to work together, with detail (17 Oct 2026) */
+.home .h-service .h-svc-label{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--h-muted-light);margin:0 0 6px;max-width:none;}
+.home .h-svc-list{list-style:none;margin:0 0 22px;padding:0;max-width:46ch;}
+.home .h-svc-list li{position:relative;padding:11px 0 11px 22px;border-bottom:1px solid var(--h-line-light);font-size:1.12rem;line-height:1.35;}
+.home .h-svc-list li::before{content:"";position:absolute;left:2px;top:1.05em;width:8px;height:2px;background:var(--h-orange);}
+.home .h-service .h-svc-start{font-size:1.08rem;line-height:1.4;margin:0;color:var(--h-muted-light);}
+.home .h-service .h-svc-start strong{display:block;color:var(--h-ink);font-weight:700;margin-bottom:2px;}
+.home .h-about-links{margin-top:clamp(18px,2.4vw,30px);}
