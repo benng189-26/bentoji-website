@@ -609,3 +609,67 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
 })();
+
+/* ===================================================================
+   Smooth fold-outs (17 Oct 2026)
+   The "Working together" details on the homepage open and close with
+   a short height animation instead of jumping. The list fades and
+   slides in slightly as it opens. Off for "reduce motion".
+   =================================================================== */
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !Element.prototype.animate) return;
+  var EASE = 'cubic-bezier(.22,.7,.2,1)';
+
+  function setup(d) {
+    var summary = d.querySelector('summary');
+    if (!summary || d._smooth) return;
+    d._smooth = true;
+    var anim = null, closing = false;
+
+    function finish(open) {
+      d.open = open;
+      d.style.height = '';
+      d.style.overflow = '';
+      anim = null;
+      closing = false;
+    }
+    function closedHeight() {
+      /* summary plus the details' own top and bottom borders */
+      return summary.offsetHeight + (d.offsetHeight - d.clientHeight);
+    }
+
+    summary.addEventListener('click', function (e) {
+      e.preventDefault();
+      var from = d.offsetHeight;
+      if (anim) anim.cancel();
+      d.style.overflow = 'hidden';
+
+      if (!d.open || closing) {
+        /* open */
+        closing = false;
+        d.open = true;
+        d.style.height = 'auto';
+        var to = d.offsetHeight;
+        d.style.height = from + 'px';
+        anim = d.animate({ height: [from + 'px', to + 'px'] }, { duration: 380, easing: EASE });
+        var list = d.querySelector('summary ~ *');
+        if (list) list.animate(
+          { opacity: [0, 1], transform: ['translateY(-8px)', 'none'] },
+          { duration: 380, delay: 60, easing: EASE, fill: 'backwards' }
+        );
+        anim.onfinish = function () { finish(true); };
+      } else {
+        /* close */
+        closing = true;
+        var end = closedHeight();
+        anim = d.animate({ height: [from + 'px', end + 'px'] }, { duration: 300, easing: EASE });
+        anim.onfinish = function () { finish(false); };
+      }
+    });
+  }
+
+  function init() { document.querySelectorAll('details.h-svc-more').forEach(setup); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

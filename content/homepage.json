@@ -14,17 +14,16 @@
     "heading": "There are three ways we can work together.",
     "items": [
       {
-        "title": "Projects",
-        "body": "Websites, apps and landing pages, from the first brief through to launch. I start with the people who will use it and how the content is organised, before any visual design.",
-        "listLabel": "What it usually includes",
+        "title": "Small jobs",
+        "body": "One landing page, an ad set, a brochure, a book cover or a pack design, with a clear brief and a quick turnaround.",
+        "listLabel": "How it works",
         "list": [
-          "Requirements, audience and a sitemap",
-          "Wireframes and a clickable prototype",
-          "Visual design for desktop and mobile",
-          "Developer handover and a check of the build before launch"
+          "Send the brief and any brand files you have",
+          "Agree a fixed price before any work starts",
+          "Receive files ready for print or the web"
         ],
         "startLabel": "How it starts",
-        "start": "A free call to talk through what you need, then a fixed quote."
+        "start": "Email the brief, or book a free call if it needs talking through."
       },
       {
         "title": "Monthly design",
@@ -40,16 +39,17 @@
         "start": "A free call to agree the hours and how requests come through."
       },
       {
-        "title": "Small jobs",
-        "body": "One landing page, an ad set, a brochure, a book cover or a pack design, with a clear brief and a quick turnaround.",
-        "listLabel": "How it works",
+        "title": "Projects",
+        "body": "Websites, apps and landing pages, from the first brief through to launch. I start with the people who will use it and how the content is organised, before any visual design.",
+        "listLabel": "What it usually includes",
         "list": [
-          "Send the brief and any brand files you have",
-          "Agree a fixed price before any work starts",
-          "Receive files ready for print or the web"
+          "Requirements, audience and a sitemap",
+          "Wireframes and a clickable prototype",
+          "Visual design for desktop and mobile",
+          "Developer handover and a check of the build before launch"
         ],
         "startLabel": "How it starts",
-        "start": "Email the brief, or book a free call if it needs talking through."
+        "start": "A free call to talk through what you need, then a fixed quote."
       }
     ],
     "cta": "Get in touch"
