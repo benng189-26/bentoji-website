@@ -318,7 +318,18 @@ body.home{
 @media(max-width:700px){ .home .site-footer::after{width:110vw;right:-48vw;bottom:-78vw;opacity:.8;} }
 
 /* services: four ways to work together, with detail (17 Oct 2026) */
-.home .h-service .h-svc-label{font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--h-muted-light);margin:0 0 6px;max-width:none;}
+.home .h-svc-more{margin:0 0 22px;max-width:46ch;border-top:1px solid var(--h-line-light);border-bottom:1px solid var(--h-line-light);}
+.home .h-svc-more summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0;
+  font-family:var(--font-head);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--h-ink);}
+.home .h-svc-more summary::-webkit-details-marker{display:none;}
+.home .h-svc-more summary::after{content:"";flex:none;width:12px;height:12px;
+  background:linear-gradient(currentColor,currentColor) center/12px 2px no-repeat,linear-gradient(currentColor,currentColor) center/2px 12px no-repeat;
+  transition:transform .25s ease;}
+.home .h-svc-more[open] summary::after{transform:rotate(45deg);}
+.home .h-svc-more summary:hover{color:var(--h-orange);}
+.home .h-svc-more summary:focus-visible{outline:2px solid var(--h-orange);outline-offset:4px;}
+.home .h-svc-more .h-svc-list{margin:0 0 6px;border-top:1px solid var(--h-line-light);}
+.home .h-svc-more .h-svc-list li:last-child{border-bottom:0;}
 .home .h-svc-list{list-style:none;margin:0 0 22px;padding:0;max-width:46ch;}
 .home .h-svc-list li{position:relative;padding:11px 0 11px 22px;border-bottom:1px solid var(--h-line-light);font-size:1.12rem;line-height:1.35;}
 .home .h-svc-list li::before{content:"";position:absolute;left:2px;top:1.05em;width:8px;height:2px;background:var(--h-orange);}

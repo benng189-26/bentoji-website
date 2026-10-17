@@ -1,8 +1,8 @@
 {
   "hero": {
     "pill": "Ben Nguyen · Product & Digital Designer, Auckland",
-    "title": "I design websites and apps that are easy to use, and the brands behind them.",
-    "lead": "I have more than ten years of experience across agency and independent work, designing marketing websites, customer portals, brand identities and apps. I am open to a full-time or contract role, and I also take on freelance projects."
+    "title": "I design digital products and websites that are easy to use.",
+    "lead": "I have spent more than ten years designing websites, customer portals and apps for agencies, small businesses and my own products, with campaign and print work along the way."
   },
   "work": {
     "pill": "Work",
@@ -11,24 +11,11 @@
   },
   "services": {
     "pill": "Working together",
-    "heading": "There are four ways we can work together.",
+    "heading": "There are three ways we can work together.",
     "items": [
       {
-        "title": "Full-time or contract role",
-        "body": "I am looking for a product, UI/UX or digital design role, permanent or contract. I live in Auckland and am happy to work hybrid or on site.",
-        "listLabel": "What I bring",
-        "list": [
-          "Design from discovery and information architecture through to UI, prototypes, handover and QA",
-          "Figma design systems with reusable components and notes for developers",
-          "Websites, customer portals, dashboards and mobile apps",
-          "Close work with project managers, business analysts, developers and marketing"
-        ],
-        "startLabel": "How it starts",
-        "start": "Get in touch and I will send you my CV."
-      },
-      {
         "title": "Projects",
-        "body": "Websites, apps and brand identities, from the first brief through to launch. I start with the people who will use it and how the content is organised, before any visual design.",
+        "body": "Websites, apps and landing pages, from the first brief through to launch. I start with the people who will use it and how the content is organised, before any visual design.",
         "listLabel": "What it usually includes",
         "list": [
           "Requirements, audience and a sitemap",
@@ -74,16 +61,16 @@
     "pill": "About",
     "heading": "Hi, I'm Ben.",
     "paragraphs": [
-      "I am a product and digital designer with more than ten years of experience. Six of those years were at Avidly, an APAC HubSpot partner, where I started as a digital designer and spent the last four years leading design on websites, customer portals and web apps for clients across New Zealand and Australia.",
-      "Since July 2025 I have worked for myself. I design for small businesses, have contracted with Zib Digital on client websites, and design and ship my own iOS apps, including SoundLax. Taking an app from the first sketch to the App Store changed how I work: I now think about a product from the start through to release, not only the screens.",
-      "I came up building sites in HTML and CSS, so I understand how a design gets built. On a team, I see my role as a bridge between marketing, business analysts, project managers and developers."
+      "I am a product and digital designer with more than ten years of experience. I spent six years at Avidly, an APAC HubSpot partner, the last four leading design on websites, customer portals and web apps for clients across New Zealand and Australia.",
+      "Since July 2025 I have worked for myself, designing for small businesses and shipping my own iOS apps, including SoundLax.",
+      "I have designed for HubSpot, WordPress, Wix and Squarespace, so I know how a design will be built and plan it to be practical for developers from the start."
     ]
   },
   "cta": {
-    "heading": "Hiring, or have a project in mind?",
-    "body": "Tell me about the role or what you are working on. The first call is free, and I will give you a straight answer on whether I am the right fit."
+    "heading": "Have a project in mind?",
+    "body": "Tell me what you are working on. The first call is free, and I will give you a straight answer on what it would take."
   },
   "footer": {
-    "blurb": "Bentoji is the design practice of Ben Nguyen, a product and digital designer in Auckland working on websites, apps and brands."
+    "blurb": "Bentoji is the design practice of Ben Nguyen, a product and digital designer in Auckland."
   }
 }
