@@ -37,12 +37,14 @@
   function geometry() {
     W = hero.offsetWidth; H = hero.offsetHeight;
     var narrow = W < 900;
-    G.R = narrow ? 760 : 1320;
-    G.k = narrow ? 0.8 : 1;                   /* scale for light falloff distances */
-    G.cx = narrow ? W * 0.22 + G.R : Math.max(W * 0.30, W - 1100) + G.R;
-    G.cy = narrow ? H * 0.64 + G.R : H * 0.50 + G.R;
+    G.R = narrow ? 1100 : Math.max(1900, W * 1.45);
+    G.k = narrow ? 0.7 : Math.max(1, W / 1440); /* scale for light falloff distances */
+    /* place the planet so its lit edge passes through this point (the band then
+       sweeps from the bottom middle up to the top right, like the reference) */
+    var px = narrow ? W * 0.94 : W * 0.84, py = narrow ? H * 0.84 : H * 0.40;
+    G.cx = px - SUN.x * G.R; G.cy = py - SUN.y * G.R;
     moon = narrow ? { x: W * 0.82, y: H * 0.16, r: 17 } : { x: Math.max(84, W * 0.08), y: H * 0.18, r: 30 };
-    orbit = { rx: 1.085, ry: 1.03, rot: -0.12, range: null };
+    orbit = { gap: narrow ? 46 : 70, range: null };   /* a circle around the planet, the same centre */
     view(0);
     var vis = [];
     for (var a = 0; a < 1440; a++) {
@@ -67,46 +69,52 @@
     V.cy = oy + (G.cy - oy) * s - H * 0.14 * e;
     V.R = G.R * s; V.s = s;
   }
-  function orbitPoint(a) {
-    var x = Math.cos(a) * orbit.rx * V.R, y = Math.sin(a) * orbit.ry * V.R, c = Math.cos(orbit.rot), s = Math.sin(orbit.rot);
-    return { x: V.cx + x * c - y * s, y: V.cy + x * s + y * c };
-  }
+  function orbitR() { return V.R + orbit.gap * G.k * V.s; }
+  function orbitPoint(a) { var r = orbitR(); return { x: V.cx + Math.cos(a) * r, y: V.cy + Math.sin(a) * r }; }
   function sizeCanvas(c, dpr) { dpr = dpr || DPR; c.width = Math.round(W * dpr); c.height = Math.round(H * dpr); c.style.width = W + 'px'; c.style.height = H + 'px'; }
 
   /* ---------------- planet: WebGL ---------------- */
   var gl = null, prog, loc = {};
   var FRAG = [
     'precision highp float;',
-    'uniform vec2 uRes; uniform vec2 uC; uniform float uR; uniform vec2 uSun; uniform float uK; uniform float uSeed;',
-    'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233)) + uSeed) * 43758.5453); }',
-    'void main(){',
-    '  vec2 fc = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);',
+    'uniform vec2 uRes; uniform vec2 uC; uniform float uR; uniform vec2 uSun; uniform float uK;',
+    'float hash(vec2 p){ return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453); }',
+    /* light at one point: h = distance from the edge in design pixels (negative inside) */
+    'vec3 shade(vec2 fc, out float inside){',
     '  vec2 p = fc - uC; float d = length(p);',
-    '  float h = (d - uR) / uK;',                       /* distance from the edge, in design pixels */
-    '  vec2 n = p / d;',
-    '  float f = dot(n, uSun);',                       /* 1 = facing the light */
-    '  float lit = pow(clamp(f, 0.0, 1.0), 1.8);',
-    '  float halo = pow(clamp(f * 0.5 + 0.5, 0.0, 1.0), 7.0);',
-    '  float warm = smoothstep(0.62, 0.18, f) * smoothstep(-0.05, 0.22, f);',
-    '  vec3 col;',
+    '  float h = (d - uR) / uK;',
+    '  float f = dot(p / d, uSun);',
+    '  float lit = smoothstep(-0.30, 0.95, f); lit *= lit;',          /* broad, fades towards both ends */
+    '  float wide = smoothstep(-0.55, 0.9, f);',
+    '  inside = step(h, 0.0);',
+    '  vec3 c;',
     '  if (h >= 0.0) {',
-    '    float core = exp(-h / 0.9), inner = exp(-h / 4.5), mid = exp(-h / 20.0), outer = exp(-h / 95.0), far = exp(-h / 360.0);',
-    '    vec3 cIn  = mix(vec3(0.55, 0.74, 1.00), vec3(1.00, 0.70, 0.48), warm * 0.85);',
-    '    vec3 cMid = mix(vec3(0.10, 0.30, 0.95), vec3(0.85, 0.36, 0.20), warm * 0.6);',
-    '    col = lit * (core * vec3(1.0, 0.97, 0.93) * 2.2 + inner * cIn * 0.85 + mid * cMid * 0.42)',
-    '        + halo * (outer * vec3(0.04, 0.09, 0.40) * 0.30 + far * vec3(0.03, 0.03, 0.14) * 0.10);',
+    '    c = lit * (exp(-h / 4.5) * vec3(1.00, 0.98, 1.00) * 1.6',     /* white-hot edge */
+    '             + exp(-h / 26.0) * vec3(0.82, 0.76, 1.00) * 0.95',   /* lavender */
+    '             + exp(-h / 62.0) * vec3(0.46, 0.32, 1.00) * 0.55',   /* violet */
+    '             + exp(-h / 170.0) * vec3(0.20, 0.12, 0.70) * 0.10)', /* deep violet-blue */
+    '      + wide * exp(-h / 480.0) * vec3(0.05, 0.035, 0.20) * 0.06;',
     '  } else {',
     '    float hi = -h;',
-    '    float rim = exp(-hi / 1.1), scat = exp(-hi / 7.0), shade = exp(-hi / 45.0), body = exp(-hi / 240.0);',
-    '    col = vec3(0.0006, 0.0007, 0.0012)',
-    '        + lit * (rim * vec3(1.0, 0.96, 0.92) * 1.6 + scat * vec3(0.16, 0.30, 0.80) * 0.45',
-    '        + shade * vec3(0.03, 0.06, 0.20) * 0.22 + body * vec3(0.010, 0.016, 0.040) * 0.12);',
+    '    c = vec3(0.0006, 0.0006, 0.0014)',
+    '      + lit * (exp(-hi / 3.5) * vec3(1.00, 0.97, 0.96) * 1.2',      /* the same bright edge, seen from above */
+    '             + exp(-hi / 34.0) * vec3(1.00, 0.64, 0.44) * 0.40',   /* warm peach haze over the surface */
+    '             + exp(-hi / 95.0) * vec3(0.50, 0.36, 0.95) * 0.26',   /* violet scattering */
+    '             + exp(-hi / 260.0) * vec3(0.08, 0.06, 0.24) * 0.12);',/* fading into the night side */
     '  }',
-    '  col = 1.0 - exp(-col * 1.15);',                  /* soft tone map: no hard clipping */
-    '  col = pow(col, vec3(1.0 / 2.2));',               /* to screen colour */
-    '  col += (hash(fc) - 0.5) * (1.6 / 255.0);',       /* dither: no banding */
-    '  float cov = clamp(uR - d + 0.5, 0.0, 1.0);',     /* smooth planet edge */
-    '  gl_FragColor = vec4(max(col, 0.0), cov);',       /* outside: light is added over the stars */
+    '  return c;',
+    '}',
+    'void main(){',
+    '  vec2 fc = vec2(gl_FragCoord.x, uRes.y - gl_FragCoord.y);',
+    /* four samples per pixel: smooth edges, no stair steps */
+    '  float i0, i1, i2, i3;',
+    '  vec3 col = shade(fc + vec2(-0.125, -0.375), i0) + shade(fc + vec2(0.375, -0.125), i1)',
+    '           + shade(fc + vec2(0.125, 0.375), i2) + shade(fc + vec2(-0.375, 0.125), i3);',
+    '  col *= 0.25; float cov = (i0 + i1 + i2 + i3) * 0.25;',
+    '  col = 1.0 - exp(-col * 1.2);',
+    '  col = pow(col, vec3(1.0 / 2.2));',
+    '  col += (hash(fc) - 0.5) * (1.5 / 255.0);',
+    '  gl_FragColor = vec4(max(col, 0.0), cov);',
     '}'
   ].join('\n');
   var VERT = 'attribute vec2 a; void main(){ gl_Position = vec4(a, 0.0, 1.0); }';
@@ -123,7 +131,7 @@
     var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
     var a = gl.getAttribLocation(prog, 'a'); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
-    ['uRes', 'uC', 'uR', 'uSun', 'uK', 'uSeed'].forEach(function (n) { loc[n] = gl.getUniformLocation(prog, n); });
+    ['uRes', 'uC', 'uR', 'uSun', 'uK'].forEach(function (n) { loc[n] = gl.getUniformLocation(prog, n); });
     return true;
   }
   function drawPlanet(t) {
@@ -137,7 +145,6 @@
       gl.uniform1f(loc.uR, V.R * dpr);
       gl.uniform2f(loc.uSun, SUN.x * c - SUN.y * s, SUN.x * s + SUN.y * c);
       gl.uniform1f(loc.uK, G.k * V.s * dpr);
-      gl.uniform1f(loc.uSeed, 0);
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       return;
     }
@@ -154,7 +161,7 @@
   function buildStars() {
     sizeCanvas(starC);
     stars = [];
-    var n = Math.round(W * H / 5200);
+    var n = Math.round(W * H / 3600);
     for (var i = 0; i < n; i++) {
       var tint = Math.random();
       stars.push({
@@ -202,19 +209,21 @@
     var a0 = orbit.range[0], span = orbit.range[1] - a0;
     ctx.lineWidth = 1;
     ctx.strokeStyle = 'rgba(214,224,255,0.12)';
-    ctx.beginPath();
-    for (var i = 0; i <= 200; i++) { var p = orbitPoint(a0 + span * i / 200); if (i) ctx.lineTo(p.x, p.y); else ctx.moveTo(p.x, p.y); }
-    ctx.stroke();
+    ctx.beginPath(); ctx.arc(V.cx, V.cy, orbitR(), a0, a0 + span); ctx.stroke();
     var f = reduce ? 0.42 : (t / 40) % 1;
     var a = a0 + span * f, fade = Math.min(1, f / 0.08, (1 - f) / 0.08);
-    for (var k = 0; k < 26; k++) {
-      var q1 = orbitPoint(a - span * 0.004 * k), q2 = orbitPoint(a - span * 0.004 * (k + 1));
-      ctx.strokeStyle = 'rgba(235,240,255,' + (0.3 * (1 - k / 26) * fade).toFixed(3) + ')';
-      ctx.beginPath(); ctx.moveTo(q1.x, q1.y); ctx.lineTo(q2.x, q2.y); ctx.stroke();
+    /* trail: a short arc behind it, fading out */
+    var trail = 90 / orbitR();
+    for (var k = 0; k < 24; k++) {
+      ctx.strokeStyle = 'rgba(235,240,255,' + (0.38 * (1 - k / 24) * fade).toFixed(3) + ')';
+      ctx.lineWidth = 1.4;
+      ctx.beginPath(); ctx.arc(V.cx, V.cy, orbitR(), a - trail * (k + 1) / 24, a - trail * k / 24); ctx.stroke();
     }
     var s = orbitPoint(a);
     ctx.fillStyle = 'rgba(255,255,255,' + (0.95 * fade).toFixed(3) + ')';
-    ctx.beginPath(); ctx.arc(s.x, s.y, 1.8, 0, 6.2832); ctx.fill();
+    ctx.beginPath(); ctx.arc(s.x, s.y, 3.2, 0, 6.2832); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,' + (0.18 * fade).toFixed(3) + ')';
+    ctx.beginPath(); ctx.arc(s.x, s.y, 5.5, 0, 6.2832); ctx.fill();
   }
 
   /* ---------------- moon ---------------- */
