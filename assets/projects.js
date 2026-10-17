@@ -218,7 +218,7 @@ window.PROJECTS = [
     featured: true,
     title: 'Kmart rebrand concept',
     category: 'Brand concept',
-    tagline: 'A rebrand concept built around one idea: making low prices feel like a choice.',
+    tagline: 'A rebrand concept built around making low prices feel like a choice, with a new logo, brand identity, website, app and social ads.',
     location: 'Auckland, NZ · Retail / eCommerce',
     thumb: '/assets/img/work/kmart/hero.webp',
     facts: [

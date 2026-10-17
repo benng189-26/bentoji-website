@@ -1,18 +1,15 @@
 /* ===================================================================
-   Homepage hero: space scene (17 Oct 2026, v4)
-   - Star field: a Milky Way photo (in the HTML), plus code stars that
-     drift slowly and now and then blink out and back.
-   - Planet and atmosphere: rendered on the GPU (WebGL) at full screen
-     resolution, every pixel worked out from the distance to the planet's
-     edge. Light is calculated in linear space, tone-mapped and dithered,
-     so the falloff is smooth with no banding. Colours follow real limb
-     light: a white-hot thin edge, blue scattering, deep blue haze, and a
-     faint warm tint near the ends where the light passes at a low angle.
-   - One orbit and a small light travelling along it.
+   Homepage hero: space scene (17 Oct 2026)
+   - Star field: a faint Milky Way photo (in the HTML), plus code stars
+     that drift slowly and now and then blink out and back.
+   - Planet: a photo, drawn to a canvas so it stays sharp while the view
+     moves in on scroll.
+   - Four orbits around the planet, each with a small light at its own
+     pace. The outer one sweeps the left side and is fitted to pass
+     outside the headline.
    - A real moon photo on the left, shaded away from the light.
-   - Scroll: the hero is pinned while the view moves in towards the lit
-     edge (re-rendered, so it stays sharp), the text lifts away and the
-     next section slides over.
+   - Scroll: the hero is pinned briefly while the view moves in, the text
+     lifts away, and the work section rises and fades in over it.
    With "reduce motion" on, nothing moves and the hero is not pinned.
    =================================================================== */
 (function () {
@@ -26,6 +23,7 @@
   var fxC = space.querySelector('.h-fx');
   var moonC = space.querySelector('.h-moon');
   var content = hero.querySelector('.container');
+  var nextSec = track && track.nextElementSibling, nextIn = nextSec ? nextSec.querySelector('.container') : null;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var DPR = Math.min(window.devicePixelRatio || 1, 2);
   var SUN = norm(-0.58, -0.81);              /* light from the upper left */
@@ -48,13 +46,39 @@
     var defs = narrow
       ? [{ f: 1.20, period: 34, dir: 1, off: 0.10 }, { f: 1.42, period: 52, dir: -1, off: 0.55 }, { f: 1.70, period: 80, dir: 1, off: 0.80 }]
       : [{ f: 1.16, period: 40, dir: 1, off: 0.05 }, { f: 1.34, period: 64, dir: -1, off: 0.45 }, { f: 1.58, period: 95, dir: 1, off: 0.75 }];
+    /* a fourth, far orbit that sweeps the left side and the top without crossing the
+       headline: its radius is set so the circle passes just outside the text block */
+    var box = null;
+    if (content) {
+      var hr = hero.getBoundingClientRect(), cr = content.getBoundingClientRect();
+      var kids = content.children, L = 1e9, T = 1e9, Rr = -1e9, B = -1e9;
+      for (var q = 0; q < kids.length; q++) {
+        var kr = kids[q].getBoundingClientRect();
+        if (!kr.width) continue;
+        L = Math.min(L, kr.left); T = Math.min(T, kr.top); Rr = Math.max(Rr, kr.right); B = Math.max(B, kr.bottom);
+      }
+      if (L < 1e9) {
+        var shift = cr.top - hr.top - content.offsetTop;   /* undo any scroll offset applied to the text */
+        box = { l: L - hr.left - 28, t: T - hr.top - shift - 28, r: Rr - hr.left + 28, b: B - hr.top - shift + 28 };
+        var far = Math.hypot(G.cx - box.l, G.cy - box.t) * 1.04;
+        /* if the moon sits on this path, nudge it just inside so the trail never runs into it */
+        var md = Math.hypot(G.cx - moon.x, G.cy - moon.y);
+        if (Math.abs(md - far) < moon.r + 36) {
+          var mk = (far - moon.r - 36) / md;
+          moon.x = G.cx + (moon.x - G.cx) * mk; moon.y = G.cy + (moon.y - G.cy) * mk;
+        }
+        defs.push({ f: far / G.R, period: 120, dir: -1, off: 0.3, avoid: true });
+      }
+    }
     orbits = defs.map(function (o) {
       o.range = null;
       var vis = [];
       for (var a = 0; a < 1440; a++) {
         var ang = a / 1440 * Math.PI * 2, rr = G.R * o.f;
         var x = G.cx + Math.cos(ang) * rr, y = G.cy + Math.sin(ang) * rr;
-        if (x > -30 && x < W + 30 && y > -30 && y < H + 30) vis.push(ang);
+        var onScreen = x > -30 && x < W + 30 && y > -30 && y < H + 30;
+        var inText = o.avoid && box && x > box.l && x < box.r && y > box.t && y < box.b;
+        if (onScreen && !inText) vis.push(ang);
       }
       if (vis.length) {
         var gap = 0, gi = 0;
@@ -65,6 +89,7 @@
         var s = vis[(gi + 1) % vis.length], e = vis[gi];
         if (e < s) e += Math.PI * 2;
         o.range = [s, e];
+        if (o.avoid) o.period = Math.max(26, (e - s) * G.R * o.f / 16);   /* about 16 px a second */
       }
       return o;
     });
@@ -150,7 +175,7 @@
       if (!o.range) continue;
       var rr = V.R * o.f, a0 = o.range[0], span = o.range[1] - a0;
       ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(214,224,255,' + (0.11 - n * 0.025).toFixed(3) + ')';
+      ctx.strokeStyle = 'rgba(214,224,255,' + Math.max(0.05, 0.11 - n * 0.025).toFixed(3) + ')';
       ctx.beginPath(); ctx.arc(V.cx, V.cy, rr, a0, a0 + span); ctx.stroke();
       var f = reduce ? o.off : ((t / o.period + o.off) % 1);
       if (o.dir < 0) f = 1 - f;
@@ -163,7 +188,7 @@
         ctx.lineWidth = 1.4;
         ctx.beginPath(); ctx.arc(V.cx, V.cy, rr, Math.min(b0, b1), Math.max(b0, b1)); ctx.stroke();
       }
-      var x = V.cx + Math.cos(a) * rr, y = V.cy + Math.sin(a) * rr, size = n === 0 ? 3.2 : n === 1 ? 2.6 : 2.2;
+      var x = V.cx + Math.cos(a) * rr, y = V.cy + Math.sin(a) * rr, size = [3.2, 2.6, 2.2, 2.4][n] || 2.2;
       ctx.fillStyle = 'rgba(255,255,255,' + (0.95 * fade).toFixed(3) + ')';
       ctx.beginPath(); ctx.arc(x, y, size, 0, 6.2832); ctx.fill();
       ctx.fillStyle = 'rgba(255,255,255,' + (0.18 * fade).toFixed(3) + ')';
@@ -221,8 +246,14 @@
     starC.style.transform = 'scale(' + (1 + 0.18 * e).toFixed(4) + ')';
     moonC.style.transform = 'translate3d(' + (-W * 0.05 * e).toFixed(1) + 'px,' + (-H * 0.22 * e).toFixed(1) + 'px,0) scale(' + (1 + 0.5 * e).toFixed(3) + ')';
     moonC.style.opacity = (1 - e * 0.7).toFixed(3);
+    if (nextIn) {
+      /* the work section's content rises and fades in as the hero hands over */
+      var ip = Math.min(1, Math.max(0, (p - 0.35) / 0.65)), ie = 1 - Math.pow(1 - ip, 3);
+      nextIn.style.transform = 'translate3d(0,' + (90 * (1 - ie)).toFixed(1) + 'px,0)';
+      nextIn.style.opacity = (0.15 + 0.85 * ie).toFixed(3);
+    }
     if (content) {
-      var tp = Math.min(1, p / 0.55);
+      var tp = Math.min(1, p / 0.45);
       content.style.transform = 'translate3d(0,' + (-H * 0.10 * tp).toFixed(1) + 'px,0)';
       content.style.opacity = (1 - tp).toFixed(3);
       content.style.visibility = tp >= 1 ? 'hidden' : '';
@@ -245,6 +276,8 @@
     var t = performance.now() / 1000; drawPlanet(); drawStars(t, 0); drawFx(t);
   }
   all();
+  /* the far orbit is fitted around the headline, so measure again once the fonts are in */
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { geometry(); view(scrollE); drawPlanet(); });
   setTimeout(function () { space.classList.add('is-ready'); }, 2500);
 
   var rt = 0, lastW = W, lastH = H;

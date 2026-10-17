@@ -7,7 +7,7 @@ the case study shells and the SoundLax landing page are not built here.
 """
 import os
 
-V = {'site': 52, 'home': 20, 'pages': 7, 'case': 24, 'projects': 30, 'portfolio': 5, 'sitejs': 38, 'casejs': 22}
+V = {'site': 53, 'home': 21, 'pages': 7, 'case': 24, 'projects': 31, 'portfolio': 5, 'sitejs': 38, 'casejs': 22}
 EMAIL = 'ben.ng189@gmail.com'
 ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
 BACK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>'
@@ -45,7 +45,7 @@ def nav(current):
     mob = ''.join('  <a href="%s">%s</a>\n' % (h, t) for t, h in NAV)
     return f'''<header class="site-nav">
   <div class="container nav-inner">
-    <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg?v=2" alt="Bentoji" /></a>
+    <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg?v=3" alt="Bentoji" /></a>
     <nav class="nav-links" aria-label="Primary">
 {links}      <a class="btn btn-ghost nav-cta" href="/contact">Let's talk</a>
     </nav>
@@ -74,7 +74,7 @@ FOOTER = f'''<footer class="site-footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg?v=2" alt="Bentoji" /></a>
+        <a class="brand" href="/" aria-label="Bentoji home"><img src="/assets/img/bentoji-logo.svg?v=3" alt="Bentoji" /></a>
         <p data-cms="footer.blurb">Bentoji is the design practice of Ben Nguyen, a designer in Auckland working on websites, apps and brands.</p>
       </div>
       <div class="footer-col">
@@ -438,7 +438,7 @@ for path, title in [('work/index.html', 'Project | Bentoji, Ben Nguyen')]:
 gate = head('Bentoji', 'Private preview.', '/access') + '''<body class="home">
 <main class="p-gate">
   <div class="p-gate-box">
-    <a class="brand" href="/access/" aria-label="Bentoji"><img src="/assets/img/bentoji-logo.svg?v=2" alt="Bentoji" /></a>
+    <a class="brand" href="/access/" aria-label="Bentoji"><img src="/assets/img/bentoji-logo.svg?v=3" alt="Bentoji" /></a>
     <h1>Private preview</h1>
     <p>This site is still being finished. Enter the password to continue.</p>
     <form id="gf" autocomplete="off">

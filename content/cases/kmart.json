@@ -38,52 +38,6 @@
   ],
   "sections": [
     {
-      "id": "problem",
-      "nav": "The problem",
-      "tone": "grey",
-      "pill": "The problem",
-      "heading": "Cheap is not the same as budget",
-      "blocks": [
-        {
-          "type": "text",
-          "p": [
-            "Cheap and budget are not the same thing, but Kmart's identity treated them as one. The prices were the reason to shop there, and they were also the reason people did not like to admit that they did.",
-            "That looked like a design problem, but it was really a [[positioning problem]]."
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "The brand was apologising for the exact thing that made it good."
-        }
-      ]
-    },
-    {
-      "bleed": {
-        "src": "/assets/img/work/kmart/store.webp",
-        "alt": "A Kmart store front with the new wordmark on a concrete facade, above a car park"
-      }
-    },
-    {
-      "id": "idea",
-      "nav": "The idea",
-      "tone": "dark",
-      "pill": "The idea",
-      "heading": "Buying cheap, on purpose",
-      "blocks": [
-        {
-          "type": "text",
-          "p": [
-            "The idea was to stop selling low prices as a compromise and start selling them as a choice. If you spend less on a chair, you have [[more left for everything that is not a chair]].",
-            "The whole rebrand hangs off that one reframe, so every decision after it had to answer to the same question."
-          ]
-        },
-        {
-          "type": "statement",
-          "text": "Does this make buying cheap feel deliberate?"
-        }
-      ]
-    },
-    {
       "id": "logo",
       "nav": "The logo",
       "tone": "grey",
@@ -152,6 +106,52 @@
           "src": "/assets/img/work/kmart/stationery.webp",
           "alt": "Kmart letterhead, envelopes and business cards with the new wordmark",
           "caption": "Business cards, letterhead and envelopes, kept almost entirely white so the mark does the work."
+        }
+      ]
+    },
+    {
+      "id": "problem",
+      "nav": "The problem",
+      "tone": "dark",
+      "pill": "The problem",
+      "heading": "Cheap is not the same as budget",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "Cheap and budget are not the same thing, but Kmart's identity treated them as one. The prices were the reason to shop there, and they were also the reason people did not like to admit that they did.",
+            "That looked like a design problem, but it was really a [[positioning problem]]."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "The brand was apologising for the exact thing that made it good."
+        }
+      ]
+    },
+    {
+      "bleed": {
+        "src": "/assets/img/work/kmart/store.webp",
+        "alt": "A Kmart store front with the new wordmark on a concrete facade, above a car park"
+      }
+    },
+    {
+      "id": "idea",
+      "nav": "The idea",
+      "tone": "grey",
+      "pill": "The idea",
+      "heading": "Buying cheap, on purpose",
+      "blocks": [
+        {
+          "type": "text",
+          "p": [
+            "The idea was to stop selling low prices as a compromise and start selling them as a choice. If you spend less on a chair, you have [[more left for everything that is not a chair]].",
+            "The whole rebrand hangs off that one reframe, so every decision after it had to answer to the same question."
+          ]
+        },
+        {
+          "type": "statement",
+          "text": "Does this make buying cheap feel deliberate?"
         }
       ]
     },

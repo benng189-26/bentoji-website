@@ -276,7 +276,7 @@ body.home{
 /* ===== Hero background (17 Oct 2026, v3): photographic space scene, assets/space.js =====
    The hero is pinned inside .hero-track while the view moves in towards the
    planet; the work section then slides up over it with a soft dark edge. */
-.home .hero-track{position:relative;height:175svh;}
+.home .hero-track{position:relative;height:130svh;}
 .home .hero-track > .h-hero.has-space{
   position:sticky;top:0;height:100svh;min-height:600px;
   background:#030407;overflow:hidden;z-index:0;
@@ -295,10 +295,24 @@ body.home{
 .home .h-space.is-ready .h-starfield{opacity:.16;}
 .home .hero-track .h-hero.has-space > .container{position:relative;z-index:4;will-change:transform,opacity;}
 /* the next section slides over the pinned hero */
-.home .hero-track + .h-work{position:relative;z-index:1;margin-top:-30svh;
+.home .hero-track + .h-work{position:relative;z-index:1;margin-top:-22svh;
   background:linear-gradient(to bottom,rgba(15,21,28,0) 0,rgba(15,21,28,.85) 14svh,var(--h-navy) 30svh);}
 @media(prefers-reduced-motion:reduce){
   .home .hero-track{height:auto;}
   .home .hero-track > .h-hero.has-space{position:relative;}
   .home .hero-track + .h-work{margin-top:0;background:var(--h-navy);}
 }
+
+.home .hero-track + .h-work > .container{will-change:transform,opacity;}
+@media(prefers-reduced-motion:reduce){ .home .hero-track + .h-work > .container{transform:none!important;opacity:1!important;} }
+
+
+/* footer: a quiet version of the hero (stars, planet edge), no motion */
+.home .site-footer{position:relative;overflow:hidden;isolation:isolate;background:#04060a;border-top:1px solid var(--h-line-dark);}
+.home .site-footer::before{display:block;content:"";position:absolute;inset:0;z-index:0;left:0;right:0;top:0;height:auto;filter:none;animation:none;transform:none;
+  background:url(/assets/img/space/stars.webp) center/cover no-repeat;opacity:.14;}
+.home .site-footer::after{content:"";position:absolute;z-index:0;pointer-events:none;
+  width:min(62vw,820px);aspect-ratio:1;right:max(-18vw,-260px);bottom:calc(min(62vw,820px) * -0.62);
+  background:url(/assets/img/space/planet-sm.webp) center/contain no-repeat;opacity:.95;}
+.home .site-footer .container{position:relative;z-index:1;}
+@media(max-width:700px){ .home .site-footer::after{width:110vw;right:-48vw;bottom:-78vw;opacity:.8;} }
